@@ -98,7 +98,7 @@ window.FREENAV_SOFTWARE = [
   { id: "aria2", name: "Aria2", cat: "download", desc: "命令行多协议下载内核，配合前端做离线下载。", url: "https://aria2.github.io/", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["命令行", "离线下载"] },
   { id: "ytdlp", name: "yt-dlp", cat: "download", desc: "视频下载命令行神器，更新极快、支持海量站点。", url: "https://github.com/yt-dlp/yt-dlp", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["视频", "命令行"] },
   { id: "persepolis", name: "Persepolis", cat: "download", desc: "Aria2 的图形前端，下载管理更直观。", url: "https://persepolisdm.github.io/", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["图形化", "Aria2"] },
-  { id: "downzemall", name: "DownZemAll", cat: "download", desc: "开源下载管理器，批量抓取页面里的所有链接。", url: "https://github.com/liberodark/DownZemAll", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["批量", "抓取"] },
+  { id: "downzemall", name: "DownZemAll", cat: "download", desc: "开源下载管理器，批量抓取页面里的所有链接。", url: "https://www.downthemall.org/", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["批量", "抓取"] },
   { id: "cobalt", name: "Cobalt", cat: "download", desc: "开源在线媒体下载器，粘贴链接即得视频/音频，干净无广告。", url: "https://cobalt.tools/", pricing: "开源", platforms: ["Web"], tags: ["在线", "视频"] },
 
   // ───────── AI 工具 ─────────
@@ -118,7 +118,7 @@ window.FREENAV_SOFTWARE = [
   { id: "signal", name: "Signal", cat: "security", desc: "端到端加密通讯，默认收集极少、安全标杆。", url: "https://signal.org/", pricing: "开源", platforms: ["Win", "Mac", "Linux", "Android", "iOS"], tags: ["加密通讯", "隐私"] },
   { id: "protonmail", name: "Proton Mail", cat: "security", desc: "加密邮箱，瑞士服务器、隐私友好。", url: "https://proton.me/mail", pricing: "免费增值", platforms: ["Web", "Win", "Mac", "Android", "iOS"], tags: ["邮箱", "加密"] },
   { id: "simplelogin", name: "SimpleLogin", cat: "security", desc: "邮箱别名服务，注册网站用一次性地址防追踪。", url: "https://simplelogin.io/", pricing: "开源", platforms: ["Web", "Android", "iOS"], tags: ["邮箱别名", "防追踪"] },
-  { id: "ublockorigin", name: "uBlock Origin", cat: "security", desc: "高效广告与追踪拦截，省流量、护隐私。", url: "https://github.com/gorhill/uBlock-Origin", pricing: "开源", platforms: ["Web"], tags: ["广告拦截", "插件"] },
+  { id: "ublockorigin", name: "uBlock Origin", cat: "security", desc: "高效广告与追踪拦截，省流量、护隐私。", url: "https://github.com/gorhill/uBlock", pricing: "开源", platforms: ["Web"], tags: ["广告拦截", "插件"] },
   { id: "portmaster", name: "Portmaster", cat: "security", desc: "开源应用防火墙，可视化监控每个程序的网络连接。", url: "https://safing.io/portmaster/", pricing: "开源", platforms: ["Win", "Linux"], tags: ["防火墙", "监控"] },
   { id: "veracrypt", name: "VeraCrypt", cat: "security", desc: "开源磁盘加密，创建加密卷隐藏敏感数据。", url: "https://www.veracrypt.fr/", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["加密", "磁盘"] },
   { id: "gnupg", name: "GnuPG", cat: "security", desc: "命令行加密与签名，邮件/文件验证基石。", url: "https://gnupg.org/", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["加密", "签名"] },

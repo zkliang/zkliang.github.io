@@ -1,0 +1,70 @@
+name: 死链检测
+
+on:
+  schedule:
+    # 每周一凌晨 2:00 (UTC+8 = UTC 18:00 周日)
+    - cron: "0 18 * * 0"
+  workflow_dispatch:  # 也可手动触发
+
+jobs:
+  check-links:
+    # 免费额度足够，每月 2000+ 分钟
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 使用 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 运行死链检测
+        id: check
+        run: node scripts/check-dead-links.js | tee /tmp/report.txt
+
+      - name: 发现死链 → 创建 Issue
+        if: contains(steps.check.outputs.has_dead, 'true')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('/tmp/report.txt', 'utf8');
+            const lines = report.split('\n').filter(l => l.match(/\[(ERR|TIMEOUT|\d+)\]/));
+            const body = lines.length > 0
+              ? '## 🔴 死链检测报告\n\n以下 ' + lines.length + ' 个链接可能存在访问异常：\n\n```\n' + lines.join('\n') + '\n```\n\n> 自动检测于 ' + new Date().toISOString().slice(0, 10)
+              : '## ✅ 死链检测报告\n\n本次未发现异常链接。\n\n> 自动检测于 ' + new Date().toISOString().slice(0, 10);
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '📡 死链检测报告 — ' + new Date().toISOString().slice(0, 10),
+              body: body,
+              labels: ['auto-check', 'maintenance']
+            });
+
+      - name: 全部正常 → 关闭上次 Issue（如果有）
+        if: contains(steps.check.outputs.all_ok, 'true')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'auto-check'
+            });
+            for (const issue of issues.data) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: '✅ 链接已全部恢复。'
+              });
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed'
+              });
+            }
