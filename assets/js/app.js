@@ -403,7 +403,7 @@
     if (!items.length) { affiliateStrip.hidden = true; return; }
     affiliateStrip.hidden = false;
     affiliateStrip.innerHTML =
-      '<h2 class="aff-title">编辑推荐 <span class="aff-sub">精挑细选，按需入手</span></h2>' +
+      '<h2 class="aff-title">赞助推荐 <span class="aff-sub">推广内容 · 助力本站免费运营</span></h2>' +
       '<div class="aff-grid">' + items.map(function (it) {
         var tag = it.tag ? '<span class="aff-tag">' + it.tag + "</span>" : "";
         var note = it.note ? '<p class="aff-note">' + it.note + "</p>" : "";
