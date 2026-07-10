@@ -53,7 +53,7 @@
   // 首页「为什么选择 FreeNav」信任区（文案真实，不夸大）
   var WHY = [
     { icon: "🔗", title: "官网直达", desc: "每款工具直链官方网站或开源仓库，没有中间商，下载更安心。" },
-    { icon: "🆓", title: "免费 / 开源优先", desc: "清单以开源与免费软件为主，帮你避开臃肿捆绑、省下订阅开支。" },
+    { icon: "🆓", title: "免费 / 开源优先", desc: "清单以开源与免费软件为主，帮助你减少不必要的订阅支出。" },
     { icon: "🛡️", title: "隐私友好", desc: "只做导航索引，不追踪、不内置广告，你的浏览数据只属于你。" }
   ];
 
@@ -190,7 +190,7 @@
       '<section class="home-sec">' +
         '<div class="sec-head"><span class="section-eyebrow">Why FreeNav</span>' +
           '<h2 class="section-title">为什么选择 FreeNav</h2>' +
-          '<p class="section-sub">不是又一个广告导航站——我们只做一件事：把真正免费、开源的好工具，干净地交到你手里。</p></div>' +
+          '<p class="section-sub">我们不是一个充斥广告的导航站——我们只做一件事：把真正免费、开源的优质工具，干净地呈现给你。</p></div>' +
         '<div class="why-grid">' + WHY.map(whyCardHTML).join("") + "</div>" +
       "</section>";
     if (spy) { spy.disconnect(); spy = null; }
@@ -274,7 +274,7 @@
     if (!arr.length) {
       listRoot.innerHTML = "";
       if (emptyState) {
-        emptyState.innerHTML = '<p>没有找到与“' + esc(query.trim()) + '”匹配的软件。<br>换个关键词，或浏览左侧分类试试～</p>';
+        emptyState.innerHTML = '<p>没有找到与“' + esc(query.trim()) + '”匹配的软件。<br>请尝试其他关键词，或浏览左侧分类。</p>';
         emptyState.hidden = false;
       }
       return;
@@ -389,7 +389,7 @@
     var stats = [
       { num: SOFTWARE.length, label: "精选工具" },
       { num: CATEGORIES.length, label: "专业分类" },
-      { num: "0¥", label: "完全免费" }
+      { num: "100%", label: "免费开源" }
     ];
     heroStats.innerHTML = stats.map(function (s) {
       return '<div class="hero-stat"><span class="hs-num">' + s.num + '</span><span class="hs-label">' + s.label + "</span></div>";

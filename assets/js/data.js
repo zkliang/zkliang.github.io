@@ -15,16 +15,16 @@
  */
 
 window.FREENAV_CATEGORIES = [
-  { key: "system",   label: "系统工具",   icon: "🛠️", color: "#38bdf8", color2: "#0284c7", desc: "清理、搜索、启动盘与效率启动器，让电脑干净又好用。", guide: "找文件用 Everything，截图录屏用 ShareX，重装系统用 Ventoy / Rufus，想要一步到位再装 PowerToys。" },
-  { key: "office",   label: "办公 & 文档", icon: "📝", color: "#34d399", color2: "#059669", desc: "笔记、密码、PDF 与办公套件，告别臃肿订阅与广告弹窗。", guide: "文档协作选 OnlyOffice，知识管理选 Obsidian / Logseq，密码统一交给 Bitwarden，PDF 处理上 Stirling-PDF。" },
-  { key: "design",   label: "设计 & 创作", icon: "🎨", color: "#f472b6", color2: "#db2777", desc: "修图、插画、3D、剪辑与排版，开源也能做出专业作品。", guide: "修图选 GIMP，插画用 Krita，3D 上 Blender，排版用 Scribus——全套开源、零授权费。" },
+  { key: "system",   label: "系统工具",   icon: "🛠️", color: "#38bdf8", color2: "#0284c7", desc: "清理、搜索、启动盘与效率启动器，让电脑保持整洁高效。", guide: "找文件用 Everything，截图录屏用 ShareX，重装系统用 Ventoy / Rufus，想要一步到位再装 PowerToys。" },
+  { key: "office",   label: "办公 & 文档", icon: "📝", color: "#34d399", color2: "#059669", desc: "笔记、密码、PDF 与办公套件，以免费方案替代付费订阅。", guide: "文档协作选 OnlyOffice，知识管理选 Obsidian / Logseq，密码统一交给 Bitwarden，PDF 处理上 Stirling-PDF。" },
+  { key: "design",   label: "设计 & 创作", icon: "🎨", color: "#f472b6", color2: "#db2777", desc: "修图、插画、3D、剪辑与排版，开源也能完成专业创作。", guide: "修图选 GIMP，插画用 Krita，3D 上 Blender，排版用 Scribus——全套开源、零授权费。" },
   { key: "dev",      label: "开发 & 编程", icon: "💻", color: "#818cf8", color2: "#4f46e5", desc: "编辑器、版本控制、数据库与部署，开发者日常工具箱。", guide: "写代码用 VS Code，版本控制用 Git，连数据库用 DBeaver，本地联调靠 Docker / Tailscale。" },
-  { key: "media",    label: "影音 & 媒体", icon: "🎬", color: "#fb7185", color2: "#e11d48", desc: "万能播放、私有影音库与转码，自己的媒体自己说了算。", guide: "万能播放用 VLC / MPV，自建影音库用 Jellyfin，转码压片用 HandBrake——自己的媒体自己管。" },
-  { key: "download", label: "下载 & 传输", icon: "⬇️", color: "#fbbf24", color2: "#d97706", desc: "BT、多线程与在线视频下载，高速且清爽无广告。", guide: "BT 用 qBittorrent，全协议用 Motrix，视频下载用 yt-dlp，离线下载搭 Aria2。" },
-  { key: "ai",       label: "AI & 智能",  icon: "🤖", color: "#a78bfa", color2: "#7c3aed", desc: "本地大模型、文生图与知识库，把 AI 跑在你自己的机器上。", guide: "本地大模型用 Ollama / LM Studio，聊天界面用 Open WebUI，文生图用 ComfyUI / SD WebUI，知识库用 AnythingLLM。" },
-  { key: "security", label: "安全 & 隐私", icon: "🔒", color: "#2dd4bf", color2: "#0d9488", desc: "VPN、加密通讯与密码管理，守住你的数据与身份。", guide: "上网用 Proton VPN，通讯用 Signal，密码用 Bitwarden，浏览防追踪上 uBlock Origin + Tor Browser。" },
-  { key: "study",    label: "学习 & 教育", icon: "📚", color: "#fb923c", color2: "#ea580c", desc: "记忆卡、文献、公版书与公开课，免费把知识装进口袋。", guide: "背单词用 Anki，管文献用 Zotero，看书去 Project Gutenberg，系统课刷 Khan Academy / Coursera。" },
-  { key: "mobile",   label: "移动 & 安卓", icon: "📱", color: "#4ade80", color2: "#16a34a", desc: "开源安卓商店与无广告客户端，手机也能清爽自由。", guide: "应用商店用 F-Droid，无广告 YouTube 用 NewPipe，离线地图用 Organic Maps，手机电脑互联用 KDE Connect。" },
+  { key: "media",    label: "影音 & 媒体", icon: "🎬", color: "#fb7185", color2: "#e11d48", desc: "影音播放、私有媒体库与格式转换，自主管理个人媒体资源。", guide: "万能播放用 VLC / MPV，自建影音库用 Jellyfin，转码压片用 HandBrake——自己的媒体自己管。" },
+  { key: "download", label: "下载 & 传输", icon: "⬇️", color: "#fbbf24", color2: "#d97706", desc: "BT、多线程与在线视频下载，高速且无广告。", guide: "BT 用 qBittorrent，全协议用 Motrix，视频下载用 yt-dlp，离线下载搭 Aria2。" },
+  { key: "ai",       label: "AI & 智能",  icon: "🤖", color: "#a78bfa", color2: "#7c3aed", desc: "本地大模型、文生图与知识库，将 AI 运行在你的设备上。", guide: "本地大模型用 Ollama / LM Studio，聊天界面用 Open WebUI，文生图用 ComfyUI / SD WebUI，知识库用 AnythingLLM。" },
+  { key: "security", label: "安全 & 隐私", icon: "🔒", color: "#2dd4bf", color2: "#0d9488", desc: "VPN、加密通讯与密码管理，保护你的数据与身份安全。", guide: "上网用 Proton VPN，通讯用 Signal，密码用 Bitwarden，浏览防追踪上 uBlock Origin + Tor Browser。" },
+  { key: "study",    label: "学习 & 教育", icon: "📚", color: "#fb923c", color2: "#ea580c", desc: "记忆卡片、文献管理、公版书与公开课，免费获取优质学习资源。", guide: "背单词用 Anki，管文献用 Zotero，看书去 Project Gutenberg，系统课刷 Khan Academy / Coursera。" },
+  { key: "mobile",   label: "移动 & 安卓", icon: "📱", color: "#4ade80", color2: "#16a34a", desc: "开源安卓商店与无广告客户端，为移动设备提供清爽体验。", guide: "应用商店用 F-Droid，无广告 YouTube 用 NewPipe，离线地图用 Organic Maps，手机电脑互联用 KDE Connect。" },
 ];
 
 window.FREENAV_SOFTWARE = [
