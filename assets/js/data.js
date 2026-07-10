@@ -22,7 +22,7 @@ window.FREENAV_CATEGORIES = [
   { key: "media",    label: "影音 & 媒体", icon: "🎬", color: "#fb7185", color2: "#e11d48", desc: "影音播放、私有媒体库与格式转换，自主管理个人媒体资源。", guide: "万能播放用 VLC / MPV，自建影音库用 Jellyfin，转码压片用 HandBrake——自己的媒体自己管。" },
   { key: "download", label: "下载 & 传输", icon: "⬇️", color: "#fbbf24", color2: "#d97706", desc: "BT、多线程与在线视频下载，高速且无广告。", guide: "BT 用 qBittorrent，全协议用 Motrix，视频下载用 yt-dlp，离线下载搭 Aria2。" },
   { key: "ai",       label: "AI & 智能",  icon: "🤖", color: "#a78bfa", color2: "#7c3aed", desc: "本地大模型、文生图与知识库，将 AI 运行在你的设备上。", guide: "本地大模型用 Ollama / LM Studio，聊天界面用 Open WebUI，文生图用 ComfyUI / SD WebUI，知识库用 AnythingLLM。" },
-  { key: "security", label: "安全 & 隐私", icon: "🔒", color: "#2dd4bf", color2: "#0d9488", desc: "VPN、加密通讯与密码管理，保护你的数据与身份安全。", guide: "上网用 Proton VPN，通讯用 Signal，密码用 Bitwarden，浏览防追踪上 uBlock Origin + Tor Browser。" },
+  { key: "security", label: "安全 & 隐私", icon: "🔒", color: "#2dd4bf", color2: "#0d9488", desc: "密码管理与数据加密，守护你的身份与隐私安全。", guide: "通讯与文件用 Signal，密码统一交给 Bitwarden，浏览防追踪装 uBlock Origin，磁盘加密用 VeraCrypt。" },
   { key: "study",    label: "学习 & 教育", icon: "📚", color: "#fb923c", color2: "#ea580c", desc: "记忆卡片、文献管理、公版书与公开课，免费获取优质学习资源。", guide: "背单词用 Anki，管文献用 Zotero，看书去 Project Gutenberg，系统课刷 Khan Academy / Coursera。" },
   { key: "mobile",   label: "移动 & 安卓", icon: "📱", color: "#4ade80", color2: "#16a34a", desc: "开源安卓商店与无广告客户端，为移动设备提供清爽体验。", guide: "应用商店用 F-Droid，无广告 YouTube 用 NewPipe，离线地图用 Organic Maps，手机电脑互联用 KDE Connect。" },
 ];
@@ -73,7 +73,7 @@ window.FREENAV_SOFTWARE = [
   { id: "dbeaver", name: "DBeaver", cat: "dev", desc: "通用数据库客户端，连 MySQL/Postgres/SQLite 等几十种库。", url: "https://dbeaver.io/", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["数据库", "SQL"] },
   { id: "docker", name: "Docker", cat: "dev", desc: "容器化部署标准，环境一致、一键起服务。", url: "https://www.docker.com/", pricing: "免费增值", platforms: ["Win", "Mac", "Linux"], tags: ["容器", "部署"] },
   { id: "neovim", name: "Neovim", cat: "dev", desc: "现代化 Vim，Lua 配置、LSP 加持，极客编辑器。", url: "https://neovim.io/", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["编辑器", "终端"] },
-  { id: "tailscale", name: "Tailscale", cat: "dev", desc: "零配置内网穿透 VPN，把设备组进私有局域网。", url: "https://tailscale.com/", pricing: "免费增值", platforms: ["Win", "Mac", "Linux", "Android", "iOS"], tags: ["内网穿透", "VPN"] },
+  { id: "tailscale", name: "Tailscale", cat: "dev", desc: "零配置内网穿透组网，把设备接入私有局域网。", url: "https://tailscale.com/", pricing: "免费增值", platforms: ["Win", "Mac", "Linux", "Android", "iOS"], tags: ["内网穿透", "组网"] },
   { id: "warp", name: "Warp", cat: "dev", desc: "智能终端，命令补全与可分享块，Shell 体验升级。", url: "https://www.warp.dev/", pricing: "免费增值", platforms: ["Win", "Mac", "Linux"], tags: ["终端", "效率"] },
   { id: "ohmyzsh", name: "Oh My Zsh", cat: "dev", desc: "Zsh 配置框架，主题插件让命令行好用又好看。", url: "https://ohmyz.sh/", pricing: "开源", platforms: ["Mac", "Linux"], tags: ["终端", "配置"] },
 
@@ -115,8 +115,6 @@ window.FREENAV_SOFTWARE = [
   { id: "localai", name: "LocalAI", cat: "ai", desc: "自托管 OpenAI 兼容推理服务，消费级硬件跑大模型。", url: "https://localai.io/", pricing: "开源", platforms: ["Win", "Mac", "Linux", "自托管"], tags: ["推理", "API"] },
 
   // ───────── 安全隐私 ─────────
-  { id: "protonvpn", name: "Proton VPN", cat: "security", desc: "瑞士隐私 VPN，免费版不限流量、无日志。", url: "https://protonvpn.com/", pricing: "免费增值", platforms: ["Win", "Mac", "Linux", "Android", "iOS"], tags: ["VPN", "隐私"] },
-  { id: "torbrowser", name: "Tor Browser", cat: "security", desc: "匿名浏览，多层加密绕开审查，保护身份。", url: "https://www.torproject.org/", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["匿名", "浏览"] },
   { id: "signal", name: "Signal", cat: "security", desc: "端到端加密通讯，默认收集极少、安全标杆。", url: "https://signal.org/", pricing: "开源", platforms: ["Win", "Mac", "Linux", "Android", "iOS"], tags: ["加密通讯", "隐私"] },
   { id: "protonmail", name: "Proton Mail", cat: "security", desc: "加密邮箱，瑞士服务器、隐私友好。", url: "https://proton.me/mail", pricing: "免费增值", platforms: ["Web", "Win", "Mac", "Android", "iOS"], tags: ["邮箱", "加密"] },
   { id: "simplelogin", name: "SimpleLogin", cat: "security", desc: "邮箱别名服务，注册网站用一次性地址防追踪。", url: "https://simplelogin.io/", pricing: "开源", platforms: ["Web", "Android", "iOS"], tags: ["邮箱别名", "防追踪"] },
