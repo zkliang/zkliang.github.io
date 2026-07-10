@@ -297,6 +297,25 @@ img { max-width: 100%; }
 .sponsor-text { margin: 0; color: var(--muted); font-size: 14.5px; }
 .sponsor-text a { color: var(--accent); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
 
+/* ---------- CPS 编辑推荐位 ---------- */
+.affiliate { padding: 8px 0 4px; }
+.aff-title { font-size: 19px; font-weight: 800; margin: 8px 0 14px; display: flex; align-items: baseline; gap: 10px; }
+.aff-sub { font-size: 13px; font-weight: 500; color: var(--muted); }
+.aff-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.aff-card {
+  display: flex; flex-direction: column; gap: 6px; padding: 14px 16px;
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  text-decoration: none; color: var(--text); transition: transform .15s, border-color .15s, box-shadow .15s;
+}
+.aff-card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: var(--shadow); }
+.aff-name { font-weight: 700; font-size: 15px; }
+.aff-tag {
+  align-self: flex-start; font-size: 11px; font-weight: 800; color: var(--accent-ink);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  padding: 2px 9px; border-radius: 999px;
+}
+.aff-note { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
+
 /* ---------- 分类切换（吸顶） ---------- */
 .categories-nav { padding: 22px 0 6px; position: sticky; top: 64px; z-index: 40;
   background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); }

@@ -15,6 +15,7 @@
   var emptyState = document.getElementById("emptyState");
   var heroTags = document.getElementById("heroTags");
   var heroStats = document.getElementById("heroStats");
+  var affiliateStrip = document.getElementById("affiliateStrip");
   var resultMeta = document.getElementById("resultMeta");
   var sortSelect = document.getElementById("sort");
   var sortLabel = document.getElementById("sortLabel");
@@ -395,6 +396,23 @@
     }).join("");
   }
 
+  // CPS 编辑推荐位：读取 config.js 的 FREENAV_AFFILIATE，空数组则不显示
+  function renderAffiliate() {
+    if (!affiliateStrip) return;
+    var items = window.FREENAV_AFFILIATE || [];
+    if (!items.length) { affiliateStrip.hidden = true; return; }
+    affiliateStrip.hidden = false;
+    affiliateStrip.innerHTML =
+      '<h2 class="aff-title">编辑推荐 <span class="aff-sub">精挑细选，按需入手</span></h2>' +
+      '<div class="aff-grid">' + items.map(function (it) {
+        var tag = it.tag ? '<span class="aff-tag">' + it.tag + "</span>" : "";
+        var note = it.note ? '<p class="aff-note">' + it.note + "</p>" : "";
+        return '<a class="aff-card" href="' + it.url + '" target="_blank" rel="nofollow noopener sponsored">' +
+                 '<span class="aff-name">' + it.name + "</span>" + tag + note +
+               "</a>";
+      }).join("") + "</div>";
+  }
+
   function injectJSONLD() {
     var list = SOFTWARE.map(function (i) {
       return {
@@ -485,6 +503,7 @@
   renderSideCols();
   renderHeroTags();
   renderHeroStats();
+  renderAffiliate();
   render();
   injectJSONLD();
 
