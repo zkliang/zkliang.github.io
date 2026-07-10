@@ -457,6 +457,7 @@ img { max-width: 100%; }
 .footer-col a:hover { text-decoration: underline; }
 .footer-col a.donate-link { color: #e07c00; font-weight: 600; }
 .footer-col a.donate-link:hover { color: #ff9500; text-decoration: underline; }
+.footer-col .donate-placeholder { color: var(--faint); font-size: 13px; cursor: default; }
 .footer-bottom { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--faint); font-size: 12.5px; text-align: center; }
 
 /* ---------- 回到顶部 ---------- */

@@ -35,7 +35,6 @@
     .biz-card p { color: var(--muted); font-size: 14px; line-height: 1.65; margin: 0; }
     .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .tier { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px 22px; display: flex; flex-direction: column; }
-    .tier.featured { border-color: color-mix(in srgb, var(--accent) 55%, transparent); box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent), 0 14px 40px -22px color-mix(in srgb, var(--accent) 70%, transparent); }
     .tier .tag { align-self: flex-start; font-size: 12px; font-weight: 700; color: var(--accent); background: color-mix(in srgb, var(--accent) 13%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent); padding: 3px 10px; border-radius: 999px; margin-bottom: 12px; }
     .tier h3 { margin: 0 0 4px; font-size: 19px; }
     .tier .price { font-size: 30px; font-weight: 900; margin: 6px 0 2px; }
@@ -83,56 +82,53 @@
   <main class="biz" id="top">
     <section class="biz-hero">
       <h1>和 <span class="g">FreeNav</span> 一起，把好软件送到更多人手里</h1>
-      <p>FreeNav 是一个纯免费 / 开源软件导航站，不卖会员、不夹私货。我们用透明、合规的推荐位与联盟分成，和软件厂商、开发者建立<strong>长期主义</strong>的合作。</p>
+      <p>FreeNav 是一个纯免费 / 开源软件导航站，不卖会员、不夹私货。目前商业合作方式正在探索中——页面上展示的为未来规划，确认可行后才会正式开放。</p>
     </section>
 
     <section class="biz-sec">
-      <h2>为什么选我们</h2>
-      <p class="sub">你的用户正在主动找「好用的免费软件」——他们是我们最精准的受众。</p>
+      <h2>软件收录投稿</h2>
+      <p class="sub">有推荐的免费 / 开源软件想加入 FreeNav？欢迎通过 GitHub Issue 提交，或直接邮件告诉我们。</p>
       <div class="biz-grid">
         <div class="biz-card">
-          <div class="ic">🎯</div>
-          <h3>高意向流量</h3>
-          <p>访客带着明确需求（找截图工具、找密码管理器）而来，转化意愿远高于泛娱乐流量。</p>
+          <div class="ic">🐙</div>
+          <h3>GitHub Issue</h3>
+          <p>在项目仓库提交 Issue，附上软件名称、官网地址和推荐理由，我会在 3 个工作日内审核收录。</p>
+          <p style="margin-top:12px"><a href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer" style="font-weight:700;color:var(--accent)">提交 Issue →</a></p>
         </div>
         <div class="biz-card">
-          <div class="ic">🤝</div>
-          <h3>信任背书</h3>
-          <p>我们只收录真正免费 / 开源的软件，品牌调性与「尊重用户」的厂商天然契合。</p>
+          <div class="ic">📧</div>
+          <h3>直接邮件</h3>
+          <p>不愿用 GitHub 的话，直接发邮件到 <a href="mailto:zkl3@msn.com">zkl3@msn.com</a>，标题注明「软件收录」，附上官网链接和一句话推荐。</p>
         </div>
         <div class="biz-card">
-          <div class="ic">📈</div>
-          <h3>透明可核</h3>
-          <p>推荐位、点击、转化全部可追溯。联盟分成按第三方平台规则结算，公开透明。</p>
+          <div class="ic">📡</div>
+          <h3>RSS/动态跟进</h3>
+          <p>订阅 <a href="/rss.xml">RSS</a> 了解 FreeNav 的更新动态。收录、专题更新都会自动推送。</p>
         </div>
       </div>
     </section>
 
     <section class="biz-sec">
-      <h2>合作方案</h2>
-      <p class="sub">三种合作方式，按需选择，随时可调整。</p>
+      <h2>合作方向（评估中）</h2>
+      <p class="sub">以下为规划中的合作方式，正式开放时间待定。如需提前沟通，可直接邮件联系。</p>
       <div class="tiers">
         <div class="tier">
           <h3>分类推荐位</h3>
-          <div class="price">¥600 <small>/ 月</small></div>
+          <div class="price">准备中 <small>暂不开放</small></div>
           <ul>
-            <li>指定分类（如「设计 & 创作」）置顶 1 个推荐位</li>
+            <li>指定分类（如「设计 & 创作」）置顶推荐位</li>
             <li>带「赞助」标识，合规透明</li>
-            <li>可放官网 / 联盟链接</li>
-            <li>按月续费，随时可停</li>
+            <li>正式定价与开放时间待定</li>
           </ul>
           <div class="spacer"></div>
         </div>
-        <div class="tier featured">
-          <span class="tag">最受欢迎</span>
-          <h3>专题冠名</h3>
-          <div class="price">¥1800 <small>/ 月</small></div>
+        <div class="tier">
+          <h3>专题深度合作</h3>
+          <div class="price">准备中 <small>暂不开放</small></div>
           <ul>
-            <li>整个月度冠名一个细分专题（如「本地 AI」）</li>
+            <li>月度冠名一个细分专题（如「本地 AI」）</li>
             <li>专题页 Header 品牌展示</li>
-            <li>含 3 个分类推荐位</li>
-            <li>优先收录你的产品测评</li>
-            <li>季度合作享 9 折</li>
+            <li>正式定价与开放时间待定</li>
           </ul>
           <div class="spacer"></div>
         </div>
@@ -165,9 +161,9 @@
         <div class="field">
           <label for="cType">合作意向</label>
           <select id="cType" name="type">
-            <option value="分类推荐位">分类推荐位</option>
-            <option value="专题冠名">专题冠名</option>
             <option value="联盟分成">联盟分成</option>
+            <option value="软件收录">软件收录</option>
+            <option value="合作提前沟通">合作提前沟通</option>
             <option value="其他">其他 / 媒体合作</option>
           </select>
         </div>
