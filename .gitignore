@@ -1,0 +1,16 @@
+# 依赖
+node_modules/
+
+# 脚本缓存/草稿（sync.mjs 生成，不入库）
+scripts/.cache/
+
+# 系统/编辑器
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc

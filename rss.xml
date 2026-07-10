@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FreeNav · 免费软件导航</title>
+    <link>https://freenav.example.com</link>
+    <description>精选 100+ 款真正免费、开源的软件，附 4 个差异化专题对比表与测评。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 09 Jul 2026 06:53:12 GMT</lastBuildDate>
+    <atom:link href="https://freenav.example.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Everything</title>
+      <link>https://www.voidtools.com/</link>
+      <guid isPermaLink="false">https://www.voidtools.com/</guid>
+      <description>清理、搜索、启动盘与效率启动器，让电脑干净又好用。</description>
+    </item>
+    <item>
+      <title>PowerToys</title>
+      <link>https://github.com/microsoft/PowerToys</link>
+      <guid isPermaLink="false">https://github.com/microsoft/PowerToys</guid>
+      <description>笔记、密码、PDF 与办公套件，告别臃肿订阅与广告弹窗。</description>
+    </item>
+    <item>
+      <title>ShareX</title>
+      <link>https://getsharex.com/</link>
+      <guid isPermaLink="false">https://getsharex.com/</guid>
+      <description>修图、插画、3D、剪辑与排版，开源也能做出专业作品。</description>
+    </item>
+    <item>
+      <title>7-Zip</title>
+      <link>https://7-zip.org/</link>
+      <guid isPermaLink="false">https://7-zip.org/</guid>
+      <description>编辑器、版本控制、数据库与部署，开发者日常工具箱。</description>
+    </item>
+    <item>
+      <title>Ventoy</title>
+      <link>https://www.ventoy.net/</link>
+      <guid isPermaLink="false">https://www.ventoy.net/</guid>
+      <description>万能播放、私有影音库与转码，自己的媒体自己说了算。</description>
+    </item>
+    <item>
+      <title>Rufus</title>
+      <link>https://rufus.ie/</link>
+      <guid isPermaLink="false">https://rufus.ie/</guid>
+      <description>BT、多线程与在线视频下载，高速且清爽无广告。</description>
+    </item>
+    <item>
+      <title>CrystalDiskInfo</title>
+      <link>https://crystalmark.info/</link>
+      <guid isPermaLink="false">https://crystalmark.info/</guid>
+      <description>本地大模型、文生图与知识库，把 AI 跑在你自己的机器上。</description>
+    </item>
+    <item>
+      <title>BleachBit</title>
+      <link>https://www.bleachbit.org/</link>
+      <guid isPermaLink="false">https://www.bleachbit.org/</guid>
+      <description>VPN、加密通讯与密码管理，守住你的数据与身份。</description>
+    </item>
+    <item>
+      <title>LocalSend</title>
+      <link>https://localsend.org/</link>
+      <guid isPermaLink="false">https://localsend.org/</guid>
+      <description>记忆卡、文献、公版书与公开课，免费把知识装进口袋。</description>
+    </item>
+    <item>
+      <title>Flow Launcher</title>
+      <link>https://flowlauncher.com/</link>
+      <guid isPermaLink="false">https://flowlauncher.com/</guid>
+      <description>开源安卓商店与无广告客户端，手机也能清爽自由。</description>
+    </item>
+    <item>
+      <title>LibreOffice</title>
+      <link>https://www.libreoffice.org/</link>
+      <guid isPermaLink="false">https://www.libreoffice.org/</guid>
+      <description>极速本地文件搜索，输入即出，秒级定位任意文件。</description>
+    </item>
+    <item>
+      <title>OnlyOffice</title>
+      <link>https://www.onlyoffice.com/</link>
+      <guid isPermaLink="false">https://www.onlyoffice.com/</guid>
+      <description>微软官方系统增强套件，窗口布局、批量重命名、取色等 20+ 工具。</description>
+    </item>
+    <item>
+      <title>Obsidian</title>
+      <link>https://obsidian.md/</link>
+      <guid isPermaLink="false">https://obsidian.md/</guid>
+      <description>强大截图与录屏，支持滚动截图、OCR、一键上传图床。</description>
+    </item>
+    <item>
+      <title>Joplin</title>
+      <link>https://joplinapp.org/</link>
+      <guid isPermaLink="false">https://joplinapp.org/</guid>
+      <description>老牌开源压缩工具，支持 7z/zip/rar，压缩率高、体积小。</description>
+    </item>
+    <item>
+      <title>Logseq</title>
+      <link>https://logseq.com/</link>
+      <guid isPermaLink="false">https://logseq.com/</guid>
+      <description>把 U 盘做成多系统启动盘，ISO 直接拖入即可引导，重装神器。</description>
+    </item>
+    <item>
+      <title>Bitwarden</title>
+      <link>https://bitwarden.com/</link>
+      <guid isPermaLink="false">https://bitwarden.com/</guid>
+      <description>轻量启动盘制作工具，制作 Windows/Linux 安装盘最快最稳。</description>
+    </item>
+    <item>
+      <title>KeePassXC</title>
+      <link>https://keepassxc.org/</link>
+      <guid isPermaLink="false">https://keepassxc.org/</guid>
+      <description>硬盘健康监控，读取 S.M.A.R.T 提前预警坏道。</description>
+    </item>
+    <item>
+      <title>MarkText</title>
+      <link>https://marktext.app/</link>
+      <guid isPermaLink="false">https://marktext.app/</guid>
+      <description>系统清理与隐私擦除，释放空间、清除使用痕迹。</description>
+    </item>
+    <item>
+      <title>Standard Notes</title>
+      <link>https://standardnotes.com/</link>
+      <guid isPermaLink="false">https://standardnotes.com/</guid>
+      <description>局域网跨平台文件互传，无需联网、无需账号，替代 AirDrop。</description>
+    </item>
+    <item>
+      <title>Stirling-PDF</title>
+      <link>https://github.com/Stirling-Tools/Stirling-PDF</link>
+      <guid isPermaLink="false">https://github.com/Stirling-Tools/Stirling-PDF</guid>
+      <description>类 Alfred 的快捷启动器，搜文件、计算、查词一键直达。</description>
+    </item>
+    <item>
+      <title>GIMP</title>
+      <link>https://www.gimp.org/</link>
+      <guid isPermaLink="false">https://www.gimp.org/</guid>
+      <description>完整开源办公套件，兼容 Word/Excel/PPT，永久免费无广告。</description>
+    </item>
+    <item>
+      <title>Inkscape</title>
+      <link>https://inkscape.org/</link>
+      <guid isPermaLink="false">https://inkscape.org/</guid>
+      <description>界面现代的开源办公套件，协作与格式兼容表现出色。</description>
+    </item>
+    <item>
+      <title>Krita</title>
+      <link>https://krita.org/</link>
+      <guid isPermaLink="false">https://krita.org/</guid>
+      <description>本地优先的双链笔记，Markdown 存储、插件生态丰富，知识管理首选。</description>
+    </item>
+    <item>
+      <title>Blender</title>
+      <link>https://www.blender.org/</link>
+      <guid isPermaLink="false">https://www.blender.org/</guid>
+      <description>开源笔记与待办，端到端加密、支持多端同步。</description>
+    </item>
+    <item>
+      <title>Darktable</title>
+      <link>https://www.darktable.org/</link>
+      <guid isPermaLink="false">https://www.darktable.org/</guid>
+      <description>大纲式知识库，双向链接 + 白板，适合构建个人 wiki。</description>
+    </item>
+    <item>
+      <title>Audacity</title>
+      <link>https://www.audacityteam.org/</link>
+      <guid isPermaLink="false">https://www.audacityteam.org/</guid>
+      <description>开源密码管理器，全平台同步、自带密码生成与泄露监测。</description>
+    </item>
+    <item>
+      <title>OBS Studio</title>
+      <link>https://obsproject.com/</link>
+      <guid isPermaLink="false">https://obsproject.com/</guid>
+      <description>本地离线密码库，数据完全自持、不依赖云端。</description>
+    </item>
+    <item>
+      <title>Shotcut</title>
+      <link>https://shotcut.org/</link>
+      <guid isPermaLink="false">https://shotcut.org/</guid>
+      <description>优雅的 Markdown 编辑器，实时预览、专注写作无干扰。</description>
+    </item>
+    <item>
+      <title>Scribus</title>
+      <link>https://www.scribus.net/</link>
+      <guid isPermaLink="false">https://www.scribus.net/</guid>
+      <description>端到端加密笔记，简洁稳定，适合存敏感信息。</description>
+    </item>
+    <item>
+      <title>Pencil2D</title>
+      <link>https://www.pencil2d.org/</link>
+      <guid isPermaLink="false">https://www.pencil2d.org/</guid>
+      <description>自托管 PDF 工具箱，合并/拆分/转换/加水印一站搞定。</description>
+    </item>
+    <item>
+      <title>FontForge</title>
+      <link>https://fontforge.org/</link>
+      <guid isPermaLink="false">https://fontforge.org/</guid>
+      <description>开源版 Photoshop，修图、绘图、图层全支持。</description>
+    </item>
+    <item>
+      <title>VS Code</title>
+      <link>https://code.visualstudio.com/</link>
+      <guid isPermaLink="false">https://code.visualstudio.com/</guid>
+      <description>矢量绘图利器，SVG 原生，Logo/插画首选。</description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>https://git-scm.com/</link>
+      <guid isPermaLink="false">https://git-scm.com/</guid>
+      <description>专业开源数字绘画，画笔引擎强、适合插画与概念图。</description>
+    </item>
+    <item>
+      <title>GitHub Desktop</title>
+      <link>https://desktop.github.com/</link>
+      <guid isPermaLink="false">https://desktop.github.com/</guid>
+      <description>全流程 3D 创作，建模/雕刻/动画/渲染一体。</description>
+    </item>
+    <item>
+      <title>Postman</title>
+      <link>https://www.postman.com/</link>
+      <guid isPermaLink="false">https://www.postman.com/</guid>
+      <description>开源 RAW 后期，类似 Lightroom 的非破坏性编辑。</description>
+    </item>
+    <item>
+      <title>DBeaver</title>
+      <link>https://dbeaver.io/</link>
+      <guid isPermaLink="false">https://dbeaver.io/</guid>
+      <description>老牌开源音频编辑，录音/降噪/剪辑够用。</description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://www.docker.com/</link>
+      <guid isPermaLink="false">https://www.docker.com/</guid>
+      <description>直播与录屏标配，开源免费、插件丰富。</description>
+    </item>
+    <item>
+      <title>Neovim</title>
+      <link>https://neovim.io/</link>
+      <guid isPermaLink="false">https://neovim.io/</guid>
+      <description>跨平台视频剪辑，多轨道、滤镜齐全、上手快。</description>
+    </item>
+    <item>
+      <title>Tailscale</title>
+      <link>https://tailscale.com/</link>
+      <guid isPermaLink="false">https://tailscale.com/</guid>
+      <description>开源桌面出版，排版印刷级，替代 InDesign 做小册子。</description>
+    </item>
+    <item>
+      <title>Warp</title>
+      <link>https://www.warp.dev/</link>
+      <guid isPermaLink="false">https://www.warp.dev/</guid>
+      <description>轻量 2D 手绘动画，界面简单适合入门。</description>
+    </item>
+    <item>
+      <title>Oh My Zsh</title>
+      <link>https://ohmyz.sh/</link>
+      <guid isPermaLink="false">https://ohmyz.sh/</guid>
+      <description>开源字体编辑器，创建 / 修改字体、导出多种格式。</description>
+    </item>
+    <item>
+      <title>VLC</title>
+      <link>https://www.videolan.org/vlc/</link>
+      <guid isPermaLink="false">https://www.videolan.org/vlc/</guid>
+      <description>微软开源编辑器，插件生态无敌，前后端通吃。</description>
+    </item>
+    <item>
+      <title>MPV</title>
+      <link>https://mpv.io/</link>
+      <guid isPermaLink="false">https://mpv.io/</guid>
+      <description>版本控制事实标准，所有协作流程的基石。</description>
+    </item>
+    <item>
+      <title>PotPlayer</title>
+      <link>https://potplayer.daum.net/</link>
+      <guid isPermaLink="false">https://potplayer.daum.net/</guid>
+      <description>官方图形化 Git 客户端，新手友好。</description>
+    </item>
+    <item>
+      <title>foobar2000</title>
+      <link>https://www.foobar2000.org/</link>
+      <guid isPermaLink="false">https://www.foobar2000.org/</guid>
+      <description>API 调试与测试，集合管理、文档生成一站搞定。</description>
+    </item>
+    <item>
+      <title>Jellyfin</title>
+      <link>https://jellyfin.org/</link>
+      <guid isPermaLink="false">https://jellyfin.org/</guid>
+      <description>通用数据库客户端，连 MySQL/Postgres/SQLite 等几十种库。</description>
+    </item>
+    <item>
+      <title>Kodi</title>
+      <link>https://kodi.tv/</link>
+      <guid isPermaLink="false">https://kodi.tv/</guid>
+      <description>容器化部署标准，环境一致、一键起服务。</description>
+    </item>
+    <item>
+      <title>HandBrake</title>
+      <link>https://handbrake.fr/</link>
+      <guid isPermaLink="false">https://handbrake.fr/</guid>
+      <description>现代化 Vim，Lua 配置、LSP 加持，极客编辑器。</description>
+    </item>
+    <item>
+      <title>MusicBrainz Picard</title>
+      <link>https://picard.musicbrainz.org/</link>
+      <guid isPermaLink="false">https://picard.musicbrainz.org/</guid>
+      <description>零配置内网穿透 VPN，把设备组进私有局域网。</description>
+    </item>
+    <item>
+      <title>ffmpeg</title>
+      <link>https://ffmpeg.org/</link>
+      <guid isPermaLink="false">https://ffmpeg.org/</guid>
+      <description>智能终端，命令补全与可分享块，Shell 体验升级。</description>
+    </item>
+    <item>
+      <title>Plex</title>
+      <link>https://www.plex.tv/</link>
+      <guid isPermaLink="false">https://www.plex.tv/</guid>
+      <description>Zsh 配置框架，主题插件让命令行好用又好看。</description>
+    </item>
+    <item>
+      <title>qBittorrent</title>
+      <link>https://www.qbittorrent.org/</link>
+      <guid isPermaLink="false">https://www.qbittorrent.org/</guid>
+      <description>万能播放器，几乎通吃所有格式，无广告无间谍。</description>
+    </item>
+    <item>
+      <title>Transmission</title>
+      <link>https://transmissionbt.com/</link>
+      <guid isPermaLink="false">https://transmissionbt.com/</guid>
+      <description>极简高性能播放器，快捷键党与二次开发首选。</description>
+    </item>
+    <item>
+      <title>Motrix</title>
+      <link>https://motrix.app/</link>
+      <guid isPermaLink="false">https://motrix.app/</guid>
+      <description>轻量强大的 Windows 播放器，解码与字幕体验佳。</description>
+    </item>
+    <item>
+      <title>Free Download Manager</title>
+      <link>https://www.freedownloadmanager.org/</link>
+      <guid isPermaLink="false">https://www.freedownloadmanager.org/</guid>
+      <description>高保真音乐播放器，音质与自定义界面临界点。</description>
+    </item>
+    <item>
+      <title>JDownloader</title>
+      <link>https://jdownloader.org/</link>
+      <guid isPermaLink="false">https://jdownloader.org/</guid>
+      <description>开源私人影音库，自建 Netflix，无订阅无限制。</description>
+    </item>
+    <item>
+      <title>Aria2</title>
+      <link>https://aria2.github.io/</link>
+      <guid isPermaLink="false">https://aria2.github.io/</guid>
+      <description>家庭影院中心，统一管理电影音乐、支持插件。</description>
+    </item>
+    <item>
+      <title>yt-dlp</title>
+      <link>https://github.com/yt-dlp/yt-dlp</link>
+      <guid isPermaLink="false">https://github.com/yt-dlp/yt-dlp</guid>
+      <description>开源视频转码，压片清晰、预设丰富。</description>
+    </item>
+    <item>
+      <title>Persepolis</title>
+      <link>https://persepolisdm.github.io/</link>
+      <guid isPermaLink="false">https://persepolisdm.github.io/</guid>
+      <description>音频元数据自动整理，给曲库批量洗标签。</description>
+    </item>
+    <item>
+      <title>DownZemAll</title>
+      <link>https://github.com/liberodark/DownZemAll</link>
+      <guid isPermaLink="false">https://github.com/liberodark/DownZemAll</guid>
+      <description>命令行音视频瑞士军刀，转换/截取/录制的底层引擎。</description>
+    </item>
+    <item>
+      <title>Cobalt</title>
+      <link>https://cobalt.tools/</link>
+      <guid isPermaLink="false">https://cobalt.tools/</guid>
+      <description>媒体服务器，远程串流你的影音库，免费版够用。</description>
+    </item>
+    <item>
+      <title>Ollama</title>
+      <link>https://ollama.com/</link>
+      <guid isPermaLink="false">https://ollama.com/</guid>
+      <description>无广告开源 BT 客户端，搜索与做种稳定。</description>
+    </item>
+    <item>
+      <title>LM Studio</title>
+      <link>https://lmstudio.ai/</link>
+      <guid isPermaLink="false">https://lmstudio.ai/</guid>
+      <description>轻量 BT 客户端，占用低、适合常驻做种。</description>
+    </item>
+    <item>
+      <title>Open WebUI</title>
+      <link>https://github.com/open-webui/open-webui</link>
+      <guid isPermaLink="false">https://github.com/open-webui/open-webui</guid>
+      <description>全协议下载器，界面现代，支持 HTTP/BT/磁力。</description>
+    </item>
+    <item>
+      <title>ComfyUI</title>
+      <link>https://www.comfy.org/</link>
+      <guid isPermaLink="false">https://www.comfy.org/</guid>
+      <description>多线程下载加速，断点续传、站点抓取。</description>
+    </item>
+    <item>
+      <title>Jan</title>
+      <link>https://jan.ai/</link>
+      <guid isPermaLink="false">https://jan.ai/</guid>
+      <description>网盘/批量下载利器，自动解压与验证码识别。</description>
+    </item>
+    <item>
+      <title>AnythingLLM</title>
+      <link>https://anythingllm.com/</link>
+      <guid isPermaLink="false">https://anythingllm.com/</guid>
+      <description>命令行多协议下载内核，配合前端做离线下载。</description>
+    </item>
+    <item>
+      <title>Upscayl</title>
+      <link>https://www.upscayl.org/</link>
+      <guid isPermaLink="false">https://www.upscayl.org/</guid>
+      <description>视频下载命令行神器，更新极快、支持海量站点。</description>
+    </item>
+    <item>
+      <title>Whisper</title>
+      <link>https://github.com/openai/whisper</link>
+      <guid isPermaLink="false">https://github.com/openai/whisper</guid>
+      <description>Aria2 的图形前端，下载管理更直观。</description>
+    </item>
+    <item>
+      <title>Stable Diffusion WebUI</title>
+      <link>https://github.com/AUTOMATIC1111/stable-diffusion-webui</link>
+      <guid isPermaLink="false">https://github.com/AUTOMATIC1111/stable-diffusion-webui</guid>
+      <description>开源下载管理器，批量抓取页面里的所有链接。</description>
+    </item>
+    <item>
+      <title>Pinokio</title>
+      <link>https://pinokio.computer/</link>
+      <guid isPermaLink="false">https://pinokio.computer/</guid>
+      <description>开源在线媒体下载器，粘贴链接即得视频/音频，干净无广告。</description>
+    </item>
+    <item>
+      <title>LocalAI</title>
+      <link>https://localai.io/</link>
+      <guid isPermaLink="false">https://localai.io/</guid>
+      <description>本地运行大模型最简单方式，一行命令跑 Llama/Mistral。</description>
+    </item>
+    <item>
+      <title>Proton VPN</title>
+      <link>https://protonvpn.com/</link>
+      <guid isPermaLink="false">https://protonvpn.com/</guid>
+      <description>图形化本地模型管理，下载/聊天/API 一体。</description>
+    </item>
+    <item>
+      <title>Tor Browser</title>
+      <link>https://www.torproject.org/</link>
+      <guid isPermaLink="false">https://www.torproject.org/</guid>
+      <description>自托管 ChatGPT 式界面，对接 Ollama/任意模型。</description>
+    </item>
+    <item>
+      <title>Signal</title>
+      <link>https://signal.org/</link>
+      <guid isPermaLink="false">https://signal.org/</guid>
+      <description>节点式 Stable Diffusion 工作流，出图可控可复现。</description>
+    </item>
+    <item>
+      <title>Proton Mail</title>
+      <link>https://proton.me/mail</link>
+      <guid isPermaLink="false">https://proton.me/mail</guid>
+      <description>本地 AI 聊天桌面端，模型商店与隐私优先。</description>
+    </item>
+    <item>
+      <title>SimpleLogin</title>
+      <link>https://simplelogin.io/</link>
+      <guid isPermaLink="false">https://simplelogin.io/</guid>
+      <description>全栈本地知识库，把文档喂给私有 GPT。</description>
+    </item>
+    <item>
+      <title>uBlock Origin</title>
+      <link>https://github.com/gorhill/uBlock-Origin</link>
+      <guid isPermaLink="false">https://github.com/gorhill/uBlock-Origin</guid>
+      <description>开源 AI 图片放大，老照片/低清图一键清晰化。</description>
+    </item>
+    <item>
+      <title>Portmaster</title>
+      <link>https://safing.io/portmaster/</link>
+      <guid isPermaLink="false">https://safing.io/portmaster/</guid>
+      <description>OpenAI 开源语音转文字，本地转写多语种字幕。</description>
+    </item>
+    <item>
+      <title>VeraCrypt</title>
+      <link>https://www.veracrypt.fr/</link>
+      <guid isPermaLink="false">https://www.veracrypt.fr/</guid>
+      <description>最流行的本地文生图界面（AUTOMATIC1111）。</description>
+    </item>
+    <item>
+      <title>GnuPG</title>
+      <link>https://gnupg.org/</link>
+      <guid isPermaLink="false">https://gnupg.org/</guid>
+      <description>一键安装 AI 应用商店，ComfyUI/模型自动配环境。</description>
+    </item>
+    <item>
+      <title>Privacy Badger</title>
+      <link>https://privacybadger.org/</link>
+      <guid isPermaLink="false">https://privacybadger.org/</guid>
+      <description>自托管 OpenAI 兼容推理服务，消费级硬件跑大模型。</description>
+    </item>
+    <item>
+      <title>Anki</title>
+      <link>https://apps.ankiweb.net/</link>
+      <guid isPermaLink="false">https://apps.ankiweb.net/</guid>
+      <description>瑞士隐私 VPN，免费版不限流量、无日志。</description>
+    </item>
+    <item>
+      <title>Zotero</title>
+      <link>https://www.zotero.org/</link>
+      <guid isPermaLink="false">https://www.zotero.org/</guid>
+      <description>匿名浏览，多层加密绕开审查，保护身份。</description>
+    </item>
+    <item>
+      <title>Project Gutenberg</title>
+      <link>https://www.gutenberg.org/</link>
+      <guid isPermaLink="false">https://www.gutenberg.org/</guid>
+      <description>端到端加密通讯，默认收集极少、安全标杆。</description>
+    </item>
+    <item>
+      <title>Khan Academy</title>
+      <link>https://www.khanacademy.org/</link>
+      <guid isPermaLink="false">https://www.khanacademy.org/</guid>
+      <description>加密邮箱，瑞士服务器、隐私友好。</description>
+    </item>
+    <item>
+      <title>Duolingo</title>
+      <link>https://www.duolingo.com/</link>
+      <guid isPermaLink="false">https://www.duolingo.com/</guid>
+      <description>邮箱别名服务，注册网站用一次性地址防追踪。</description>
+    </item>
+    <item>
+      <title>OpenStax</title>
+      <link>https://openstax.org/</link>
+      <guid isPermaLink="false">https://openstax.org/</guid>
+      <description>高效广告与追踪拦截，省流量、护隐私。</description>
+    </item>
+    <item>
+      <title>Standard Ebooks</title>
+      <link>https://standardebooks.org/</link>
+      <guid isPermaLink="false">https://standardebooks.org/</guid>
+      <description>开源应用防火墙，可视化监控每个程序的网络连接。</description>
+    </item>
+    <item>
+      <title>Coursera</title>
+      <link>https://www.coursera.org/</link>
+      <guid isPermaLink="false">https://www.coursera.org/</guid>
+      <description>开源磁盘加密，创建加密卷隐藏敏感数据。</description>
+    </item>
+    <item>
+      <title>F-Droid</title>
+      <link>https://f-droid.org/</link>
+      <guid isPermaLink="false">https://f-droid.org/</guid>
+      <description>命令行加密与签名，邮件/文件验证基石。</description>
+    </item>
+    <item>
+      <title>Aurora Store</title>
+      <link>https://auroraoss.com/</link>
+      <guid isPermaLink="false">https://auroraoss.com/</guid>
+      <description>EFF 出品的反追踪插件，自动学习屏蔽跟踪器。</description>
+    </item>
+    <item>
+      <title>NewPipe</title>
+      <link>https://newpipe.net/</link>
+      <guid isPermaLink="false">https://newpipe.net/</guid>
+      <description>间隔重复记忆卡，背单词/备考神器，开源同步。</description>
+    </item>
+    <item>
+      <title>Organic Maps</title>
+      <link>https://organicmaps.app/</link>
+      <guid isPermaLink="false">https://organicmaps.app/</guid>
+      <description>开源文献管理，一键抓取论文、生成引用。</description>
+    </item>
+    <item>
+      <title>KDE Connect</title>
+      <link>https://kdeconnect.kde.org/</link>
+      <guid isPermaLink="false">https://kdeconnect.kde.org/</guid>
+      <description>超 7 万本公版电子书，永久免费下载。</description>
+    </item>
+    <item>
+      <title>Simple Mobile Tools</title>
+      <link>https://www.simplemobiletools.com/</link>
+      <guid isPermaLink="false">https://www.simplemobiletools.com/</guid>
+      <description>免费系统化学科课程，K12 到大学全覆盖。</description>
+    </item>
+    <item>
+      <title>Librera Reader</title>
+      <link>https://librera.ml/</link>
+      <guid isPermaLink="false">https://librera.ml/</guid>
+      <description>游戏化语言学习，零基础入门最轻松。</description>
+    </item>
+    <item>
+      <title>AntennaPod</title>
+      <link>https://antennapod.org/</link>
+      <guid isPermaLink="false">https://antennapod.org/</guid>
+      <description>免费开源教材，大学课程教科书可下载。</description>
+    </item>
+    <item>
+      <title>Open Camera</title>
+      <link>https://opencamera.org.uk/</link>
+      <guid isPermaLink="false">https://opencamera.org.uk/</guid>
+      <description>精排公版书，排版考究、EPUB 干净。</description>
+    </item>
+    <item>
+      <title>Trail Sense</title>
+      <link>https://github.com/kylecorry31/Trail-Sense</link>
+      <guid isPermaLink="false">https://github.com/kylecorry31/Trail-Sense</guid>
+      <description>名校公开课平台，大量免费旁听课程。</description>
+    </item>
+  </channel>
+</rss>

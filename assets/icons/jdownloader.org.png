@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+JDownloader.org - Official Homepage
+</title>
+<meta name="generator" content="DokuWiki Release 2009-02-14" />
+<meta name="robots" content="noindex,follow" />
+<meta name="date" content="1970-01-01T01:00:00+0100" />
+<meta name="keywords" content="apple-touch-icon.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="/lib/exe/opensearch.php" title="JDownloader" />
+<link rel="start" href="/" />
+<link rel="contents" href="/apple-touch-icon.png?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="/feed.php?mode=list&amp;ns=" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="/_export/xhtml/apple-touch-icon.png" />
+<link rel="stylesheet" media="screen" type="text/css" href="/lib/exe/css.php?t=arctic" />
+<script src="/lib/exe/js.php?edit=0&amp;write=0" ></script>
+<script src="/lib/plugins/indexmenu/jsmenu/menu.js" ></script>
+<script src="/lib/plugins/indexmenu/indexmenu.js" ></script>
+<script ><!--//--><![CDATA[//><!--
+var indexmenu_ID='apple-touch-icon.png'
+//--><!]]></script>
+
+<meta name="google-site-verification" content="jiaFa2SVORrI5W3b_VpOwiymuH29KGXY4Gbk7PE2Kyg" />
+
+<link rel="shortcut icon" href="/lib/tpl/arctic/images/favicon.ico" />
+
+<link href="/lib/tpl/arctic/jdstyle.css?10" rel="stylesheet" type="text/css" /> 
+<!--layerlib-->
+
+
+		
+
+<script>
+
+
+function setCookie(name, value, daysToLive) {
+	var d = new Date();
+	d.setTime(d.getTime() + (daysToLive * 24 * 60 * 60 * 1000));
+	document.cookie = name + "=" + value + ";expires="+d.toUTCString() + ";path=/;secure";
+}
+function getCookie(cookieKey) {
+	var name = cookieKey + "=";
+	var allCookies = document.cookie.split(';');
+	for(var i = 0; i < allCookies.length; i++) {
+		var cookie = allCookies[i];
+		while (cookie.charAt(0) == ' ') {
+			cookie = cookie.substring(1);
+		}
+		if (cookie.indexOf(name) == 0) {
+			return cookie.substring(name.length, cookie.length);
+		}
+	}
+	return "";
+}
+
+if(window.location.href.indexOf("revoke_consent") > -1) {
+	setCookie("_appwork_ad_pa", null, -1);
+}
+
+</script>
+
+		</head>
+
+
+		<body>
+
+
+				<div id="wrapper">
+				
+<div class="dokuwiki">
+
+
+<div class="stylehead">
+<div class="preheader" style="margin-bottom:5px;text-align:center">
+<img  style="margin-bottom:15px" src="/lib/tpl/arctic/images/logo.png" alt="JDownloader" /> 
+<!--<img  style="margin-bottom:0px;border:0px" src="http://appwork.org/images/jd_xmasheader_141210.jpg" alt="JDownloader" />-->
+
+</div>
+
+<div class="header" style="border:0px">
+
+<div class="pagename">
+ 
+</div>
+<ul id="navigation">
+
+<li><a href="/home/index">Home</a></li>
+<li><a href="/news/index">News</a></li>
+<li><a href="/download/index">Download</a></li>
+<li><a href="/changes/index">Changelog</a></li>
+<li><a href="/knowledge/wiki/start">Wiki/FAQ</a></li>
+<li><a href="/knowledge/index">Help</a></li>
+<li><a href="https://support.jdownloader.org/index.php?/Tickets/Submit">Support</a></li>
+
+<li><a href="https://board.jdownloader.org/?langid=1">Board</a></li>
+
+
+<li style="float:right">
+
+				
+
+</li>
+
+
+
+
+				</ul>
+
+				</div>
+
+
+								</div>
+
+
+
+				
+
+
+
+
+
+
+
+
+			<div class="left_sidebar">
+
+
+
+
+
+
+
+
+
+			<hr style="margin-top:5px"/><p>
+
+
+			<div class="namespace_sidebar sidebar_box" style="width: 210px;">
+			<div class="plugin_translation"><ul>  <li><div class="li"><span class="curid"><a href="/apple-touch-icon.png?s=lng_en" class="wikilink2" title="apple-touch-icon.png" rel="nofollow">en</a></span></div></li>  <li><div class="li"><a href="/cs/apple-touch-icon.png?s=lng_cs" class="wikilink2" title="cs:apple-touch-icon.png" rel="nofollow">cs</a></div></li>  <li><div class="li"><a href="/de/apple-touch-icon.png?s=lng_de" class="wikilink2" title="de:apple-touch-icon.png" rel="nofollow">de</a></div></li>  <li><div class="li"><a href="/es/apple-touch-icon.png?s=lng_es" class="wikilink2" title="es:apple-touch-icon.png" rel="nofollow">es</a></div></li>  <li><div class="li"><a href="/fr/apple-touch-icon.png?s=lng_fr" class="wikilink2" title="fr:apple-touch-icon.png" rel="nofollow">fr</a></div></li>  <li><div class="li"><a href="/pl/apple-touch-icon.png?s=lng_pl" class="wikilink2" title="pl:apple-touch-icon.png" rel="nofollow">pl</a></div></li>  <li><div class="li"><a href="/pt/apple-touch-icon.png?s=lng_pt" class="wikilink2" title="pt:apple-touch-icon.png" rel="nofollow">pt</a></div></li>  <li><div class="li"><a href="/tr/apple-touch-icon.png?s=lng_tr" class="wikilink2" title="tr:apple-touch-icon.png" rel="nofollow">tr</a></div></li></ul></div>			</div>
+			<div class="namespace_sidebar sidebar_box">
+                        
+			<form action="//jdownloader.org/search" id="cse-search-box">
+                        <div style="width:210px">
+                        <input type="hidden" name="cx" value="partner-pub-3360043026714777:iipoi0-kil2" />
+                        <input type="hidden" name="cof" value="FORID:10" />
+                        <input type="hidden" name="ie" value="ISO-8859-1" />
+                        <input type="text" name="q" onfocus="this.value=''" value="Search via Google custom search engine" onblur="if (this.value == '') this.value='Search via Google custom search engine'"/>
+                        </div>
+                        </form>
+			
+			<script>
+			window.addEventListener("load", function(){
+				if ( (adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds == 0 && false){
+				var script = document.createElement('script');
+				script.type="text/javascript";
+				script.src="https://cse.google.de/coop/cse/brand?form=cse-search-box&amp;lang=en";
+				document.getElementsByTagName('head')[0].appendChild(script);	
+				}
+				});
+			</script>
+								<div style="text-align:center">
+
+
+
+					<hr style="margin-top:5px"/>
+					<a href="https://my.jdownloader.org/contribute/#/?ref=homepage" target="_blank"><img src="/lib/tpl/arctic/images/btn_donate_SM.gif"/></a>
+
+
+					<hr style="margin-top:5px;margin-bottom:5px"/>
+
+
+					
+
+
+
+					</div>
+
+					</div>
+										</div>
+
+
+						
+
+							<div class="right_page">
+							
+
+
+<h1><a name="this-topic-does-not-exist-yet" id="this-topic-does-not-exist-yet">This topic does not exist yet</a></h1>
+<div class="level1">
+
+<p>
+
+You&#039;ve followed a link to a topic that doesn&#039;t exist yet. If permissions allow, you may create it by using the <code>Create this page</code> button.
+</p>
+
+</div>
+
+
+					
+
+							<br/>
+							<br/>
+							<br/>
+							<h1>Ops...Nothing here?</h1>
+							<p> It seems that we could not find anything for &gt;&gt; <b>apple-touch-icon.png</b> &lt;&lt; You could try to search for it.</p>
+
+							<div style="text-align:center">
+
+							<br/>
+							<form action="/" accept-charset="utf-8" class="search" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" /><input type="submit" value="Search" class="button" title="Search" /><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>							<br/>
+
+														</div>
+							
+							    
+									</div>
+									
+											
+																											<div class="stylefoot">
+																											<div class="meta">
+																											<div class="user">
+																																																						</div>
+																											<div class="doc">
+																																																						</div>
+																											</div>
+																											</div>
+
+																											<div class="clearer"></div>
+
+																											
+																																																							<div class="bar" id="bar__bottom">
+																													<div class="bar-left">
+																													 
+																													</div>
+																													<div class="bar-right">
+																													<a href="//jdownloader.org/apple-touch-icon.png?do=index"  class="action index" accesskey="x" rel="nofollow">Index</a>																													</div>
+																													</div>
+																													
+																													<div align="center" class="footerinc">
+<div style="text-align: right; margin-left: 214px;">
+</div>
+ <a target="_blank" href="https://my.jdownloader.org/legal/privacy.html" title="Privacy/Datenschutz"><img src="/lib/tpl/arctic/images/privacy.png" width="80" height="15" alt="Privacy/Datenschutz" border="0" /></a>
+
+ 
+  <a target="_blank" href="http://www.chimeric.de" title="www.chimeric.de"><img src="/lib/tpl/arctic/images/button-chimeric-de.png" width="80" height="15" alt="www.chimeric.de" border="0" /></a>
+
+  <a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.0/" rel="license" title="Creative Commons License"><img src="/lib/tpl/arctic/images/button-cc.gif" width="80" height="15" alt="Creative Commons License" border="0" /></a>
+
+
+  <a target="_blank" href="/feed.php" title="Recent changes RSS feed"><img src="/lib/tpl/arctic/images/button-rss.png" width="80" height="15" alt="Recent changes RSS feed" border="0" /></a>
+  <br/>
+  <a target="_blank" href="/impressum" title="Imprint/Impressum" style="color:#ffffff">Impressum/Imprint</a>
+
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+</div>
+																													</div>
+																													</div>
+
+																													<div class="no"></div>
+
+
+
+
+
+																													
+
+
+
+
+<script>window.JDOWNLOADER_SECURITY_NOTICE=window.JDOWNLOADER_SECURITY_NOTICE||{};window.JDOWNLOADER_SECURITY_NOTICE.linkCacheBuster="20260508277000";</script>
+<script src="/lib/scripts/notification.js?v=20260508277000" defer></script>
+</body>
+</html>
+

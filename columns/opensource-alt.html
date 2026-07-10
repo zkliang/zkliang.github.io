@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>开源 / 免费替代库 · FreeNav</title>
+  <meta name="description" content="不用破解、不用订阅，免费工具替代付费软件。附替代对比表与 GIMP 实测测评。" />
+  <link rel="canonical" href="https://freenav.example.com/columns/opensource-alt.html" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="开源 / 免费替代库 · FreeNav" />
+  <meta property="og:description" content="不用破解、不用订阅，免费工具替代付费软件。附替代对比表与 GIMP 实测测评。" />
+  <meta property="og:url" content="https://freenav.example.com/columns/opensource-alt.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#top">跳到主内容</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">FreeNav</span>
+        <span class="brand-sub">免费软件导航</span>
+      </a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/privacy.html">隐私</a>
+        <a href="/disclaimer.html">免责</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <nav class="side-nav" id="sideNav"></nav>
+    </aside>
+    <main>
+    <section class="col-hero-wrap" id="top"><div class="container" id="colHero"></div></section>
+    <section class="container" id="colCompare"></section>
+    <section class="container" id="colPicks"></section>
+    <section class="container" id="colReviews"></section>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/">首页</a></p>
+        <p><a href="/privacy.html">隐私政策</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 用免费工具，过清爽数字生活</span></div>
+  </footer>
+  <script>window.__COL__ = "opensource-alt";</script>
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/icons.js"></script>
+  <script src="../assets/js/columns.js"></script>
+  <script src="../assets/js/column-render.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(function () {});</script>
+</body>
+</html>
