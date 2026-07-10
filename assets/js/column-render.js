@@ -161,7 +161,7 @@
     document.title = col.title + " · FreeNav";
     var link = document.querySelector('link[rel="canonical"]');
     if (link && window.FREENAV_SITE_URL) link.href = window.FREENAV_SITE_URL + "/columns/" + col.key + ".html";
-    else if (link) link.href = "https://freenav.example.com/columns/" + col.key + ".html";
+    else if (link) link.href = "https://freenav.net/columns/" + col.key + ".html";
 
     if (hero) {
       hero.innerHTML =
@@ -308,7 +308,7 @@
         "@type": "CollectionPage",
         name: col.title,
         description: col.intro,
-        url: (window.FREENAV_SITE_URL || "https://freenav.example.com") + "/columns/" + col.key + ".html"
+        url: (window.FREENAV_SITE_URL || "https://freenav.net") + "/columns/" + col.key + ".html"
       };
       if (col.reviews && col.reviews[0] && typeof col.reviews[0].rating === "number") {
         data.hasPart = {

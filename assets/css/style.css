@@ -335,6 +335,8 @@ img { max-width: 100%; }
 .cat-head h2 { font-size: 21px; margin: 0; font-weight: 800; }
 .cat-head .cnt { color: var(--accent); font-size: 13px; font-weight: 700; margin-left: 6px; }
 .cat-desc { color: var(--muted); font-size: 14px; margin: 3px 0 0; }
+.cat-guide { color: var(--text); font-size: 13.5px; line-height: 1.6; margin: 10px 0 0; padding: 10px 12px; background: color-mix(in srgb, var(--cat, var(--accent)) 10%, transparent); border: 1px solid color-mix(in srgb, var(--cat, var(--accent)) 28%, transparent); border-radius: var(--radius-sm); }
+.cat-guide span { margin-right: 4px; }
 
 /* ---------- 分类视图：侧栏 + 软件列表（仅进入分类后出现） ---------- */
 .cat-layout { display: grid; grid-template-columns: 232px 1fr; gap: 30px; align-items: start; }

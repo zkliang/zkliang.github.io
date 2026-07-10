@@ -44,8 +44,8 @@ python -m http.server 4173
 - **GitHub Pages**：把本目录推到仓库，开启 Pages（root）。注意 SPA 无需特殊配置，因为本站是单页锚点。
 
 ## 上线前必改的占位符
-1. 全站把占位域名 `freenav.example.com` 替换为你的真实域名（如 `https://freenav.com`）。涉及：`index.html`、`sitemap.xml`、`robots.txt`、4 个栏目页的 `<link rel="canonical">`，以及 `assets/js/config.js` 里的 `FREENAV_SITE_URL`（JS 驱动的 canonical / JSON-LD 从这里读取）；
-2. 页脚与法律页里的联系邮箱 `contact@freenav.example.com` → 你的真实邮箱；
+1. 全站把占位域名 `freenav.net` 替换为你的真实域名（如 `https://freenav.com`）。涉及：`index.html`、`sitemap.xml`、`robots.txt`、4 个栏目页的 `<link rel="canonical">`，以及 `assets/js/config.js` 里的 `FREENAV_SITE_URL`（JS 驱动的 canonical / JSON-LD 从这里读取）；
+2. 页脚与法律页里的联系邮箱 `contact@freenav.net` → 你的真实邮箱；
 3. 启用分析：把 `index.html` 中 Cloudflare Web Analytics 的注释取消，替换 `YOUR_TOKEN_HERE`（免费、隐私友好）；
 4. 如需真实赞助收入，把 `index.html` 里 `#sponsor` 的占位文案换成赞助商链接（务必标注"赞助/推广"）。
 

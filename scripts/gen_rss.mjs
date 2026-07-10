@@ -8,7 +8,7 @@ const ROOT = resolve(__dirname, "..");
 const dataText = readFileSync(resolve(ROOT, "assets/js/data.js"), "utf8");
 const confText = readFileSync(resolve(ROOT, "assets/js/config.js"), "utf8");
 
-let SITE = "https://freenav.example.com";
+let SITE = "https://freenav.net";
 const cm = confText.match(/FREENAV_SITE_URL\s*=\s*"([^"]+)"/);
 if (cm) SITE = cm[1];
 

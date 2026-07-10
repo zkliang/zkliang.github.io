@@ -10,7 +10,19 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/"><span class="brand-mark">◆</span><span class="brand-name">FreeNav</span></a>
+      <a class="brand" href="/">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">FreeNav</span>
+        <span class="brand-sub">免费软件导航</span>
+      </a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/business.html">商务合作</a>
+        <a href="/privacy.html">隐私</a>
+        <a href="/disclaimer.html">免责</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
     </div>
   </header>
   <section class="legal-hero"><div class="container"><h1 class="hero-title" style="font-size:30px;">免责声明</h1></div></section>
@@ -28,5 +40,23 @@
     <h2>5. 内容来源</h2>
     <p>本站软件清单的灵感与分类参考自公开社区 <a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>（Free Media Heck Yeah），最终以官方信息为准。</p>
   </article>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/">首页</a></p>
+        <p><a href="/business.html">商务合作</a></p>
+        <p><a href="/privacy.html">隐私政策</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 用免费工具，过清爽数字生活</span></div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -250,7 +250,9 @@
           '<div class="cat-head" style="' + catStyle(key) + '">' +
             '<span class="cat-ico">' + c.icon + "</span>" +
             "<div><h2>" + esc(c.label) + '<span class="cnt">' + items.length + " 款</span></h2>" +
-            '<p class="cat-desc">' + esc(c.desc) + "</p></div></div>" +
+            '<p class="cat-desc">' + esc(c.desc) + "</p>" +
+            (c.guide ? '<p class="cat-guide"><span aria-hidden="true">💡</span> ' + esc(c.guide) + "</p>" : "") +
+            "</div></div>" +
           pfChips +
           listBody +
         "</div>" +

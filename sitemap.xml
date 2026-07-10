@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://freenav.example.com/</loc>
+    <loc>https://freenav.net/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://freenav.example.com/privacy.html</loc>
+    <loc>https://freenav.net/privacy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://freenav.example.com/terms.html</loc>
+    <loc>https://freenav.net/terms.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://freenav.example.com/disclaimer.html</loc>
+    <loc>https://freenav.net/disclaimer.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://freenav.example.com/columns/opensource-alt.html</loc>
+    <loc>https://freenav.net/columns/opensource-alt.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://freenav.example.com/columns/newbie.html</loc>
+    <loc>https://freenav.net/columns/newbie.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://freenav.example.com/columns/design.html</loc>
+    <loc>https://freenav.net/columns/design.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://freenav.example.com/columns/local-ai.html</loc>
+    <loc>https://freenav.net/columns/local-ai.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

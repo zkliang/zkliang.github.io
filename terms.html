@@ -10,7 +10,19 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/"><span class="brand-mark">◆</span><span class="brand-name">FreeNav</span></a>
+      <a class="brand" href="/">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">FreeNav</span>
+        <span class="brand-sub">免费软件导航</span>
+      </a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/business.html">商务合作</a>
+        <a href="/privacy.html">隐私</a>
+        <a href="/disclaimer.html">免责</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
     </div>
   </header>
   <section class="legal-hero"><div class="container"><h1 class="hero-title" style="font-size:30px;">服务条款</h1></div></section>
@@ -24,7 +36,25 @@
     <h2>3. 免责</h2>
     <p>软件功能、价格、开源协议可能随时变更。请以下载页与官方说明为准。因使用本站链接的软件而产生的任何后果，FreeNav 不承担责任。</p>
     <h2>4. 内容更正</h2>
-    <p>如发现链接失效或信息有误，欢迎通过 <a href="mailto:contact@freenav.example.com">contact@freenav.example.com</a> 反馈。</p>
+    <p>如发现链接失效或信息有误，欢迎通过 <a href="mailto:contact@freenav.net">contact@freenav.net</a> 反馈。</p>
   </article>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/">首页</a></p>
+        <p><a href="/business.html">商务合作</a></p>
+        <p><a href="/privacy.html">隐私政策</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 用免费工具，过清爽数字生活</span></div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
