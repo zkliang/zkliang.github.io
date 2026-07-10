@@ -1,48 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://freenav.net/</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://freenav.net/og.png</image:loc>
+      <image:title>FreeNav · 免费软件导航</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://freenav.net/business.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freenav.net/privacy.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://freenav.net/terms.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://freenav.net/disclaimer.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://freenav.net/columns/opensource-alt.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://freenav.net/og.png</image:loc>
+      <image:title>开源 / 免费替代库 · FreeNav</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://freenav.net/columns/newbie.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://freenav.net/og.png</image:loc>
+      <image:title>新人装机清单 · FreeNav</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://freenav.net/columns/design.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://freenav.net/og.png</image:loc>
+      <image:title>设计师免费素材全家桶 · FreeNav</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://freenav.net/columns/local-ai.html</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://freenav.net/og.png</image:loc>
+      <image:title>本地 AI 工具箱 · FreeNav</image:title>
+    </image:image>
   </url>
 </urlset>

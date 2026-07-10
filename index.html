@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FreeNav · 免费软件导航 | 100+ 款开源免费工具精选</title>
-  <meta name="description" content="FreeNav 精选 100+ 款真正免费、开源的软件，覆盖系统、办公、设计、开发、影音、下载、AI、安全、学习与移动 10 大场景；并提供开源替代、新人装机清单、设计师素材、本地 AI 等 4 个差异化专题与对比测评，帮助你以更低的成本获取优质软件。" />
+  <title>FreeNav · 免费软件导航 | 98 款开源免费工具精选</title>
+  <meta name="description" content="FreeNav 精选 98 款真正免费、开源的软件，覆盖系统、办公、设计、开发、影音、下载、AI、安全、学习与移动 10 大场景；并提供开源替代、新人装机清单、设计师素材、本地 AI 等 4 个差异化专题与对比测评，帮助你以更低的成本获取优质软件。" />
   <meta name="keywords" content="免费软件,开源软件,软件导航,正版免费,替代付费,Adobe替代,Notion替代,开源清单,开源替代,装机清单" />
   <meta name="author" content="FreeNav" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://icons.duckduckgo.com https://www.google.com data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="x-ua-compatible" content="IE=edge" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://freenav.net/" />
   <link rel="manifest" href="manifest.webmanifest" />
@@ -16,22 +19,22 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="FreeNav · 免费软件导航" />
-  <meta property="og:description" content="精选 100+ 款真正免费、开源的软件，附 4 个差异化专题对比表与测评。" />
+  <meta property="og:description" content="精选 98 款真正免费、开源的软件，附 4 个差异化专题对比表与测评。" />
   <meta property="og:url" content="https://freenav.net/" />
   <meta property="og:locale" content="zh_CN" />
-  <meta property="og:image" content="/og.png" />
+  <meta property="og:image" content="https://freenav.net/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="FreeNav · 免费软件导航" />
-  <meta name="twitter:description" content="精选 100+ 款真正免费、开源的软件，附 4 个差异化专题对比表与测评。" />
+  <meta name="twitter:description" content="精选 98 款真正免费、开源的软件，附 4 个差异化专题对比表与测评。" />
 
   <!-- Cloudflare Web Analytics（免费、隐私友好）：把 token 换成你自己的 -->
   <!--
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"YOUR_TOKEN_HERE"}'></script>
   -->
 
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.min.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主内容</a>
@@ -55,7 +58,7 @@
       <section class="hero">
         <span class="hero-badge">免费 · 开源 · 无追踪</span>
         <h1 class="hero-title">发现真正免费、开源的<br /><span class="hl">优质软件</span>。</h1>
-        <p class="hero-sub">FreeNav 精选 100 余款免费、开源软件，覆盖 10 大使用场景；另设 4 个专题栏目，提供对比表与深度测评。</p>
+        <p class="hero-sub">FreeNav 精选 98 款免费、开源软件，覆盖 10 大使用场景；另设 4 个专题栏目，提供对比表与深度测评。</p>
         <div class="search-wrap">
           <span class="search-ico" aria-hidden="true">🔍</span>
           <input id="search" type="search" placeholder="搜索软件、功能或标签，如：截图 / PDF / 网盘 / 本地大模型" autocomplete="off" />
@@ -113,7 +116,6 @@
         <p><a href="/columns/opensource-alt.html">细分专题</a></p>
         <p><a href="/rss.xml">RSS 订阅</a></p>
         <p><a href="/business.html">商务合作</a></p>
-        <p><a href="/business.html">商务合作</a></p>
         <p><a href="/privacy.html">隐私政策</a></p>
         <p><a href="/terms.html">服务条款</a></p>
         <p><a href="/disclaimer.html">免责声明</a></p>
@@ -127,12 +129,12 @@
 
   <button id="toTop" class="to-top" aria-label="回到顶部" hidden>↑</button>
 
-  <script src="assets/js/config.js"></script>
-  <script src="assets/js/data.js"></script>
-  <script src="assets/js/icons.js"></script>
-  <script src="assets/js/columns.js"></script>
-  <script src="assets/js/app.js"></script>
-  <script src="assets/js/theme.js"></script>
+  <script defer src="assets/js/config.min.js"></script>
+  <script defer src="assets/js/data.min.js"></script>
+  <script defer src="assets/js/icons.min.js"></script>
+  <script defer src="assets/js/columns.min.js"></script>
+  <script defer src="assets/js/app.min.js"></script>
+  <script defer src="assets/js/theme.min.js"></script>
   <script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(function () {});</script>
 </body>
 </html>
