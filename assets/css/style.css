@@ -455,6 +455,8 @@ img { max-width: 100%; }
 .footer-note { color: var(--muted); font-size: 13px; margin: 0 0 10px; line-height: 1.65; }
 .footer-col a { color: var(--accent); }
 .footer-col a:hover { text-decoration: underline; }
+.footer-col a.donate-link { color: #e07c00; font-weight: 600; }
+.footer-col a.donate-link:hover { color: #ff9500; text-decoration: underline; }
 .footer-bottom { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--faint); font-size: 12.5px; text-align: center; }
 
 /* ---------- 回到顶部 ---------- */
