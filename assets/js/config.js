@@ -13,11 +13,10 @@ window.FREENAV_SITE_URL = "https://freenav.net";
  * 想加几个就加几个，每行一个，逗号隔开。
  */
 window.FREENAV_AFFILIATE = [
-  // 示例（删除或替换成你自己的链接）：
-  // {
-  //   name: "机械键盘推荐",
-  //   note: "刚需外设，成交率高",
-  //   url: "https://你的淘宝联盟推广链接",
-  //   tag: "推广"
-  // },
+  {
+    name: "阿里云服务器 / 域名",
+    note: "新用户首单返佣高，站长装机刚需",
+    url: "https://www.aliyun.com/minisite/goods?userCode=dmi4rtzf",
+    tag: "推广"
+  }
 ];
