@@ -2,13 +2,18 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>设计师免费素材全家桶 · FreeNav</title>
   <meta name="description" content="免费设计工具 + 正版素材，从灵感到交付一条龙。覆盖 8 类常用素材的去向与配套开源工具。" />
   <link rel="canonical" href="https://freenav.net/columns/design.html" />
-  <link rel="manifest" href="/manifest.webmanifest" />
   <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FreeNav" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="设计师免费素材全家桶 · FreeNav" />
   <meta property="og:description" content="免费设计工具 + 正版素材，从灵感到交付一条龙。覆盖 8 类常用素材的去向与配套开源工具。" />
@@ -79,7 +84,7 @@
   <script defer src="../assets/js/column-render.min.js"></script>
   <script defer src="../assets/js/theme.min.js"></script>
   <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(function () {});</script>
+  <script defer src="../assets/js/sw-register.js"></script>
   <script defer src="https://cn.vercount.one/js"></script>
 </body>
 </html>

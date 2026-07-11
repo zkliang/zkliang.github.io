@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>FreeNav · 免费软件导航 | 98 款开源免费工具精选</title>
   <meta name="description" content="FreeNav 精选 98 款真正免费、开源的软件，覆盖系统、办公、设计、开发、影音、下载、AI、安全、学习与移动 10 大场景；并提供开源替代、新人装机清单、设计师素材、本地 AI 等 4 个差异化专题与对比测评，帮助你以更低的成本获取优质软件。" />
   <meta name="keywords" content="免费软件,开源软件,软件导航,正版免费,替代付费,Adobe替代,Notion替代,开源清单,开源替代,装机清单" />
@@ -13,6 +13,11 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://freenav.net/" />
   <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FreeNav" />
   <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
 
@@ -137,7 +142,7 @@
   <script defer src="assets/js/columns.min.js"></script>
   <script defer src="assets/js/app.min.js"></script>
   <script defer src="assets/js/theme.min.js"></script>
-  <script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(function () {});</script>
+  <script defer src="assets/js/sw-register.js"></script>
   <script defer src="https://cn.vercount.one/js"></script>
 </body>
 </html>

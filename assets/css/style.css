@@ -802,3 +802,63 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .hero-stat { min-width: 100px; padding: 12px 16px; }
   .hs-num { font-size: 1.4rem; }
 }
+
+/* =========================================================
+   移动端增强：安全区 / dvh / 触控目标 / 防横向溢出
+   ========================================================= */
+
+/* 防横向溢出：用 clip 而非 hidden，避免破坏站内大量 position:sticky */
+html { overflow-x: clip; }
+body { overflow-x: clip; max-width: 100%; }
+
+/* 头部适配刘海 / 状态栏安全区 */
+.site-header {
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* 返回顶部按钮避开底部安全区（home indicator） */
+.to-top {
+  bottom: calc(22px + env(safe-area-inset-bottom));
+  right: calc(22px + env(safe-area-inset-right));
+}
+
+/* 页脚底部避开安全区 */
+.footer-bottom {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
+}
+
+/* 动态视口高度：避免移动端浏览器工具栏导致的高度误差 */
+@supports (height: 100dvh) {
+  .sidebar { height: calc(100dvh - 64px); }
+  .cat-side { max-height: calc(100dvh - 96px); }
+  @media (max-width: 960px) {
+    .sidebar { height: 100dvh; }
+  }
+}
+
+/* 窄屏：触控目标加大、分类卡两列更易点 */
+@media (max-width: 760px) {
+  .cat-tabs button,
+  .side-cat,
+  .side-col,
+  .side-links a,
+  .col-nav a,
+  .pf-chip,
+  .cmp-chip { min-height: 40px; }
+
+  .search-clear { width: 32px; height: 32px; }
+
+  .cat-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .cat-card { padding: 14px; }
+  .cat-card-name { font-size: 14px; }
+
+  .card-link { padding: 4px 0; }
+
+  /* 对比表横向滚动提示更明显 */
+  .table-wrap { margin: 0 -4px; }
+}
+

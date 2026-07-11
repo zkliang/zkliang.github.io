@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>服务条款 - FreeNav</title>
   <meta name="description" content="FreeNav 服务条款。" />
   <link rel="stylesheet" href="assets/css/style.min.css" />
@@ -16,6 +16,12 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FreeNav" />
   <!-- Cloudflare Web Analytics（免费 / 隐私友好 / 无 Cookie）：把下方 token 换成你在 Cloudflare 后台 Web Analytics 拿到的 -->
 </head>
 <body>
@@ -71,6 +77,7 @@
     </div>
   </footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script defer src="assets/js/sw-register.js"></script>
   <script defer src="https://cn.vercount.one/js"></script>
 </body>
 </html>
