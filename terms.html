@@ -17,7 +17,6 @@
   <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
   <!-- Cloudflare Web Analytics（免费 / 隐私友好 / 无 Cookie）：把下方 token 换成你在 Cloudflare 后台 Web Analytics 拿到的 -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"YOUR_CLOUDFLARE_WEB_ANALYTICS_TOKEN"}'></script>
 </head>
 <body>
   <header class="site-header">
@@ -66,7 +65,12 @@
       </div>
     </div>
     <div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span></div>
+      <div class="footer-stat">
+      <span id="busuanzi_container_site_pv" style="display:none">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
+      <span id="busuanzi_container_site_uv" style="display:none"> | 本站访客 <span id="busuanzi_value_site_uv"></span> 人</span>
+    </div>
   </footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script defer src="https://cn.vercount.one/js"></script>
 </body>
 </html>

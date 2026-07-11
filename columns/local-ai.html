@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="../assets/css/style.min.css" />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <!-- Cloudflare Web Analytics（免费 / 隐私友好 / 无 Cookie）：把下方 token 换成你在 Cloudflare 后台 Web Analytics 拿到的 -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"YOUR_CLOUDFLARE_WEB_ANALYTICS_TOKEN"}'></script>
 </head>
 <body>
   <a class="skip-link" href="#top">跳到主内容</a>
@@ -67,6 +66,10 @@
       </div>
     </div>
     <div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span></div>
+      <div class="footer-stat">
+      <span id="busuanzi_container_site_pv" style="display:none">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
+      <span id="busuanzi_container_site_uv" style="display:none"> | 本站访客 <span id="busuanzi_value_site_uv"></span> 人</span>
+    </div>
   </footer>
   <script>window.__COL__ = "local-ai";</script>
   <script defer src="../assets/js/config.min.js"></script>
@@ -77,5 +80,6 @@
   <script defer src="../assets/js/theme.min.js"></script>
   <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(function () {});</script>
+  <script defer src="https://cn.vercount.one/js"></script>
 </body>
 </html>

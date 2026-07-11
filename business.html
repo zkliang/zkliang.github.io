@@ -59,7 +59,6 @@
     @media (max-width: 820px) { .biz-grid, .tiers { grid-template-columns: 1fr; } }
   </style>
   <!-- Cloudflare Web Analytics（免费 / 隐私友好 / 无 Cookie）：把下方 token 换成你在 Cloudflare 后台 Web Analytics 拿到的 -->
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"YOUR_CLOUDFLARE_WEB_ANALYTICS_TOKEN"}'></script>
 </head>
 <body>
   <a class="skip-link" href="#top">跳到主内容</a>
@@ -194,6 +193,10 @@
       </div>
     </div>
     <div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span></div>
+      <div class="footer-stat">
+      <span id="busuanzi_container_site_pv" style="display:none">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
+      <span id="busuanzi_container_site_uv" style="display:none"> | 本站访客 <span id="busuanzi_value_site_uv"></span> 人</span>
+    </div>
   </footer>
 
   <script>
@@ -213,5 +216,6 @@
       window.location.href = "mailto:zkl3@msn.com?subject=" + subject + "&body=" + body;
     });
   </script>
+  <script defer src="https://cn.vercount.one/js"></script>
 </body>
 </html>
