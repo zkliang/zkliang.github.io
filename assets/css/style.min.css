@@ -7,3 +7,9 @@ body{overflow-x:clip;max-width:100%}
 .footer-bottom{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);padding-bottom:calc(16px + env(safe-area-inset-bottom))}
 @supports (height:100dvh){.sidebar{height:calc(100dvh - 64px)}.cat-side{max-height:calc(100dvh - 96px)}@media (max-width:960px){.sidebar{height:100dvh}}}
 @media (max-width:760px){.cat-tabs button,.side-cat,.side-col,.side-links a,.col-nav a,.pf-chip,.cmp-chip{min-height:40px}.search-clear{width:32px;height:32px}.cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}.cat-card{padding:14px}.cat-card-name{font-size:14px}.card-link{padding:4px 0}.table-wrap{margin:0 -4px}}
+/* 捐赠二维码（微信/支付宝） */
+.donate-box{margin-top:4px}
+.donate-qrs{display:flex;gap:16px;margin:8px 0}
+.donate-qrs figure{margin:0;text-align:center}
+.donate-qrs img{width:88px;height:88px;object-fit:cover;border-radius:10px;background:var(--surface,#f3f4f6);border:1px solid var(--border)}
+.donate-qrs figcaption{font-size:12px;color:var(--faint);margin-top:5px}

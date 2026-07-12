@@ -458,6 +458,11 @@ img { max-width: 100%; }
 .footer-col a.donate-link { color: #e07c00; font-weight: 600; }
 .footer-col a.donate-link:hover { color: #ff9500; text-decoration: underline; }
 .footer-col .donate-placeholder { color: var(--faint); font-size: 13px; cursor: default; }
+.donate-box { margin-top: 4px; }
+.donate-qrs { display: flex; gap: 16px; margin: 8px 0; }
+.donate-qrs figure { margin: 0; text-align: center; }
+.donate-qrs img { width: 88px; height: 88px; object-fit: cover; border-radius: 10px; background: var(--surface, #f3f4f6); border: 1px solid var(--border); }
+.donate-qrs figcaption { font-size: 12px; color: var(--faint); margin-top: 5px; }
 .footer-bottom { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--faint); font-size: 12.5px; text-align: center; }
 
 /* ---------- 回到顶部 ---------- */
