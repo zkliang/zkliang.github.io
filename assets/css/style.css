@@ -459,6 +459,9 @@ img { max-width: 100%; }
 .footer-col a.donate-link:hover { color: #ff9500; text-decoration: underline; }
 .footer-col .donate-placeholder { color: var(--faint); font-size: 13px; cursor: default; }
 .donate-box { margin-top: 4px; }
+.donate-summary { list-style: none; cursor: pointer; color: var(--accent); font-weight: 600; }
+.donate-summary::-webkit-details-marker { display: none; }
+.donate-box[open] .donate-summary { margin-bottom: 4px; }
 .donate-qrs { display: flex; gap: 16px; margin: 8px 0; }
 .donate-qrs figure { margin: 0; text-align: center; }
 .donate-qrs img { width: 88px; height: 88px; object-fit: cover; border-radius: 10px; background: var(--surface, #f3f4f6); border: 1px solid var(--border); }
