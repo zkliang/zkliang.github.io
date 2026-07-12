@@ -8,8 +8,8 @@ window.FREENAV_SITE_URL = "https://freenav.net";
 /*
  * CPS 推广链接插槽（变现用，零基础可填）
  * 教程见 _运营/CPS手把手教程.md
- * 用法：把你的联盟推广链接填进 url 即可，首页底部自动渲染「编辑推荐」卡片。
- * 数组留空 [] 则不显示任何卡片。tag 必须保留（合规标识「推广」）。
+ * 用法：把你的联盟推广链接填进 url 即可，首页底部自动渲染「赞助推荐」卡片。
+ * 数组留空 [] 则不显示任何卡片。tag 必须保留（合规标识「广告」）。
  * 想加几个就加几个，每行一个，逗号隔开。
  */
 window.FREENAV_AFFILIATE = [
@@ -17,6 +17,6 @@ window.FREENAV_AFFILIATE = [
     name: "阿里云服务器 / 域名",
     note: "新用户首单返佣高，站长装机刚需",
     url: "https://www.aliyun.com/minisite/goods?userCode=dmi4rtzf",
-    tag: "推广"
+    tag: "广告"
   }
 ];
