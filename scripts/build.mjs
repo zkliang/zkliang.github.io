@@ -6,6 +6,12 @@
  * HTML 会自动切换到 .min 版本（回滚：node scripts/build.mjs --dev）
  */
 
+import { createRequire } from 'module';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+const require = createRequire(import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const UglifyJS = require('uglify-js');
 const CleanCSS = require('clean-css');
 const fs = require('fs');
@@ -14,8 +20,10 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const JS_DIR = path.join(ROOT, 'assets/js');
 const CSS_DIR = path.join(ROOT, 'assets/css');
-const JS_FILES = ['app.js', 'data.js', 'columns.js', 'column-render.js', 'config.js', 'icons.js', 'theme.js'];
+const JS_FILES = ['app.js', 'data.js', 'columns.js', 'column-render.js', 'config.js', 'icons.js', 'theme.js', 'licenses.js'];
 const CSS_FILES = ['style.css'];
+// 仅对真正会生成 .min 的文件做引用替换，避免把 sw-register.js 等未压缩脚本误改成不存在的 .min.js
+const JS_BASE = new Set(JS_FILES.map(f => f.replace(/\.js$/, '')));
 
 const isDev = process.argv.includes('--dev');
 
@@ -58,12 +66,9 @@ function updateHTMLRefs(useMin) {
     if (useMin) {
       // Switch to .min versions
       html = html.replace(/assets\/css\/style\.css/g, 'assets/css/style.min.css');
-      html = html.replace(/assets\/js\/(\w[\w-]*)\.js/g, (m, name) => {
-        // Skip column-render.js on pages that don't use it, and skip icons.js
-        return `assets/js/${name}.min.js`;
-      });
+      html = html.replace(/assets\/js\/(\w[\w-]*)\.js/g, (m, name) => JS_BASE.has(name) ? `assets/js/${name}.min.js` : m);
       html = html.replace(/\.\.\/assets\/css\/style\.css/g, '../assets/css/style.min.css');
-      html = html.replace(/\.\.\/assets\/js\/(\w[\w-]*)\.js/g, (m, name) => `../assets/js/${name}.min.js`);
+      html = html.replace(/\.\.\/assets\/js\/(\w[\w-]*)\.js/g, (m, name) => JS_BASE.has(name) ? `../assets/js/${name}.min.js` : m);
     } else {
       // Switch back to dev versions
       html = html.replace(/assets\/css\/style\.min\.css/g, 'assets/css/style.css');

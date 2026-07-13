@@ -115,12 +115,14 @@
     }).join("");
     var link = item.affiliateUrl || item.url;
     var rel = item.affiliateUrl ? "sponsored noopener noreferrer" : "noopener noreferrer";
+    var lic = (window.FREENAV_LICENSES && window.FREENAV_LICENSES[item.id]) || item.license;
+    var licHTML = lic ? '<span class="badge lic-badge" title="授权方式：' + esc(lic) + '">' + esc(lic) + "</span>" : "";
     return (
       '<article class="card" style="' + catStyle(item.cat) + ";animation-delay:" + ((idx % 12) * 0.03) + 's">' +
         '<div class="card-head">' +
           logoHTML(item.name, item.url) +
           '<div class="card-name-wrap"><span class="card-name">' + esc(item.name) + "</span>" +
-          '<span class="badge ' + priceClass + '">' + esc(PRICE_LABEL[item.pricing] || item.pricing) + "</span></div>" +
+          '<span class="badge ' + priceClass + '">' + esc(PRICE_LABEL[item.pricing] || item.pricing) + "</span>" + licHTML + "</div>" +
         "</div>" +
         '<p class="card-desc">' + esc(item.desc) + "</p>" +
         '<div class="badges">' + badges + "</div>" +
