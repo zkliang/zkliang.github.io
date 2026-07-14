@@ -92,12 +92,11 @@
     var letter = esc((name || "?").charAt(0).toUpperCase());
     var domain = getDomain(url);
     if (!domain) return '<div class="card-logo"><span class="logo-fallback">' + letter + "</span></div>";
-    var hasLocal = window.FREENAV_ICONS && window.FREENAV_ICONS[domain];
-    var local = hasLocal ? "/assets/icons/" + domain + ".png" : null;
+    var local = "/assets/icons/" + domain + ".png";
     var ddg = "https://icons.duckduckgo.com/ip3/" + domain + ".ico";
     var own = "https://" + domain + "/favicon.ico";
-    // 优先本地（同源、快、无追踪）→ DDG（隐私友好）→ 官网自带 favicon；去掉 Google（国内常慢/被墙）
-    var chain = (local ? [local, ddg, own] : [ddg, own]);
+    // 始终优先本地自托管（同源、快、无追踪）；本地缺则 DDG（隐私友好）；再不行用官网自带 favicon；去掉 Google
+    var chain = [local, ddg, own];
     var rest = chain.slice(1).join("|");
     return '<div class="card-logo has-logo">' +
       '<img alt="" loading="lazy" src="' + chain[0] + '" data-f="' + rest + '">' +
@@ -128,6 +127,15 @@
         if (img.naturalWidth > 0) onLogoLoad(img);
         else onLogoError(img);
       }
+      // 超时兜底：任何网络/外链不可达时，最多 3.5s 后显示首字母，绝不永久卡在 shimmer
+      setTimeout(function () {
+        if (img.parentNode && !img.parentNode.classList.contains("loaded")) {
+          var fb = img.parentNode.querySelector(".logo-fallback");
+          if (fb) fb.style.display = "grid";
+          img.parentNode.classList.remove("has-logo");
+          img.remove();
+        }
+      }, 3500);
     });
   }
 
