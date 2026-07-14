@@ -1,4 +1,4 @@
-/* FreeNav 增强组件：分享栏注入 + 复制链接 + 主题按钮原生提示 */
+/* FreeNav 增强组件：捐赠二维码展开 / 分享栏 / 主题按钮提示 */
 (function () {
   "use strict";
 
@@ -32,6 +32,48 @@
     t.classList.add("show");
     clearTimeout(toastTimer);
     toastTimer = setTimeout(function () { t.classList.remove("show"); }, 2400);
+  }
+
+  /* 捐赠二维码：点击按钮显示/隐藏对应二维码 */
+  function initDonate() {
+    var boxes = document.querySelectorAll(".donate-box");
+    boxes.forEach(function (box) {
+      var buttons = box.querySelectorAll(".donate-link");
+      var qrs = box.querySelectorAll(".donate-qr");
+      if (!buttons.length) return;
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var key = btn.getAttribute("data-qr");
+          var isPressed = btn.getAttribute("aria-pressed") === "true";
+
+          // 先重置所有按钮与二维码
+          buttons.forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+          qrs.forEach(function (q) { q.classList.remove("active"); });
+
+          // 如果当前未展开，则展开；否则全部收起
+          if (!isPressed) {
+            btn.setAttribute("aria-pressed", "true");
+            var target = box.querySelector('.donate-qr[data-qr="' + key + '"]');
+            if (target) target.classList.add("active");
+          }
+        });
+      });
+
+      // 点击外部或 Esc 收起二维码
+      document.addEventListener("click", function (e) {
+        if (!box.contains(e.target)) {
+          buttons.forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+          qrs.forEach(function (q) { q.classList.remove("active"); });
+        }
+      });
+      box.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          buttons.forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+          qrs.forEach(function (q) { q.classList.remove("active"); });
+        }
+      });
+    });
   }
 
   function injectShareBar() {
@@ -82,6 +124,7 @@
   }
 
   function init() {
+    initDonate();
     injectShareBar();
     setupThemeTitle();
   }
