@@ -23,6 +23,7 @@
   <meta property="og:image" content="https://freenav.net/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="../assets/css/style.min.css" />
+  <link rel="stylesheet" href="../assets/css/widgets.css" />
   <link rel="stylesheet" href="../assets/css/tools.css" />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
 </head>
@@ -98,14 +99,14 @@
       <div class="footer-col">
         <p class="footer-title">链接</p>
         <p><a href="/">首页</a></p>
-        <details class="donate-box">
-          <summary class="footer-title donate-summary">☕ 请作者喝杯咖啡</summary>
-          <p class="footer-note">如果 FreeNav 帮到了你，欢迎扫码支持，用于服务器与日常维护 💛</p>
-          <div class="donate-qrs">
-            <figure><img src="../assets/img/wechat-donate.jpg" alt="微信赞赏码" loading="lazy"><figcaption>微信</figcaption></figure>
-            <figure><img src="../assets/img/alipay-donate.jpg" alt="支付宝收款码" loading="lazy"><figcaption>支付宝</figcaption></figure>
-          </div>
-        </details>
+        <details class="donate-box" open>
+  <summary class="footer-title donate-summary">☕ 请作者喝杯咖啡</summary>
+  <p class="donate-hint">如果 FreeNav 对你有帮助，欢迎扫码支持作者 💛 这是对我持续维护 FreeNav 最大的鼓励，<strong>不会影响你使用站内任何功能</strong>。也欢迎把本站分享给需要的朋友～</p>
+  <div class="donate-qrs">
+    <figure><img src="../assets/img/wechat-donate.jpg" alt="微信赞赏码" loading="lazy"><figcaption>微信</figcaption></figure>
+    <figure><img src="../assets/img/alipay-donate.jpg" alt="支付宝收款码" loading="lazy"><figcaption>支付宝</figcaption></figure>
+  </div>
+</details>
         <p><a href="/tools.html">全部工具</a></p>
         <p><a href="/business.html">商务合作</a></p>
         <p><a href="/privacy.html">隐私政策</a></p>
@@ -121,6 +122,7 @@
   <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"NewPipe","applicationCategory":"移动 & 安卓","operatingSystem":"Android","description":"轻量 YouTube 客户端，无广告、可后台播放下载。","url":"https://freenav.net/tools/newpipe.html","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"}}</script>
   <script defer src="../assets/js/theme.min.js"></script>
+  <script defer src="../assets/js/widgets.js"></script>
   <script defer src="../assets/js/sw-register.js"></script>
   <script defer src="https://cn.vercount.one/js"></script>
 </body>

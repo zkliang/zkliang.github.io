@@ -22,6 +22,7 @@
   <meta property="og:image" content="https://freenav.net/og-opensource-alt.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="../assets/css/style.min.css" />
+  <link rel="stylesheet" href="../assets/css/widgets.css" />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <!-- Cloudflare Web Analytics（免费 / 隐私友好 / 无 Cookie）：把下方 token 换成你在 Cloudflare 后台 Web Analytics 拿到的 -->
 </head>
@@ -64,14 +65,14 @@
       <div class="footer-col">
         <p class="footer-title">链接</p>
         <p><a href="/">首页</a></p>
-        <details class="donate-box">
-          <summary class="footer-title donate-summary">☕ 请作者喝杯咖啡</summary>
-          <p class="footer-note">如果 FreeNav 帮到了你，欢迎扫码支持，用于服务器与日常维护 💛</p>
-          <div class="donate-qrs">
-            <figure><img src="../assets/img/wechat-donate.jpg" alt="微信赞赏码" loading="lazy"><figcaption>微信</figcaption></figure>
-            <figure><img src="../assets/img/alipay-donate.jpg" alt="支付宝收款码" loading="lazy"><figcaption>支付宝</figcaption></figure>
-          </div>
-        </details>
+        <details class="donate-box" open>
+  <summary class="footer-title donate-summary">☕ 请作者喝杯咖啡</summary>
+  <p class="donate-hint">如果 FreeNav 对你有帮助，欢迎扫码支持作者 💛 这是对我持续维护 FreeNav 最大的鼓励，<strong>不会影响你使用站内任何功能</strong>。也欢迎把本站分享给需要的朋友～</p>
+  <div class="donate-qrs">
+    <figure><img src="../assets/img/wechat-donate.jpg" alt="微信赞赏码" loading="lazy"><figcaption>微信</figcaption></figure>
+    <figure><img src="../assets/img/alipay-donate.jpg" alt="支付宝收款码" loading="lazy"><figcaption>支付宝</figcaption></figure>
+  </div>
+</details>
         <p><a href="/business.html">商务合作</a></p>
         <p><a href="/privacy.html">隐私政策</a></p>
         <p><a href="/disclaimer.html">免责声明</a></p>
@@ -91,6 +92,7 @@
   <script defer src="../assets/js/licenses.min.js"></script>
   <script defer src="../assets/js/column-render.min.js"></script>
   <script defer src="../assets/js/theme.min.js"></script>
+  <script defer src="../assets/js/widgets.js"></script>
   <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script defer src="../assets/js/sw-register.js"></script>
   <script defer src="https://cn.vercount.one/js"></script>
