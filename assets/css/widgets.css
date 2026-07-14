@@ -1,53 +1,60 @@
 /* ===== FreeNav 增强组件：捐赠卡片 / 分享栏 / 主题切换标签 ===== */
 
-/* 捐赠卡片：紧凑、默认展开、二维码通过按钮展开 */
+/* 捐赠区：放在 footer-inner 底部，全宽横幅 */
+.footer-donate {
+  grid-column: 1 / -1;
+  margin: 4px 0 6px;
+}
 .donate-box {
-  border: 1px solid var(--border, #e6e8ee);
+  border: 1px dashed var(--border, #e6e8ee);
   border-radius: 12px;
-  padding: 10px 12px;
-  margin: 0 0 12px;
+  padding: 14px 18px;
   background: var(--surface, #fff);
 }
 .donate-summary {
-  cursor: pointer;
-  font-weight: 700;
-  font-size: .92rem;
-  list-style: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-weight: 700;
+  font-size: 1rem;
   color: var(--text, #111);
-}
-.footer-col:first-child .donate-summary {
-  font-size: 1.05rem;
+  cursor: pointer;
+  list-style: none;
+  margin: 0 0 8px;
 }
 .donate-summary::-webkit-details-marker { display: none; }
 .donate-summary::marker { content: ""; }
+
+.donate-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
 .donate-hint {
-  margin: 6px 0 8px;
-  font-size: .82rem;
+  flex: 1 1 260px;
+  margin: 0;
+  font-size: .84rem;
   line-height: 1.55;
   color: var(--muted, #5b6675);
 }
 .donate-hint strong { color: var(--text, #111); }
-
-/* 打赏操作：把二维码藏在按钮后面 */
 .donate-actions {
   display: flex;
   gap: 8px;
-  flex-wrap: wrap;
+  flex: 0 0 auto;
 }
 .donate-link {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 5px 11px;
+  padding: 6px 13px;
   border: 1px solid var(--border, #e6e8ee);
   border-radius: 999px;
   background: var(--bg, #fff);
   color: var(--accent, #6366f1);
   cursor: pointer;
-  font-size: .82rem;
+  font-size: .84rem;
   line-height: 1;
   transition: border-color .15s, color .15s, transform .1s, box-shadow .15s;
 }
@@ -63,18 +70,19 @@
   color: var(--accent, #6366f1);
 }
 
-/* 二维码面板：默认收起 */
+/* 二维码面板：默认收起，展开后全宽居中 */
 .donate-qr-panel {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 10px;
+  grid-template-columns: repeat(2, min-content);
+  justify-content: center;
+  gap: 16px;
+  margin-top: 14px;
 }
 .donate-qr {
   display: none;
   margin: 0;
   text-align: center;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid var(--border, #e6e8ee);
   border-radius: 10px;
   background: #fff;
@@ -94,14 +102,14 @@
   color: var(--muted, #5b6675);
 }
 
-/* 分享栏：在 footer 三列网格里跨满整行，且按钮不换行 */
+/* 分享栏：在 footer 三列网格里跨满整行，按钮不换行 */
 .share-bar {
   grid-column: 1 / -1;
   display: flex;
   align-items: center;
   gap: 10px;
   flex-wrap: nowrap;
-  margin: 16px 0 4px;
+  margin: 8px 0 4px;
   padding: 12px 14px;
   border: 1px dashed var(--border, #e6e8ee);
   border-radius: 12px;
@@ -183,7 +191,10 @@
 .theme-toggle:focus::after { opacity: 1; }
 
 @media (max-width: 600px) {
-  .donate-qr-panel { grid-template-columns: 1fr; }
+  .donate-content { gap: 10px; }
+  .donate-hint { flex: 1 1 100%; }
+  .donate-actions { width: 100%; }
+  .donate-qr-panel { grid-template-columns: 1fr; justify-items: center; }
   .donate-qr img { width: 96px; height: 96px; }
   .share-bar { flex-wrap: wrap; gap: 8px; }
 }
