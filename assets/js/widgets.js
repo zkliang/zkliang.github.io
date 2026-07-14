@@ -1,4 +1,4 @@
-/* FreeNav 增强组件：捐赠二维码展开 / 分享栏 / 主题按钮提示 */
+/* FreeNav 增强组件：捐赠二维码展开 / 分享栏 / 主题按钮提示 / 页脚紧凑化 */
 (function () {
   "use strict";
 
@@ -32,6 +32,16 @@
     t.classList.add("show");
     clearTimeout(toastTimer);
     toastTimer = setTimeout(function () { t.classList.remove("show"); }, 2400);
+  }
+
+  /* 把统计行移入 footer-bottom，与版权信息合并在一行 */
+  function compactFooterBottom() {
+    var footer = document.querySelector(".site-footer");
+    var bottom = document.querySelector(".site-footer .footer-bottom");
+    var stat = document.querySelector(".site-footer .footer-stat");
+    if (!footer || !bottom || !stat) return;
+    if (bottom.contains(stat)) return;
+    bottom.appendChild(stat);
   }
 
   /* 捐赠二维码：点击按钮显示/隐藏对应二维码 */
@@ -76,10 +86,10 @@
     });
   }
 
+  /* 把分享栏注入到第一个 footer-col 中，避免独立横幅占用空间 */
   function injectShareBar() {
-    var footerInner = document.querySelector(".site-footer .footer-inner");
-    var footerBottom = document.querySelector(".site-footer .footer-bottom");
-    if (!footerInner || document.querySelector(".site-footer > .share-bar")) return;
+    var footerCol = document.querySelector(".site-footer .footer-col");
+    if (!footerCol || document.querySelector(".footer-col > .share-bar")) return;
 
     var url = location.href;
     var title = document.title;
@@ -87,20 +97,16 @@
     var t = encodeURIComponent(title);
 
     var bar = document.createElement("div");
-    bar.className = "share-bar container";
+    bar.className = "share-bar";
     bar.innerHTML =
-      '<span class="share-label">🔗 分享给好友：</span>' +
-      '<button class="share-btn" data-act="copy">📋 复制</button>' +
+      '<span class="share-label">🔗 分享：</span>' +
+      '<button class="share-btn" data-act="copy">复制</button>' +
       '<a class="share-btn" data-act="weibo" href="https://service.weibo.com/share/share.php?url=' + u + '&title=' + t + '" target="_blank" rel="noopener">微博</a>' +
       '<a class="share-btn" data-act="qq" href="https://connect.qq.com/widget/shareqq/index.html?url=' + u + '&title=' + t + '" target="_blank" rel="noopener">QQ</a>' +
-      '<button class="share-btn" data-act="wechat">💬 微信</button>' +
-      '<button class="share-btn" data-act="more">⋯ 更多</button>';
+      '<button class="share-btn" data-act="wechat">微信</button>' +
+      '<button class="share-btn" data-act="more">更多</button>';
 
-    if (footerBottom) {
-      footerBottom.parentNode.insertBefore(bar, footerBottom);
-    } else {
-      footerInner.parentNode.appendChild(bar);
-    }
+    footerCol.appendChild(bar);
 
     bar.querySelector('[data-act="copy"]').addEventListener("click", function () {
       copyText(url).then(function () { toast("链接已复制，去分享给好友吧 👍"); })
@@ -129,6 +135,7 @@
   }
 
   function init() {
+    compactFooterBottom();
     initDonate();
     injectShareBar();
     setupThemeTitle();

@@ -191,7 +191,7 @@ img { max-width: 100%; }
 .sidebar-backdrop { display: none; position: fixed; inset: 0; z-index: 55; background: rgba(0,0,0,0.5); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
 
 /* ---------- Hero ---------- */
-.hero { position: relative; padding: 44px 0 26px; text-align: center; overflow: hidden; }
+.hero { position: relative; padding: 34px 0 20px; text-align: center; overflow: hidden; }
 .hero::before, .hero::after {
   content: ""; position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.5; pointer-events: none; z-index: 0;
 }
@@ -202,7 +202,7 @@ img { max-width: 100%; }
   display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--accent);
   background: color-mix(in srgb, var(--accent) 12%, transparent);
   border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
-  padding: 6px 14px; border-radius: 999px; margin-bottom: 22px;
+  padding: 5px 12px; border-radius: 999px; margin-bottom: 16px;
 }
 .hero-title {
   font-size: clamp(30px, 5.4vw, 50px); line-height: 1.18; margin: 0 0 18px;
@@ -212,7 +212,7 @@ img { max-width: 100%; }
   color: var(--accent); position: relative; white-space: nowrap;
   text-shadow: 0 0 26px color-mix(in srgb, var(--accent) 45%, transparent);
 }
-.hero-sub { color: var(--muted); max-width: 680px; margin: 0 auto 26px; font-size: 16.5px; line-height: 1.7; }
+.hero-sub { color: var(--muted); max-width: 680px; margin: 0 auto 20px; font-size: 16.5px; line-height: 1.7; }
 .hero-sub strong { color: var(--accent); font-weight: 700; }
 
 .search-wrap { position: relative; max-width: 660px; margin: 0 auto; display: flex; align-items: center; }
@@ -240,9 +240,9 @@ img { max-width: 100%; }
 }
 .hero-tags button:hover { color: var(--text); border-color: var(--accent); background: var(--surface-hover); }
 
-.hero-stats { display: flex; gap: 14px; justify-content: center; margin-top: 36px; flex-wrap: wrap; }
+.hero-stats { display: flex; gap: 14px; justify-content: center; margin-top: 22px; flex-wrap: wrap; }
 .hero-stats .stat {
-  min-width: 116px; padding: 16px 22px; border-radius: 16px;
+  min-width: 110px; padding: 14px 18px; border-radius: 16px;
   background: var(--surface); border: 1px solid var(--border);
 }
 .hero-stats b { display: block; font-size: 26px; color: var(--accent); font-weight: 800; line-height: 1.1; }
@@ -283,12 +283,12 @@ img { max-width: 100%; }
 .cat-card-desc { color: var(--muted); font-size: 13px; line-height: 1.55; }
 
 /* ---------- 赞助位（合规标注 + 视觉突出） ---------- */
-.sponsor { padding: 16px 0 6px; }
+.sponsor { padding: 12px 0 4px; }
 .sponsor-card {
   display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
   background:
     linear-gradient(100deg, color-mix(in srgb, var(--accent) 14%, transparent), color-mix(in srgb, var(--accent-2) 12%, transparent));
-  border: 1px dashed var(--border-strong); border-radius: var(--radius); padding: 16px 20px;
+  border: 1px dashed var(--border-strong); border-radius: var(--radius); padding: 12px 16px;
 }
 .sponsor-badge {
   background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: var(--accent-ink);
@@ -696,7 +696,7 @@ table.compare .cmp-empty { text-align: center; color: var(--muted); padding: 26p
   .header-inner { gap: 10px; }
 
   .brand-sub { display: none; }
-  .hero { padding: 38px 0 22px; }
+  .hero { padding: 32px 0 18px; }
   .hero-title { font-size: clamp(26px, 8.5vw, 36px); }
   .hero-sub { font-size: 15px; }
   .search-wrap { max-width: 100%; }
@@ -738,9 +738,9 @@ table.compare .cmp-empty { text-align: center; color: var(--muted); padding: 26p
 }
 
 /* ---------- 首页专属（单栏：功能 + 专题） ---------- */
-.home-sec { padding: 38px 0 8px; }
+.home-sec { padding: 28px 0 6px; }
 .home-sec + .home-sec { padding-top: 12px; }
-.sec-head { margin-bottom: 26px; }
+.sec-head { margin-bottom: 18px; }
 .sec-head .section-eyebrow { margin-bottom: 10px; }
 .sec-head .section-sub { margin-bottom: 0; }
 .cat-grid { gap: 16px; }
@@ -772,15 +772,15 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .hs-label { display: block; font-size: .82rem; color: var(--muted); margin-top: 4px; }
 
 /* 「为什么选择 FreeNav」信任区 */
-.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
 .why-card {
   background: var(--bg-2); border: 1px solid var(--border); border-radius: 18px;
-  padding: 22px 20px; transition: transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
+  padding: 16px; transition: transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
 }
 .why-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,.16); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
-.why-ico { font-size: 1.9rem; line-height: 1; }
-.why-title { margin: 12px 0 6px; font-size: 1.08rem; }
-.why-desc { color: var(--muted); font-size: .92rem; line-height: 1.65; margin: 0; }
+.why-ico { font-size: 1.6rem; line-height: 1; }
+.why-title { margin: 8px 0 4px; font-size: 1.08rem; }
+.why-desc { color: var(--muted); font-size: .92rem; line-height: 1.6; margin: 0; }
 
 /* 分类页平台筛选 chips */
 .cat-filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 18px; }

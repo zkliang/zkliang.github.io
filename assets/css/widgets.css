@@ -1,80 +1,128 @@
-/* ===== FreeNav 增强组件：捐赠卡片 / 分享栏 / 主题切换标签 ===== */
+/* FreeNav 增强组件：捐赠 / 分享 / 主题切换 */
+/* 目标：紧凑、对齐、减少留白，把页脚整理成干净的三段式 */
 
-/* Footer 整体紧凑化 */
+/* ===== 页脚整体：收紧上下间距 ===== */
 .site-footer {
-  padding-top: 28px;
-  padding-bottom: 16px;
-  margin-top: 22px;
+  padding: 22px 0 10px;
+  margin-top: 18px;
 }
+
 .footer-inner {
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr 1fr;
+  align-items: start;
+  gap: 18px;
   padding-bottom: 0;
 }
-.footer-brand { font-size: 15px; }
-.footer-title { font-size: 13px; margin-bottom: 8px; }
-.footer-note { font-size: 12px; margin-bottom: 8px; line-height: 1.55; }
-.footer-bottom { margin-top: 14px; padding-top: 12px; }
 
-/* 捐赠区：放在 footer-inner 之外，全宽横幅，紧凑 */
+.footer-brand {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.footer-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+
+.footer-note {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0 0 6px;
+  color: var(--muted);
+}
+
+.footer-col p { margin: 0 0 6px; }
+.footer-col p:last-child { margin-bottom: 0; }
+.footer-col a { color: var(--accent); text-decoration: none; }
+.footer-col a:hover { text-decoration: underline; }
+
+/* 链接列分成两栏，避免第三列过高 */
+.footer-col:nth-child(3) {
+  columns: 2;
+  column-gap: 14px;
+}
+.footer-col:nth-child(3) .footer-title { column-span: all; }
+.footer-col:nth-child(3) p {
+  break-inside: avoid;
+  margin-bottom: 3px;
+}
+
+/* ===== 捐赠区：从“卡片”改成“横向条带” ===== */
 .footer-donate {
   width: 100%;
-  margin: 8px 0 4px;
+  margin-top: 14px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
+
 .donate-box {
-  border: 1px dashed var(--border, #e6e8ee);
-  border-radius: 14px;
-  padding: 12px 16px;
-  background: var(--surface, #fff);
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
 }
+
 .donate-summary {
-  display: block;
+  display: inline-block;
   list-style: none;
-  margin: 0;
+  margin: 0 14px 0 0;
   padding: 0;
   cursor: default;
+  vertical-align: middle;
 }
 .donate-summary::-webkit-details-marker { display: none; }
 .donate-summary::marker { content: ""; }
+
 .donate-title {
   display: inline-block;
+  font-size: 1.2rem;
   font-weight: 800;
-  font-size: 1.42rem;
   color: var(--accent, #6366f1);
   line-height: 1.2;
-  margin-bottom: 8px;
+  white-space: nowrap;
 }
 
 .donate-body {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 14px;
+  justify-content: flex-start;
+  gap: 12px;
   flex-wrap: wrap;
+  vertical-align: middle;
 }
+
 .donate-hint {
-  flex: 1 1 300px;
+  flex: 1 1 260px;
   margin: 0;
   font-size: .82rem;
   line-height: 1.5;
   color: var(--muted, #5b6675);
 }
 .donate-hint strong { color: var(--text, #111); }
+
 .donate-actions {
-  display: flex;
+  display: inline-flex;
   gap: 8px;
   flex: 0 0 auto;
 }
+
 .donate-link {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 7px 15px;
+  padding: 5px 13px;
   border: 1px solid var(--accent, #6366f1);
   border-radius: 999px;
-  background: var(--bg, #fff);
+  background: transparent;
   color: var(--accent, #6366f1);
   cursor: pointer;
-  font-size: .86rem;
+  font-size: .82rem;
   font-weight: 600;
   line-height: 1;
   transition: border-color .15s, color .15s, transform .1s, background .15s, box-shadow .15s;
@@ -90,63 +138,69 @@
   color: #fff;
 }
 
-/* 二维码面板：展开后全宽居中 */
+/* 二维码面板：横向展开，居中 */
 .donate-qr-panel {
-  display: grid;
-  grid-template-columns: repeat(2, min-content);
+  display: flex;
   justify-content: center;
-  gap: 16px;
-  margin-top: 12px;
+  gap: 14px;
+  margin-top: 10px;
 }
 .donate-qr {
   display: none;
   margin: 0;
   text-align: center;
-  padding: 8px;
+  padding: 6px;
   border: 1px solid var(--border, #e6e8ee);
-  border-radius: 10px;
+  border-radius: 8px;
   background: #fff;
 }
 .donate-qr.active { display: block; }
 .donate-qr img {
   display: block;
-  width: 100px;
-  height: 100px;
-  border-radius: 8px;
+  width: 88px;
+  height: 88px;
+  border-radius: 6px;
   margin: 0 auto;
   background: #fff;
 }
 .donate-qr figcaption {
-  margin-top: 5px;
+  margin-top: 4px;
   font-size: .72rem;
   color: var(--muted, #5b6675);
 }
 
-/* 分享栏：放在 footer-inner 之外，按钮不换行，更紧凑 */
-.share-bar {
+/* ===== 分享栏：从独立横幅移入第一列 footer-col ===== */
+.footer-col .share-bar {
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex-wrap: nowrap;
-  margin: 8px 0 0;
-  padding: 10px 14px;
-  border: 1px dashed var(--border, #e6e8ee);
-  border-radius: 12px;
-  background: var(--surface, #fff);
-  overflow-x: auto;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  overflow-x: visible;
 }
-.share-label { font-weight: 600; font-size: .88rem; color: var(--text, #111); white-space: nowrap; }
+
+.share-label {
+  font-weight: 600;
+  font-size: .8rem;
+  color: var(--muted, #5b6675);
+  white-space: nowrap;
+}
+
 .share-btn {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 5px 12px;
+  gap: 4px;
+  padding: 4px 9px;
   border: 1px solid var(--border, #e6e8ee);
   border-radius: 999px;
-  background: var(--bg, #fff);
+  background: var(--surface, #fff);
   color: var(--text, #111);
   cursor: pointer;
-  font-size: .82rem;
+  font-size: .75rem;
   text-decoration: none;
   white-space: nowrap;
   transition: border-color .15s, color .15s, transform .1s;
@@ -154,6 +208,7 @@
 .share-btn:hover { border-color: var(--accent, #6366f1); color: var(--accent, #6366f1); }
 .share-btn:active { transform: scale(.96); }
 
+/* 分享提示 */
 .share-toast {
   position: fixed;
   left: 50%;
@@ -172,7 +227,34 @@
 }
 .share-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* 主题切换按钮：图标 + 可见文字标签 */
+/* ===== Footer bottom：把统计并入同一行 ===== */
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px 16px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: none;
+  color: var(--faint);
+  font-size: 12px;
+  text-align: center;
+}
+
+.footer-bottom .footer-stat {
+  font-size: .75rem;
+  color: var(--faint);
+}
+
+.footer-tip {
+  flex: 1 1 100%;
+  color: var(--muted);
+  font-size: .78rem;
+  line-height: 1.5;
+}
+
+/* ===== 主题切换按钮 ===== */
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -181,12 +263,19 @@
   min-width: 34px;
   height: 34px;
   padding: 0 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
 }
+.theme-toggle:hover { border-color: var(--accent); }
+
 .theme-icon { line-height: 1; font-size: 15px; }
 .theme-label { font-size: .85rem; color: var(--muted, #5b6675); }
-.theme-toggle:hover .theme-label { color: var(--text, #111); }
+.theme-toggle:hover .theme-label { color: var(--text); }
 
-/* 主题按钮 hover 提示气泡保留 */
+/* 主题按钮 hover 提示气泡 */
 .theme-toggle { position: relative; }
 .theme-toggle::after {
   content: attr(aria-label);
@@ -209,14 +298,26 @@
 .theme-toggle:hover::after,
 .theme-toggle:focus::after { opacity: 1; }
 
+/* ===== 响应式 ===== */
 @media (max-width: 720px) {
-  .site-footer { padding-top: 24px; }
-  .footer-inner { gap: 18px; }
-  .donate-title { font-size: 1.2rem; }
-  .donate-body { gap: 10px; }
+  .site-footer { padding: 20px 0 10px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 16px; }
+  .footer-col:nth-child(3) { columns: 2; }
+
+  .donate-title { font-size: 1.05rem; }
+  .donate-body { gap: 8px; }
   .donate-hint { flex: 1 1 100%; }
   .donate-actions { width: 100%; justify-content: flex-start; }
-  .donate-qr-panel { grid-template-columns: 1fr; justify-items: center; }
-  .donate-qr img { width: 92px; height: 92px; }
-  .share-bar { flex-wrap: wrap; gap: 8px; padding: 10px 12px; }
+  .donate-qr-panel { gap: 10px; }
+  .donate-qr img { width: 84px; height: 84px; }
+
+  .footer-col .share-bar { margin-top: 8px; }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-tip { text-align: left; }
 }
