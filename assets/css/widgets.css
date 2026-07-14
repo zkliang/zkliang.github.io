@@ -1,4 +1,4 @@
-/* ===== FreeNav 增强组件：捐赠卡片 / 分享栏 / 主题提示 ===== */
+/* ===== FreeNav 增强组件：捐赠卡片 / 分享栏 / 主题切换标签 ===== */
 
 /* 捐赠卡片：紧凑、默认展开、二维码通过按钮展开 */
 .donate-box {
@@ -17,6 +17,9 @@
   align-items: center;
   gap: 6px;
   color: var(--text, #111);
+}
+.footer-col:first-child .donate-summary {
+  font-size: 1.05rem;
 }
 .donate-summary::-webkit-details-marker { display: none; }
 .donate-summary::marker { content: ""; }
@@ -91,19 +94,21 @@
   color: var(--muted, #5b6675);
 }
 
-/* 分享栏 */
+/* 分享栏：在 footer 三列网格里跨满整行，且按钮不换行 */
 .share-bar {
+  grid-column: 1 / -1;
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin: 16px 0 4px;
   padding: 12px 14px;
   border: 1px dashed var(--border, #e6e8ee);
   border-radius: 12px;
   background: var(--surface, #fff);
+  overflow-x: auto;
 }
-.share-label { font-weight: 600; font-size: .92rem; color: var(--text, #111); }
+.share-label { font-weight: 600; font-size: .92rem; color: var(--text, #111); white-space: nowrap; }
 .share-btn {
   display: inline-flex;
   align-items: center;
@@ -116,6 +121,7 @@
   cursor: pointer;
   font-size: .85rem;
   text-decoration: none;
+  white-space: nowrap;
   transition: border-color .15s, color .15s, transform .1s;
 }
 .share-btn:hover { border-color: var(--accent, #6366f1); color: var(--accent, #6366f1); }
@@ -139,7 +145,21 @@
 }
 .share-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* 主题切换按钮：hover / focus 显示提示气泡（内容取自 aria-label） */
+/* 主题切换按钮：图标 + 可见文字标签 */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: auto;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 10px;
+}
+.theme-icon { line-height: 1; font-size: 15px; }
+.theme-label { font-size: .85rem; color: var(--muted, #5b6675); }
+.theme-toggle:hover .theme-label { color: var(--text, #111); }
+
+/* 主题按钮 hover 提示气泡保留 */
 .theme-toggle { position: relative; }
 .theme-toggle::after {
   content: attr(aria-label);
@@ -165,5 +185,5 @@
 @media (max-width: 600px) {
   .donate-qr-panel { grid-template-columns: 1fr; }
   .donate-qr img { width: 96px; height: 96px; }
-  .share-bar { gap: 8px; }
+  .share-bar { flex-wrap: wrap; gap: 8px; }
 }

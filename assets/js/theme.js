@@ -3,11 +3,17 @@
   "use strict";
   var STORE_KEY = "freenav-theme";
 
+  function renderBtn(btn, theme) {
+    if (!btn) return;
+    var icon = theme === "light" ? "☀️" : "🌙";
+    var label = theme === "light" ? "浅色" : "深色";
+    btn.innerHTML = '<span class="theme-icon">' + icon + '</span><span class="theme-label">' + label + '</span>';
+  }
+
   function apply(theme) {
     if (theme === "light") document.documentElement.setAttribute("data-theme", "light");
     else document.documentElement.removeAttribute("data-theme");
-    var btn = document.getElementById("themeToggle");
-    if (btn) btn.textContent = theme === "light" ? "☀️" : "🌙";
+    renderBtn(document.getElementById("themeToggle"), theme);
   }
 
   var saved = null;
@@ -36,7 +42,7 @@
     btn.setAttribute("aria-label", "切换深色 / 浅色主题");
     btn.addEventListener("click", toggle);
     nav.appendChild(btn);
-    btn.textContent = document.documentElement.getAttribute("data-theme") === "light" ? "☀️" : "🌙";
+    renderBtn(btn, document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark");
   }
   if (document.readyState !== "loading") inject();
   else document.addEventListener("DOMContentLoaded", inject);
