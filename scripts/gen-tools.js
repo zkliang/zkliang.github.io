@@ -216,11 +216,11 @@ function toolPage(item) {
 }
 
 /* ---------- 索引页 ---------- */
-function indexPage() {
+function indexPage(basePath = "", linkBase = "tools/") {
   let blocks = "";
   CATEGORIES.forEach((c) => {
     const items = SOFTWARE.filter((s) => s.cat === c.key);
-    const cards = items.map((s) => similarCard(s, "tools/")).join("");
+    const cards = items.map((s) => similarCard(s, linkBase)).join("");
     blocks +=
       '<section class="cat-block">' +
         "<h2>" + esc(c.icon || "🔹") + " " + esc(c.label) + ' <span class="cat-count">' + items.length + " 款</span></h2>" +
@@ -239,8 +239,8 @@ function indexPage() {
   <link rel="canonical" href="${SITE}/tools.html" />
   <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="${basePath}manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="${basePath}apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -252,9 +252,9 @@ function indexPage() {
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:image" content="${SITE}/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="assets/css/style.min.css" />
-  <link rel="stylesheet" href="assets/css/tools.css" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="${basePath}assets/css/style.min.css" />
+  <link rel="stylesheet" href="${basePath}assets/css/tools.css" />
+  <link rel="icon" href="${basePath}favicon.svg" type="image/svg+xml" />
 </head>
 <body>
   <a class="skip-link" href="#top">跳到主内容</a>
@@ -294,8 +294,8 @@ function indexPage() {
           <summary class="footer-title donate-summary">☕ 请作者喝杯咖啡</summary>
           <p class="footer-note">如果 FreeNav 帮到了你，欢迎扫码支持，用于服务器与日常维护 💛</p>
           <div class="donate-qrs">
-            <figure><img src="assets/img/wechat-donate.jpg" alt="微信赞赏码" loading="lazy"><figcaption>微信</figcaption></figure>
-            <figure><img src="assets/img/alipay-donate.jpg" alt="支付宝收款码" loading="lazy"><figcaption>支付宝</figcaption></figure>
+            <figure><img src="${basePath}assets/img/wechat-donate.jpg" alt="微信赞赏码" loading="lazy"><figcaption>微信</figcaption></figure>
+            <figure><img src="${basePath}assets/img/alipay-donate.jpg" alt="支付宝收款码" loading="lazy"><figcaption>支付宝</figcaption></figure>
           </div>
         </details>
         <p><a href="/business.html">商务合作</a></p>
@@ -306,8 +306,8 @@ function indexPage() {
     <div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span></div>
   </footer>
   <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
-  <script defer src="assets/js/theme.min.js"></script>
-  <script defer src="assets/js/sw-register.js"></script>
+  <script defer src="${basePath}assets/js/theme.min.js"></script>
+  <script defer src="${basePath}assets/js/sw-register.js"></script>
   <script defer src="https://cn.vercount.one/js"></script>
 </body>
 </html>
@@ -361,7 +361,8 @@ SOFTWARE.forEach((item) => {
   fs.writeFileSync(path.join(toolsDir, item.id + ".html"), toolPage(item), "utf8");
   count++;
 });
-fs.writeFileSync(path.join(ROOT, "tools.html"), indexPage(), "utf8");
+fs.writeFileSync(path.join(ROOT, "tools.html"), indexPage("", "tools/"), "utf8");
+fs.writeFileSync(path.join(ROOT, "tools/index.html"), indexPage("../", ""), "utf8");
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sitemap(), "utf8");
 
-console.log("生成完成：详情页 " + count + " 个，索引页 1 个，sitemap 已扩充至 " + (FRAMEWORK.length + 1 + count) + " 条 URL。");
+console.log("生成完成：详情页 " + count + " 个，索引页 2 个（tools.html + tools/index.html），sitemap 已扩充至 " + (FRAMEWORK.length + 1 + count) + " 条 URL。");
