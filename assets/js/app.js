@@ -127,7 +127,10 @@
         '<p class="card-desc">' + esc(item.desc) + "</p>" +
         '<div class="badges">' + badges + "</div>" +
         '<div class="tags">' + tags + "</div>" +
-        '<a class="card-link" href="' + esc(link) + '" target="_blank" rel="' + rel + '">访问官网 <span aria-hidden="true">→</span></a>' +
+        '<div class="card-actions">' +
+          '<a class="card-link card-link-primary" href="' + esc(link) + '" target="_blank" rel="' + rel + '">访问官网 <span aria-hidden="true">→</span></a>' +
+          '<a class="card-link card-link-detail" href="tools/' + esc(item.id) + '.html">查看详情 <span aria-hidden="true">→</span></a>' +
+        '</div>' +
       "</article>"
     );
   }

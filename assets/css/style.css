@@ -438,8 +438,9 @@ img { max-width: 100%; }
 .tags { display: flex; gap: 6px; flex-wrap: wrap; }
 .tag { font-size: 11px; color: var(--faint); background: color-mix(in srgb, var(--text) 6%, transparent); padding: 2px 8px; border-radius: 6px; }
 
+.card-actions { display: flex; gap: 14px; align-items: center; margin-top: 2px; }
 .card-link {
-  align-self: flex-start; margin-top: 2px; font-size: 13.5px; font-weight: 700; color: var(--cat);
+  font-size: 13.5px; font-weight: 700; color: var(--cat);
   display: inline-flex; align-items: center; gap: 5px; transition: gap 0.15s;
 }
 .card-link:hover { gap: 9px; }
