@@ -160,7 +160,7 @@ function toolPage(item) {
       <p class="tool-desc">${esc(item.desc)}</p>
 
       <div class="tool-actions">
-        <a class="btn-primary" href="${esc(url)}" target="_blank" rel="${rel}">访问 ${esc(item.name)} 官网 <span aria-hidden="true">→</span></a>
+        <a class="btn-primary" href="${esc(url)}" target="_blank" rel="${rel}">访问 ${esc(item.name)} 官网下载 <span aria-hidden="true">→</span></a>
         <a class="btn-ghost" href="/#categories">浏览全部分类</a>
       </div>
 
@@ -209,7 +209,7 @@ function toolPage(item) {
   <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
   <script defer src="../assets/js/theme.min.js"></script>
   <script defer src="../assets/js/sw-register.js"></script>
-  <script defer src="https://cn.vercount.one/js"></script>
+  <script async src="https://cn.vercount.one/js"></script>
 </body>
 </html>
 `;
@@ -308,7 +308,7 @@ function indexPage(basePath = "", linkBase = "tools/") {
   <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script defer src="${basePath}assets/js/theme.min.js"></script>
   <script defer src="${basePath}assets/js/sw-register.js"></script>
-  <script defer src="https://cn.vercount.one/js"></script>
+  <script async src="https://cn.vercount.one/js"></script>
 </body>
 </html>
 `;

@@ -86,23 +86,49 @@
     try { return new URL(url).hostname.replace(/^www\./, ""); } catch (e) { return ""; }
   }
   // 软件 logo：本地自托管优先 → 外链兜底 → 首字母
+  // 注意：不能用内联 onload/onerror（会被 CSP 的 script-src 拦截，导致 .loaded 永不添加、
+  //       logo 永远停在 shimmer 占位、图片隐藏）。统一由 bindLogos() 用 addEventListener 绑定。
   function logoHTML(name, url) {
     var letter = esc((name || "?").charAt(0).toUpperCase());
     var domain = getDomain(url);
     if (!domain) return '<div class="card-logo"><span class="logo-fallback">' + letter + "</span></div>";
     var hasLocal = window.FREENAV_ICONS && window.FREENAV_ICONS[domain];
     var local = hasLocal ? "/assets/icons/" + domain + ".png" : null;
-    var own = "https://" + domain + "/favicon.ico";
     var ddg = "https://icons.duckduckgo.com/ip3/" + domain + ".ico";
-    var ggl = "https://www.google.com/s2/favicons?domain=" + domain;
-    var chain = (local ? [local, own, ddg, ggl] : [own, ddg, ggl]);
+    var own = "https://" + domain + "/favicon.ico";
+    // 优先本地（同源、快、无追踪）→ DDG（隐私友好）→ 官网自带 favicon；去掉 Google（国内常慢/被墙）
+    var chain = (local ? [local, ddg, own] : [ddg, own]);
     var rest = chain.slice(1).join("|");
     return '<div class="card-logo has-logo">' +
-      '<img alt="" loading="lazy" src="' + chain[0] + '" data-f="' + rest + '" ' +
-      "onload=\"this.parentNode.classList.add('loaded')\" " +
-      "onerror=\"var t=this;var L=t.dataset.f.split('|');if(!t.dataset.i)t.dataset.i=0;var i=+t.dataset.i;if(i<L.length){t.src=L[i];t.dataset.i=i+1;}else{t.remove();var s=t.parentNode.querySelector('.logo-fallback');if(s)s.style.display='grid';t.parentNode.classList.remove('has-logo');}\" />" +
+      '<img alt="" loading="lazy" src="' + chain[0] + '" data-f="' + rest + '">' +
       '<span class="logo-fallback" style="display:none">' + letter + "</span>" +
       "</div>";
+  }
+
+  function onLogoError(img) {
+    var L = (img.dataset.f || "").split("|");
+    var i = +img.dataset.i || 0;
+    if (i < L.length) { img.src = L[i]; img.dataset.i = i + 1; return; }
+    if (img.parentNode) {
+      var fb = img.parentNode.querySelector(".logo-fallback");
+      if (fb) fb.style.display = "grid";
+      img.parentNode.classList.remove("has-logo");
+    }
+    img.remove();
+  }
+  function onLogoLoad(img) { if (img.parentNode) img.parentNode.classList.add("loaded"); }
+  function bindLogos(root) {
+    var scope = root || document;
+    var imgs = scope.querySelectorAll(".card-logo img[data-f]");
+    Array.prototype.forEach.call(imgs, function (img) {
+      img.addEventListener("error", function () { onLogoError(img); });
+      img.addEventListener("load", function () { onLogoLoad(img); });
+      // 处理已缓存/已完成（事件可能早于监听器绑定）
+      if (img.complete) {
+        if (img.naturalWidth > 0) onLogoLoad(img);
+        else onLogoError(img);
+      }
+    });
   }
 
   function cardHTML(item, idx) {
@@ -264,6 +290,8 @@
         "</div>" +
       "</div>";
 
+    bindLogos(listRoot);
+
     var homeBtn = listRoot.querySelector(".cat-side-home");
     if (homeBtn) homeBtn.addEventListener("click", function () {
       view = "home"; activeCat = "all"; query = ""; platformFilter = "all";
@@ -287,6 +315,7 @@
     if (spy) { spy.disconnect(); spy = null; }
     if (sideCatsEl) sideCatsEl.querySelectorAll(".side-cat.active").forEach(function (n) { n.classList.remove("active"); });
     listRoot.innerHTML = '<div class="grid">' + arr.map(cardHTML).join("") + "</div>";
+    bindLogos(listRoot);
   }
 
   function whyCardHTML(w) {

@@ -23,7 +23,6 @@
   <meta property="og:image" content="https://freenav.net/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="../assets/css/style.min.css" />
-  <link rel="stylesheet" href="../assets/css/widgets.css" />
   <link rel="stylesheet" href="../assets/css/tools.css" />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
 </head>
@@ -74,7 +73,7 @@
       <p class="tool-desc">名校公开课平台，大量免费旁听课程。</p>
 
       <div class="tool-actions">
-        <a class="btn-primary" href="https://www.coursera.org/" target="_blank" rel="noopener noreferrer">访问 Coursera 官网 <span aria-hidden="true">→</span></a>
+        <a class="btn-primary" href="https://www.coursera.org/" target="_blank" rel="noopener noreferrer">访问 Coursera 官网下载 <span aria-hidden="true">→</span></a>
         <a class="btn-ghost" href="/#categories">浏览全部分类</a>
       </div>
 
@@ -94,40 +93,26 @@
     <div class="container footer-inner">
       <div class="footer-col">
         <p class="footer-brand">◆ FreeNav</p>
-
         <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>。</p>
       </div>
       <div class="footer-col">
         <p class="footer-title">链接</p>
         <p><a href="/">首页</a></p>
-        
+        <details class="donate-box">
+          <summary class="footer-title donate-summary">☕ 请作者喝杯咖啡</summary>
+          <p class="footer-note">如果 FreeNav 帮到了你，欢迎扫码支持，用于服务器与日常维护 💛</p>
+          <div class="donate-qrs">
+            <figure><img src="../assets/img/wechat-donate.jpg" alt="微信赞赏码" loading="lazy"><figcaption>微信</figcaption></figure>
+            <figure><img src="../assets/img/alipay-donate.jpg" alt="支付宝收款码" loading="lazy"><figcaption>支付宝</figcaption></figure>
+          </div>
+        </details>
         <p><a href="/tools.html">全部工具</a></p>
         <p><a href="/business.html">商务合作</a></p>
         <p><a href="/privacy.html">隐私政策</a></p>
         <p><a href="/disclaimer.html">免责声明</a></p>
-  </div>
-  </div>
-
-  
-<div class="container footer-donate">
-<details class="donate-box" open>
-  <summary class="donate-summary">
-    <span class="donate-title">☕ 请站长喝咖啡加油</span>
-  </summary>
-  <div class="donate-body">
-    <p class="donate-hint">如果 FreeNav 对你有帮助，欢迎扫码支持 💛 这是持续维护的最大动力，<strong>不影响你使用任何功能</strong>。</p>
-    <div class="donate-actions">
-      <button class="donate-link" data-qr="wechat" type="button">微信打赏</button>
-      <button class="donate-link" data-qr="alipay" type="button">支付宝支持</button>
+      </div>
     </div>
-  </div>
-  <div class="donate-qr-panel">
-    <figure class="donate-qr" data-qr="wechat"><img src="../assets/img/wechat-donate.jpg" alt="微信赞赏码" loading="lazy"><figcaption>微信扫一扫</figcaption></figure>
-    <figure class="donate-qr" data-qr="alipay"><img src="../assets/img/alipay-donate.jpg" alt="支付宝收款码" loading="lazy"><figcaption>支付宝扫一扫</figcaption></figure>
-  </div>
-</details>
-</div>
-<div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span></div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span></div>
     <div class="footer-stat">
       <span id="busuanzi_container_site_pv" style="display:none">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
       <span id="busuanzi_container_site_uv" style="display:none"> | 本站访客 <span id="busuanzi_value_site_uv"></span> 人</span>
@@ -136,8 +121,7 @@
   <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Coursera","applicationCategory":"学习 & 教育","operatingSystem":"Web / Android / iOS","description":"名校公开课平台，大量免费旁听课程。","url":"https://freenav.net/tools/coursera.html","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"}}</script>
   <script defer src="../assets/js/theme.min.js"></script>
-  <script defer src="../assets/js/widgets.js"></script>
   <script defer src="../assets/js/sw-register.js"></script>
-  <script defer src="https://cn.vercount.one/js"></script>
+  <script async src="https://cn.vercount.one/js"></script>
 </body>
 </html>
