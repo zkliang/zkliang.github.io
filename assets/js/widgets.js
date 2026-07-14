@@ -78,7 +78,7 @@
 
   function injectShareBar() {
     var footer = document.querySelector(".site-footer .footer-inner");
-    if (!footer || footer.querySelector(".share-bar")) return;
+    if (!footer || document.querySelector(".site-footer > .share-bar")) return;
 
     var url = location.href;
     var title = document.title;
@@ -86,16 +86,16 @@
     var t = encodeURIComponent(title);
 
     var bar = document.createElement("div");
-    bar.className = "share-bar";
+    bar.className = "share-bar container";
     bar.innerHTML =
       '<span class="share-label">🔗 分享给好友：</span>' +
-      '<button class="share-btn" data-act="copy">📋 复制链接</button>' +
+      '<button class="share-btn" data-act="copy">📋 复制</button>' +
       '<a class="share-btn" data-act="weibo" href="https://service.weibo.com/share/share.php?url=' + u + '&title=' + t + '" target="_blank" rel="noopener">微博</a>' +
       '<a class="share-btn" data-act="qq" href="https://connect.qq.com/widget/shareqq/index.html?url=' + u + '&title=' + t + '" target="_blank" rel="noopener">QQ</a>' +
       '<button class="share-btn" data-act="wechat">💬 微信</button>' +
       '<button class="share-btn" data-act="more">⋯ 更多</button>';
 
-    footer.appendChild(bar);
+    footer.parentNode.insertBefore(bar, footer.nextSibling);
 
     bar.querySelector('[data-act="copy"]').addEventListener("click", function () {
       copyText(url).then(function () { toast("链接已复制，去分享给好友吧 👍"); })

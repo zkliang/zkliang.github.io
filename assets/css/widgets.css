@@ -1,41 +1,61 @@
 /* ===== FreeNav 增强组件：捐赠卡片 / 分享栏 / 主题切换标签 ===== */
 
-/* 捐赠区：放在 footer-inner 底部，全宽横幅 */
+/* Footer 整体紧凑化 */
+.site-footer {
+  padding-top: 28px;
+  padding-bottom: 16px;
+  margin-top: 22px;
+}
+.footer-inner {
+  gap: 16px;
+  padding-bottom: 0;
+}
+.footer-brand { font-size: 15px; }
+.footer-title { font-size: 13px; margin-bottom: 8px; }
+.footer-note { font-size: 12px; margin-bottom: 8px; line-height: 1.55; }
+.footer-bottom { margin-top: 14px; padding-top: 12px; }
+
+/* 捐赠区：放在 footer-inner 之外，全宽横幅，紧凑 */
 .footer-donate {
-  grid-column: 1 / -1;
-  margin: 4px 0 6px;
+  width: 100%;
+  margin: 8px 0 4px;
 }
 .donate-box {
   border: 1px dashed var(--border, #e6e8ee);
-  border-radius: 12px;
-  padding: 14px 18px;
+  border-radius: 14px;
+  padding: 12px 16px;
   background: var(--surface, #fff);
 }
 .donate-summary {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--text, #111);
-  cursor: pointer;
+  display: block;
   list-style: none;
-  margin: 0 0 8px;
+  margin: 0;
+  padding: 0;
+  cursor: default;
 }
 .donate-summary::-webkit-details-marker { display: none; }
 .donate-summary::marker { content: ""; }
+.donate-title {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 1.42rem;
+  color: var(--accent, #6366f1);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
 
-.donate-content {
+.donate-body {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 14px;
+  flex-wrap: wrap;
 }
 .donate-hint {
-  flex: 1 1 260px;
+  flex: 1 1 300px;
   margin: 0;
-  font-size: .84rem;
-  line-height: 1.55;
+  font-size: .82rem;
+  line-height: 1.5;
   color: var(--muted, #5b6675);
 }
 .donate-hint strong { color: var(--text, #111); }
@@ -48,41 +68,41 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 6px 13px;
-  border: 1px solid var(--border, #e6e8ee);
+  padding: 7px 15px;
+  border: 1px solid var(--accent, #6366f1);
   border-radius: 999px;
   background: var(--bg, #fff);
   color: var(--accent, #6366f1);
   cursor: pointer;
-  font-size: .84rem;
+  font-size: .86rem;
+  font-weight: 600;
   line-height: 1;
-  transition: border-color .15s, color .15s, transform .1s, box-shadow .15s;
+  transition: border-color .15s, color .15s, transform .1s, background .15s, box-shadow .15s;
 }
 .donate-link:hover {
-  border-color: var(--accent, #6366f1);
-  color: var(--accent, #6366f1);
-  box-shadow: 0 1px 4px rgba(99, 102, 241, .12);
+  background: var(--accent, #6366f1);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, .22);
 }
 .donate-link:active { transform: scale(.96); }
 .donate-link[aria-pressed="true"] {
-  border-color: var(--accent, #6366f1);
-  background: rgba(99, 102, 241, .08);
-  color: var(--accent, #6366f1);
+  background: var(--accent, #6366f1);
+  color: #fff;
 }
 
-/* 二维码面板：默认收起，展开后全宽居中 */
+/* 二维码面板：展开后全宽居中 */
 .donate-qr-panel {
   display: grid;
   grid-template-columns: repeat(2, min-content);
   justify-content: center;
   gap: 16px;
-  margin-top: 14px;
+  margin-top: 12px;
 }
 .donate-qr {
   display: none;
   margin: 0;
   text-align: center;
-  padding: 10px;
+  padding: 8px;
   border: 1px solid var(--border, #e6e8ee);
   border-radius: 10px;
   background: #fff;
@@ -90,44 +110,43 @@
 .donate-qr.active { display: block; }
 .donate-qr img {
   display: block;
-  width: 108px;
-  height: 108px;
+  width: 100px;
+  height: 100px;
   border-radius: 8px;
   margin: 0 auto;
   background: #fff;
 }
 .donate-qr figcaption {
-  margin-top: 6px;
-  font-size: .75rem;
+  margin-top: 5px;
+  font-size: .72rem;
   color: var(--muted, #5b6675);
 }
 
-/* 分享栏：在 footer 三列网格里跨满整行，按钮不换行 */
+/* 分享栏：放在 footer-inner 之外，按钮不换行，更紧凑 */
 .share-bar {
-  grid-column: 1 / -1;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: nowrap;
-  margin: 8px 0 4px;
-  padding: 12px 14px;
+  margin: 8px 0 0;
+  padding: 10px 14px;
   border: 1px dashed var(--border, #e6e8ee);
   border-radius: 12px;
   background: var(--surface, #fff);
   overflow-x: auto;
 }
-.share-label { font-weight: 600; font-size: .92rem; color: var(--text, #111); white-space: nowrap; }
+.share-label { font-weight: 600; font-size: .88rem; color: var(--text, #111); white-space: nowrap; }
 .share-btn {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 6px 13px;
+  padding: 5px 12px;
   border: 1px solid var(--border, #e6e8ee);
   border-radius: 999px;
   background: var(--bg, #fff);
   color: var(--text, #111);
   cursor: pointer;
-  font-size: .85rem;
+  font-size: .82rem;
   text-decoration: none;
   white-space: nowrap;
   transition: border-color .15s, color .15s, transform .1s;
@@ -190,11 +209,14 @@
 .theme-toggle:hover::after,
 .theme-toggle:focus::after { opacity: 1; }
 
-@media (max-width: 600px) {
-  .donate-content { gap: 10px; }
+@media (max-width: 720px) {
+  .site-footer { padding-top: 24px; }
+  .footer-inner { gap: 18px; }
+  .donate-title { font-size: 1.2rem; }
+  .donate-body { gap: 10px; }
   .donate-hint { flex: 1 1 100%; }
-  .donate-actions { width: 100%; }
+  .donate-actions { width: 100%; justify-content: flex-start; }
   .donate-qr-panel { grid-template-columns: 1fr; justify-items: center; }
-  .donate-qr img { width: 96px; height: 96px; }
-  .share-bar { flex-wrap: wrap; gap: 8px; }
+  .donate-qr img { width: 92px; height: 92px; }
+  .share-bar { flex-wrap: wrap; gap: 8px; padding: 10px 12px; }
 }
