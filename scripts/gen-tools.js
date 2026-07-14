@@ -1,1 +1,367 @@
-LyoKICogRnJlZU5hdiDpnZnmgIHor6bmg4XpobXnlJ/miJDlmagKICog6K+75Y+WIGFzc2V0cy9qcy9kYXRhLmpzICsgYXNzZXRzL2pzL2xpY2Vuc2VzLmpz77yM5om56YeP5Lqn5Ye677yaCiAqICAgLSB0b29scy88aWQ+Lmh0bWwgICAgICDmr4/mrL7ova/ku7bnmoTni6znq4sgU0VPIOiQveWcsOmhtQogKiAgIC0gdG9vbHMuaHRtbCAgICAgICAgICAg5YWo6YOo5bel5YW357Si5byV77yI5YaF6ZO+5p6i57q977yJCiAqICAgLSBzaXRlbWFwLnhtbCAgICAgICAgICDmianlhYUgOTgg5Liq6K+m5oOF6aG1IFVSTAogKiDov5DooYzvvJpub2RlIHNjcmlwdHMvZ2VuLXRvb2xzLmpzCiAqLwpjb25zdCBmcyA9IHJlcXVpcmUoImZzIik7CmNvbnN0IHBhdGggPSByZXF1aXJlKCJwYXRoIik7Cgpjb25zdCBST09UID0gcGF0aC5yZXNvbHZlKF9fZGlybmFtZSwgIi4uIik7CmNvbnN0IFNJVEUgPSAiaHR0cHM6Ly9mcmVlbmF2Lm5ldCI7CgovKiAtLS0tLS0tLS0tIOaVsOaNruWKoOi9vSAtLS0tLS0tLS0tICovCmZ1bmN0aW9uIGxvYWRXaW5kb3coZmlsZSkgewogIGNvbnN0IGNvZGUgPSBmcy5yZWFkRmlsZVN5bmMocGF0aC5qb2luKFJPT1QsIGZpbGUpLCAidXRmOCIpOwogIGNvbnN0IHdpbmRvdyA9IHt9OwogIG5ldyBGdW5jdGlvbigid2luZG93IiwgY29kZSkod2luZG93KTsKICByZXR1cm4gd2luZG93Owp9CmNvbnN0IHcgPSBsb2FkV2luZG93KCJhc3NldHMvanMvZGF0YS5qcyIpOwpjb25zdCBsaWMgPSBsb2FkV2luZG93KCJhc3NldHMvanMvbGljZW5zZXMuanMiKTsKY29uc3QgU09GVFdBUkUgPSB3LkZSRUVOQVZfU09GVFdBUkUgfHwgW107CmNvbnN0IENBVEVHT1JJRVMgPSB3LkZSRUVOQVZfQ0FURUdPUklFUyB8fCBbXTsKY29uc3QgTElDRU5TRVMgPSBsaWMuRlJFRU5BVl9MSUNFTlNFUyB8fCB7fTsKCmNvbnN0IENBVCA9IHt9OwpDQVRFR09SSUVTLmZvckVhY2goKGMpID0+IChDQVRbYy5rZXldID0gYykpOwpjb25zdCBQTEFURk9STV9MQUJFTCA9IHsgV2luOiAiV2luZG93cyIsIE1hYzogIm1hY09TIiwgTGludXg6ICJMaW51eCIsIFdlYjogIldlYiIsIEFuZHJvaWQ6ICJBbmRyb2lkIiwgaU9TOiAiaU9TIiwgIuiHquaJmOeuoSI6ICLoh6rmiZjnrqEiIH07CgovKiAtLS0tLS0tLS0tIOW3peWFt+WHveaVsCAtLS0tLS0tLS0tICovCmZ1bmN0aW9uIGVzYyhzKSB7CiAgcmV0dXJuIFN0cmluZyhzID09IG51bGwgPyAiIiA6IHMpLnJlcGxhY2UoL1smPD4iJ10vZywgKGMpID0+ICh7ICImIjogIiZhbXA7IiwgIjwiOiAiJmx0OyIsICI+IjogIiZndDsiLCAnIic6ICImcXVvdDsiLCAiJyI6ICImIzM5OyIgfVtjXSkpOwp9CmZ1bmN0aW9uIGNhdE9mKGl0ZW0pIHsgcmV0dXJuIENBVFtpdGVtLmNhdF0gfHwgeyBsYWJlbDogaXRlbS5jYXQsIGljb246ICLwn5S5IiwgZGVzYzogIiIsIGd1aWRlOiAiIiwgY29sb3I6ICIjMzhiZGY4IiwgY29sb3IyOiAiIzAyODRjNyIgfTsgfQpmdW5jdGlvbiBwbGF0Zm9ybXNDTihpdGVtKSB7IHJldHVybiAoaXRlbS5wbGF0Zm9ybXMgfHwgW10pLm1hcCgocCkgPT4gUExBVEZPUk1fTEFCRUxbcF0gfHwgcCkuam9pbigiIC8gIik7IH0KZnVuY3Rpb24gZmlyc3RDaGFyKG5hbWUpIHsgcmV0dXJuIChuYW1lIHx8ICI/IikudHJpbSgpLmNoYXJBdCgwKS50b1VwcGVyQ2FzZSgpOyB9CgpmdW5jdGlvbiBiYWRnZSh0ZXh0LCBjbHMpIHsgcmV0dXJuICc8c3BhbiBjbGFzcz0iYmFkZ2UnICsgKGNscyA/ICIgIiArIGNscyA6ICIiKSArICciPicgKyBlc2ModGV4dCkgKyAiPC9zcGFuPiI7IH0KCi8qIOWQjOexu+WNoeeJh++8iOWGhemTvuWIsOivpuaDhemhte+8iSAqLwpmdW5jdGlvbiBzaW1pbGFyQ2FyZChpdGVtKSB7CiAgY29uc3QgYyA9IGNhdE9mKGl0ZW0pOwogIGNvbnN0IHBmID0gKGl0ZW0ucGxhdGZvcm1zIHx8IFtdKS5tYXAoKHApID0+IGJhZGdlKFBMQVRGT1JNX0xBQkVMW3BdIHx8IHApKS5qb2luKCIiKTsKICBjb25zdCB0YWdzID0gKGl0ZW0udGFncyB8fCBbXSkuc2xpY2UoMCwgNCkubWFwKCh0KSA9PiAnPHNwYW4gY2xhc3M9InRhZyI+JyArIGVzYyh0KSArICI8L3NwYW4+Iikuam9pbigiIik7CiAgcmV0dXJuICgKICAgICc8YXJ0aWNsZSBjbGFzcz0iY2FyZCIgc3R5bGU9Ii0tY2F0OicgKyBlc2MoYy5jb2xvcikgKyAnOy0tY2F0LTI6JyArIGVzYyhjLmNvbG9yMiB8fCBjLmNvbG9yKSArICciPicgKwogICAgICAnPGRpdiBjbGFzcz0iY2FyZC1oZWFkIj4nICsKICAgICAgICAnPGRpdiBjbGFzcz0iY2FyZC1sb2dvIj48c3BhbiBjbGFzcz0ibG9nby1mYWxsYmFjayI+JyArIGVzYyhmaXJzdENoYXIoaXRlbS5uYW1lKSkgKyAiPC9zcGFuPjwvZGl2PiIgKwogICAgICAgICc8ZGl2IGNsYXNzPSJjYXJkLW5hbWUtd3JhcCI+JyArCiAgICAgICAgICAnPHNwYW4gY2xhc3M9ImNhcmQtbmFtZSI+JyArIGVzYyhpdGVtLm5hbWUpICsgIjwvc3Bhbj4iICsKICAgICAgICAgIGJhZGdlKGl0ZW0ucHJpY2luZywgInByaWNlLSIgKyBpdGVtLnByaWNpbmcpICsKICAgICAgICAiPC9kaXY+IiArCiAgICAgICI8L2Rpdj4iICsKICAgICAgJzxwIGNsYXNzPSJjYXJkLWRlc2MiPicgKyBlc2MoaXRlbS5kZXNjKSArICI8L3A+IiArCiAgICAgICc8ZGl2IGNsYXNzPSJiYWRnZXMiPicgKyBwZiArICI8L2Rpdj4iICsKICAgICAgJzxkaXYgY2xhc3M9InRhZ3MiPicgKyB0YWdzICsgIjwvZGl2PiIgKwogICAgICAnPGEgY2xhc3M9ImNhcmQtbGluayIgaHJlZj0iJyArIGVzYyhpdGVtLmlkKSArICcuaHRtbCI+5p+l55yL6K+m5oOFIDxzcGFuIGFyaWEtaGlkZGVuPSJ0cnVlIj7ihpI8L3NwYW4+PC9hPicgKwogICAgIjwvYXJ0aWNsZT4iCiAgKTsKfQoKLyogLS0tLS0tLS0tLSDor6bmg4XpobUgLS0tLS0tLS0tLSAqLwpmdW5jdGlvbiB0b29sUGFnZShpdGVtKSB7CiAgY29uc3QgYyA9IGNhdE9mKGl0ZW0pOwogIGNvbnN0IGxpY1R4dCA9IExJQ0VOU0VTW2l0ZW0uaWRdOwogIGNvbnN0IGxpY0JhZGdlID0gbGljVHh0ID8gYmFkZ2UobGljVHh0LCAibGljLWJhZGdlIikgOiAiIjsKICBjb25zdCBwZiA9IChpdGVtLnBsYXRmb3JtcyB8fCBbXSkubWFwKChwKSA9PiBiYWRnZShQTEFURk9STV9MQUJFTFtwXSB8fCBwKSkuam9pbigiIik7CiAgY29uc3QgdGFncyA9IChpdGVtLnRhZ3MgfHwgW10pLm1hcCgodCkgPT4gJzxzcGFuIGNsYXNzPSJ0YWciPicgKyBlc2ModCkgKyAiPC9zcGFuPiIpLmpvaW4oIiIpOwogIGNvbnN0IHVybCA9IGl0ZW0udXJsIHx8ICIjIjsKICBjb25zdCByZWwgPSBpdGVtLmFmZmlsaWF0ZVVybCA/ICJzcG9uc29yZWQgbm9vcGVuZXIgbm9yZWZlcnJlciIgOiAibm9vcGVuZXIgbm9yZWZlcnJlciI7CgogIGNvbnN0IHNpbWlsYXIgPSBTT0ZUV0FSRS5maWx0ZXIoKHMpID0+IHMuY2F0ID09PSBpdGVtLmNhdCAmJiBzLmlkICE9PSBpdGVtLmlkKS5zbGljZSgwLCA5KS5tYXAoc2ltaWxhckNhcmQpLmpvaW4oIiIpOwoKICBjb25zdCBkZXNjTWV0YSA9IChpdGVtLmRlc2MgKyAiIOaUr+aMgSAiICsgcGxhdGZvcm1zQ04oaXRlbSkgKyAi44CCIiArIGMuZGVzYyArICIgRnJlZU5hdiDmsYfmgLsgIiArIGl0ZW0ubmFtZSArICIg55qE5a6Y572R44CB5o6I5p2D5LiO5ZCM57G75pu/5Luj44CCIikuc2xpY2UoMCwgMTYwKTsKICBjb25zdCBqc29ubGQgPSB7CiAgICAiQGNvbnRleHQiOiAiaHR0cHM6Ly9zY2hlbWEub3JnIiwKICAgICJAdHlwZSI6ICJTb2Z0d2FyZUFwcGxpY2F0aW9uIiwKICAgIG5hbWU6IGl0ZW0ubmFtZSwKICAgIGFwcGxpY2F0aW9uQ2F0ZWdvcnk6IGMubGFiZWwsCiAgICBvcGVyYXRpbmdTeXN0ZW06IHBsYXRmb3Jtc0NOKGl0ZW0pLAogICAgZGVzY3JpcHRpb246IGl0ZW0uZGVzYywKICAgIHVybDogU0lURSArICIvdG9vbHMvIiArIGl0ZW0uaWQgKyAiLmh0bWwiLAogICAgb2ZmZXJzOiB7ICJAdHlwZSI6ICJPZmZlciIsIHByaWNlOiAiMCIsIHByaWNlQ3VycmVuY3k6ICJDTlkiIH0sCiAgfTsKCiAgcmV0dXJuIGA8IURPQ1RZUEUgaHRtbD4KPGh0bWwgbGFuZz0iemgtQ04iPgo8aGVhZD4KICA8bWV0YSBjaGFyc2V0PSJVVEYtOCIgLz4KICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCwgdmlld3BvcnQtZml0PWNvdmVyIiAvPgogIDx0aXRsZT4ke2VzYyhpdGVtLm5hbWUpfSDkuIvovb3vvIgke2VzYyhjLmxhYmVsKX3vvInCtyDlhY3otLnlvIDmupDlt6XlhbcgfCBGcmVlTmF2PC90aXRsZT4KICA8bWV0YSBuYW1lPSJkZXNjcmlwdGlvbiIgY29udGVudD0iJHtlc2MoZGVzY01ldGEpfSIgLz4KICA8bWV0YSBuYW1lPSJrZXl3b3JkcyIgY29udGVudD0iJHtlc2MoW2l0ZW0ubmFtZSwgYy5sYWJlbF0uY29uY2F0KGl0ZW0udGFncyB8fCBbXSkuY29uY2F0KFsi5YWN6LS56L2v5Lu2IiwgIuW8gOa6kOi9r+S7tiIsICJGcmVlTmF2Il0pLmpvaW4oIiwiKSl9IiAvPgogIDxsaW5rIHJlbD0iY2Fub25pY2FsIiBocmVmPSIke1NJVEV9L3Rvb2xzLyR7ZXNjKGl0ZW0uaWQpfS5odG1sIiAvPgogIDxtZXRhIG5hbWU9InRoZW1lLWNvbG9yIiBjb250ZW50PSIjMGIxMjIwIiBtZWRpYT0iKHByZWZlcnMtY29sb3Itc2NoZW1lOiBkYXJrKSIgLz4KICA8bWV0YSBuYW1lPSJ0aGVtZS1jb2xvciIgY29udGVudD0iI2Y3ZjhmYiIgbWVkaWE9IihwcmVmZXJzLWNvbG9yLXNjaGVtZTogbGlnaHQpIiAvPgogIDxsaW5rIHJlbD0ibWFuaWZlc3QiIGhyZWY9Ii4uL21hbmlmZXN0LndlYm1hbmlmZXN0IiAvPgogIDxsaW5rIHJlbD0iYXBwbGUtdG91Y2gtaWNvbiIgaHJlZj0iLi4vYXBwbGUtdG91Y2gtaWNvbi5wbmciIC8+CiAgPG1ldGEgbmFtZT0iYXBwbGUtbW9iaWxlLXdlYi1hcHAtY2FwYWJsZSIgY29udGVudD0ieWVzIiAvPgogIDxtZXRhIG5hbWU9Im1vYmlsZS13ZWItYXBwLWNhcGFibGUiIGNvbnRlbnQ9InllcyIgLz4KICA8bWV0YSBuYW1lPSJhcHBsZS1tb2JpbGUtd2ViLWFwcC1zdGF0dXMtYmFyLXN0eWxlIiBjb250ZW50PSJibGFjay10cmFuc2x1Y2VudCIgLz4KICA8bWV0YSBuYW1lPSJhcHBsZS1tb2JpbGUtd2ViLWFwcC10aXRsZSIgY29udGVudD0iRnJlZU5hdiIgLz4KICA8bWV0YSBwcm9wZXJ0eT0ib2c6dHlwZSIgY29udGVudD0id2Vic2l0ZSIgLz4KICA8bWV0YSBwcm9wZXJ0eT0ib2c6dGl0bGUiIGNvbnRlbnQ9IiR7ZXNjKGl0ZW0ubmFtZSl9IMK3IEZyZWVOYXYg5YWN6LS55byA5rqQ6L2v5Lu25a+86IiqIiAvPgogIDxtZXRhIHByb3BlcnR5PSJvZzpkZXNjcmlwdGlvbiIgY29udGVudD0iJHtlc2MoaXRlbS5kZXNjKX0iIC8+CiAgPG1ldGEgcHJvcGVydHk9Im9nOnVybCIgY29udGVudD0iJHtTSVRFfS90b29scy8ke2VzYyhpdGVtLmlkKX0uaHRtbCIgLz4KICA8bWV0YSBwcm9wZXJ0eT0ib2c6bG9jYWxlIiBjb250ZW50PSJ6aF9DTiIgLz4KICA8bWV0YSBwcm9wZXJ0eT0ib2c6aW1hZ2UiIGNvbnRlbnQ9IiR7U0lURX0vb2cucG5nIiAvPgogIDxtZXRhIG5hbWU9InR3aXR0ZXI6Y2FyZCIgY29udGVudD0ic3VtbWFyeV9sYXJnZV9pbWFnZSIgLz4KICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Ii4uL2Fzc2V0cy9jc3Mvc3R5bGUubWluLmNzcyIgLz4KICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Ii4uL2Fzc2V0cy9jc3MvdG9vbHMuY3NzIiAvPgogIDxsaW5rIHJlbD0iaWNvbiIgaHJlZj0iLi4vZmF2aWNvbi5zdmciIHR5cGU9ImltYWdlL3N2Zyt4bWwiIC8+CjwvaGVhZD4KPGJvZHk+CiAgPGEgY2xhc3M9InNraXAtbGluayIgaHJlZj0iI3RvcCI+6Lez5Yiw5Li75YaF5a65PC9hPgogIDxoZWFkZXIgY2xhc3M9InNpdGUtaGVhZGVyIj4KICAgIDxkaXYgY2xhc3M9ImNvbnRhaW5lciBoZWFkZXItaW5uZXIiPgogICAgICA8YSBjbGFzcz0iYnJhbmQiIGhyZWY9Ii8iPgogICAgICAgIDxzcGFuIGNsYXNzPSJicmFuZC1tYXJrIj7il4Y8L3NwYW4+CiAgICAgICAgPHNwYW4gY2xhc3M9ImJyYW5kLW5hbWUiPkZyZWVOYXY8L3NwYW4+CiAgICAgICAgPHNwYW4gY2xhc3M9ImJyYW5kLXN1YiI+5YWN6LS56L2v5Lu25a+86IiqPC9zcGFuPgogICAgICA8L2E+CiAgICAgIDxuYXYgY2xhc3M9InRvcC1uYXYiPgogICAgICAgIDxhIGhyZWY9Ii8jY2F0ZWdvcmllcyI+5YWo6YOo5YiG57G7PC9hPgogICAgICAgIDxhIGhyZWY9Ii8jY29sdW1ucyI+57uG5YiG5LiT6aKYPC9hPgogICAgICAgIDxhIGhyZWY9Ii90b29scy5odG1sIj7lhajpg6jlt6Xlhbc8L2E+CiAgICAgICAgPGEgaHJlZj0iL3ByaXZhY3kuaHRtbCI+6ZqQ56eBPC9hPgogICAgICAgIDxhIGhyZWY9Ii9idXNpbmVzcy5odG1sIj7llYbliqHlkIjkvZw8L2E+CiAgICAgICAgPGEgaHJlZj0iL2Rpc2NsYWltZXIuaHRtbCI+5YWN6LSjPC9hPgogICAgICA8L25hdj4KICAgICAgPGJ1dHRvbiBjbGFzcz0ibmF2LXRvZ2dsZSIgaWQ9Im5hdlRvZ2dsZSIgdHlwZT0iYnV0dG9uIiBhcmlhLWxhYmVsPSLmiZPlvIDoj5zljZUiIGFyaWEtZXhwYW5kZWQ9ImZhbHNlIj7imLA8L2J1dHRvbj4KICAgIDwvZGl2PgogIDwvaGVhZGVyPgogIDxtYWluIGNsYXNzPSJjb250YWluZXIiIGlkPSJ0b3AiPgogICAgPG5hdiBjbGFzcz0iYnJlYWRjcnVtYiIgYXJpYS1sYWJlbD0i6Z2i5YyF5bGRIj4KICAgICAgPGEgaHJlZj0iLyI+6aaW6aG1PC9hPiA8c3BhbiBhcmlhLWhpZGRlbj0idHJ1ZSI+Lzwvc3Bhbj4KICAgICAgPGEgaHJlZj0iLyNjYXRlZ29yaWVzIj4ke2VzYyhjLmxhYmVsKX08L2E+IDxzcGFuIGFyaWEtaGlkZGVuPSJ0cnVlIj4vPC9zcGFuPgogICAgICA8c3Bhbj4ke2VzYyhpdGVtLm5hbWUpfTwvc3Bhbj4KICAgIDwvbmF2PgoKICAgIDxhcnRpY2xlIGNsYXNzPSJ0b29sLWRldGFpbCI+CiAgICAgIDxoZWFkZXIgY2xhc3M9InRvb2wtaGVhZCI+CiAgICAgICAgPGRpdiBjbGFzcz0idG9vbC1sb2dvIiBzdHlsZT0iLS1jYXQ6JHtlc2MoYy5jb2xvcil9Oy0tY2F0LTI6JHtlc2MoYy5jb2xvcjIgfHwgYy5jb2xvcil9Ij48c3BhbiBjbGFzcz0ibG9nby1mYWxsYmFjayI+JHtlc2MoZmlyc3RDaGFyKGl0ZW0ubmFtZSkpfTwvc3Bhbj48L2Rpdj4KICAgICAgICA8ZGl2PgogICAgICAgICAgPGgxIGNsYXNzPSJ0b29sLXRpdGxlIj4ke2VzYyhpdGVtLm5hbWUpfTwvaDE+CiAgICAgICAgICA8cCBjbGFzcz0idG9vbC1jYXQiPiR7ZXNjKGMuaWNvbiB8fCAi8J+UuSIpfSAke2VzYyhjLmxhYmVsKX0gwrcg5YWN6LS5IC8g5byA5rqQ6L2v5Lu2PC9wPgogICAgICAgIDwvZGl2PgogICAgICA8L2hlYWRlcj4KCiAgICAgIDxkaXYgY2xhc3M9InRvb2wtYmFkZ2VzIj4KICAgICAgICAke2JhZGdlKGl0ZW0ucHJpY2luZywgInByaWNlLSIgKyBpdGVtLnByaWNpbmcpfQogICAgICAgICR7bGljQmFkZ2V9CiAgICAgICAgJHtwZn0KICAgICAgPC9kaXY+CgogICAgICA8ZGl2IGNsYXNzPSJ0YWdzIj4ke3RhZ3N9PC9kaXY+CgogICAgICA8cCBjbGFzcz0idG9vbC1kZXNjIj4ke2VzYyhpdGVtLmRlc2MpfTwvcD4KCiAgICAgIDxkaXYgY2xhc3M9InRvb2wtYWN0aW9ucyI+CiAgICAgICAgPGEgY2xhc3M9ImJ0bi1wcmltYXJ5IiBocmVmPSIke2VzYyh1cmwpfSIgdGFyZ2V0PSJfYmxhbmsiIHJlbD0iJHtyZWx9Ij7orr/pl64gJHtlc2MoaXRlbS5uYW1lKX0g5a6Y572RIDxzcGFuIGFyaWEtaGlkZGVuPSJ0cnVlIj7ihpI8L3NwYW4+PC9hPgogICAgICAgIDxhIGNsYXNzPSJidG4tZ2hvc3QiIGhyZWY9Ii8jY2F0ZWdvcmllcyI+5rWP6KeI5YWo6YOo5YiG57G7PC9hPgogICAgICA8L2Rpdj4KCiAgICAgIDxzZWN0aW9uIGNsYXNzPSJ0b29sLXdoeSI+CiAgICAgICAgPGgyPuS4uuS7gOS5iCBGcmVlTmF2IOaUtuW9lSAke2VzYyhpdGVtLm5hbWUpfe+8nzwvaDI+CiAgICAgICAgPHA+JHtlc2MoYy5kZXNjKX0g5Zyo44CMJHtlc2MoYy5sYWJlbCl944CN6L+Z5Liq5L2/55So5Zy65pmv5LiL77yMJHtlc2MoaXRlbS5uYW1lKX0g5Lul44CMJHtlc2MoaXRlbS5wcmljaW5nKX3jgI3nmoTmlrnlvI/mj5DkvpvvvIzpgILlkIjluIzmnJvlh4/lsJHova/ku7blvIDmlK/jgIHlj4jkuI3mhL/ooqvlub/lkYrlkozov73ouKrmiZPmibDnmoTnlKjmiLfjgIIke2VzYyhjLmd1aWRlKX08L3A+CiAgICAgIDwvc2VjdGlvbj4KCiAgICAgIDxzZWN0aW9uIGNsYXNzPSJ0b29sLWFsdCI+CiAgICAgICAgPGgyPuWQjOexuyAke2VzYyhjLmxhYmVsKX0g5bel5YW35o6o6I2QPC9oMj4KICAgICAgICA8cCBjbGFzcz0iY29sLXN1YiI+5Lul5LiL5Z2H5Li65bey6aqM6K+B55qE5YWN6LS5IC8g5byA5rqQ5pa55qGI77yM54K55Ye75p+l55yL6K+m5oOF5LiO5a6Y572R44CCPC9wPgogICAgICAgIDxkaXYgY2xhc3M9ImdyaWQiPiR7c2ltaWxhcn08L2Rpdj4KICAgICAgPC9zZWN0aW9uPgogICAgPC9hcnRpY2xlPgogIDwvbWFpbj4KICA8Zm9vdGVyIGNsYXNzPSJzaXRlLWZvb3RlciI+CiAgICA8ZGl2IGNsYXNzPSJjb250YWluZXIgZm9vdGVyLWlubmVyIj4KICAgICAgPGRpdiBjbGFzcz0iZm9vdGVyLWNvbCI+CiAgICAgICAgPHAgY2xhc3M9ImZvb3Rlci1icmFuZCI+4peGIEZyZWVOYXY8L3A+CiAgICAgICAgPHAgY2xhc3M9ImZvb3Rlci1ub3RlIj7nsr7pgInlhY3otLkgLyDlvIDmupDova/ku7blr7zoiKrjgILlhoXlrrnngbXmhJ/kuI7muIXljZXmnaXmupDvvJo8YSBocmVmPSJodHRwczovL2ZtaHkubmV0LyIgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9vcGVuZXIgbm9yZWZlcnJlciI+Zm1oeS5uZXQ8L2E+44CCPC9wPgogICAgICA8L2Rpdj4KICAgICAgPGRpdiBjbGFzcz0iZm9vdGVyLWNvbCI+CiAgICAgICAgPHAgY2xhc3M9ImZvb3Rlci10aXRsZSI+6ZO+5o6lPC9wPgogICAgICAgIDxwPjxhIGhyZWY9Ii8iPummlumhtTwvYT48L3A+CiAgICAgICAgPGRldGFpbHMgY2xhc3M9ImRvbmF0ZS1ib3giPgogICAgICAgICAgPHN1bW1hcnkgY2xhc3M9ImZvb3Rlci10aXRsZSBkb25hdGUtc3VtbWFyeSI+4piVIOivt+S9nOiAheWWneadr+WSluWVoTwvc3VtbWFyeT4KICAgICAgICAgIDxwIGNsYXNzPSJmb290ZXItbm90ZSI+5aaC5p6cIEZyZWVOYXYg5biu5Yiw5LqG5L2g77yM5qyi6L+O5omr56CB5pSv5oyB77yM55So5LqO5pyN5Yqh5Zmo5LiO5pel5bi457u05oqkIPCfkps8L3A+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJkb25hdGUtcXJzIj4KICAgICAgICAgICAgPGZpZ3VyZT48aW1nIHNyYz0iLi4vYXNzZXRzL2ltZy93ZWNoYXQtZG9uYXRlLmpwZyIgYWx0PSLlvq7kv6HotZ7otY/noIEiIGxvYWRpbmc9ImxhenkiPjxmaWdjYXB0aW9uPuW+ruS/oTwvZmlnY2FwdGlvbj48L2ZpZ3VyZT4KICAgICAgICAgICAgPGZpZ3VyZT48aW1nIHNyYz0iLi4vYXNzZXRzL2ltZy9hbGlwYXktZG9uYXRlLmpwZyIgYWx0PSLmlK/ku5jlrp3mlLbmrL7noIEiIGxvYWRpbmc9ImxhenkiPjxmaWdjYXB0aW9uPuaUr+S7mOWunTwvZmlnY2FwdGlvbj48L2ZpZ3VyZT4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGV0YWlscz4KICAgICAgICA8cD48YSBocmVmPSIvdG9vbHMuaHRtbCI+5YWo6YOo5bel5YW3PC9hPjwvcD4KICAgICAgICA8cD48YSBocmVmPSIvYnVzaW5lc3MuaHRtbCI+5ZWG5Yqh5ZCI5L2cPC9hPjwvcD4KICAgICAgICA8cD48YSBocmVmPSIvcHJpdmFjeS5odG1sIj7pmpDnp4HmlL/nrZY8L2E+PC9wPgogICAgICAgIDxwPjxhIGhyZWY9Ii9kaXNjbGFpbWVyLmh0bWwiPuWFjei0o+WjsOaYjjwvYT48L3A+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJjb250YWluZXIgZm9vdGVyLWJvdHRvbSI+PHNwYW4+wqkgPHNwYW4gaWQ9InllYXIiPjwvc3Bhbj4gRnJlZU5hdiDCtyDlhY3otLnkuI7lvIDmupDova/ku7blr7zoiKo8L3NwYW4+PC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJmb290ZXItc3RhdCI+CiAgICAgIDxzcGFuIGlkPSJidXN1YW56aV9jb250YWluZXJfc2l0ZV9wdiIgc3R5bGU9ImRpc3BsYXk6bm9uZSI+5pys56uZ5oC76K6/6Zeu6YePIDxzcGFuIGlkPSJidXN1YW56aV92YWx1ZV9zaXRlX3B2Ij48L3NwYW4+IOasoTwvc3Bhbj4KICAgICAgPHNwYW4gaWQ9ImJ1c3VhbnppX2NvbnRhaW5lcl9zaXRlX3V2IiBzdHlsZT0iZGlzcGxheTpub25lIj4gfCDmnKznq5norr/lrqIgPHNwYW4gaWQ9ImJ1c3VhbnppX3ZhbHVlX3NpdGVfdXYiPjwvc3Bhbj4g5Lq6PC9zcGFuPgogICAgPC9kaXY+CiAgPC9mb290ZXI+CiAgPHNjcmlwdD5pZiAoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoInllYXIiKSkgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoInllYXIiKS50ZXh0Q29udGVudCA9IG5ldyBEYXRlKCkuZ2V0RnVsbFllYXIoKTs8L3NjcmlwdD4KICA8c2NyaXB0IHR5cGU9ImFwcGxpY2F0aW9uL2xkK2pzb24iPiR7SlNPTi5zdHJpbmdpZnkoanNvbmxkKX08L3NjcmlwdD4KICA8c2NyaXB0IGRlZmVyIHNyYz0iLi4vYXNzZXRzL2pzL3RoZW1lLm1pbi5qcyI+PC9zY3JpcHQ+CiAgPHNjcmlwdCBkZWZlciBzcmM9Ii4uL2Fzc2V0cy9qcy9zdy1yZWdpc3Rlci5qcyI+PC9zY3JpcHQ+CiAgPHNjcmlwdCBkZWZlciBzcmM9Imh0dHBzOi8vY24udmVyY291bnQub25lL2pzIj48L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+CmA7Cn0KCi8qIC0tLS0tLS0tLS0g57Si5byV6aG1IC0tLS0tLS0tLS0gKi8KZnVuY3Rpb24gaW5kZXhQYWdlKCkgewogIGxldCBibG9ja3MgPSAiIjsKICBDQVRFR09SSUVTLmZvckVhY2goKGMpID0+IHsKICAgIGNvbnN0IGl0ZW1zID0gU09GVFdBUkUuZmlsdGVyKChzKSA9PiBzLmNhdCA9PT0gYy5rZXkpOwogICAgY29uc3QgY2FyZHMgPSBpdGVtcy5tYXAoc2ltaWxhckNhcmQpLmpvaW4oIiIpOwogICAgYmxvY2tzICs9CiAgICAgICc8c2VjdGlvbiBjbGFzcz0iY2F0LWJsb2NrIj4nICsKICAgICAgICAiPGgyPiIgKyBlc2MoYy5pY29uIHx8ICLwn5S5IikgKyAiICIgKyBlc2MoYy5sYWJlbCkgKyAnIDxzcGFuIGNsYXNzPSJjYXQtY291bnQiPicgKyBpdGVtcy5sZW5ndGggKyAiIOasvjwvc3Bhbj48L2gyPiIgKwogICAgICAgICc8cCBjbGFzcz0iY2F0LWRlc2MiPicgKyBlc2MoYy5kZXNjKSArICI8L3A+IiArCiAgICAgICAgJzxkaXYgY2xhc3M9ImdyaWQiPicgKyBjYXJkcyArICI8L2Rpdj4iICsKICAgICAgIjwvc2VjdGlvbj4iOwogIH0pOwoKICByZXR1cm4gYDwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJ6aC1DTiI+CjxoZWFkPgogIDxtZXRhIGNoYXJzZXQ9IlVURi04IiAvPgogIDxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MS4wLCB2aWV3cG9ydC1maXQ9Y292ZXIiIC8+CiAgPHRpdGxlPuWFqOmDqOWFjei0uSAvIOW8gOa6kOi9r+S7tiAtIEZyZWVOYXbvvIgke1NPRlRXQVJFLmxlbmd0aH0g5qy+77yJPC90aXRsZT4KICA8bWV0YSBuYW1lPSJkZXNjcmlwdGlvbiIgY29udGVudD0iRnJlZU5hdiDmsYfmgLsgJHtTT0ZUV0FSRS5sZW5ndGh9IOasvue7j+i/h+mqjOivgeeahOWFjei0ueS4juW8gOa6kOi9r+S7tu+8jOaMiSAxMCDlpKfkvb/nlKjlnLrmma/liIbnsbvvvIzmr4/mrL7lnYfpmYTlrpjnvZHjgIHmjojmnYPkuI7lkIznsbvmm7/ku6PjgIIiIC8+CiAgPGxpbmsgcmVsPSJjYW5vbmljYWwiIGhyZWY9IiR7U0lURX0vdG9vbHMuaHRtbCIgLz4KICA8bWV0YSBuYW1lPSJ0aGVtZS1jb2xvciIgY29udGVudD0iIzBiMTIyMCIgbWVkaWE9IihwcmVmZXJzLWNvbG9yLXNjaGVtZTogZGFyaykiIC8+CiAgPG1ldGEgbmFtZT0idGhlbWUtY29sb3IiIGNvbnRlbnQ9IiNmN2Y4ZmIiIG1lZGlhPSIocHJlZmVycy1jb2xvci1zY2hlbWU6IGxpZ2h0KSIgLz4KICA8bGluayByZWw9Im1hbmlmZXN0IiBocmVmPSJtYW5pZmVzdC53ZWJtYW5pZmVzdCIgLz4KICA8bGluayByZWw9ImFwcGxlLXRvdWNoLWljb24iIGhyZWY9ImFwcGxlLXRvdWNoLWljb24ucG5nIiAvPgogIDxtZXRhIG5hbWU9ImFwcGxlLW1vYmlsZS13ZWItYXBwLWNhcGFibGUiIGNvbnRlbnQ9InllcyIgLz4KICA8bWV0YSBuYW1lPSJtb2JpbGUtd2ViLWFwcC1jYXBhYmxlIiBjb250ZW50PSJ5ZXMiIC8+CiAgPG1ldGEgbmFtZT0iYXBwbGUtbW9iaWxlLXdlYi1hcHAtc3RhdHVzLWJhci1zdHlsZSIgY29udGVudD0iYmxhY2stdHJhbnNsdWNlbnQiIC8+CiAgPG1ldGEgbmFtZT0iYXBwbGUtbW9iaWxlLXdlYi1hcHAtdGl0bGUiIGNvbnRlbnQ9IkZyZWVOYXYiIC8+CiAgPG1ldGEgcHJvcGVydHk9Im9nOnR5cGUiIGNvbnRlbnQ9IndlYnNpdGUiIC8+CiAgPG1ldGEgcHJvcGVydHk9Im9nOnRpdGxlIiBjb250ZW50PSLlhajpg6jlhY3otLkgLyDlvIDmupDova/ku7YgLSBGcmVlTmF2IiAvPgogIDxtZXRhIHByb3BlcnR5PSJvZzpkZXNjcmlwdGlvbiIgY29udGVudD0iRnJlZU5hdiDmsYfmgLsgJHtTT0ZUV0FSRS5sZW5ndGh9IOasvuWFjei0ueW8gOa6kOi9r+S7tu+8jOaMieWcuuaZr+WIhuexu++8jOmZhOWumOe9keS4juWQjOexu+abv+S7o+OAgiIgLz4KICA8bWV0YSBwcm9wZXJ0eT0ib2c6dXJsIiBjb250ZW50PSIke1NJVEV9L3Rvb2xzLmh0bWwiIC8+CiAgPG1ldGEgcHJvcGVydHk9Im9nOmxvY2FsZSIgY29udGVudD0iemhfQ04iIC8+CiAgPG1ldGEgcHJvcGVydHk9Im9nOmltYWdlIiBjb250ZW50PSIke1NJVEV9L29nLnBuZyIgLz4KICA8bWV0YSBuYW1lPSJ0d2l0dGVyOmNhcmQiIGNvbnRlbnQ9InN1bW1hcnlfbGFyZ2VfaW1hZ2UiIC8+CiAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJhc3NldHMvY3NzL3N0eWxlLm1pbi5jc3MiIC8+CiAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJhc3NldHMvY3NzL3Rvb2xzLmNzcyIgLz4KICA8bGluayByZWw9Imljb24iIGhyZWY9ImZhdmljb24uc3ZnIiB0eXBlPSJpbWFnZS9zdmcreG1sIiAvPgo8L2hlYWQ+Cjxib2R5PgogIDxhIGNsYXNzPSJza2lwLWxpbmsiIGhyZWY9IiN0b3AiPui3s+WIsOS4u+WGheWuuTwvYT4KICA8aGVhZGVyIGNsYXNzPSJzaXRlLWhlYWRlciI+CiAgICA8ZGl2IGNsYXNzPSJjb250YWluZXIgaGVhZGVyLWlubmVyIj4KICAgICAgPGEgY2xhc3M9ImJyYW5kIiBocmVmPSIvIj4KICAgICAgICA8c3BhbiBjbGFzcz0iYnJhbmQtbWFyayI+4peGPC9zcGFuPgogICAgICAgIDxzcGFuIGNsYXNzPSJicmFuZC1uYW1lIj5GcmVlTmF2PC9zcGFuPgogICAgICAgIDxzcGFuIGNsYXNzPSJicmFuZC1zdWIiPuWFjei0uei9r+S7tuWvvOiIqjwvc3Bhbj4KICAgICAgPC9hPgogICAgICA8bmF2IGNsYXNzPSJ0b3AtbmF2Ij4KICAgICAgICA8YSBocmVmPSIvI2NhdGVnb3JpZXMiPuWFqOmDqOWIhuexuzwvYT4KICAgICAgICA8YSBocmVmPSIvI2NvbHVtbnMiPue7huWIhuS4k+mimDwvYT4KICAgICAgICA8YSBocmVmPSIvdG9vbHMuaHRtbCI+5YWo6YOo5bel5YW3PC9hPgogICAgICAgIDxhIGhyZWY9Ii9wcml2YWN5Lmh0bWwiPumakOengTwvYT4KICAgICAgICA8YSBocmVmPSIvYnVzaW5lc3MuaHRtbCI+5ZWG5Yqh5ZCI5L2cPC9hPgogICAgICAgIDxhIGhyZWY9Ii9kaXNjbGFpbWVyLmh0bWwiPuWFjei0ozwvYT4KICAgICAgPC9uYXY+CiAgICAgIDxidXR0b24gY2xhc3M9Im5hdi10b2dnbGUiIGlkPSJuYXZUb2dnbGUiIHR5cGU9ImJ1dHRvbiIgYXJpYS1sYWJlbD0i5omT5byA6I+c5Y2VIiBhcmlhLWV4cGFuZGVkPSJmYWxzZSI+4piwPC9idXR0b24+CiAgICA8L2Rpdj4KICA8L2hlYWRlcj4KICA8bWFpbiBjbGFzcz0iY29udGFpbmVyIHRvb2xzLWluZGV4IiBpZD0idG9wIj4KICAgIDxoMT7lhajpg6jlhY3otLkgLyDlvIDmupDova/ku7Y8L2gxPgogICAgPHAgY2xhc3M9ImxlYWQiPkZyZWVOYXYg55uu5YmN5pS25b2VIDxiPiR7U09GVFdBUkUubGVuZ3RofTwvYj4g5qy+57uP6L+H6aqM6K+B55qE5YWN6LS55LiO5byA5rqQ6L2v5Lu277yM5oyJIDEwIOWkp+S9v+eUqOWcuuaZr+WIhuexu+OAgueCueW8gOS7u+aEj+W3peWFt+afpeeci+WumOe9keOAgeaOiOadg+aWueW8j+S4juWQjOexu+abv+S7o+OAgjwvcD4KICAgICR7YmxvY2tzfQogIDwvbWFpbj4KICA8Zm9vdGVyIGNsYXNzPSJzaXRlLWZvb3RlciI+CiAgICA8ZGl2IGNsYXNzPSJjb250YWluZXIgZm9vdGVyLWlubmVyIj4KICAgICAgPGRpdiBjbGFzcz0iZm9vdGVyLWNvbCI+CiAgICAgICAgPHAgY2xhc3M9ImZvb3Rlci1icmFuZCI+4peGIEZyZWVOYXY8L3A+CiAgICAgICAgPHAgY2xhc3M9ImZvb3Rlci1ub3RlIj7nsr7pgInlhY3otLkgLyDlvIDmupDova/ku7blr7zoiKrjgILlhoXlrrnngbXmhJ/kuI7muIXljZXmnaXmupDvvJo8YSBocmVmPSJodHRwczovL2ZtaHkubmV0LyIgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9vcGVuZXIgbm9yZWZlcnJlciI+Zm1oeS5uZXQ8L2E+44CCPC9wPgogICAgICA8L2Rpdj4KICAgICAgPGRpdiBjbGFzcz0iZm9vdGVyLWNvbCI+CiAgICAgICAgPHAgY2xhc3M9ImZvb3Rlci10aXRsZSI+6ZO+5o6lPC9wPgogICAgICAgIDxwPjxhIGhyZWY9Ii8iPummlumhtTwvYT48L3A+CiAgICAgICAgPGRldGFpbHMgY2xhc3M9ImRvbmF0ZS1ib3giPgogICAgICAgICAgPHN1bW1hcnkgY2xhc3M9ImZvb3Rlci10aXRsZSBkb25hdGUtc3VtbWFyeSI+4piVIOivt+S9nOiAheWWneadr+WSluWVoTwvc3VtbWFyeT4KICAgICAgICAgIDxwIGNsYXNzPSJmb290ZXItbm90ZSI+5aaC5p6cIEZyZWVOYXYg5biu5Yiw5LqG5L2g77yM5qyi6L+O5omr56CB5pSv5oyB77yM55So5LqO5pyN5Yqh5Zmo5LiO5pel5bi457u05oqkIPCfkps8L3A+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJkb25hdGUtcXJzIj4KICAgICAgICAgICAgPGZpZ3VyZT48aW1nIHNyYz0iYXNzZXRzL2ltZy93ZWNoYXQtZG9uYXRlLmpwZyIgYWx0PSLlvq7kv6HotZ7otY/noIEiIGxvYWRpbmc9ImxhenkiPjxmaWdjYXB0aW9uPuW+ruS/oTwvZmlnY2FwdGlvbj48L2ZpZ3VyZT4KICAgICAgICAgICAgPGZpZ3VyZT48aW1nIHNyYz0iYXNzZXRzL2ltZy9hbGlwYXktZG9uYXRlLmpwZyIgYWx0PSLmlK/ku5jlrp3mlLbmrL7noIEiIGxvYWRpbmc9ImxhenkiPjxmaWdjYXB0aW9uPuaUr+S7mOWunTwvZmlnY2FwdGlvbj48L2ZpZ3VyZT4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGV0YWlscz4KICAgICAgICA8cD48YSBocmVmPSIvYnVzaW5lc3MuaHRtbCI+5ZWG5Yqh5ZCI5L2cPC9hPjwvcD4KICAgICAgICA8cD48YSBocmVmPSIvcHJpdmFjeS5odG1sIj7pmpDnp4HmlL/nrZY8L2E+PC9wPgogICAgICAgIDxwPjxhIGhyZWY9Ii9kaXNjbGFpbWVyLmh0bWwiPuWFjei0o+WjsOaYjjwvYT48L3A+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJjb250YWluZXIgZm9vdGVyLWJvdHRvbSI+PHNwYW4+wqkgPHNwYW4gaWQ9InllYXIiPjwvc3Bhbj4gRnJlZU5hdiDCtyDlhY3otLnkuI7lvIDmupDova/ku7blr7zoiKo8L3NwYW4+PC9kaXY+CiAgPC9mb290ZXI+CiAgPHNjcmlwdD5pZiAoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoInllYXIiKSkgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoInllYXIiKS50ZXh0Q29udGVudCA9IG5ldyBEYXRlKCkuZ2V0RnVsbFllYXIoKTs8L3NjcmlwdD4KICA8c2NyaXB0IGRlZmVyIHNyYz0iYXNzZXRzL2pzL3RoZW1lLm1pbi5qcyI+PC9zY3JpcHQ+CiAgPHNjcmlwdCBkZWZlciBzcmM9ImFzc2V0cy9qcy9zdy1yZWdpc3Rlci5qcyI+PC9zY3JpcHQ+CiAgPHNjcmlwdCBkZWZlciBzcmM9Imh0dHBzOi8vY24udmVyY291bnQub25lL2pzIj48L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+CmA7Cn0KCi8qIC0tLS0tLS0tLS0gc2l0ZW1hcCAtLS0tLS0tLS0tICovCmNvbnN0IEZSQU1FV09SSyA9IFsKICB7IGxvYzogIi8iLCBwcmk6ICIxLjAiLCBmcmVxOiAid2Vla2x5IiwgaW1nOiB7IGxvYzogIi9vZy5wbmciLCB0aXRsZTogIkZyZWVOYXYgwrcg5YWN6LS56L2v5Lu25a+86IiqIiB9IH0sCiAgeyBsb2M6ICIvYnVzaW5lc3MuaHRtbCIsIHByaTogIjAuNiIsIGZyZXE6ICJtb250aGx5IiB9LAogIHsgbG9jOiAiL3ByaXZhY3kuaHRtbCIsIHByaTogIjAuMyIsIGZyZXE6ICJ5ZWFybHkiIH0sCiAgeyBsb2M6ICIvdGVybXMuaHRtbCIsIHByaTogIjAuMyIsIGZyZXE6ICJ5ZWFybHkiIH0sCiAgeyBsb2M6ICIvZGlzY2xhaW1lci5odG1sIiwgcHJpOiAiMC4zIiwgZnJlcTogInllYXJseSIgfSwKICB7IGxvYzogIi9jb2x1bW5zL29wZW5zb3VyY2UtYWx0Lmh0bWwiLCBwcmk6ICIwLjciLCBmcmVxOiAibW9udGhseSIsIGltZzogeyBsb2M6ICIvb2cucG5nIiwgdGl0bGU6ICLlvIDmupAgLyDlhY3otLnmm7/ku6PlupMgwrcgRnJlZU5hdiIgfSB9LAogIHsgbG9jOiAiL2NvbHVtbnMvbmV3YmllLmh0bWwiLCBwcmk6ICIwLjciLCBmcmVxOiAibW9udGhseSIsIGltZzogeyBsb2M6ICIvb2cucG5nIiwgdGl0bGU6ICLmlrDkurroo4XmnLrmuIXljZUgwrcgRnJlZU5hdiIgfSB9LAogIHsgbG9jOiAiL2NvbHVtbnMvZGVzaWduLmh0bWwiLCBwcmk6ICIwLjciLCBmcmVxOiAibW9udGhseSIsIGltZzogeyBsb2M6ICIvb2cucG5nIiwgdGl0bGU6ICLorr7orqHluIjlhY3otLnntKDmnZDlhajlrrbmobYgwrcgRnJlZU5hdiIgfSB9LAogIHsgbG9jOiAiL2NvbHVtbnMvbG9jYWwtYWkuaHRtbCIsIHByaTogIjAuNyIsIGZyZXE6ICJtb250aGx5IiwgaW1nOiB7IGxvYzogIi9vZy5wbmciLCB0aXRsZTogIuacrOWcsCBBSSDlt6XlhbfnrrEgwrcgRnJlZU5hdiIgfSB9LApdOwoKZnVuY3Rpb24gc2l0ZW1hcCgpIHsKICBjb25zdCB0b2RheSA9IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKS5zbGljZSgwLCAxMCk7CiAgbGV0IG91dCA9ICc8P3htbCB2ZXJzaW9uPSIxLjAiIGVuY29kaW5nPSJVVEYtOCI/PlxuJzsKICBvdXQgKz0gJzx1cmxzZXQgeG1sbnM9Imh0dHA6Ly93d3cuc2l0ZW1hcHMub3JnL3NjaGVtYXMvc2l0ZW1hcC8wLjkiXG4gICAgICAgIHhtbG5zOmltYWdlPSJodHRwOi8vd3d3Lmdvb2dsZS5jb20vc2NoZW1hcy9zaXRlbWFwLWltYWdlLzEuMSI+XG4nOwogIGZ1bmN0aW9uIHVybCh1KSB7CiAgICBvdXQgKz0gIiAgPHVybD5cbiI7CiAgICBvdXQgKz0gIiAgICA8bG9jPiIgKyBTSVRFICsgdS5sb2MgKyAiPC9sb2M+XG4iOwogICAgb3V0ICs9ICIgICAgPGxhc3Rtb2Q+IiArIHRvZGF5ICsgIjwvbGFzdG1vZD5cbiI7CiAgICBvdXQgKz0gIiAgICA8Y2hhbmdlZnJlcT4iICsgdS5mcmVxICsgIjwvY2hhbmdlZnJlcT5cbiI7CiAgICBvdXQgKz0gIiAgICA8cHJpb3JpdHk+IiArIHUucHJpICsgIjwvcHJpb3JpdHk+XG4iOwogICAgaWYgKHUuaW1nKSB7CiAgICAgIG91dCArPSAiICAgIDxpbWFnZTppbWFnZT5cbiI7CiAgICAgIG91dCArPSAiICAgICAgPGltYWdlOmxvYz4iICsgU0lURSArIHUuaW1nLmxvYyArICI8L2ltYWdlOmxvYz5cbiI7CiAgICAgIG91dCArPSAiICAgICAgPGltYWdlOnRpdGxlPiIgKyBlc2ModS5pbWcudGl0bGUpICsgIjwvaW1hZ2U6dGl0bGU+XG4iOwogICAgICBvdXQgKz0gIiAgICA8L2ltYWdlOmltYWdlPlxuIjsKICAgIH0KICAgIG91dCArPSAiICA8L3VybD5cbiI7CiAgfQogIEZSQU1FV09SSy5mb3JFYWNoKHVybCk7CiAgdXJsKHsgbG9jOiAiL3Rvb2xzLmh0bWwiLCBwcmk6ICIwLjUiLCBmcmVxOiAibW9udGhseSIgfSk7CiAgU09GVFdBUkUuZm9yRWFjaCgocykgPT4gdXJsKHsgbG9jOiAiL3Rvb2xzLyIgKyBzLmlkICsgIi5odG1sIiwgcHJpOiAiMC40IiwgZnJlcTogIm1vbnRobHkiIH0pKTsKICBvdXQgKz0gIjwvdXJsc2V0PlxuIjsKICByZXR1cm4gb3V0Owp9CgovKiAtLS0tLS0tLS0tIOaJp+ihjCAtLS0tLS0tLS0tICovCmNvbnN0IHRvb2xzRGlyID0gcGF0aC5qb2luKFJPT1QsICJ0b29scyIpOwpmcy5ta2RpclN5bmModG9vbHNEaXIsIHsgcmVjdXJzaXZlOiB0cnVlIH0pOwoKbGV0IGNvdW50ID0gMDsKU09GVFdBUkUuZm9yRWFjaCgoaXRlbSkgPT4gewogIGZzLndyaXRlRmlsZVN5bmMocGF0aC5qb2luKHRvb2xzRGlyLCBpdGVtLmlkICsgIi5odG1sIiksIHRvb2xQYWdlKGl0ZW0pLCAidXRmOCIpOwogIGNvdW50Kys7Cn0pOwpmcy53cml0ZUZpbGVTeW5jKHBhdGguam9pbihST09ULCAidG9vbHMuaHRtbCIpLCBpbmRleFBhZ2UoKSwgInV0ZjgiKTsKZnMud3JpdGVGaWxlU3luYyhwYXRoLmpvaW4oUk9PVCwgInNpdGVtYXAueG1sIiksIHNpdGVtYXAoKSwgInV0ZjgiKTsKCmNvbnNvbGUubG9nKCLnlJ/miJDlrozmiJDvvJror6bmg4XpobUgIiArIGNvdW50ICsgIiDkuKrvvIzntKLlvJXpobUgMSDkuKrvvIxzaXRlbWFwIOW3suaJqeWFheiHsyAiICsgKEZSQU1FV09SSy5sZW5ndGggKyAxICsgY291bnQpICsgIiDmnaEgVVJM44CCIik7Cg==
+/*
+ * FreeNav 静态详情页生成器
+ * 读取 assets/js/data.js + assets/js/licenses.js，批量产出：
+ *   - tools/<id>.html      每款软件的独立 SEO 落地页
+ *   - tools.html           全部工具索引（内链枢纽）
+ *   - sitemap.xml          扩充 98 个详情页 URL
+ * 运行：node scripts/gen-tools.js
+ */
+const fs = require("fs");
+const path = require("path");
+
+const ROOT = path.resolve(__dirname, "..");
+const SITE = "https://freenav.net";
+
+/* ---------- 数据加载 ---------- */
+function loadWindow(file) {
+  const code = fs.readFileSync(path.join(ROOT, file), "utf8");
+  const window = {};
+  new Function("window", code)(window);
+  return window;
+}
+const w = loadWindow("assets/js/data.js");
+const lic = loadWindow("assets/js/licenses.js");
+const SOFTWARE = w.FREENAV_SOFTWARE || [];
+const CATEGORIES = w.FREENAV_CATEGORIES || [];
+const LICENSES = lic.FREENAV_LICENSES || {};
+
+const CAT = {};
+CATEGORIES.forEach((c) => (CAT[c.key] = c));
+const PLATFORM_LABEL = { Win: "Windows", Mac: "macOS", Linux: "Linux", Web: "Web", Android: "Android", iOS: "iOS", "自托管": "自托管" };
+
+/* ---------- 工具函数 ---------- */
+function esc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+function catOf(item) { return CAT[item.cat] || { label: item.cat, icon: "🔹", desc: "", guide: "", color: "#38bdf8", color2: "#0284c7" }; }
+function platformsCN(item) { return (item.platforms || []).map((p) => PLATFORM_LABEL[p] || p).join(" / "); }
+function firstChar(name) { return (name || "?").trim().charAt(0).toUpperCase(); }
+
+function badge(text, cls) { return '<span class="badge' + (cls ? " " + cls : "") + '">' + esc(text) + "</span>"; }
+
+/* 同类卡片（内链到详情页） */
+function similarCard(item, base = "") {
+  const c = catOf(item);
+  const pf = (item.platforms || []).map((p) => badge(PLATFORM_LABEL[p] || p)).join("");
+  const tags = (item.tags || []).slice(0, 4).map((t) => '<span class="tag">' + esc(t) + "</span>").join("");
+  return (
+    '<article class="card" style="--cat:' + esc(c.color) + ';--cat-2:' + esc(c.color2 || c.color) + '">' +
+      '<div class="card-head">' +
+        '<div class="card-logo"><span class="logo-fallback">' + esc(firstChar(item.name)) + "</span></div>" +
+        '<div class="card-name-wrap">' +
+          '<span class="card-name">' + esc(item.name) + "</span>" +
+          badge(item.pricing, "price-" + item.pricing) +
+        "</div>" +
+      "</div>" +
+      '<p class="card-desc">' + esc(item.desc) + "</p>" +
+      '<div class="badges">' + pf + "</div>" +
+      '<div class="tags">' + tags + "</div>" +
+      '<a class="card-link" href="' + esc(base + item.id) + '.html">查看详情 <span aria-hidden="true">→</span></a>' +
+    "</article>"
+  );
+}
+
+/* ---------- 详情页 ---------- */
+function toolPage(item) {
+  const c = catOf(item);
+  const licTxt = LICENSES[item.id];
+  const licBadge = licTxt ? badge(licTxt, "lic-badge") : "";
+  const pf = (item.platforms || []).map((p) => badge(PLATFORM_LABEL[p] || p)).join("");
+  const tags = (item.tags || []).map((t) => '<span class="tag">' + esc(t) + "</span>").join("");
+  const url = item.url || "#";
+  const rel = item.affiliateUrl ? "sponsored noopener noreferrer" : "noopener noreferrer";
+
+  const similar = SOFTWARE.filter((s) => s.cat === item.cat && s.id !== item.id).slice(0, 9).map((s) => similarCard(s)).join("");
+
+  const descMeta = (item.desc + " 支持 " + platformsCN(item) + "。" + c.desc + " FreeNav 汇总 " + item.name + " 的官网、授权与同类替代。").slice(0, 160);
+  const jsonld = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: item.name,
+    applicationCategory: c.label,
+    operatingSystem: platformsCN(item),
+    description: item.desc,
+    url: SITE + "/tools/" + item.id + ".html",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" },
+  };
+
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>${esc(item.name)} 下载（${esc(c.label)}）· 免费开源工具 | FreeNav</title>
+  <meta name="description" content="${esc(descMeta)}" />
+  <meta name="keywords" content="${esc([item.name, c.label].concat(item.tags || []).concat(["免费软件", "开源软件", "FreeNav"]).join(","))}" />
+  <link rel="canonical" href="${SITE}/tools/${esc(item.id)}.html" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FreeNav" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="${esc(item.name)} · FreeNav 免费开源软件导航" />
+  <meta property="og:description" content="${esc(item.desc)}" />
+  <meta property="og:url" content="${SITE}/tools/${esc(item.id)}.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="${SITE}/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../assets/css/style.min.css" />
+  <link rel="stylesheet" href="../assets/css/tools.css" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#top">跳到主内容</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">FreeNav</span>
+        <span class="brand-sub">免费软件导航</span>
+      </a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/tools.html">全部工具</a>
+        <a href="/privacy.html">隐私</a>
+        <a href="/business.html">商务合作</a>
+        <a href="/disclaimer.html">免责</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+  <main class="container" id="top">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <a href="/">首页</a> <span aria-hidden="true">/</span>
+      <a href="/#categories">${esc(c.label)}</a> <span aria-hidden="true">/</span>
+      <span>${esc(item.name)}</span>
+    </nav>
+
+    <article class="tool-detail">
+      <header class="tool-head">
+        <div class="tool-logo" style="--cat:${esc(c.color)};--cat-2:${esc(c.color2 || c.color)}"><span class="logo-fallback">${esc(firstChar(item.name))}</span></div>
+        <div>
+          <h1 class="tool-title">${esc(item.name)}</h1>
+          <p class="tool-cat">${esc(c.icon || "🔹")} ${esc(c.label)} · 免费 / 开源软件</p>
+        </div>
+      </header>
+
+      <div class="tool-badges">
+        ${badge(item.pricing, "price-" + item.pricing)}
+        ${licBadge}
+        ${pf}
+      </div>
+
+      <div class="tags">${tags}</div>
+
+      <p class="tool-desc">${esc(item.desc)}</p>
+
+      <div class="tool-actions">
+        <a class="btn-primary" href="${esc(url)}" target="_blank" rel="${rel}">访问 ${esc(item.name)} 官网 <span aria-hidden="true">→</span></a>
+        <a class="btn-ghost" href="/#categories">浏览全部分类</a>
+      </div>
+
+      <section class="tool-why">
+        <h2>为什么 FreeNav 收录 ${esc(item.name)}？</h2>
+        <p>${esc(c.desc)} 在「${esc(c.label)}」这个使用场景下，${esc(item.name)} 以「${esc(item.pricing)}」的方式提供，适合希望减少软件开支、又不愿被广告和追踪打扰的用户。${esc(c.guide)}</p>
+      </section>
+
+      <section class="tool-alt">
+        <h2>同类 ${esc(c.label)} 工具推荐</h2>
+        <p class="col-sub">以下均为已验证的免费 / 开源方案，点击查看详情与官网。</p>
+        <div class="grid">${similar}</div>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/">首页</a></p>
+        <details class="donate-box">
+          <summary class="footer-title donate-summary">☕ 请作者喝杯咖啡</summary>
+          <p class="footer-note">如果 FreeNav 帮到了你，欢迎扫码支持，用于服务器与日常维护 💛</p>
+          <div class="donate-qrs">
+            <figure><img src="../assets/img/wechat-donate.jpg" alt="微信赞赏码" loading="lazy"><figcaption>微信</figcaption></figure>
+            <figure><img src="../assets/img/alipay-donate.jpg" alt="支付宝收款码" loading="lazy"><figcaption>支付宝</figcaption></figure>
+          </div>
+        </details>
+        <p><a href="/tools.html">全部工具</a></p>
+        <p><a href="/business.html">商务合作</a></p>
+        <p><a href="/privacy.html">隐私政策</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span></div>
+    <div class="footer-stat">
+      <span id="busuanzi_container_site_pv" style="display:none">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
+      <span id="busuanzi_container_site_uv" style="display:none"> | 本站访客 <span id="busuanzi_value_site_uv"></span> 人</span>
+    </div>
+  </footer>
+  <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
+  <script defer src="../assets/js/theme.min.js"></script>
+  <script defer src="../assets/js/sw-register.js"></script>
+  <script defer src="https://cn.vercount.one/js"></script>
+</body>
+</html>
+`;
+}
+
+/* ---------- 索引页 ---------- */
+function indexPage() {
+  let blocks = "";
+  CATEGORIES.forEach((c) => {
+    const items = SOFTWARE.filter((s) => s.cat === c.key);
+    const cards = items.map((s) => similarCard(s, "tools/")).join("");
+    blocks +=
+      '<section class="cat-block">' +
+        "<h2>" + esc(c.icon || "🔹") + " " + esc(c.label) + ' <span class="cat-count">' + items.length + " 款</span></h2>" +
+        '<p class="cat-desc">' + esc(c.desc) + "</p>" +
+        '<div class="grid">' + cards + "</div>" +
+      "</section>";
+  });
+
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>全部免费 / 开源软件 - FreeNav（${SOFTWARE.length} 款）</title>
+  <meta name="description" content="FreeNav 汇总 ${SOFTWARE.length} 款经过验证的免费与开源软件，按 10 大使用场景分类，每款均附官网、授权与同类替代。" />
+  <link rel="canonical" href="${SITE}/tools.html" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FreeNav" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="全部免费 / 开源软件 - FreeNav" />
+  <meta property="og:description" content="FreeNav 汇总 ${SOFTWARE.length} 款免费开源软件，按场景分类，附官网与同类替代。" />
+  <meta property="og:url" content="${SITE}/tools.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="${SITE}/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="assets/css/style.min.css" />
+  <link rel="stylesheet" href="assets/css/tools.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#top">跳到主内容</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">FreeNav</span>
+        <span class="brand-sub">免费软件导航</span>
+      </a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/tools.html">全部工具</a>
+        <a href="/privacy.html">隐私</a>
+        <a href="/business.html">商务合作</a>
+        <a href="/disclaimer.html">免责</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+  <main class="container tools-index" id="top">
+    <h1>全部免费 / 开源软件</h1>
+    <p class="lead">FreeNav 目前收录 <b>${SOFTWARE.length}</b> 款经过验证的免费与开源软件，按 10 大使用场景分类。点开任意工具查看官网、授权方式与同类替代。</p>
+    ${blocks}
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/">首页</a></p>
+        <details class="donate-box">
+          <summary class="footer-title donate-summary">☕ 请作者喝杯咖啡</summary>
+          <p class="footer-note">如果 FreeNav 帮到了你，欢迎扫码支持，用于服务器与日常维护 💛</p>
+          <div class="donate-qrs">
+            <figure><img src="assets/img/wechat-donate.jpg" alt="微信赞赏码" loading="lazy"><figcaption>微信</figcaption></figure>
+            <figure><img src="assets/img/alipay-donate.jpg" alt="支付宝收款码" loading="lazy"><figcaption>支付宝</figcaption></figure>
+          </div>
+        </details>
+        <p><a href="/business.html">商务合作</a></p>
+        <p><a href="/privacy.html">隐私政策</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span></div>
+  </footer>
+  <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script defer src="assets/js/theme.min.js"></script>
+  <script defer src="assets/js/sw-register.js"></script>
+  <script defer src="https://cn.vercount.one/js"></script>
+</body>
+</html>
+`;
+}
+
+/* ---------- sitemap ---------- */
+const FRAMEWORK = [
+  { loc: "/", pri: "1.0", freq: "weekly", img: { loc: "/og.png", title: "FreeNav · 免费软件导航" } },
+  { loc: "/business.html", pri: "0.6", freq: "monthly" },
+  { loc: "/privacy.html", pri: "0.3", freq: "yearly" },
+  { loc: "/terms.html", pri: "0.3", freq: "yearly" },
+  { loc: "/disclaimer.html", pri: "0.3", freq: "yearly" },
+  { loc: "/columns/opensource-alt.html", pri: "0.7", freq: "monthly", img: { loc: "/og.png", title: "开源 / 免费替代库 · FreeNav" } },
+  { loc: "/columns/newbie.html", pri: "0.7", freq: "monthly", img: { loc: "/og.png", title: "新人装机清单 · FreeNav" } },
+  { loc: "/columns/design.html", pri: "0.7", freq: "monthly", img: { loc: "/og.png", title: "设计师免费素材全家桶 · FreeNav" } },
+  { loc: "/columns/local-ai.html", pri: "0.7", freq: "monthly", img: { loc: "/og.png", title: "本地 AI 工具箱 · FreeNav" } },
+];
+
+function sitemap() {
+  const today = new Date().toISOString().slice(0, 10);
+  let out = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  out += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n';
+  function url(u) {
+    out += "  <url>\n";
+    out += "    <loc>" + SITE + u.loc + "</loc>\n";
+    out += "    <lastmod>" + today + "</lastmod>\n";
+    out += "    <changefreq>" + u.freq + "</changefreq>\n";
+    out += "    <priority>" + u.pri + "</priority>\n";
+    if (u.img) {
+      out += "    <image:image>\n";
+      out += "      <image:loc>" + SITE + u.img.loc + "</image:loc>\n";
+      out += "      <image:title>" + esc(u.img.title) + "</image:title>\n";
+      out += "    </image:image>\n";
+    }
+    out += "  </url>\n";
+  }
+  FRAMEWORK.forEach(url);
+  url({ loc: "/tools.html", pri: "0.5", freq: "monthly" });
+  SOFTWARE.forEach((s) => url({ loc: "/tools/" + s.id + ".html", pri: "0.4", freq: "monthly" }));
+  out += "</urlset>\n";
+  return out;
+}
+
+/* ---------- 执行 ---------- */
+const toolsDir = path.join(ROOT, "tools");
+fs.mkdirSync(toolsDir, { recursive: true });
+
+let count = 0;
+SOFTWARE.forEach((item) => {
+  fs.writeFileSync(path.join(toolsDir, item.id + ".html"), toolPage(item), "utf8");
+  count++;
+});
+fs.writeFileSync(path.join(ROOT, "tools.html"), indexPage(), "utf8");
+fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sitemap(), "utf8");
+
+console.log("生成完成：详情页 " + count + " 个，索引页 1 个，sitemap 已扩充至 " + (FRAMEWORK.length + 1 + count) + " 条 URL。");
