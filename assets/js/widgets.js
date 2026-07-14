@@ -77,8 +77,9 @@
   }
 
   function injectShareBar() {
-    var footer = document.querySelector(".site-footer .footer-inner");
-    if (!footer || document.querySelector(".site-footer > .share-bar")) return;
+    var footerInner = document.querySelector(".site-footer .footer-inner");
+    var footerBottom = document.querySelector(".site-footer .footer-bottom");
+    if (!footerInner || document.querySelector(".site-footer > .share-bar")) return;
 
     var url = location.href;
     var title = document.title;
@@ -95,7 +96,11 @@
       '<button class="share-btn" data-act="wechat">💬 微信</button>' +
       '<button class="share-btn" data-act="more">⋯ 更多</button>';
 
-    footer.parentNode.insertBefore(bar, footer.nextSibling);
+    if (footerBottom) {
+      footerBottom.parentNode.insertBefore(bar, footerBottom);
+    } else {
+      footerInner.parentNode.appendChild(bar);
+    }
 
     bar.querySelector('[data-act="copy"]').addEventListener("click", function () {
       copyText(url).then(function () { toast("链接已复制，去分享给好友吧 👍"); })
