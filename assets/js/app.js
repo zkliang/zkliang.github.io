@@ -438,17 +438,17 @@
     }).join("");
   }
 
-  // CPS 编辑推荐位：读取 config.js 的 FREENAV_AFFILIATE，空数组则不显示
+  // CPS 底部推荐位：读取 config.js 的 FREENAV_AFFILIATE，空数组则不显示
   function renderAffiliate() {
     if (!affiliateStrip) return;
     var items = window.FREENAV_AFFILIATE || [];
     if (!items.length) { affiliateStrip.hidden = true; return; }
     affiliateStrip.hidden = false;
     affiliateStrip.innerHTML =
-      '<h2 class="aff-title">赞助推荐 <span class="aff-sub">推广内容 · 助力本站免费运营</span></h2>' +
+      '<p class="aff-hint">本站链接中可能包含联盟推广，你无需额外付费，但会支持我们持续更新。</p>' +
       '<div class="aff-grid">' + items.map(function (it) {
         var tag = it.tag ? '<span class="aff-tag">' + it.tag + "</span>" : "";
-        var note = it.note ? '<p class="aff-note">' + it.note + "</p>" : "";
+        var note = it.note ? '<span class="aff-note">' + it.note + "</span>" : "";
         return '<a class="aff-card" href="' + it.url + '" target="_blank" rel="nofollow noopener sponsored">' +
                  '<span class="aff-name">' + it.name + "</span>" + tag + note +
                "</a>";

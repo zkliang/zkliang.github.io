@@ -24,11 +24,5 @@ window.FREENAV_AFFILIATE = [
     note: "新用户首单返佣高，站长装机刚需；佣金结算到支付宝 / 国内银行卡",
     url: "https://www.aliyun.com/minisite/goods?userCode=dmi4rtzf",
     tag: "广告"
-  },
-  {
-    name: "Namecheap 域名注册",
-    note: "海外域名常更便宜；联盟佣金经 PayPal 发放，可提现国内银行卡",
-    url: "https://www.namecheap.com/",   // TODO: 换成你的 Namecheap 联盟链接（affiliate 后台获取）
-    tag: "广告"
   }
 ];
