@@ -871,3 +871,148 @@ body { overflow-x: clip; max-width: 100%; }
   .table-wrap { margin: 0 -4px; }
 }
 
+/* =========================================================
+   PWA：添加到主屏幕引导条（Add to Home Screen）
+   ========================================================= */
+.pwa-install-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 95;
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-top: 1px solid var(--border-strong);
+  box-shadow: 0 -6px 24px -8px rgba(0, 0, 0, .35);
+  transform: translateY(0);
+  transition: transform .28s var(--ease), opacity .28s var(--ease);
+}
+.pwa-install-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pwa-install-icon {
+  flex: 0 0 auto;
+  font-size: 20px;
+  line-height: 1;
+}
+.pwa-install-text {
+  flex: 1 1 auto;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.35;
+  min-width: 0;
+}
+.pwa-install-btn {
+  flex: 0 0 auto;
+  border: none;
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-ink);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: filter .15s, transform .15s;
+}
+.pwa-install-btn:hover { filter: brightness(1.08); }
+.pwa-install-btn:active { transform: scale(.97); }
+.pwa-install-close {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color .15s, border-color .15s;
+}
+.pwa-install-close:hover { color: var(--text); border-color: var(--accent); }
+
+/* iOS 手动引导弹层 */
+.pwa-install-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  background: rgba(0, 0, 0, .55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.pwa-install-modal {
+  width: 100%;
+  max-width: 360px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.pwa-install-modal h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: var(--text);
+}
+.pwa-install-modal p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.pwa-install-modal ol {
+  text-align: left;
+  margin: 0 0 20px;
+  padding-left: 20px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.85;
+}
+.pwa-install-modal li { margin-bottom: 6px; }
+.pwa-share-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 14px;
+}
+.pwa-install-modal-close {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-ink);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 桌面端：不显示底部引导条（仅保留移动端体验） */
+@media (min-width: 761px) {
+  .pwa-install-banner { display: none; }
+}
+
+/* 移动端：引导条出现后，给回到顶部按钮让出空间 */
+@media (max-width: 760px) {
+  .to-top { bottom: calc(72px + env(safe-area-inset-bottom)); }
+}
+

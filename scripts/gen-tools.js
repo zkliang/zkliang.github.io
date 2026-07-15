@@ -36,18 +36,24 @@ function esc(s) {
 function catOf(item) { return CAT[item.cat] || { label: item.cat, icon: "🔹", desc: "", guide: "", color: "#38bdf8", color2: "#0284c7" }; }
 function platformsCN(item) { return (item.platforms || []).map((p) => PLATFORM_LABEL[p] || p).join(" / "); }
 function firstChar(name) { return (name || "?").trim().charAt(0).toUpperCase(); }
+function getDomain(url) { try { return new URL(url).hostname.replace(/^www\./, ""); } catch (e) { return ""; } }
 
 function badge(text, cls) { return '<span class="badge' + (cls ? " " + cls : "") + '">' + esc(text) + "</span>"; }
 
 /* 同类卡片（内链到详情页） */
-function similarCard(item, base = "") {
+function similarCard(item, base = "", imgBase = "assets/icons/") {
   const c = catOf(item);
   const pf = (item.platforms || []).map((p) => badge(PLATFORM_LABEL[p] || p)).join("");
   const tags = (item.tags || []).slice(0, 4).map((t) => '<span class="tag">' + esc(t) + "</span>").join("");
+  const domain = getDomain(item.url || item.link || "");
+  const iconSrc = domain ? imgBase + domain + ".png" : "";
+  const logo = iconSrc
+    ? '<div class="card-logo has-logo"><img alt="" loading="lazy" src="' + esc(iconSrc) + '"><span class="logo-fallback" style="display:none" aria-hidden="true">' + esc(firstChar(item.name)) + "</span></div>"
+    : '<div class="card-logo"><span class="logo-fallback">' + esc(firstChar(item.name)) + "</span></div>";
   return (
     '<article class="card" style="--cat:' + esc(c.color) + ';--cat-2:' + esc(c.color2 || c.color) + '">' +
       '<div class="card-head">' +
-        '<div class="card-logo"><span class="logo-fallback">' + esc(firstChar(item.name)) + "</span></div>" +
+        logo +
         '<div class="card-name-wrap">' +
           '<span class="card-name">' + esc(item.name) + "</span>" +
           badge(item.pricing, "price-" + item.pricing) +
@@ -71,7 +77,7 @@ function toolPage(item) {
   const url = item.url || "#";
   const rel = item.affiliateUrl ? "sponsored noopener noreferrer" : "noopener noreferrer";
 
-  const similar = SOFTWARE.filter((s) => s.cat === item.cat && s.id !== item.id).slice(0, 9).map((s) => similarCard(s)).join("");
+  const similar = SOFTWARE.filter((s) => s.cat === item.cat && s.id !== item.id).slice(0, 9).map((s) => similarCard(s, "", "../assets/icons/")).join("");
 
   const descMeta = (item.desc + " 支持 " + platformsCN(item) + "。" + c.desc + " FreeNav 汇总 " + item.name + " 的官网、授权与同类替代。").slice(0, 160);
   const jsonld = {
@@ -110,7 +116,7 @@ function toolPage(item) {
   <meta property="og:image" content="${SITE}/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="../assets/css/style.min.css" />
-  <link rel="stylesheet" href="../assets/css/tools.css" />
+  <link rel="stylesheet" href="../assets/css/tools.min.css" />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
 </head>
 <body>
@@ -142,7 +148,7 @@ function toolPage(item) {
 
     <article class="tool-detail">
       <header class="tool-head">
-        <div class="tool-logo" style="--cat:${esc(c.color)};--cat-2:${esc(c.color2 || c.color)}"><span class="logo-fallback">${esc(firstChar(item.name))}</span></div>
+        <div class="tool-logo" style="--cat:${esc(c.color)};--cat-2:${esc(c.color2 || c.color)}"><img src="../assets/icons/${esc(getDomain(item.url || item.link || ''))}.png" alt="${esc(item.name)}" loading="eager"><span class="logo-fallback" aria-hidden="true">${esc(firstChar(item.name))}</span></div>
         <div>
           <h1 class="tool-title">${esc(item.name)}</h1>
           <p class="tool-cat">${esc(c.icon || "🔹")} ${esc(c.label)} · 免费 / 开源软件</p>
@@ -208,6 +214,8 @@ function toolPage(item) {
   <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
   <script defer src="../assets/js/theme.min.js"></script>
+  <script defer src="../assets/js/tools-detail.min.js"></script>
+  <script defer src="../assets/js/pwa-install.min.js"></script>
   <script defer src="../assets/js/sw-register.js"></script>
   <script async src="https://cn.vercount.one/js"></script>
 </body>
@@ -220,7 +228,7 @@ function indexPage(basePath = "", linkBase = "tools/") {
   let blocks = "";
   CATEGORIES.forEach((c) => {
     const items = SOFTWARE.filter((s) => s.cat === c.key);
-    const cards = items.map((s) => similarCard(s, linkBase)).join("");
+    const cards = items.map((s) => similarCard(s, linkBase, basePath + "assets/icons/")).join("");
     blocks +=
       '<section class="cat-block">' +
         "<h2>" + esc(c.icon || "🔹") + " " + esc(c.label) + ' <span class="cat-count">' + items.length + " 款</span></h2>" +
@@ -253,7 +261,7 @@ function indexPage(basePath = "", linkBase = "tools/") {
   <meta property="og:image" content="${SITE}/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="${basePath}assets/css/style.min.css" />
-  <link rel="stylesheet" href="${basePath}assets/css/tools.css" />
+  <link rel="stylesheet" href="${basePath}assets/css/tools.min.css" />
   <link rel="icon" href="${basePath}favicon.svg" type="image/svg+xml" />
 </head>
 <body>
@@ -307,6 +315,8 @@ function indexPage(basePath = "", linkBase = "tools/") {
   </footer>
   <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script defer src="${basePath}assets/js/theme.min.js"></script>
+  <script defer src="${basePath}assets/js/tools-detail.min.js"></script>
+  <script defer src="${basePath}assets/js/pwa-install.min.js"></script>
   <script defer src="${basePath}assets/js/sw-register.js"></script>
   <script async src="https://cn.vercount.one/js"></script>
 </body>

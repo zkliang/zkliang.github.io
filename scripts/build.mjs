@@ -20,8 +20,8 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const JS_DIR = path.join(ROOT, 'assets/js');
 const CSS_DIR = path.join(ROOT, 'assets/css');
-const JS_FILES = ['app.js', 'data.js', 'columns.js', 'column-render.js', 'config.js', 'icons.js', 'theme.js', 'licenses.js'];
-const CSS_FILES = ['style.css'];
+const JS_FILES = ['app.js', 'data.js', 'columns.js', 'column-render.js', 'config.js', 'icons.js', 'theme.js', 'licenses.js', 'pwa-install.js', 'tools-detail.js'];
+const CSS_FILES = ['style.css', 'tools.css'];
 // 仅对真正会生成 .min 的文件做引用替换，避免把 sw-register.js 等未压缩脚本误改成不存在的 .min.js
 const JS_BASE = new Set(JS_FILES.map(f => f.replace(/\.js$/, '')));
 
