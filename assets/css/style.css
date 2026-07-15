@@ -748,7 +748,13 @@ table.compare .cmp-empty { text-align: center; color: var(--muted); padding: 26p
   .cat-side-list { flex-direction: row; gap: 8px; }
   .cat-side-link { flex: 0 0 auto; white-space: nowrap; border: 1px solid var(--border); padding: 7px 13px; }
   .grid { grid-template-columns: 1fr; }
-  .col-grid { grid-template-columns: 1fr; }
+  .col-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .col-card { padding: 14px 14px 12px; gap: 6px; border-radius: 14px; }
+  .col-card .cat-card-ico { width: 38px; height: 38px; font-size: 20px; border-radius: 11px; }
+  .col-card .cat-card-name { font-size: 14.5px; }
+  .col-card .cat-card-desc { font-size: 11.5px; line-height: 1.45; }
+  .col-card-go { font-size: 11.5px; }
+  .col-card .col-axis { font-size: 9.5px; padding: 2px 7px; top: 11px; right: 11px; }
 
   .list-toolbar { flex-direction: column; align-items: flex-start; gap: 14px; }
   .cat-tabs, .col-nav .container { -webkit-overflow-scrolling: touch; }
