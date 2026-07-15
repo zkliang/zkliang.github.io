@@ -12,29 +12,23 @@ window.FREENAV_SITE_URL = "https://freenav.net";
  * 数组留空 [] 则不显示任何卡片。tag 必须保留（合规标识「广告」）。
  * 想加几个就加几个，每行一个，逗号隔开。
  */
+/* 国内用户选型提醒（2026-07-15）：
+ *  - 优先选「佣金能结算到 支付宝 / 国内银行卡」的联盟，到账最省心：阿里云、腾讯云、华为云等。
+ *  - 海外联盟（Namecheap / Vercel 等）佣金多为 PayPal 或账户额度，提现国内有摩擦，按需保留。
+ *  - Vercel 推荐仅为「账户额度」、非现金，已移除；腾讯云因注册名额上限暂无法接入，已移除。
+ *  - 想加新联盟：复制下面任意一项改 name/note/url/tag 即可，无需改其它代码。
+ */
 window.FREENAV_AFFILIATE = [
   {
     name: "阿里云服务器 / 域名",
-    note: "新用户首单返佣高，站长装机刚需",
+    note: "新用户首单返佣高，站长装机刚需；佣金结算到支付宝 / 国内银行卡",
     url: "https://www.aliyun.com/minisite/goods?userCode=dmi4rtzf",
     tag: "广告"
   },
   {
-    name: "腾讯云服务器 / 域名",
-    note: "新用户专属优惠，建站上云常选",
-    url: "https://cloud.tencent.com/",   // TODO: 换成你的腾讯云 CPS 推广链接（云+社区后台获取）
-    tag: "广告"
-  },
-  {
     name: "Namecheap 域名注册",
-    note: "海外域名注册，价格常低于国内，支持支付宝",
+    note: "海外域名常更便宜；联盟佣金经 PayPal 发放，可提现国内银行卡",
     url: "https://www.namecheap.com/",   // TODO: 换成你的 Namecheap 联盟链接（affiliate 后台获取）
     tag: "广告"
-  },
-  {
-    name: "Vercel 部署平台",
-    note: "前端 / 静态站托管，开发者首选，拖拽即上线",
-    url: "https://vercel.com/",          // TODO: 换成你的 Vercel 推荐链接（Dashboard → Referrals）
-    tag: "推广"
   }
 ];
