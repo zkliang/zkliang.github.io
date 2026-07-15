@@ -18,5 +18,23 @@ window.FREENAV_AFFILIATE = [
     note: "新用户首单返佣高，站长装机刚需",
     url: "https://www.aliyun.com/minisite/goods?userCode=dmi4rtzf",
     tag: "广告"
+  },
+  {
+    name: "腾讯云服务器 / 域名",
+    note: "新用户专属优惠，建站上云常选",
+    url: "https://cloud.tencent.com/",   // TODO: 换成你的腾讯云 CPS 推广链接（云+社区后台获取）
+    tag: "广告"
+  },
+  {
+    name: "Namecheap 域名注册",
+    note: "海外域名注册，价格常低于国内，支持支付宝",
+    url: "https://www.namecheap.com/",   // TODO: 换成你的 Namecheap 联盟链接（affiliate 后台获取）
+    tag: "广告"
+  },
+  {
+    name: "Vercel 部署平台",
+    note: "前端 / 静态站托管，开发者首选，拖拽即上线",
+    url: "https://vercel.com/",          // TODO: 换成你的 Vercel 推荐链接（Dashboard → Referrals）
+    tag: "推广"
   }
 ];

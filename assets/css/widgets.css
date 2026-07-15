@@ -169,6 +169,15 @@
   color: var(--muted, #5b6675);
 }
 
+/* 捐赠区：资金用途说明 + 与上方列间距 */
+.footer-donate { margin-top: 22px; }
+.donate-use {
+  margin: 8px 0 0;
+  font-size: .76rem;
+  line-height: 1.5;
+  color: var(--faint, #8b9ab4);
+}
+
 /* ===== 分享栏：从独立横幅移入第一列 footer-col ===== */
 .footer-col .share-bar {
   display: flex;
