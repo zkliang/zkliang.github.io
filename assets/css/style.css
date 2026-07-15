@@ -240,13 +240,19 @@ img { max-width: 100%; }
 }
 .hero-tags button:hover { color: var(--text); border-color: var(--accent); background: var(--surface-hover); }
 
-.hero-stats { display: flex; gap: 14px; justify-content: center; margin-top: 22px; flex-wrap: wrap; }
+.hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 22px auto 0; max-width: 360px; }
 .hero-stats .stat {
-  min-width: 110px; padding: 14px 18px; border-radius: 16px;
+  min-width: 0; padding: 12px 8px; border-radius: 16px; text-align: center;
   background: var(--surface); border: 1px solid var(--border);
 }
-.hero-stats b { display: block; font-size: 26px; color: var(--accent); font-weight: 800; line-height: 1.1; }
-.hero-stats span { font-size: 12.5px; color: var(--faint); }
+.hero-stats b { display: block; font-size: 22px; color: var(--accent); font-weight: 800; line-height: 1.1; }
+.hero-stats span { font-size: 11.5px; color: var(--faint); }
+@media (min-width: 560px) {
+  .hero-stats { max-width: 420px; gap: 14px; }
+  .hero-stats .stat { padding: 14px 12px; }
+  .hero-stats b { font-size: 26px; }
+  .hero-stats span { font-size: 12.5px; }
+}
 
 /* ---------- 区块标题（eyebrow 结构） ---------- */
 .section { padding: 14px 0 8px; }
