@@ -73,6 +73,9 @@
   --glow: 0 12px 34px -12px rgba(13, 148, 136, 0.35);
 }
 
+/* 修复某些浏览器/样式下 [hidden] 被 display 覆盖的问题 */
+[hidden] { display: none !important; }
+
 /* 浅色主题对比度修正：分类浅色不宜作文字/白字填充，改用可达标色 */
 [data-theme="light"] .card-logo { color: #0b1220; }
 [data-theme="light"] .card-link,

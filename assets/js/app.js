@@ -211,7 +211,7 @@
     if (backBtn) backBtn.hidden = true;
     if (sortLabel) sortLabel.hidden = true;
     if (searchCount) searchCount.textContent = SOFTWARE.length + " 款";
-    if (resultMeta) resultMeta.textContent = CATEGORIES.length + " 大分类 · " + SOFTWARE.length + " 款免费软件";
+    if (resultMeta) resultMeta.textContent = "";
     var cols = window.FREENAV_COLUMNS || [];
     listRoot.innerHTML =
       '<section class="home-sec">' +
