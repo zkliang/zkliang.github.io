@@ -831,9 +831,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 /* 响应式 */
 @media (max-width: 720px) {
-  .why-grid { grid-template-columns: 1fr; }
-  .hero-stat { min-width: 100px; padding: 12px 16px; }
-  .hs-num { font-size: 1.4rem; }
+  .why-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .why-card { padding: 13px 13px 12px; border-radius: 14px; }
+  .why-ico { font-size: 1.35rem; }
+  .why-title { margin: 6px 0 3px; font-size: .98rem; }
+  .why-desc { font-size: .82rem; line-height: 1.5; }
 }
 
 /* =========================================================
