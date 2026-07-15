@@ -14,11 +14,11 @@
   var searchCount = document.getElementById("searchCount");
   var emptyState = document.getElementById("emptyState");
   var heroTags = document.getElementById("heroTags");
-  var heroStats = document.getElementById("heroStats");
   var affiliateStrip = document.getElementById("affiliateStrip");
   var resultMeta = document.getElementById("resultMeta");
   var sortSelect = document.getElementById("sort");
   var sortLabel = document.getElementById("sortLabel");
+  var listToolbar = document.getElementById("listToolbar");
   var listSection = document.getElementById("list");
   var searchClear = document.getElementById("searchClear");
   var backBtn = document.getElementById("backBtn");
@@ -197,6 +197,7 @@
       var res = sortItems(SOFTWARE.filter(function (i) { return matchItem(i, q); }));
       if (searchCount) searchCount.textContent = res.length + " 款";
       if (backBtn) backBtn.hidden = (view === "home");
+      if (listToolbar) listToolbar.hidden = (view === "home");
       renderResults(res, '搜索 “' + query.trim() + '” · 共 ' + res.length + ' 款');
       return;
     }
@@ -208,6 +209,7 @@
   // 首页：功能分类卡片 + 细分专题卡片（都不直接显示软件，点击各自进入）
   function renderHome() {
     platformFilter = "all";
+    if (listToolbar) listToolbar.hidden = true;
     if (backBtn) backBtn.hidden = true;
     if (sortLabel) sortLabel.hidden = true;
     if (searchCount) searchCount.textContent = SOFTWARE.length + " 款";
@@ -240,6 +242,7 @@
   function renderCategory(key) {
     var c = CAT_COLOR[key];
     if (!c) { view = "home"; renderHome(); return; }
+    if (listToolbar) listToolbar.hidden = false;
     if (backBtn) backBtn.hidden = false;
     if (sortLabel) sortLabel.hidden = false;
     var items = sortItems(SOFTWARE.filter(function (i) { return i.cat === key; }));
@@ -426,18 +429,6 @@
     }).join("");
   }
 
-  function renderHeroStats() {
-    if (!heroStats) return;
-    var stats = [
-      { num: SOFTWARE.length, label: "精选工具" },
-      { num: CATEGORIES.length, label: "专业分类" },
-      { num: "100%", label: "免费开源" }
-    ];
-    heroStats.innerHTML = stats.map(function (s) {
-      return '<div class="hero-stat"><span class="hs-num">' + s.num + '</span><span class="hs-label">' + s.label + "</span></div>";
-    }).join("");
-  }
-
   // CPS 底部推荐位：读取 config.js 的 FREENAV_AFFILIATE，空数组则不显示
   function renderAffiliate() {
     if (!affiliateStrip) return;
@@ -544,7 +535,6 @@
   renderSideCats();
   renderSideCols();
   renderHeroTags();
-  renderHeroStats();
   renderAffiliate();
   render();
   injectJSONLD();
