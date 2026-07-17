@@ -753,6 +753,62 @@ table.compare .cmp-empty { text-align: center; color: var(--muted); padding: 26p
 .cat-card-name { font-size: 16.5px; }
 .col-grid { gap: 16px; }
 
+/* ---------- 首页赞助推荐位（比底部更显眼，但避开首屏） ---------- */
+.home-affiliate { padding: 28px 0 18px; }
+.home-affiliate .home-aff-inner {
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--border));
+  border-radius: 22px;
+  padding: 24px 28px;
+  text-align: center;
+}
+.home-aff-title {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text);
+}
+.home-aff-hint {
+  margin: 0 0 18px;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.home-aff-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.home-aff-card {
+  display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 10px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none; font-size: 14.5px; font-weight: 700;
+  transition: border-color .2s, transform .15s, box-shadow .2s;
+  box-shadow: var(--shadow-sm);
+}
+.home-aff-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -10px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.home-aff-name { font-weight: 800; }
+.home-aff-note {
+  font-size: 12.5px; font-weight: 500; color: var(--muted);
+  max-width: 420px; line-height: 1.5;
+}
+.home-aff-tag {
+  font-size: 10px; font-weight: 800; color: var(--accent-ink);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  padding: 2px 8px; border-radius: 999px;
+}
+@media (max-width: 560px) {
+  .home-affiliate .home-aff-inner { padding: 18px 16px; border-radius: 18px; }
+  .home-aff-title { font-size: 15.5px; }
+  .home-aff-hint { font-size: 12px; margin-bottom: 14px; }
+  .home-aff-card { padding: 12px 16px; font-size: 13px; gap: 8px; }
+  .home-aff-note { font-size: 11px; }
+}
+
 /* ---------- 无障碍：跳转链接 + 焦点可见 ---------- */
 .skip-link {
   position: absolute; left: 12px; top: -48px; z-index: 200;

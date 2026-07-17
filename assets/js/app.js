@@ -206,6 +206,27 @@
     renderCategory(activeCat);
   }
 
+  // 首页赞助推荐位（放大版，放在内容流中更易被看到）
+  function affiliateBannerHTML() {
+    var items = window.FREENAV_AFFILIATE || [];
+    if (!items.length) return "";
+    var cards = items.map(function (it) {
+      var tag = it.tag ? '<span class="home-aff-tag">' + it.tag + "</span>" : "";
+      var note = it.note ? '<span class="home-aff-note">' + it.note + "</span>" : "";
+      return '<a class="home-aff-card" href="' + it.url + '" target="_blank" rel="nofollow noopener sponsored">' +
+               '<span class="home-aff-name">' + it.name + "</span>" +
+               tag + note +
+             "</a>";
+    }).join("");
+    return '<section class="home-sec home-affiliate">' +
+             '<div class="home-aff-inner">' +
+               '<p class="home-aff-title">支持 FreeNav 持续更新</p>' +
+               '<p class="home-aff-hint">通过以下链接购买不会增加你的费用，但能帮助本站覆盖服务器与域名成本</p>' +
+               '<div class="home-aff-grid">' + cards + "</div>" +
+             "</div>" +
+           "</section>";
+  }
+
   // 首页：功能分类卡片 + 细分专题卡片（都不直接显示软件，点击各自进入）
   function renderHome() {
     platformFilter = "all";
@@ -222,6 +243,7 @@
           '<p class="section-sub">' + CATEGORIES.length + ' 大使用场景，<b>点开即看</b>对应工具；全部免费、开源，无需注册、不收一分钱。</p></div>' +
         '<div class="cat-grid">' + CATEGORIES.map(catCardHTML).join("") + "</div>" +
       "</section>" +
+      affiliateBannerHTML() +
       '<section class="home-sec">' +
         '<div class="sec-head"><span class="section-eyebrow">Deep dives</span>' +
           '<h2 class="section-title">细分专题</h2>' +
