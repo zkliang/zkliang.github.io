@@ -14,7 +14,6 @@
   var searchCount = document.getElementById("searchCount");
   var emptyState = document.getElementById("emptyState");
   var heroTags = document.getElementById("heroTags");
-  var affiliateStrip = document.getElementById("affiliateStrip");
   var resultMeta = document.getElementById("resultMeta");
   var sortSelect = document.getElementById("sort");
   var sortLabel = document.getElementById("sortLabel");
@@ -451,23 +450,6 @@
     }).join("");
   }
 
-  // CPS 底部推荐位：读取 config.js 的 FREENAV_AFFILIATE，空数组则不显示
-  function renderAffiliate() {
-    if (!affiliateStrip) return;
-    var items = window.FREENAV_AFFILIATE || [];
-    if (!items.length) { affiliateStrip.hidden = true; return; }
-    affiliateStrip.hidden = false;
-    affiliateStrip.innerHTML =
-      '<p class="aff-hint">本站链接中可能包含联盟推广，你无需额外付费，但会支持我们持续更新。</p>' +
-      '<div class="aff-grid">' + items.map(function (it) {
-        var tag = it.tag ? '<span class="aff-tag">' + it.tag + "</span>" : "";
-        var note = it.note ? '<span class="aff-note">' + it.note + "</span>" : "";
-        return '<a class="aff-card" href="' + it.url + '" target="_blank" rel="nofollow noopener sponsored">' +
-                 '<span class="aff-name">' + it.name + "</span>" + tag + note +
-               "</a>";
-      }).join("") + "</div>";
-  }
-
   function injectJSONLD() {
     var list = SOFTWARE.map(function (i) {
       return {
@@ -557,7 +539,6 @@
   renderSideCats();
   renderSideCols();
   renderHeroTags();
-  renderAffiliate();
   render();
   injectJSONLD();
 
