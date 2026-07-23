@@ -46,7 +46,7 @@
         '<li>在系统浏览器中，再按以下对应步骤添加：</li>' +
         (isIOS
           ? '<li>iOS：底部 <strong>分享</strong> → <strong>添加到主屏幕</strong> → <strong>添加</strong></li>'
-          : '<li>Android：右上角 <strong>⋮</strong> → <strong>安装应用</strong></li>');
+          : '<li>Android：右上角 <strong>⋮</strong> → <strong>添加到桌面</strong></li>');
     } else if (isIOS) {
       steps =
         '<li>点击底部工具栏的 <strong>分享</strong> 图标 <span class="pwa-share-icon" aria-hidden="true">⎙</span></li>' +
@@ -55,8 +55,8 @@
     } else {
       steps =
         '<li>点击浏览器右上角的 <strong>⋮ 菜单</strong></li>' +
-        '<li>选择 <strong>安装应用</strong>（或 <strong>添加到主屏幕</strong>）</li>' +
-        '<li>在弹出的提示中点击 <strong>安装</strong></li>';
+        '<li>选择 <strong>添加到桌面</strong></li>' +
+        '<li>在弹出的提示中点击 <strong>添加到桌面</strong></li>';
     }
 
     var overlay = document.createElement("div");
@@ -90,7 +90,7 @@
     banner.setAttribute("role", "region");
     banner.setAttribute("aria-label", "添加到主屏幕");
     // 按钮文案随是否拿到原生 prompt 变化：能装→「安装」，否则→「添加到主屏幕」
-    var btnLabel = deferredPrompt ? "安装" : "添加到主屏幕";
+    var btnLabel = "添加到桌面";
     banner.innerHTML =
       '<div class="pwa-install-inner">' +
         '<span class="pwa-install-icon" aria-hidden="true">📲</span>' +
@@ -133,7 +133,7 @@
     // 若兜底 banner 已先弹出，把按钮文案切到「安装」
     var btn = document.querySelector("#pwaInstallBanner .pwa-install-btn");
     if (btn) {
-      btn.textContent = "安装";
+      btn.textContent = "添加到桌面";
     } else {
       buildBanner();
     }
