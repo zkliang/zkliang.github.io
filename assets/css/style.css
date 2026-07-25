@@ -1042,3 +1042,86 @@ body { overflow-x: clip; max-width: 100%; }
   .to-top { bottom: calc(72px + env(safe-area-inset-bottom)); }
 }
 
+/* ── 收藏按钮 ── */
+.fav-btn {
+  margin-left: auto;
+  flex: 0 0 auto;
+  width: 30px; height: 30px;
+  border: 1px solid var(--border, #e3e6ee);
+  background: var(--card-bg, #fff);
+  color: var(--muted, #9aa3b2);
+  border-radius: 9px;
+  font-size: 15px; line-height: 1;
+  cursor: pointer;
+  transition: transform .12s ease, color .15s ease, background .15s ease, border-color .15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.fav-btn:hover { transform: scale(1.08); color: #f6c343; }
+.fav-btn.is-fav { color: #f6c343; border-color: #f6c343; background: rgba(246,195,67,.12); }
+.fav-btn:active { transform: scale(.94); }
+
+/* ── 首页个性化区块 ── */
+.home-link {
+  font-size: 14px; font-weight: 600;
+  color: var(--accent, #6d8bff);
+  text-decoration: none; margin-left: 8px;
+  white-space: nowrap;
+}
+.home-link:hover { text-decoration: underline; }
+.hero-personalize { display: flex; justify-content: center; margin-top: 18px; }
+.hero-customize {
+  border: 1px solid var(--border, #e3e6ee);
+  background: var(--card-bg, #fff);
+  color: var(--text, #1b2330);
+  border-radius: 999px;
+  padding: 9px 18px; font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: border-color .15s, color .15s, background .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.hero-customize:hover { border-color: var(--accent, #6d8bff); color: var(--accent, #6d8bff); }
+
+/* ── 兴趣定制面板 ── */
+.interest-panel { position: fixed; inset: 0; z-index: 80; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.interest-panel[hidden] { display: none; }
+.interest-backdrop { position: absolute; inset: 0; background: rgba(8,12,20,.5); }
+.interest-panel-inner {
+  position: relative; width: min(560px, 100%);
+  background: var(--card-bg, #fff); color: var(--text, #1b2330);
+  border: 1px solid var(--border, #e3e6ee);
+  border-radius: 18px; padding: 22px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+  animation: intPop .18s ease;
+}
+@keyframes intPop { from { opacity: 0; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: none; } }
+.interest-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+.interest-title { margin: 0; font-size: 18px; font-weight: 800; }
+.interest-sub { margin: 4px 0 0; font-size: 13px; color: var(--muted, #7a8493); line-height: 1.5; }
+.interest-close { flex: 0 0 auto; width: 32px; height: 32px; border: none; background: transparent; color: var(--muted, #7a8493); font-size: 22px; line-height: 1; cursor: pointer; border-radius: 9px; }
+.interest-close:hover { background: var(--border, #eef1f6); color: var(--text, #1b2330); }
+.interest-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.int-chip {
+  border: 1px solid var(--border, #e3e6ee);
+  background: var(--card-bg, #fff);
+  color: var(--text, #1b2330);
+  border-radius: 999px; padding: 9px 15px; font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: transform .14s ease, background .14s ease, border-color .14s ease;
+  -webkit-tap-highlight-color: transparent;
+  border-left: 4px solid var(--cat, #ccc);
+}
+.int-chip:hover { transform: translateY(-1px); }
+.int-chip.active { background: color-mix(in srgb, var(--cat, #6d8bff) 14%, var(--card-bg, #fff)); border-color: var(--cat, #6d8bff); }
+.interest-reset {
+  border: none; background: transparent; color: var(--muted, #7a8493);
+  font-size: 13px; cursor: pointer; padding: 4px 0; text-decoration: underline;
+}
+.interest-reset:hover { color: var(--text, #1b2330); }
+
+/* ── 导航收藏角标 ── */
+.nav-badge {
+  display: inline-block; min-width: 18px; padding: 0 5px;
+  margin-left: 2px; border-radius: 999px;
+  background: #f6c343; color: #3a2c00;
+  font-size: 11px; font-weight: 800; line-height: 18px; text-align: center;
+}
+.nav-badge.is-empty { display: none; }
+
