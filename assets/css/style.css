@@ -1202,3 +1202,47 @@ body { overflow-x: clip; max-width: 100%; }
   .post-body { font-size: 15.5px; }
 }
 
+/* ── 导航「专栏」CTA ── */
+.top-nav a.nav-cta {
+  color: var(--accent);
+  font-weight: 700;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: 999px;
+  padding: 6px 14px;
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.top-nav a.nav-cta:hover { color: var(--text); border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, transparent); }
+@media (max-width: 960px) {
+  .top-nav a.nav-cta { border: none; border-bottom: 1px solid var(--border); border-radius: 0; background: transparent; padding: 13px 4px; }
+}
+
+/* ── 首页「专栏」高亮带 ── */
+.home-column { padding: 26px 0 8px; }
+.home-col-inner {
+  position: relative;
+  background: linear-gradient(120deg, color-mix(in srgb, var(--accent) 12%, var(--surface)), color-mix(in srgb, var(--accent-2) 10%, var(--surface)));
+  border: 1px solid color-mix(in srgb, var(--accent) 32%, var(--border));
+  border-radius: 22px; padding: 24px 26px; overflow: hidden;
+}
+.home-col-badge {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 800;
+  color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent); padding: 5px 12px; border-radius: 999px; margin-bottom: 14px;
+}
+.home-col-title { font-size: clamp(20px, 3vw, 26px); font-weight: 800; margin: 0 0 10px; line-height: 1.35; color: var(--text); }
+.home-col-excerpt { color: var(--muted); font-size: 14.5px; margin: 0 0 14px; line-height: 1.65; max-width: 680px; }
+.home-col-go { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--accent); text-decoration: none; }
+.home-col-go:hover { gap: 10px; }
+
+/* ── 文章/专栏 分享分发条 ── */
+.share-bar { margin-top: 28px; padding: 18px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.share-label { display: block; font-weight: 800; color: var(--text); margin-bottom: 12px; font-size: 15px; }
+.share-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.share-btns button {
+  border: 1px solid var(--border); background: var(--bg-2); color: var(--text);
+  border-radius: 999px; padding: 9px 16px; font-size: 13.5px; font-weight: 600; font-family: inherit; cursor: pointer; transition: .15s;
+}
+.share-btns button:hover { border-color: var(--accent); color: var(--accent); }
+.share-btns button.copied { background: color-mix(in srgb, var(--success) 16%, transparent); border-color: var(--success); color: var(--success); }
+.share-tip { margin: 12px 0 0; font-size: 12.5px; color: var(--faint); line-height: 1.6; }
+
