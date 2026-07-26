@@ -651,7 +651,7 @@
     render(); window.scrollTo({ top: 0, behavior: "smooth" });
   });
   // 定制按钮 / 关闭 / 重置 / 兴趣 chip
-  var customizeBtn = document.getElementById("customizeBtn");
+  var customizeBtn = document.getElementById("navCustomize");
   if (customizeBtn) customizeBtn.addEventListener("click", openInterestPanel);
   var interestClose = document.getElementById("interestClose");
   if (interestClose) interestClose.addEventListener("click", closeInterestPanel);
