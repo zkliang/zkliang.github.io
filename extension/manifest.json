@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "FreeNav 新标签页",
+  "version": "1.0.0",
+  "description": "打开新标签页即见精选免费、开源软件；搜索直达 FreeNav。隐私友好、无追踪。",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "icons": {
+    "192": "icons/icon-192.png",
+    "512": "icons/icon-512.png"
+  }
+}

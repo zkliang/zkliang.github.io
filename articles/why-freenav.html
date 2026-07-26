@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>我做了个不追踪你的「软件界豆瓣」：FreeNav 是怎么挑软件的 · FreeNav 专栏</title>
+  <meta name="description" content="一个不懂代码的人，为什么动手搭了个软件导航站？它和全家桶、资讯流到底哪里不一样，以及 FreeNav 挑软件的 3 条硬标准。" />
+  <link rel="canonical" href="https://freenav.net/articles/why-freenav.html" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FreeNav" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="我做了个不追踪你的「软件界豆瓣」：FreeNav 是怎么挑软件的" />
+  <meta property="og:description" content="一个不懂代码的人，为什么动手搭了个软件导航站？以及挑软件的 3 条硬标准。" />
+  <meta property="og:url" content="https://freenav.net/articles/why-freenav.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://freenav.net/og-blog.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../assets/css/style.min.css" />
+  <link rel="stylesheet" href="../assets/css/widgets.css" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#top">跳到主内容</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">FreeNav</span>
+        <span class="brand-sub">免费软件导航</span>
+      </a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/tools.html">全部工具</a>
+        <a href="/blog.html" class="active">专栏</a>
+        <a href="#favs" id="navFavs">⭐ 收藏 <span id="favCount" class="nav-badge"></span></a>
+        <button class="nav-customize" id="navCustomize" type="button" aria-label="定制我的首页">✨ 定制</button>
+        <a href="/privacy.html">隐私</a>
+        <a href="/business.html">商务合作</a>
+        <a href="/disclaimer.html">免责</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="blog-main" id="top">
+    <article class="container post">
+      <p class="post-kicker">关于本站</p>
+      <h1 class="post-title">我做了个不追踪你的「软件界豆瓣」：FreeNav 是怎么挑软件的</h1>
+      <p class="post-meta">2026-07-26 · 约 7 分钟阅读</p>
+
+      <div class="post-body">
+        <p>先交个底：我是个完全不懂代码的人。所以当我跟朋友说"我做了个软件导航站"的时候，他们第一反应是——你被人骗去当代理了？</p>
+        <p>不是。我只是被"找软件"这件事烦透了。</p>
+
+        <h2>一、被全家桶和弹窗逼出来的念头</h2>
+        <p>你大概也有过这种经历：想装个压缩软件，搜出来一排"高速下载""安全下载"，点下去蹦出三四个不认识的捆绑；想剪个视频，先被"免费试用 3 天"勾走注意力，真正想用的功能藏在付费墙后面。更别提那些装完就改你浏览器主页、隔三差五弹窗问你"是否允许发送使用数据"的。</p>
+        <p>我不是反对软件赚钱。我是烦那种<strong>「你以为免费，其实在拿隐私和注意力买单」</strong>的模糊感。于是我动了念头：能不能有个地方，把"真正免费、开源、不偷偷追踪你"的软件，老老实实列出来，还顺手告诉你"这个和那个比，谁更适合小白"。</p>
+
+        <h2>二、它和"资讯流"不是一回事</h2>
+        <p>有人问我：那你这不就是个软件版的新闻聚合？还真不是。</p>
+        <p>新闻聚合类工具（比如给开发者看资讯的 hackertab）做的是"自动搬运 + 实时更新 + 帮你省时间"——像今日头条，刷得越多越上头，但信息一过就忘。FreeNav 想做的是另一头：<strong>像豆瓣榜单那样，人工精选、深度测评、帮你做决定</strong>。一个软件值不值得进榜单，是人挑的，不是算法推的；一篇文章讲不讲得清，是写的人负责的，不是标题党凑的。</p>
+        <p>所以你会发现，这里没有"今日热榜"，也没有"猜你喜欢"。我们宁可慢一点、少一点，也要让每一条都经得起"你装上去用一周"的检验。</p>
+
+        <h2>三、挑软件的 3 条硬标准</h2>
+        <p>这是 FreeNav 选品的底线，一条不满足就不进列表：</p>
+        <p><strong>① 开源优先。</strong>能开源的，优先推荐开源版。代码公开意味着有人能审计、出事能接力维护，不会作者一跑路软件就死。当然，少数闭源但确实好用又良心的，也会收，但会标清楚。</p>
+        <p><strong>② 真免费，没有暗坑。</strong>不是"免费下载、核心功能收费"的套路，也不是"个人免费、商用要买"却不说清楚的含糊。免费到什么程度，我们写明白。</p>
+        <p><strong>③ 无追踪是底线。</strong>这一条是我的私心，也是 FreeNav 的招牌。凡是会偷偷上报你的行为、弹窗求权限、把数据卖给第三方的，一律不收。你在这站上逛，浏览器里不会被人悄悄记下"这个人看了什么"。</p>
+
+        <h2>四、站里现在有什么</h2>
+        <p>截至这篇写出来，FreeNav 已经收了 <a href="/tools.html">98 款软件</a>，按 10 大使用场景分好类——写文档、做图、录屏、传文件、本地跑 AI……你想得到的日常需求，基本都能直接对号入座。</p>
+        <p>另外还有 4 个深度专题：比如<a href="/columns/local-ai.html">本地 AI 怎么选</a>、<a href="/columns/newbie.html">新人装机清单</a>。它们不是"把软件罗列一遍"，而是真的做了对比表和踩坑提醒——这才是"专栏"存在的意义。</p>
+
+        <h2>五、你能怎么参与</h2>
+        <p>FreeNav 没有评论区（加第三方评论要么追踪你、要么塞广告，违背招牌）。但你有三个零追踪的方式参与：</p>
+        <p>· 在首页点 <strong>⭐ 收藏</strong>，把你常用的钉住，再用 <strong>✨ 定制</strong> 告诉站点你关心哪些场景，首页会更懂你；<br>
+        · 发现好软件，去 <a href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer">GitHub 开个 Issue 投稿</a>；<br>
+        · 文章有错漏，同样走 Issue 或邮件告诉我。</p>
+
+        <h2>写在最后</h2>
+        <p>我做 FreeNav，不是要和它比谁软件多。我是想证明一件事：在"免费"这件事上，你本可以不交出隐私、不忍受捆绑、不被当成流量。</p>
+        <p>如果这篇让你点了头，欢迎去 <a href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer">GitHub 投个稿</a>，或者邮件告诉我你想看的下一个专题。下一期，我打算写《2026 年我私藏的 8 个开源替代，帮你告别全家桶》——你也可以在 <a href="/blog.html">专栏</a> 里蹲着。</p>
+      </div>
+
+      <div class="post-end">
+        <p class="post-end-title">发现错漏，或有想看的专题？</p>
+        <div class="post-end-actions">
+          <a class="post-end-btn" href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer">去 GitHub 提 Issue</a>
+          <a class="post-end-btn ghost" href="mailto:zkl3@msn.com?subject=FreeNav%20投稿%2F纠错">写邮件给我</a>
+        </div>
+        <p class="post-end-note">本站不追踪你；投稿与纠错均不要求注册。</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>（Free Media Heck Yeah）。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">关于本站</p>
+        <p class="footer-note">本站为导航索引，不托管、不销售任何软件。所有链接指向软件官方网站或开源仓库。</p>
+        <p class="footer-note">部分链接为<strong>联盟推广 / 赞助</strong>链接，你通过它们可能产生佣金，但<strong>不会额外加价</strong>。详见<a href="/disclaimer.html">免责声明</a>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/tools.html">全部工具</a></p>
+        <p><a href="/columns/opensource-alt.html">细分专题</a></p>
+        <p><a href="/blog.html">专栏</a></p>
+        <p><a href="/business.html">商务合作</a></p>
+        <p><a href="/privacy.html">隐私政策</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span>
+      <span class="footer-tip">温馨提示：软件均来自第三方官方站点，下载前请认准官网，注意系统兼容与数据安全。</span>
+    </div>
+  </footer>
+
+  <button id="toTop" class="to-top" aria-label="回到顶部" hidden>↑</button>
+
+  <script>document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());</script>
+  <script defer src="../assets/js/theme.min.js"></script>
+  <script defer src="../assets/js/sw-register.js"></script>
+  <script defer src="../assets/js/pwa-install.min.js"></script>
+  <script async src="https://cn.vercount.one/js"></script>
+</body>
+</html>

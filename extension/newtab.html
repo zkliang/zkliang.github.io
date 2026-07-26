@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FreeNav · 新标签页</title>
+  <link rel="stylesheet" href="newtab.css" />
+</head>
+<body>
+  <header class="nt-header">
+    <div class="nt-brand"><span class="nt-mark">◆</span> FreeNav</div>
+    <div class="nt-search">
+      <span class="nt-search-ico" aria-hidden="true">🔍</span>
+      <input id="ntSearch" type="search" placeholder="搜索免费 / 开源软件，或回车在 FreeNav 搜索" autocomplete="off" />
+    </div>
+    <a class="nt-open" id="ntOpen" href="https://freenav.net/" target="_blank" rel="noopener noreferrer">打开完整站点 ↗</a>
+  </header>
+
+  <nav class="nt-chips" id="ntChips" aria-label="按场景筛选"></nav>
+
+  <main class="nt-main">
+    <div class="nt-grid" id="ntGrid"></div>
+    <p class="nt-empty" id="ntEmpty" hidden>没有匹配的工具，换个关键词试试。</p>
+  </main>
+
+  <footer class="nt-footer">
+    <span>FreeNav · 精选免费 / 开源软件导航</span>
+    <span class="nt-tip">数据来自 freenav.net · 隐私友好、无追踪</span>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="newtab.js"></script>
+</body>
+</html>

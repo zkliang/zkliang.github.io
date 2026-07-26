@@ -55,6 +55,9 @@
         <a href="/#categories">全部分类</a>
         <a href="/#columns">细分专题</a>
         <a href="/tools.html">全部工具</a>
+        <a href="/blog.html">专栏</a>
+        <a href="#favs" id="navFavs">⭐ 收藏 <span id="favCount" class="nav-badge"></span></a>
+        <button class="nav-customize" id="navCustomize" type="button" aria-label="定制我的首页">✨ 定制</button>
         <a href="/privacy.html">隐私</a>
         <a href="/business.html">商务合作</a>
         <a href="/disclaimer.html">免责</a>
@@ -97,6 +100,22 @@
       </section>
 
   </main>
+
+  <!-- 兴趣定制面板（收藏/个性化首页） -->
+  <div class="interest-panel" id="interestPanel" hidden>
+    <div class="interest-backdrop" id="interestBackdrop"></div>
+    <div class="interest-panel-inner" role="dialog" aria-label="定制首页">
+      <div class="interest-head">
+        <div>
+          <p class="interest-title">定制你的首页</p>
+          <p class="interest-sub">选择你常用的场景，首页会优先推荐相关工具（仅存本机，不追踪）。</p>
+        </div>
+        <button class="interest-close" id="interestClose" type="button" aria-label="关闭">×</button>
+      </div>
+      <div class="interest-chips" id="interestChips"></div>
+      <button class="interest-reset" id="interestReset" type="button">重置定制</button>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="container footer-inner">

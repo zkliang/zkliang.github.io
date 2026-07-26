@@ -37,6 +37,19 @@
   var PRICE_RANK = { "开源": 0, "免费": 1, "免费增值": 2 };
   var PRICE_LABEL = { "开源": "开源", "免费": "免费", "免费增值": "免费增值" };
 
+  // ── 收藏 & 个性化（localStorage，纯前端，无追踪）──
+  var LS_FAV = "freenav:favs";
+  var LS_INT = "freenav:interests";
+  function _getArr(key) { try { return JSON.parse(localStorage.getItem(key)) || []; } catch (e) { return []; } }
+  function _setArr(key, a) { try { localStorage.setItem(key, JSON.stringify(a)); } catch (e) {} }
+  function getFavs() { return _getArr(LS_FAV); }
+  function isFav(id) { return getFavs().indexOf(id) !== -1; }
+  function toggleFav(id) { var a = getFavs(); var i = a.indexOf(id); if (i === -1) a.push(id); else a.splice(i, 1); _setArr(LS_FAV, a); return i === -1; }
+  function getInterests() { return _getArr(LS_INT); }
+  function isInterest(k) { return getInterests().indexOf(k) !== -1; }
+  function toggleInterest(k) { var a = getInterests(); var i = a.indexOf(k); if (i === -1) a.push(k); else a.splice(i, 1); _setArr(LS_INT, a); return i === -1; }
+  function getFavItems() { var f = getFavs(); return SOFTWARE.filter(function (i) { return f.indexOf(i.id) !== -1; }); }
+
   // 分类色彩映射（差异化视觉系统的数据源）
   var CAT_COLOR = {};
   CATEGORIES.forEach(function (c) { CAT_COLOR[c.key] = c; });
@@ -156,6 +169,7 @@
           logoHTML(item.name, item.url) +
           '<div class="card-name-wrap"><span class="card-name">' + esc(item.name) + "</span>" +
           '<span class="badge ' + priceClass + '">' + esc(PRICE_LABEL[item.pricing] || item.pricing) + "</span>" + licHTML + "</div>" +
+          '<button class="fav-btn' + (isFav(item.id) ? " is-fav" : "") + '" data-fav="' + esc(item.id) + '" type="button" aria-pressed="' + (isFav(item.id) ? "true" : "false") + '" aria-label="收藏 ' + esc(item.name) + '" title="收藏">★</button>' +
         "</div>" +
         '<p class="card-desc">' + esc(item.desc) + "</p>" +
         '<div class="badges">' + badges + "</div>" +
@@ -201,6 +215,7 @@
       return;
     }
 
+    if (view === "favs") { renderFavs(); return; }
     if (view === "home") { renderHome(); return; }
     renderCategory(activeCat);
   }
@@ -226,6 +241,34 @@
            "</section>";
   }
 
+  // 首页个性化区块：我的收藏 + 为你推荐（按关注场景）
+  function buildPersonalSections() {
+    var out = "";
+    var favs = getFavItems();
+    if (favs.length) {
+      out += '<section class="home-sec home-favs">' +
+        '<div class="sec-head"><span class="section-eyebrow">Your picks</span>' +
+          '<h2 class="section-title">⭐ 我的收藏 <a class="home-link" href="#favs" data-view="favs">查看全部 ' + favs.length + ' 款 →</a></h2></div>' +
+        '<div class="grid">' + favs.slice(0, 8).map(cardHTML).join("") + "</div></section>";
+    }
+    var interests = getInterests();
+    if (interests.length) {
+      var intSet = {}; interests.forEach(function (k) { intSet[k] = 1; });
+      var pool = SOFTWARE.filter(function (i) { return intSet[i.cat]; });
+      pool.sort(function (a, b) {
+        var fa = isFav(a.id) ? 0 : 1, fb = isFav(b.id) ? 0 : 1;
+        if (fa !== fb) return fa - fb;
+        return interests.indexOf(a.cat) - interests.indexOf(b.cat);
+      });
+      out += '<section class="home-sec home-rec">' +
+        '<div class="sec-head"><span class="section-eyebrow">For you</span>' +
+          '<h2 class="section-title">✨ 为你推荐 <a class="home-link" href="#" id="editInterests">调整关注 →</a></h2>' +
+          '<p class="section-sub">根据你关注的场景精选，随时点首页 ✨ 定制修改。</p></div>' +
+        '<div class="grid">' + pool.slice(0, 8).map(cardHTML).join("") + "</div></section>";
+    }
+    return out;
+  }
+
   // 首页：功能分类卡片 + 细分专题卡片（都不直接显示软件，点击各自进入）
   function renderHome() {
     platformFilter = "all";
@@ -235,7 +278,7 @@
     if (searchCount) searchCount.textContent = SOFTWARE.length + " 款";
     if (resultMeta) resultMeta.textContent = "";
     var cols = window.FREENAV_COLUMNS || [];
-    listRoot.innerHTML =
+    listRoot.innerHTML = buildPersonalSections() +
       '<section class="home-sec">' +
         '<div class="sec-head"><span class="section-eyebrow">Browse by function</span>' +
           '<h2 class="section-title">按功能找软件</h2>' +
@@ -332,6 +375,24 @@
       render();
       if (listSection) window.scrollTo({ top: listSection.offsetTop - 70, behavior: "smooth" });
     });
+  }
+
+  function renderFavs() {
+    var items = getFavItems();
+    if (listToolbar) listToolbar.hidden = false;
+    if (backBtn) backBtn.hidden = false;
+    if (sortLabel) sortLabel.hidden = true;
+    if (searchCount) searchCount.textContent = items.length + " 款";
+    if (resultMeta) resultMeta.textContent = "⭐ 我的收藏 · 共 " + items.length + " 款";
+    if (spy) { spy.disconnect(); spy = null; }
+    if (sideCatsEl) sideCatsEl.querySelectorAll(".side-cat.active").forEach(function (n) { n.classList.remove("active"); });
+    if (!items.length) {
+      listRoot.innerHTML = '<div class="empty-state" style="display:block"><p>还没有收藏任何工具。</p>' +
+        '<p>回到首页逛逛，点卡片右上角的 ★ 即可收藏——下次打开还在，换设备也丢不了（存在本机浏览器）。</p></div>';
+      return;
+    }
+    listRoot.innerHTML = '<div class="grid">' + items.map(cardHTML).join("") + "</div>";
+    bindLogos(listRoot);
   }
 
   function renderResults(arr, meta) {
@@ -478,6 +539,17 @@
 
   // 事件：内容区功能卡片点击 → 进入该分类视图
   listRoot.addEventListener("click", function (e) {
+    var favBtn = e.target.closest("button[data-fav]");
+    if (favBtn) {
+      var id = favBtn.getAttribute("data-fav");
+      var added = toggleFav(id);
+      favBtn.classList.toggle("is-fav", added);
+      favBtn.setAttribute("aria-pressed", added ? "true" : "false");
+      favBtn.title = added ? "已收藏" : "收藏";
+      updateFavCount();
+      if (view === "favs") render();   // 在收藏视图取消收藏时实时移除
+      return;
+    }
     var btn = e.target.closest("button[data-cat]");
     if (!btn) return;
     setCatView(btn.getAttribute("data-cat"));
@@ -496,7 +568,13 @@
     query = searchInput.value;
     if (searchClear) searchClear.classList.toggle("show", query.length > 0);
     if (searchTimer) clearTimeout(searchTimer);
-    searchTimer = setTimeout(render, 180);
+    searchTimer = setTimeout(function () {
+      render();
+      var p = new URLSearchParams(location.search);
+      if (query.trim()) p.set("q", query.trim()); else p.delete("q");
+      var qs = p.toString();
+      history.replaceState(null, "", qs ? "?" + qs : location.pathname);
+    }, 180);
   });
 
   if (searchClear) searchClear.addEventListener("click", function () {
@@ -533,12 +611,73 @@
     if (listSection) window.scrollTo({ top: listSection.offsetTop - 70, behavior: "smooth" });
   });
 
+  // ── 收藏计数 / 兴趣定制 ──
+  function updateFavCount() {
+    var el = document.getElementById("favCount");
+    if (!el) return;
+    var n = getFavs().length;
+    el.textContent = n ? String(n) : "";
+    el.classList.toggle("is-empty", !n);
+  }
+  function renderInterestChips() {
+    var el = document.getElementById("interestChips");
+    if (!el) return;
+    el.innerHTML = CATEGORIES.map(function (c) {
+      return '<button class="int-chip' + (isInterest(c.key) ? " active" : "") + '" data-int="' + c.key + '" style="' + catStyle(c.key) + '" type="button">' + c.icon + " " + esc(c.label) + "</button>";
+    }).join("");
+  }
+  function openInterestPanel() { var p = document.getElementById("interestPanel"); if (p) p.hidden = false; renderInterestChips(); }
+  function closeInterestPanel() { var p = document.getElementById("interestPanel"); if (p) p.hidden = true; }
+
+  // 文档级点击：首页「查看全部收藏」「调整关注」
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[data-view="favs"]');
+    if (a) {
+      e.preventDefault();
+      view = "favs"; query = ""; if (searchInput) searchInput.value = "";
+      if (searchClear) searchClear.classList.remove("show");
+      render(); window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    if (e.target.closest("#editInterests")) { e.preventDefault(); openInterestPanel(); }
+  });
+
+  // 导航「收藏」链接
+  var navFavs = document.getElementById("navFavs");
+  if (navFavs) navFavs.addEventListener("click", function (e) {
+    e.preventDefault();
+    view = "favs"; query = ""; if (searchInput) searchInput.value = "";
+    if (searchClear) searchClear.classList.remove("show");
+    render(); window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  // 定制按钮 / 关闭 / 重置 / 兴趣 chip
+  var customizeBtn = document.getElementById("navCustomize");
+  if (customizeBtn) customizeBtn.addEventListener("click", openInterestPanel);
+  var interestClose = document.getElementById("interestClose");
+  if (interestClose) interestClose.addEventListener("click", closeInterestPanel);
+  var interestBackdrop = document.getElementById("interestBackdrop");
+  if (interestBackdrop) interestBackdrop.addEventListener("click", closeInterestPanel);
+  var interestReset = document.getElementById("interestReset");
+  if (interestReset) interestReset.addEventListener("click", function () { _setArr(LS_INT, []); renderInterestChips(); renderHome(); });
+  var interestChips = document.getElementById("interestChips");
+  if (interestChips) interestChips.addEventListener("click", function (e) {
+    var chip = e.target.closest("button[data-int]"); if (!chip) return;
+    toggleInterest(chip.getAttribute("data-int"));
+    chip.classList.toggle("active");
+    renderHome();
+  });
+
   // 初始化
   if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();
   renderTabs();
   renderSideCats();
   renderSideCols();
   renderHeroTags();
+  // URL 可分享搜索：?q= 读取（扩展/分享链接直达搜索结果）
+  var _params = new URLSearchParams(location.search);
+  var _q0 = _params.get("q");
+  if (_q0) { query = _q0; if (searchInput) { searchInput.value = _q0; if (searchClear) searchClear.classList.add("show"); } }
+  updateFavCount();
   render();
   injectJSONLD();
 
