@@ -38,7 +38,7 @@
         <a href="/#categories">全部分类</a>
         <a href="/#columns">细分专题</a>
         <a href="/tools.html">全部工具</a>
-        <a href="/blog.html" class="active">专栏</a>
+        <a href="/blog.html" class="active nav-cta">专栏</a>
         <a href="#favs" id="navFavs">⭐ 收藏 <span id="favCount" class="nav-badge"></span></a>
         <button class="nav-customize" id="navCustomize" type="button" aria-label="定制我的首页">✨ 定制</button>
         <a href="/privacy.html">隐私</a>
@@ -89,6 +89,18 @@
         <p>如果这篇让你点了头，欢迎去 <a href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer">GitHub 投个稿</a>，或者邮件告诉我你想看的下一个专题。下一期，我打算写《2026 年我私藏的 8 个开源替代，帮你告别全家桶》——你也可以在 <a href="/blog.html">专栏</a> 里蹲着。</p>
       </div>
 
+      <div class="share-bar">
+        <span class="share-label">📤 分享 / 分发这篇</span>
+        <div class="share-btns">
+          <button data-share="link" type="button">复制链接</button>
+          <button data-share="wechat" type="button">微信文案</button>
+          <button data-share="weibo" type="button">微博文案</button>
+          <button data-share="xiaohongshu" type="button">小红书/知乎文案</button>
+          <button data-share="native" type="button">系统分享</button>
+        </div>
+        <p class="share-tip">按平台分别生成文案：严格平台（小红书 / 知乎 / 头条 / B站）不含外链、不导流变现、不贬竞品，靠「搜 FreeNav」建立品牌记忆。</p>
+      </div>
+
       <div class="post-end">
         <p class="post-end-title">发现错漏，或有想看的专题？</p>
         <div class="post-end-actions">
@@ -133,6 +145,7 @@
   <script defer src="../assets/js/theme.min.js"></script>
   <script defer src="../assets/js/sw-register.js"></script>
   <script defer src="../assets/js/pwa-install.min.js"></script>
+  <script defer src="../assets/js/share.min.js"></script>
   <script async src="https://cn.vercount.one/js"></script>
 </body>
 </html>
