@@ -1152,10 +1152,12 @@ body { overflow-x: clip; max-width: 100%; }
 .post-card-title { font-size: 18px; font-weight: 800; margin: 0 0 8px; line-height: 1.4; }
 .post-card-meta { font-size: 13px; color: var(--faint); margin: 0 0 8px; }
 .post-card-excerpt { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.6; }
-.blog-more { margin-top: 22px; color: var(--faint); font-size: 14px; }
+.blog-more { margin-top: 26px; color: var(--faint); font-size: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .blog-more-chip {
-  display: inline-block; margin: 0 8px 6px 0; padding: 4px 12px;
-  border: 1px solid var(--border); border-radius: 999px; font-size: 13px; color: var(--muted);
+  display: inline-flex; align-items: center; padding: 5px 13px;
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--border));
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--muted);
 }
 .submit-wrap { margin: 44px 0; }
 .submit-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; }
