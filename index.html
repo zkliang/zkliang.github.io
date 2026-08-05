@@ -39,6 +39,37 @@
 
   <link rel="stylesheet" href="assets/css/style.min.css" />
   <link rel="stylesheet" href="assets/css/widgets.css" />
+
+  <!-- 结构化数据：帮助百度/Google 更好理解站点，提升收录与富媒体展示 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "FreeNav",
+        "url": "https://freenav.net",
+        "description": "精选 98 款真正免费、开源的软件，覆盖系统、办公、设计、开发、影音等场景，并提供开源替代、装机清单等专题。",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://freenav.net/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "FreeNav",
+        "url": "https://freenav.net",
+        "logo": "https://freenav.net/icon-512.png"
+      }
+    ]
+  }
+  </script>
+
+  <!-- 百度搜索资源平台站点验证：在 ziyuan.baidu.com 添加 freenav.net 后，
+       把官方给的 <meta name="baidu-site-verification" content="XXXX"> 替换下面这行注释即可 -->
+  <!-- <meta name="baidu-site-verification" content="REPLACE_WITH_BAIDU_CODE" /> -->
+
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主内容</a>
@@ -199,5 +230,15 @@
   <script defer src="assets/js/sw-register.js"></script>
   <script defer src="assets/js/pwa-install.min.js"></script>
   <script async src="https://cn.vercount.one/js"></script>
+  <!-- ============ 百度联盟广告位（接 union.baidu.com 审核通过后粘贴官方代码） ============
+       投放建议：
+       1) 首页信息流中部（高曝光）：把下方占位注释替换为官方 <script>/<ins> 代码
+       2) 工具/文章详情页底部（高相关）：在对应页面相同位置粘贴
+       官方代码形如：
+         <script charset="utf-8" src="https://cpro.baidustatic.com/cpro/ui/cm.js"></script>
+         <ins class="bdslot" data-ad-client="你的ID" data-ad-slot="你的广告位ID"></ins>
+       前提：需先通过百度联盟审核（要求 ICP 备案 + 内容质量 + 一定访问量） -->
+  <!-- BAIDU_UNION_SLOT_END -->
+
 </body>
 </html>
