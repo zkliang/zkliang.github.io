@@ -25,6 +25,7 @@ window.FREENAV_CATEGORIES = [
   { key: "security", label: "安全 & 隐私", icon: "🔒", color: "#2dd4bf", color2: "#0d9488", desc: "密码管理与数据加密，守护你的身份与隐私安全。", guide: "通讯与文件用 Signal，密码统一交给 Bitwarden，浏览防追踪装 uBlock Origin，磁盘加密用 VeraCrypt。" },
   { key: "study",    label: "学习 & 教育", icon: "📚", color: "#fb923c", color2: "#ea580c", desc: "记忆卡片、文献管理、公版书与公开课，免费获取优质学习资源。", guide: "背单词用 Anki，管文献用 Zotero，看书去 Project Gutenberg，系统课刷 Khan Academy / Coursera。" },
   { key: "mobile",   label: "移动 & 安卓", icon: "📱", color: "#4ade80", color2: "#16a34a", desc: "开源安卓商店与无广告客户端，为移动设备提供清爽体验。", guide: "应用商店用 F-Droid，无广告 YouTube 用 NewPipe，离线地图用 Organic Maps，手机电脑互联用 KDE Connect。" },
+  { key: "aichina", label: "国产 AI", icon: "🀄", color: "#f59e0b", color2: "#d97706", desc: "豆包、通义、DeepSeek、可灵……国产大模型与 AI 应用全景，按场景挑不踩坑。", guide: "综合对话选豆包 / 通义 / DeepSeek；写代码用通义灵码 / CodeGeeX；出图出视频看即梦 / 可灵；手机自带小艺 / 小布 / 蓝心随叫随到。" },
 ];
 
 window.FREENAV_SOFTWARE = [
@@ -113,6 +114,33 @@ window.FREENAV_SOFTWARE = [
   { id: "sdwebui", name: "Stable Diffusion WebUI", cat: "ai", desc: "最流行的本地文生图界面（AUTOMATIC1111）。", url: "https://github.com/AUTOMATIC1111/stable-diffusion-webui", pricing: "开源", platforms: ["Win", "Linux"], tags: ["文生图", "本地"] },
   { id: "pinokio", name: "Pinokio", cat: "ai", desc: "一键安装 AI 应用商店，ComfyUI/模型自动配环境。", url: "https://pinokio.computer/", pricing: "免费", platforms: ["Win", "Mac", "Linux"], tags: ["AI商店", "一键"] },
   { id: "localai", name: "LocalAI", cat: "ai", desc: "自托管 OpenAI 兼容推理服务，消费级硬件跑大模型。", url: "https://localai.io/", pricing: "开源", platforms: ["Win", "Mac", "Linux", "自托管"], tags: ["推理", "API"] },
+  // ───────── 国产 AI（云端 SaaS）─────────
+{ id: "doubao", name: "豆包", cat: "aichina", desc: "字节跳动出品，国民级 AI 助手，聊天、写作、识图全能，免费可用。", url: "https://www.doubao.com/", pricing: "免费增值", platforms: ["Web", "Android", "iOS"], tags: ["综合助手", "字节", "聊天"] },
+{ id: "qwen", name: "通义千问", cat: "aichina", desc: "阿里通义系列大模型，企业办公与长文本处理强，开源权重可自部署。", url: "https://tongyi.aliyun.com/", pricing: "免费增值", platforms: ["Web", "Android", "iOS"], tags: ["综合助手", "阿里", "长文本"] },
+{ id: "deepseek", name: "DeepSeek", cat: "aichina", desc: "深度求索出品，推理与代码能力突出，开源模型广受开发者欢迎。", url: "https://www.deepseek.com/", pricing: "免费增值", platforms: ["Web", "Android", "iOS"], tags: ["综合助手", "推理", "代码"] },
+{ id: "yuanbao", name: "元宝", cat: "aichina", desc: "腾讯 AI 助手，深度集成微信生态，办公与文档处理顺手。", url: "https://yuanbao.tencent.com/", pricing: "免费增值", platforms: ["Web", "Android", "iOS"], tags: ["综合助手", "腾讯", "微信"] },
+{ id: "kimi", name: "Kimi", cat: "aichina", desc: "月之暗面出品，超长文本处理见长，读论文长文档好帮手。", url: "https://kimi.moonshot.cn/", pricing: "免费增值", platforms: ["Web", "Android", "iOS"], tags: ["综合助手", "长文本", "文档"] },
+{ id: "jimeng", name: "即梦 AI", cat: "aichina", desc: "字节出品，文生图与文生视频，创意设计与短视频素材好用。", url: "https://jimeng.jianying.com/", pricing: "免费增值", platforms: ["Web", "Android", "iOS"], tags: ["文生图", "文生视频", "字节"] },
+{ id: "keling", name: "可灵", cat: "aichina", desc: "快手出品，高质量视频生成，单次可生成较长时长片段。", url: "https://klingai.kuaishou.com/", pricing: "免费增值", platforms: ["Web"], tags: ["视频生成", "快手"] },
+{ id: "seedance", name: "Seedance", cat: "aichina", desc: "字节视频生成模型，单次可生成较长视频，动作连贯。", url: "https://www.bytedance.com/", pricing: "免费增值", platforms: ["Web"], tags: ["视频生成", "字节"] },
+{ id: "minimax", name: "MiniMax", cat: "aichina", desc: "对话与视频生成模型，开源视频模型性价比高。", url: "https://www.minimax.io/", pricing: "免费增值", platforms: ["Web", "Android", "iOS"], tags: ["视频生成", "对话", "开源"] },
+{ id: "seedream", name: "Seedream", cat: "aichina", desc: "字节多模态图像生成，出图质量与中文理解兼顾。", url: "https://www.bytedance.com/", pricing: "免费增值", platforms: ["Web"], tags: ["文生图", "字节"] },
+{ id: "tongyilingma", name: "通义灵码", cat: "aichina", desc: "阿里出品 AI 编程助手，IDE 内补全与生成，企业协作强。", url: "https://tongyi.aliyun.com/lingma", pricing: "免费增值", platforms: ["Win", "Mac", "Linux"], tags: ["编程", "阿里", "IDE"] },
+{ id: "codegeex", name: "CodeGeeX", cat: "aichina", desc: "智谱 AI 出品代码模型，多语言补全与单测生成。", url: "https://codegeex.cn/", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["编程", "智谱", "补全"] },
+{ id: "raccoon", name: "Raccoon", cat: "aichina", desc: "商汤出品代码大模型，企业级代码生成与审查。", url: "https://www.sensetime.com/", pricing: "免费增值", platforms: ["Win", "Mac", "Linux"], tags: ["编程", "商汤"] },
+{ id: "comate", name: "百度 Comate", cat: "aichina", desc: "百度出品 AI 编程助手，接文心大模型，补全与解释。", url: "https://comate.baidu.com/", pricing: "免费增值", platforms: ["Win", "Mac", "Linux"], tags: ["编程", "百度"] },
+{ id: "trae", name: "Trae", cat: "aichina", desc: "字节出品 AI IDE，对话式生成与修改代码，中文体验好。", url: "https://www.trae.cn/", pricing: "免费增值", platforms: ["Win", "Mac"], tags: ["IDE", "字节", "AI编程"] },
+{ id: "xingliu", name: "星流 Agent", cat: "aichina", desc: "LiblibAI 出品一站式中文 AI 设计，模型广场与智能体工作流。", url: "https://www.liblib.ai/", pricing: "免费增值", platforms: ["Web"], tags: ["设计", "AI绘画", "中文"] },
+{ id: "ardot", name: "Ardot", cat: "aichina", desc: "腾讯出品，一句话生成可编辑 UI 设计稿，产品原型提速。", url: "https://www.tencent.com/", pricing: "免费增值", platforms: ["Web"], tags: ["设计", "UI", "腾讯"] },
+{ id: "miora", name: "Miora", cat: "aichina", desc: "腾讯创意智能体，多模态生成与创意辅助。", url: "https://www.tencent.com/", pricing: "免费增值", platforms: ["Web"], tags: ["设计", "创意", "腾讯"] },
+{ id: "codebuddy", name: "CodeBuddy", cat: "aichina", desc: "腾讯云 AI 代码助手，补全、生成与智能问答。", url: "https://copilot.tencent.com/", pricing: "免费增值", platforms: ["Win", "Mac", "Linux"], tags: ["编程", "腾讯云"] },
+{ id: "workbuddy", name: "WorkBuddy", cat: "aichina", desc: "腾讯出品 AI 助手与智能体平台，文件处理与自动化任务。", url: "https://www.workbuddy.ai/", pricing: "免费增值", platforms: ["Win", "Mac", "Linux", "Web"], tags: ["AI助手", "智能体", "腾讯"] },
+{ id: "doubaoaixue", name: "豆包爱学", cat: "aichina", desc: "字节教育向 AI，学科答疑与学习辅导。", url: "https://www.doubao.com/", pricing: "免费增值", platforms: ["Web", "Android", "iOS"], tags: ["教育", "字节", "答疑"] },
+{ id: "afu", name: "蚂蚁阿福", cat: "aichina", desc: "蚂蚁出品专业财税 AI，票据与报税辅助。", url: "https://www.antgroup.com/", pricing: "免费增值", platforms: ["Web"], tags: ["财税", "蚂蚁", "企业"] },
+{ id: "xiaoyi", name: "华为小艺", cat: "aichina", desc: "华为设备内置 AI 助手，系统级调度与跨设备协同。", url: "https://consumer.huawei.com/cn/", pricing: "免费", platforms: ["Android"], tags: ["手机AI", "华为"] },
+{ id: "xiaobu", name: "OPPO 小布", cat: "aichina", desc: "OPPO 设备内置 AI 助手，对话与设备控制。", url: "https://www.oppo.com/cn/", pricing: "免费", platforms: ["Android"], tags: ["手机AI", "OPPO"] },
+{ id: "lanxin", name: "vivo 蓝心", cat: "aichina", desc: "vivo 设备内置 AI 助手，蓝心大模型驱动。", url: "https://www.vivo.com.cn/", pricing: "免费", platforms: ["Android"], tags: ["手机AI", "vivo"] },
+
 
   // ───────── 安全隐私 ─────────
   { id: "signal", name: "Signal", cat: "security", desc: "端到端加密通讯，默认收集极少、安全标杆。", url: "https://signal.org/", pricing: "开源", platforms: ["Win", "Mac", "Linux", "Android", "iOS"], tags: ["加密通讯", "隐私"] },
