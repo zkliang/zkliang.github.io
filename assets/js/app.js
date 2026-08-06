@@ -60,7 +60,7 @@
   }
 
   // 专题 → 分类色映射（用于专题卡片着色）
-  var COL_COLOR = { "opensource-alt": "security", "newbie": "office", "design": "design", "local-ai": "ai" };
+  var COL_COLOR = { "opensource-alt": "security", "newbie": "office", "design": "design", "local-ai": "ai", "domestic-ai": "aichina" };
 
   // 首页「为什么选择 FreeNav」信任区（文案真实，不夸大）
   var WHY = [
@@ -286,10 +286,10 @@
         '<div class="cat-grid">' + CATEGORIES.map(catCardHTML).join("") + "</div>" +
       "</section>" +
       affiliateBannerHTML() +
-      '<section class="home-sec">' +
+      '<section class="home-sec" id="columns">' +
         '<div class="sec-head"><span class="section-eyebrow">Deep dives</span>' +
           '<h2 class="section-title">细分专题</h2>' +
-          '<p class="section-sub">不想被选择困难症折磨？这 <b>4 个专题</b>自带对比表与深度测评，直接告诉你该用哪个。</p></div>' +
+          '<p class="section-sub">不想被选择困难症折磨？这 <b>' + cols.length + ' 个专题</b>自带对比表与深度测评，直接告诉你该用哪个。</p></div>' +
         '<div class="col-grid">' + cols.map(colCardHTML).join("") + "</div>" +
       "</section>" +
       '<section class="home-sec">' +
@@ -326,7 +326,7 @@
     }).join("");
     var sideCols = (window.FREENAV_COLUMNS || []).map(function (x) {
       var st = catStyle(COL_COLOR[x.key] || "security");
-      return '<a class="cat-side-link" href="columns/' + x.key + '.html" style="' + st + '">' +
+      return '<a class="cat-side-link" href="/columns/' + x.key + '.html" style="' + st + '">' +
         '<span class="csl-ico">' + x.icon + "</span>" +
         '<span class="csl-name">' + esc(x.title) + "</span></a>";
     }).join("");
@@ -428,7 +428,7 @@
 
   function colCardHTML(c) {
     var style = catStyle(COL_COLOR[c.key] || "security");
-    return '<a class="col-card" href="columns/' + c.key + '.html" style="' + style + '">' +
+    return '<a class="col-card" href="/columns/' + c.key + '.html" style="' + style + '">' +
       (c.axis ? '<span class="col-axis">' + esc(c.axis) + "</span>" : "") +
       '<span class="cat-card-ico">' + c.icon + "</span>" +
       '<span class="cat-card-name">' + esc(c.title) + "</span>" +

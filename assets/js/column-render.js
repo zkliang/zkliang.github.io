@@ -167,7 +167,7 @@
     var sideNav = document.getElementById("sideNav");
     if (sideNav) {
       var curKey = col.key;
-      var COL_COLOR_MAP = { "opensource-alt": "security", "newbie": "office", "design": "design", "local-ai": "ai" };
+      var COL_COLOR_MAP = { "opensource-alt": "security", "newbie": "office", "design": "design", "local-ai": "ai", "domestic-ai": "aichina" };
       function countOf(key) { return SOFTWARE.filter(function (s) { return s.cat === key; }).length; }
       var catLinks = CATS.map(function (c) {
         return '<a class="side-cat" href="/#cat-' + c.key + '" data-cat="' + c.key + '" style="' + catStyle(c.key) + '">' +
@@ -178,7 +178,7 @@
       var colLinks = COLS.map(function (c) {
         var st = catStyle(COL_COLOR_MAP[c.key] || "security");
         var isActive = c.key === curKey;
-        return '<a class="side-col' + (isActive ? " active" : "") + '" href="columns/' + c.key + '.html" style="' + st + '">' +
+        return '<a class="side-col' + (isActive ? " active" : "") + '" href="/columns/' + c.key + '.html" style="' + st + '">' +
           '<span class="side-ico">' + c.icon + "</span>" +
           '<span class="side-label">' + esc(c.title) + "</span></a>";
       }).join("");
