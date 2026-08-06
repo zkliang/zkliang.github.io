@@ -169,8 +169,14 @@
       var curKey = col.key;
       var COL_COLOR_MAP = { "opensource-alt": "security", "newbie": "office", "design": "design", "local-ai": "ai", "domestic-ai": "aichina" };
       function countOf(key) { return SOFTWARE.filter(function (s) { return s.cat === key; }).length; }
+      // 分类→栏目 映射：能对应到专题栏目的分类，点一下直达栏目页；其余仍回首页按分类筛选
+      var CAT_TO_COL = { design: "design", ai: "local-ai", aichina: "domestic-ai" };
       var catLinks = CATS.map(function (c) {
-        return '<a class="side-cat" href="/#cat-' + c.key + '" data-cat="' + c.key + '" style="' + catStyle(c.key) + '">' +
+        var colKey = CAT_TO_COL[c.key];
+        var href = colKey ? "/columns/" + colKey + ".html" : "/?cat=" + c.key;
+        return '<a class="side-cat' + (colKey ? " side-cat-col" : "") + '" href="' + href + '" data-cat="' + c.key + '"' +
+          (colKey ? ' title="查看「' + (COLS.filter(function (x) { return x.key === colKey; })[0] || {}).title + '」栏目"' : ' title="在首页查看「' + esc(c.label) + '」全部软件"') +
+          ' style="' + catStyle(c.key) + '">' +
           '<span class="side-ico">' + c.icon + "</span>" +
           '<span class="side-label">' + esc(c.label) + "</span>" +
           '<span class="side-count">' + countOf(c.key) + "</span></a>";

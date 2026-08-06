@@ -677,6 +677,12 @@
   var _params = new URLSearchParams(location.search);
   var _q0 = _params.get("q");
   if (_q0) { query = _q0; if (searchInput) { searchInput.value = _q0; if (searchClear) searchClear.classList.add("show"); } }
+  // URL 可分享分类：?cat= 读取（从栏目页侧边栏跳回首页时自动筛好该分类）
+  var _cat0 = _params.get("cat");
+  if (_cat0) {
+    var _validCat = CATEGORIES.filter(function (x) { return x.key === _cat0; })[0];
+    if (_validCat) setCatView(_cat0);
+  }
   updateFavCount();
   render();
   injectJSONLD();
