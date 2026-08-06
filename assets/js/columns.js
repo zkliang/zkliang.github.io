@@ -277,7 +277,7 @@ window.FREENAV_COLUMNS = [
     axis: "按场景选型",
     tagline: "豆包、通义、DeepSeek、可灵……国产大模型与 AI 应用全景",
     intro: "国外 ChatGPT / Midjourney 要好用，但国产 AI 在中文、微信生态、本地化上更顺手，而且大多免费可用。这一栏按「综合对话 / 写代码 / 出图出视频 / 手机自带」梳理主流国产 AI，帮你按场景挑，不被营销数字带偏。",
-    picks: { ids: ["doubao", "qwen", "deepseek", "yuanbao", "kimi", "jimeng", "keling", "seedance", "minimax", "seedream", "tongyilingma", "codegeex", "raccoon", "comate", "trae", "xingliu", "ardot", "miora", "codebuddy", "workbuddy", "doubaoaixue", "afu", "xiaoyi", "xiaobu", "lanxin"] },
+    picks: { ids: ["doubao", "qwen", "deepseek", "yuanbao", "kimi", "jimeng", "keling", "seedance", "minimax", "seedream", "tongyilingma", "codegeex", "raccoon", "comate", "trae", "xingliu", "ardot", "miora", "codebuddy", "workbuddy", "doubaoaixue", "afu", "xiaoyi", "xiaobu", "lanxin", "marvis", "qclaw", "qoderwork", "qwenwork", "lovekey"] },
     compare: [
       { name: "豆包", vs: "ChatGPT", price: "免费可用", platforms: "Web·App", note: "字节出品，国民级助手，聊天写作识图全能" },
       { name: "通义千问", vs: "ChatGPT", price: "免费可用", platforms: "Web·App", note: "阿里通义系列，长文本与企业办公强" },

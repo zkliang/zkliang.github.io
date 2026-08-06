@@ -140,6 +140,11 @@ window.FREENAV_SOFTWARE = [
 { id: "xiaoyi", name: "华为小艺", cat: "aichina", desc: "华为设备内置 AI 助手，系统级调度与跨设备协同。", url: "https://consumer.huawei.com/cn/", pricing: "免费", platforms: ["Android"], tags: ["手机AI", "华为"] },
 { id: "xiaobu", name: "OPPO 小布", cat: "aichina", desc: "OPPO 设备内置 AI 助手，对话与设备控制。", url: "https://www.oppo.com/cn/", pricing: "免费", platforms: ["Android"], tags: ["手机AI", "OPPO"] },
 { id: "lanxin", name: "vivo 蓝心", cat: "aichina", desc: "vivo 设备内置 AI 助手，蓝心大模型驱动。", url: "https://www.vivo.com.cn/", pricing: "免费", platforms: ["Android"], tags: ["手机AI", "vivo"] },
+{ id: "marvis", name: "Marvis", cat: "aichina", desc: "腾讯操作系统级 AI 助手，一句话操控电脑、跨端远程、隐私模式数据不上云。", url: "https://marvis.qq.com/", pricing: "免费增值", platforms: ["Win", "Mac", "iOS", "Android"], tags: ["操作系统", "腾讯", "Agent", "跨端"] },
+{ id: "qclaw", name: "QClaw", cat: "aichina", desc: "腾讯电脑管家出品微信远程办公 AI 助手，手机发指令、电脑自动干活。", url: "https://qclaw.qq.com/", pricing: "免费增值", platforms: ["Win", "Mac"], tags: ["微信", "腾讯", "Agent", "办公"] },
+{ id: "qoderwork", name: "QoderWork", cat: "aichina", desc: "阿里 Qoder 出品的桌面 AI Agent，自然语言自主执行多步任务。", url: "https://qoderwork.org/", pricing: "免费增值", platforms: ["Mac", "桌面"], tags: ["阿里", "Agent", "桌面", "自动化"] },
+{ id: "qwenwork", name: "千问办公", cat: "aichina", desc: "阿里企业级 Agent 产品（QwenWork），整合桌面/云端/协同 Agent。", url: "https://qwenwork.cn/", pricing: "免费增值", platforms: ["Web", "Win", "Mac"], tags: ["阿里", "企业", "Agent", "办公"] },
+{ id: "lovekey", name: "LoveKey", cat: "aichina", desc: "AI 社交聊天键盘，分析语境一键高情商回复，恋爱社交场景。", url: "https://www.lovekeyboard.com/", pricing: "免费增值", platforms: ["Android", "iOS"], tags: ["社交", "键盘", "聊天", "AI回复"] },
 
 
   // ───────── 安全隐私 ─────────
