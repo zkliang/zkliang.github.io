@@ -9,6 +9,79 @@
  */
 window.FREENAV_COLUMNS = [
   {
+    key: "domestic-ai",
+    title: "国产 AI 软件清单",
+    icon: "🀄",
+    axis: "按场景选型",
+    tagline: "豆包、通义、DeepSeek、可灵……国产大模型与 AI 应用全景",
+    intro: "国外 ChatGPT / Midjourney 要好用，但国产 AI 在中文、微信生态、本地化上更顺手，而且大多免费可用。这一栏按「综合对话 / 写代码 / 出图出视频 / 手机自带」梳理主流国产 AI，帮你按场景挑，不被营销数字带偏。",
+    picks: { ids: ["doubao", "qwen", "deepseek", "yuanbao", "kimi", "jimeng", "keling", "seedance", "minimax", "seedream", "tongyilingma", "codegeex", "raccoon", "comate", "trae", "xingliu", "ardot", "miora", "codebuddy", "workbuddy", "doubaoaixue", "afu", "xiaoyi", "xiaobu", "lanxin", "marvis", "qclaw", "qoderwork", "qwenwork", "lovekey"] },
+    compare: [
+      { name: "豆包", vs: "ChatGPT", price: "免费可用", platforms: "Web·App", note: "字节出品，国民级助手，聊天写作识图全能" },
+      { name: "通义千问", vs: "ChatGPT", price: "免费可用", platforms: "Web·App", note: "阿里通义系列，长文本与企业办公强" },
+      { name: "DeepSeek", vs: "GPT-4o", price: "免费可用", platforms: "Web·App", note: "推理与代码突出，开源模型受开发者欢迎" },
+      { name: "元宝", vs: "文心一言", price: "免费可用", platforms: "Web·App", note: "腾讯出品，深度集成微信生态" },
+      { name: "Kimi", vs: "长文本工具", price: "免费可用", platforms: "Web·App", note: "超长文本处理见长，读论文长文档好用" },
+      { name: "即梦 AI", vs: "Midjourney", price: "免费增值", platforms: "Web·App", note: "字节文生图/视频，创意素材好上手" },
+      { name: "可灵", vs: "Runway", price: "免费增值", platforms: "Web", note: "快手高质量视频生成，单次时长更长" },
+      { name: "通义灵码", vs: "GitHub Copilot", price: "免费增值", platforms: "Win·Mac·Linux", note: "阿里 IDE 内补全生成，企业协作强" },
+      { name: "CodeGeeX", vs: "Copilot", price: "开源免费", platforms: "Win·Mac·Linux", note: "智谱代码模型，多语言补全与单测" },
+      { name: "Trae", vs: "Cursor", price: "免费增值", platforms: "Win·Mac", note: "字节 AI IDE，对话式改代码，中文体验好" },
+      { name: "星流 Agent", vs: "Liblib", price: "免费增值", platforms: "Web", note: "LiblibAI 一站式中文 AI 设计，模型广场" },
+      { name: "华为小艺", vs: "Siri", price: "设备自带", platforms: "Android(华为)", note: "系统级调度，跨设备协同" },
+      { name: "OPPO 小布", vs: "Siri", price: "设备自带", platforms: "Android(OPPO)", note: "对话与设备控制" },
+      { name: "vivo 蓝心", vs: "Siri", price: "设备自带", platforms: "Android(vivo)", note: "蓝心大模型驱动的随身助手" }
+    ],
+    reviews: [
+      {
+        title: "国产 AI 怎么选：按场景一张表",
+        rating: 4.5,
+        difficulty: "简单",
+        bestFor: "想用国产 AI 但被几十个名字搞晕的普通用户",
+        notFor: "需要云端严格数据合规、要私有化部署的企业（看「本地 AI 工具箱」）",
+        pros: [
+          "中文与本地化体验普遍优于海外同类",
+          "大多免费可用，先试再决定要不要开会员",
+          "微信/抖音等生态打通，分享协作顺手"
+        ],
+        cons: [
+          "聊天内容默认上云，敏感信息注意脱敏",
+          "各产品会员权益差异大，开之前看清"
+        ],
+        verdict: "综合聊天选豆包 / 通义 / DeepSeek；写代码用通义灵码 / CodeGeeX / Trae；出图出视频看即梦 / 可灵；手机自带的小艺 / 小布 / 蓝心随叫随到，不用单独装。",
+        body:
+          "<p>国产 AI 很多，按用途分四类就不会乱：</p>" +
+          "<h4>综合对话</h4><p><strong>豆包</strong>（字节，国民级、全能）、<strong>通义千问</strong>（阿里，长文本与办公）、<strong>DeepSeek</strong>（推理/代码强、开源）、<strong>元宝</strong>（腾讯，微信生态）、<strong>Kimi</strong>（超长文档）。日常聊天随便挑一个先用，都免费。</p>" +
+          "<h4>写代码</h4><p>IDE 内补全用 <strong>通义灵码</strong> / <strong>CodeGeeX</strong>；想要对话式 AI IDE 用 <strong>Trae</strong>（字节）或 <strong>百度 Comate</strong>。学生和个人大多免费。</p>" +
+          "<h4>出图 / 出视频</h4><p>文生图与短视频素材用 <strong>即梦</strong>（字节）；高质量视频用 <strong>可灵</strong>（快手）；字节还有 <strong>Seedance</strong> / <strong>Seedream</strong> 模型。设计向中文工作流看 <strong>星流 Agent</strong>（LiblibAI）。</p>" +
+          "<h4>手机自带</h4><p>华为 <strong>小艺</strong>、OPPO <strong>小布</strong>、vivo <strong>蓝心</strong> 已内置在系统里，叫一声就能用，不用单独下载。</p>" +
+          "<p class='review-tip'>别被「月活第一」「市占率最高」这类数字带偏——对你来说，顺手、免费、中文好才是关键。先挑一个最常用的场景试起来。</p>"
+      },
+      {
+        title: "用国产 AI 的几个避坑提醒",
+        rating: 4.3,
+        difficulty: "简单",
+        bestFor: "准备长期把国产 AI 当生产力工具的人",
+        notFor: "只想偶尔玩一下的人（直接注册用即可，不用看）",
+        pros: [
+          "免费额度通常够日常",
+          "中文语料与本地案例更贴合"
+        ],
+        cons: [
+          "会员自动续费要注意取消",
+          "上传的文档/聊天可能用于模型优化（看各平台隐私条款）"
+        ],
+        verdict: "把国产 AI 当「顺手的免费工具」而不是「必须付费的刚需」，敏感内容脱敏后再上传，会员按需开、记得关自动续费。",
+        body:
+          "<h4>① 隐私：聊天和文档默认上云</h4><p>云端 AI 的对话、上传的文件一般会传到厂商服务器。涉密、个人隐私、客户资料先脱敏再问；介意的话转去看「本地 AI 工具箱」，把模型跑在自己电脑上。</p>" +
+          "<h4>② 会员：看清权益再开</h4><p>免费额度对日常大多够用。真要开会员，看清楚「高速通道 / 更强模型 / 更长上下文」具体给什么，顺手关掉自动续费。</p>" +
+          "<h4>③ 选型：别追营销数字</h4><p>「第一」「最强」是市场话术。按你的真实场景挑：写作用综合助手，写代码用编程助手，做图做视频用对应生成工具，手机直接喊自带助手。</p>" +
+          "<h4>④ 互补：本地 + 云端搭配</h4><p>敏感/私密的事用本地开源工具（见本站「本地 AI 工具箱」），日常便利用国产云端 AI——两者不冲突，按需切换。</p>" +
+          "<p class='review-tip'>FreeNav 不追踪你、不卖你的聊天记录。上面这些工具都链官网，注册与使用请自行判断隐私条款。</p>"
+      }
+    ]
+  },
+  {
     key: "opensource-alt",
     title: "开源 / 免费替代库",
     icon: "♻️",
@@ -267,79 +340,6 @@ window.FREENAV_COLUMNS = [
           "<h4>文生图</h4><p><strong>Stable Diffusion WebUI（AUTOMATIC1111）</strong> 生态最大、教程最多；<strong>ComfyUI</strong> 节点式、可复现工作流，适合进阶。两者都吃独显。</p>" +
           "<h4>知识库 / RAG</h4><p><strong>AnythingLLM</strong> 开箱即用，把文档喂给本地模型问答；配合 <strong>Obsidian</strong> 做个人知识管理。</p>" +
           "<p class='review-tip'>新手路线：先 Ollama + Open WebUI 跑通对话 → 再按需要加 Whisper（转写）/ AnythingLLM（知识库）→ 有独显再上 SD WebUI 出图。别一上来全装，按需扩展。</p>"
-      }
-    ]
-  },
-  {
-    key: "domestic-ai",
-    title: "国产 AI 软件清单",
-    icon: "🀄",
-    axis: "按场景选型",
-    tagline: "豆包、通义、DeepSeek、可灵……国产大模型与 AI 应用全景",
-    intro: "国外 ChatGPT / Midjourney 要好用，但国产 AI 在中文、微信生态、本地化上更顺手，而且大多免费可用。这一栏按「综合对话 / 写代码 / 出图出视频 / 手机自带」梳理主流国产 AI，帮你按场景挑，不被营销数字带偏。",
-    picks: { ids: ["doubao", "qwen", "deepseek", "yuanbao", "kimi", "jimeng", "keling", "seedance", "minimax", "seedream", "tongyilingma", "codegeex", "raccoon", "comate", "trae", "xingliu", "ardot", "miora", "codebuddy", "workbuddy", "doubaoaixue", "afu", "xiaoyi", "xiaobu", "lanxin", "marvis", "qclaw", "qoderwork", "qwenwork", "lovekey"] },
-    compare: [
-      { name: "豆包", vs: "ChatGPT", price: "免费可用", platforms: "Web·App", note: "字节出品，国民级助手，聊天写作识图全能" },
-      { name: "通义千问", vs: "ChatGPT", price: "免费可用", platforms: "Web·App", note: "阿里通义系列，长文本与企业办公强" },
-      { name: "DeepSeek", vs: "GPT-4o", price: "免费可用", platforms: "Web·App", note: "推理与代码突出，开源模型受开发者欢迎" },
-      { name: "元宝", vs: "文心一言", price: "免费可用", platforms: "Web·App", note: "腾讯出品，深度集成微信生态" },
-      { name: "Kimi", vs: "长文本工具", price: "免费可用", platforms: "Web·App", note: "超长文本处理见长，读论文长文档好用" },
-      { name: "即梦 AI", vs: "Midjourney", price: "免费增值", platforms: "Web·App", note: "字节文生图/视频，创意素材好上手" },
-      { name: "可灵", vs: "Runway", price: "免费增值", platforms: "Web", note: "快手高质量视频生成，单次时长更长" },
-      { name: "通义灵码", vs: "GitHub Copilot", price: "免费增值", platforms: "Win·Mac·Linux", note: "阿里 IDE 内补全生成，企业协作强" },
-      { name: "CodeGeeX", vs: "Copilot", price: "开源免费", platforms: "Win·Mac·Linux", note: "智谱代码模型，多语言补全与单测" },
-      { name: "Trae", vs: "Cursor", price: "免费增值", platforms: "Win·Mac", note: "字节 AI IDE，对话式改代码，中文体验好" },
-      { name: "星流 Agent", vs: "Liblib", price: "免费增值", platforms: "Web", note: "LiblibAI 一站式中文 AI 设计，模型广场" },
-      { name: "华为小艺", vs: "Siri", price: "设备自带", platforms: "Android(华为)", note: "系统级调度，跨设备协同" },
-      { name: "OPPO 小布", vs: "Siri", price: "设备自带", platforms: "Android(OPPO)", note: "对话与设备控制" },
-      { name: "vivo 蓝心", vs: "Siri", price: "设备自带", platforms: "Android(vivo)", note: "蓝心大模型驱动的随身助手" }
-    ],
-    reviews: [
-      {
-        title: "国产 AI 怎么选：按场景一张表",
-        rating: 4.5,
-        difficulty: "简单",
-        bestFor: "想用国产 AI 但被几十个名字搞晕的普通用户",
-        notFor: "需要云端严格数据合规、要私有化部署的企业（看「本地 AI 工具箱」）",
-        pros: [
-          "中文与本地化体验普遍优于海外同类",
-          "大多免费可用，先试再决定要不要开会员",
-          "微信/抖音等生态打通，分享协作顺手"
-        ],
-        cons: [
-          "聊天内容默认上云，敏感信息注意脱敏",
-          "各产品会员权益差异大，开之前看清"
-        ],
-        verdict: "综合聊天选豆包 / 通义 / DeepSeek；写代码用通义灵码 / CodeGeeX / Trae；出图出视频看即梦 / 可灵；手机自带的小艺 / 小布 / 蓝心随叫随到，不用单独装。",
-        body:
-          "<p>国产 AI 很多，按用途分四类就不会乱：</p>" +
-          "<h4>综合对话</h4><p><strong>豆包</strong>（字节，国民级、全能）、<strong>通义千问</strong>（阿里，长文本与办公）、<strong>DeepSeek</strong>（推理/代码强、开源）、<strong>元宝</strong>（腾讯，微信生态）、<strong>Kimi</strong>（超长文档）。日常聊天随便挑一个先用，都免费。</p>" +
-          "<h4>写代码</h4><p>IDE 内补全用 <strong>通义灵码</strong> / <strong>CodeGeeX</strong>；想要对话式 AI IDE 用 <strong>Trae</strong>（字节）或 <strong>百度 Comate</strong>。学生和个人大多免费。</p>" +
-          "<h4>出图 / 出视频</h4><p>文生图与短视频素材用 <strong>即梦</strong>（字节）；高质量视频用 <strong>可灵</strong>（快手）；字节还有 <strong>Seedance</strong> / <strong>Seedream</strong> 模型。设计向中文工作流看 <strong>星流 Agent</strong>（LiblibAI）。</p>" +
-          "<h4>手机自带</h4><p>华为 <strong>小艺</strong>、OPPO <strong>小布</strong>、vivo <strong>蓝心</strong> 已内置在系统里，叫一声就能用，不用单独下载。</p>" +
-          "<p class='review-tip'>别被「月活第一」「市占率最高」这类数字带偏——对你来说，顺手、免费、中文好才是关键。先挑一个最常用的场景试起来。</p>"
-      },
-      {
-        title: "用国产 AI 的几个避坑提醒",
-        rating: 4.3,
-        difficulty: "简单",
-        bestFor: "准备长期把国产 AI 当生产力工具的人",
-        notFor: "只想偶尔玩一下的人（直接注册用即可，不用看）",
-        pros: [
-          "免费额度通常够日常",
-          "中文语料与本地案例更贴合"
-        ],
-        cons: [
-          "会员自动续费要注意取消",
-          "上传的文档/聊天可能用于模型优化（看各平台隐私条款）"
-        ],
-        verdict: "把国产 AI 当「顺手的免费工具」而不是「必须付费的刚需」，敏感内容脱敏后再上传，会员按需开、记得关自动续费。",
-        body:
-          "<h4>① 隐私：聊天和文档默认上云</h4><p>云端 AI 的对话、上传的文件一般会传到厂商服务器。涉密、个人隐私、客户资料先脱敏再问；介意的话转去看「本地 AI 工具箱」，把模型跑在自己电脑上。</p>" +
-          "<h4>② 会员：看清权益再开</h4><p>免费额度对日常大多够用。真要开会员，看清楚「高速通道 / 更强模型 / 更长上下文」具体给什么，顺手关掉自动续费。</p>" +
-          "<h4>③ 选型：别追营销数字</h4><p>「第一」「最强」是市场话术。按你的真实场景挑：写作用综合助手，写代码用编程助手，做图做视频用对应生成工具，手机直接喊自带助手。</p>" +
-          "<h4>④ 互补：本地 + 云端搭配</h4><p>敏感/私密的事用本地开源工具（见本站「本地 AI 工具箱」），日常便利用国产云端 AI——两者不冲突，按需切换。</p>" +
-          "<p class='review-tip'>FreeNav 不追踪你、不卖你的聊天记录。上面这些工具都链官网，注册与使用请自行判断隐私条款。</p>"
       }
     ]
   }
