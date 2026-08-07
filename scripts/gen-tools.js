@@ -243,7 +243,7 @@ function indexPage(basePath = "", linkBase = "tools/") {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>全部免费 / 开源软件 - FreeNav（${SOFTWARE.length} 款）</title>
-  <meta name="description" content="FreeNav 汇总 ${SOFTWARE.length} 款经过验证的免费与开源软件，按 10 大使用场景分类，每款均附官网、授权与同类替代。" />
+  <meta name="description" content="FreeNav 汇总 ${SOFTWARE.length} 款经过验证的免费与开源软件，按 11 大使用场景分类，每款均附官网、授权与同类替代。" />
   <link rel="canonical" href="${SITE}/tools.html" />
   <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
@@ -286,7 +286,7 @@ function indexPage(basePath = "", linkBase = "tools/") {
   </header>
   <main class="container tools-index" id="top">
     <h1>全部免费 / 开源软件</h1>
-    <p class="lead">FreeNav 目前收录 <b>${SOFTWARE.length}</b> 款经过验证的免费与开源软件，按 10 大使用场景分类。点开任意工具查看官网、授权方式与同类替代。</p>
+    <p class="lead">FreeNav 目前收录 <b>${SOFTWARE.length}</b> 款经过验证的免费与开源软件，按 11 大使用场景分类。点开任意工具查看官网、授权方式与同类替代。</p>
     ${blocks}
   </main>
   <footer class="site-footer">
