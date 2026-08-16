@@ -14,3 +14,9 @@ Thumbs.db
 # Python
 __pycache__/
 *.pyc
+
+# 内部运营文档（不随开源仓库公开发布）
+_运营/
+FreeNav_分发文案_精简版.md
+manual.pdf
+.playwright-cli/
