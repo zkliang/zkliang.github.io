@@ -5,7 +5,7 @@
     <link>https://freenav.net</link>
     <description>精选 128 款真正免费、开源的软件，覆盖 11 大场景，附 5 个差异化专题对比表与测评。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 07 Aug 2026 14:02:58 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2026 06:36:37 GMT</lastBuildDate>
     <atom:link href="https://freenav.net/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>免费软件下载站导航：如何避开捆绑流氓，只装干净软件</title>
@@ -57,11 +57,81 @@
       <description>备忘录记密码、所有网站用同一个密码——这两种习惯哪一个更危险？FreeNav 挑了 3 款经得起审计的开源密码管理器，告诉你哪款适合谁、踩了哪些坑。</description>
     </item>
     <item>
+      <title>安卓开源 App 推荐：用 F-Droid 替掉应用商店的广告</title>
+      <link>https://freenav.net/articles/android-foss-apps.html</link>
+      <guid isPermaLink="true">https://freenav.net/articles/android-foss-apps.html</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+      <description>应用商店里一半是广告和开屏？这篇推荐 F-Droid 上的开源安卓 App：NewPipe、AntennaPod、Organic Maps 等，无追踪、无广告、干净好用。</description>
+    </item>
+    <item>
+      <title>免费下载工具对比：下大文件、磁力、网盘哪个顺手</title>
+      <link>https://freenav.net/articles/download-manager-free.html</link>
+      <guid isPermaLink="true">https://freenav.net/articles/download-manager-free.html</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+      <description>浏览器自带下载经常断、限速、不支持磁力？这篇对比 aria2、Motrix、Free Download Manager、qBittorrent 等开源下载工具，按场景挑。</description>
+    </item>
+    <item>
+      <title>免费修图软件：GIMP、Krita、Inkscape 分别能干什么</title>
+      <link>https://freenav.net/articles/free-photo-editor.html</link>
+      <guid isPermaLink="true">https://freenav.net/articles/free-photo-editor.html</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+      <description>修图一定要买 Photoshop？这篇讲 GIMP、Krita、Inkscape、Darktable 等开源工具各自擅长什么，从位图、绘画到矢量、RAW 全都有免费替代。</description>
+    </item>
+    <item>
+      <title>免费录屏软件横评：OBS 之外还有哪些干净选择</title>
+      <link>https://freenav.net/articles/free-screen-recorder.html</link>
+      <guid isPermaLink="true">https://freenav.net/articles/free-screen-recorder.html</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+      <description>想录教程、录会议、录游戏，又不想装带水印的试用版？这篇对比 OBS、ShareX、Shotcut、HandBrake 等真正免费的开源录屏方案。</description>
+    </item>
+    <item>
+      <title>免费视频播放器横评：VLC、MPV、PotPlayer 怎么选</title>
+      <link>https://freenav.net/articles/free-video-player.html</link>
+      <guid isPermaLink="true">https://freenav.net/articles/free-video-player.html</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+      <description>电脑自带播放器这也不支持那也卡？这篇对比 VLC、MPV、PotPlayer、Kodi 等开源/免费播放器，几乎什么格式都能直接放。</description>
+    </item>
+    <item>
+      <title>本地大模型怎么跑起来：新手从 0 装好第一个开源 AI</title>
+      <link>https://freenav.net/articles/local-ai-beginner.html</link>
+      <guid isPermaLink="true">https://freenav.net/articles/local-ai-beginner.html</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+      <description>不想把聊天记录交给大厂？这篇手把手讲怎么在自家电脑跑开源大模型——从 LM Studio、AnythingLLM 到 Open WebUI，附 FreeNav 的本地 AI 专题。</description>
+    </item>
+    <item>
+      <title>开源笔记软件横评：Obsidian、Logseq、Joplin 谁更适合你</title>
+      <link>https://freenav.net/articles/open-source-notes.html</link>
+      <guid isPermaLink="true">https://freenav.net/articles/open-source-notes.html</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+      <description>备忘录记完就丢、Notion 一断网就废？这篇对比 Obsidian、Logseq、Joplin、Standard Notes 等开源笔记，数据自己掌握、不怕厂商跑路。</description>
+    </item>
+    <item>
+      <title>免费 PDF 工具：合并、压缩、转格式，别再交会员</title>
+      <link>https://freenav.net/articles/pdf-free-tools.html</link>
+      <guid isPermaLink="true">https://freenav.net/articles/pdf-free-tools.html</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+      <description>合并个 PDF、转个 Word 也要开会员？这篇讲用 StirlingPDF 等开源工具在浏览器本地搞定，文件不出本机，隐私更稳。</description>
+    </item>
+    <item>
+      <title>免费隐私保护工具：从广告拦截到端到端加密</title>
+      <link>https://freenav.net/articles/privacy-tools-free.html</link>
+      <guid isPermaLink="true">https://freenav.net/articles/privacy-tools-free.html</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+      <description>上网被追踪、被弹窗、被偷数据？这篇按「浏览—系统—通讯」三层，列清 uBlock Origin、Portmaster、Veracrypt、Signal 等开源隐私工具怎么搭。</description>
+    </item>
+    <item>
       <title>我做了个不追踪你的「软件界豆瓣」：FreeNav 是怎么挑软件的</title>
       <link>https://freenav.net/articles/why-freenav.html</link>
       <guid isPermaLink="true">https://freenav.net/articles/why-freenav.html</guid>
       <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
       <description>一个不懂代码的人，为什么动手搭了个软件导航站？它和全家桶、资讯流到底哪里不一样，以及 FreeNav 挑软件的 3 条硬标准。</description>
+    </item>
+    <item>
+      <title>2026 最好用的免费解压软件：7-Zip 之外还有哪些干净选择</title>
+      <link>https://freenav.net/articles/windows-free-unzip.html</link>
+      <guid isPermaLink="true">https://freenav.net/articles/windows-free-unzip.html</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+      <description>装个压缩包却蹦出捆绑？这篇对比 7-Zip 等真正免费、开源、无广告的解压软件，告诉你哪款适合谁、怎么避开假下载按钮。</description>
     </item>
   </channel>
 </rss>
