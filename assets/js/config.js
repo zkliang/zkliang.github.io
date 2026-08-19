@@ -24,5 +24,11 @@ window.FREENAV_AFFILIATE = [
     note: "FreeNav 域名即在阿里云注册；新用户首单优惠力度大，佣金直接结算到支付宝 / 国内银行卡",
     url: "https://www.aliyun.com/minisite/goods?userCode=dmi4rtzf",
     tag: "广告"
+  },
+  {
+    name: "硅基流动 SiliconFlow · AI 算力",
+    note: "国产大模型 API 平台（DeepSeek / Qwen 等），新用户注册即送额度；用邀请码 dg8NmW 你与好友各得代金券",
+    url: "https://cloud.siliconflow.cn/sj/dg8NmW",
+    tag: "广告"
   }
 ];
