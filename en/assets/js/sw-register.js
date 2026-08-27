@@ -3,7 +3,7 @@
 (function () {
   if (!("serviceWorker" in navigator)) return;
   var register = function () {
-    navigator.serviceWorker.register("/sw.js").catch(function () {
+    navigator.serviceWorker.register("/en/sw.js").catch(function () {
       // 注册失败不影响正常浏览
     });
   };
