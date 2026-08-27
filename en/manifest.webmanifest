@@ -1,0 +1,19 @@
+{
+  "name": "FreeNav · Free & Open-Source Software",
+  "short_name": "FreeNav",
+  "description": "128 truly free, open-source apps across 11 categories, with comparison tables and hands-on reviews.",
+  "start_url": "/en/",
+  "scope": "/en/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "categories": ["utilities", "reference", "education"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

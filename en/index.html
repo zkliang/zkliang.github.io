@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>FreeNav · Free & Open-Source Software | 128 hand-picked tools</title>
+  <meta name="description" content="FreeNav curates 128 truly free, open-source apps across 11 categories — System, Office, Design, Development, Media, Download, AI, Security, Learning, Mobile and China-made AI. Includes deep-dive columns with comparison tables and hands-on reviews to help you choose." />
+  <meta name="keywords" content="free software,open source software,software directory,free alternatives,Adobe alternatives,Notion alternatives,open source list,open source alternatives,starter pack" />
+  <meta name="author" content="FreeNav" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cn.vercount.one; style-src 'self' 'unsafe-inline'; img-src 'self' https://icons.duckduckgo.com https://www.google.com data:; connect-src 'self' https://cn.vercount.one https://events.vercount.one; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="x-ua-compatible" content="IE=edge" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://freenav.net/en/" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FreeNav" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="FreeNav · Free & Open-Source Software" />
+  <meta property="og:description" content="128 truly free, open-source apps across 11 categories, with comparison tables and hands-on reviews." />
+  <meta property="og:url" content="https://freenav.net/en/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://freenav.net/en/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FreeNav · Free & Open-Source Software" />
+  <meta name="twitter:description" content="128 truly free, open-source apps across 11 categories, with comparison tables and hands-on reviews." />
+
+
+
+  <link rel="stylesheet" href="assets/css/style.min.css" />
+  <link rel="stylesheet" href="assets/css/widgets.css" />
+
+  <!-- Structured data: helps search engines understand the site -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "FreeNav",
+        "url": "https://freenav.net/en/",
+        "description": "A curated directory of 128 truly free, open-source apps across 11 categories, with deep-dive columns, comparison tables and hands-on reviews.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://freenav.net/en/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "FreeNav",
+        "url": "https://freenav.net/en/",
+        "logo": "https://freenav.net/en/icon-512.png"
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="scroll-progress" id="progress"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/en/">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">FreeNav</span>
+        <span class="brand-sub">Free & Open-Source Software</span>
+      </a>
+      <nav class="top-nav">
+        <a href="/en/#categories">All Categories</a>
+        <a href="/en/#columns">Deep Dives</a>
+        <a href="/tools.html">All Tools</a>
+        <a href="/en/columns/opensource-alt.html" class="nav-cta">Columns</a>
+        <a href="#favs" id="navFavs">⭐ Favorites <span id="favCount" class="nav-badge"></span></a>
+        <button class="nav-customize" id="navCustomize" type="button" aria-label="Customize my home">✨ Customize</button>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/business.html">Partnership</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="content" id="main">
+      <!-- Hero: title + search only -->
+      <section class="hero">
+        <h1 class="hero-title">Discover truly free, open-source<br /><span class="hl">quality software</span>.</h1>
+        <p class="hero-sub">FreeNav hand-picks 128 free, open-source apps across 11 everyday scenarios, plus 6 deep-dive columns with comparison tables and in-depth reviews.</p>
+        <div class="search-wrap">
+          <span class="search-ico" aria-hidden="true">🔍</span>
+          <input id="search" type="search" placeholder="Search software or tags" autocomplete="off" />
+          <button class="search-clear" id="searchClear" type="button" aria-label="Clear search">×</button>
+          <span class="search-count" id="searchCount"></span>
+        </div>
+        <div class="hero-tags" id="heroTags"></div>
+      </section>
+
+      <!-- View: home = function cards grid; category click = that category's apps -->
+      <section class="list" id="list">
+        <div class="list-toolbar" id="listToolbar">
+          <button class="back-btn" id="backBtn" type="button" hidden>← All Categories</button>
+          <span id="resultMeta"></span>
+          <label class="sort" id="sortLabel">Sort
+            <select id="sort">
+              <option value="default">Default</option>
+              <option value="name">Name A–Z</option>
+              <option value="open">Open Source first</option>
+            </select>
+          </label>
+        </div>
+        <div id="listRoot"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <p>No matching software found. Try different keywords.</p>
+        </div>
+      </section>
+
+      <section class="home-column" id="homeColumn">
+        <div class="container">
+          <div class="home-col-inner">
+            <div class="home-col-badge">📝 Columns · Weekly</div>
+            <h3 class="home-col-title">A human-curated directory of free & open-source software: one deep review every week</h3>
+            <p class="home-col-excerpt">No news aggregation, no rankings. We only subtract — explaining the genuinely useful free / open-source tools clearly, comparing them fairly, and helping you decide. Updated every week; open it and you get the latest piece.</p>
+            <a class="home-col-go" href="/en/columns/opensource-alt.html">Read the latest column →</a>
+          </div>
+        </div>
+      </section>
+
+  </main>
+
+  <!-- Interest / personalization panel (favorites & custom home) -->
+  <div class="interest-panel" id="interestPanel" hidden>
+    <div class="interest-backdrop" id="interestBackdrop"></div>
+    <div class="interest-panel-inner" role="dialog" aria-label="Customize home">
+      <div class="interest-head">
+        <div>
+          <p class="interest-title">Customize your home</p>
+          <p class="interest-sub">Pick the scenarios you use often, and the home page will recommend related tools first (stored only on your device, no tracking).</p>
+        </div>
+        <button class="interest-close" id="interestClose" type="button" aria-label="Close">×</button>
+      </div>
+      <div class="interest-chips" id="interestChips"></div>
+      <button class="interest-reset" id="interestReset" type="button">Reset</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+
+        <p class="footer-note">A curated directory of free / open-source software. Inspired by and sourced from <a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a> (Free Media Heck Yeah).</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">About this site</p>
+        <p class="footer-note">This is a navigation index. We do not host or sell any software. All links point to the software's official site or open-source repository.</p>
+        <p class="footer-note">Some links are <strong>affiliate / sponsored</strong> links. They may earn us a commission, but <strong>never at an extra cost to you</strong>. See the <a href="/disclaimer.html">Disclaimer</a>.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">Links</p>
+        <p><a href="/tools.html">All Tools</a></p>
+        <p><a href="/en/columns/opensource-alt.html">Deep Dives</a></p>
+        <p><a href="/rss.xml">RSS</a></p>
+        <p><a href="/shop.html">Free Site Guide →</a></p>
+        <p><a href="/ascii-video/">Video to ASCII Art →</a></p>
+
+        <p><a href="/business.html">Partnership</a></p>
+        <p><a href="/privacy.html">Privacy Policy</a></p>
+        <p><a href="/terms.html">Terms of Service</a></p>
+        <p><a href="/disclaimer.html">Disclaimer</a></p>
+  </div>
+  </div>
+
+  
+<div class="container footer-donate">
+<details class="donate-box" open>
+  <summary class="donate-summary">
+    <span class="donate-title">☕ Buy the author a coffee</span>
+  </summary>
+  <div class="donate-body">
+    <p class="donate-hint">If FreeNav has saved you time hunting for software, scan a code to buy a coffee 💛 <strong>it does not affect any feature</strong>, yet it is the biggest motivation to keep this site updated.</p>
+    <div class="donate-actions">
+      <button class="donate-link" data-qr="wechat" type="button">WeChat</button>
+      <button class="donate-link" data-qr="alipay" type="button">Alipay</button>
+    </div>
+  </div>
+  <p class="donate-use">Every bit of support goes to server and domain renewals, keeping FreeNav free, open-source and tracker-free.</p>
+  <div class="donate-qr-panel">
+    <figure class="donate-qr" data-qr="wechat"><img src="assets/img/wechat-donate.jpg" alt="WeChat QR code" loading="lazy"><figcaption>Scan with WeChat</figcaption></figure>
+    <figure class="donate-qr" data-qr="alipay"><img src="assets/img/alipay-donate.jpg" alt="Alipay QR code" loading="lazy"><figcaption>Scan with Alipay</figcaption></figure>
+  </div>
+</details>
+</div>
+<div class="container footer-bottom">
+      <span>© <span id="year"></span> FreeNav · Free & Open-Source Software Directory</span>
+      <span class="footer-tip">Tip: all software comes from third-party official sites. Verify the official site before downloading, and mind system compatibility and data safety.</span>
+    </div>
+      <div class="footer-stat">
+      <span id="busuanzi_container_site_pv" style="display:none">Total views <span id="busuanzi_value_site_pv"></span></span>
+      <span id="busuanzi_container_site_uv" style="display:none"> | Visitors <span id="busuanzi_value_site_uv"></span></span>
+    </div>
+  </footer>
+
+  <button id="toTop" class="to-top" aria-label="Back to top" hidden>↑</button>
+
+  <script defer src="assets/js/config.min.js"></script>
+  <script defer src="assets/js/data.min.js"></script>
+  <script defer src="assets/js/icons.min.js"></script>
+  <script defer src="assets/js/columns.min.js"></script>
+  <script defer src="assets/js/licenses.min.js"></script>
+  <script defer src="assets/js/app.min.js"></script>
+  <script defer src="assets/js/theme.min.js"></script>
+  <script defer src="assets/js/widgets.js"></script>
+  <script defer src="assets/js/sw-register.js"></script>
+  <script defer src="assets/js/pwa-install.min.js"></script>
+  <script async src="https://cn.vercount.one/js"></script>
+
+</body>
+</html>
