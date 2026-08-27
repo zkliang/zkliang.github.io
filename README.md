@@ -1,79 +1,84 @@
-# FreeNav · 人工精选的免费开源软件导航
+# FreeNav · Free & Open-Source Software Directory
 
-一个**人工精选、深度测评、帮你做决定**的免费 / 开源软件导航站。零追踪、纯静态、可白嫖部署。
+**A human-curated directory of genuinely free, open-source software — with comparison tables and hands-on reviews to help you decide.**
 
-- 收录 **128 款**经过筛选的免费 / 开源软件，覆盖 **11 大使用场景**，另有 **6 个深度专题**（对比表 + 测评）；
-- 中文优先 · 开源优先 · **无追踪**（不含任何追踪脚本，仅有匿名访问计数）；
-- 纯静态（HTML / CSS / Vanilla JS，无框架、无后端、无数据库）；
-- 可托管到 GitHub Pages / Cloudflare Pages / Vercel / 任意静态空间；
-- 以 **MIT 协议**开源，欢迎 Fork 与二次开发。
+> 🔗 Live sites: **English** → [freenav.net/en](https://freenav.net/en/) ｜ **中文** → [freenav.net](https://freenav.net/)
 
-## 开源协议
+FreeNav is not an ad-stuffed aggregator. We do one thing: present genuinely free, open-source tools, cleanly — no cracks, no subscriptions, no tracking.
 
-[./LICENSE](./LICENSE)（MIT）——可自由使用、修改、分发（含商业用途），仅需保留版权声明。
+## ✨ What you get
 
-## 目录结构
+- **128 hand-picked apps** across **11 categories** — System, Office & Docs, Design, Development, Media, Download, AI, Security & Privacy, Learning, Mobile, and China-made AI.
+- **Deep-dive columns** — e.g. [Open-Source / Free Alternatives](https://freenav.net/en/columns/opensource-alt.html) — with scored comparison tables, difficulty ratings, pros/cons and real hands-on reviews.
+- **Zero tracking** — no analytics scripts, no fingerprinting. Only anonymous visit counts (self-hosted, privacy-friendly).
+- **Search & filters** — instant search, category views, platform filtering, favorites ⭐ and a personalized home page (stored only in your browser).
+- **PWA ready** — installable on Android / iOS / desktop, works offline via Service Worker.
+- **Dark / light themes**, RSS feed, sitemap, fully static & fast.
+
+## 🚀 Try it
+
+| | URL |
+|---|---|
+| 🌍 English | https://freenav.net/en/ |
+| 🇨🇳 中文 | https://freenav.net/ |
+| 📝 Column example | https://freenav.net/en/columns/opensource-alt.html |
+
+## 🧱 Tech stack
+
+Pure static site — **HTML + CSS + Vanilla JS**. No framework, no backend, no database, no build step required to run.
+
+- Single source of truth: `assets/js/data.min.js` (software data), `assets/js/columns.min.js` (column data)
+- Rendering: `app.min.js` (home/search/categories) + `column-render.min.js` (column pages)
+- Hosted on **GitHub Pages** with custom domain (`CNAME` → freenav.net)
+- Deployable to GitHub Pages / Cloudflare Pages / Vercel / any static host
+
+## 📁 Structure (simplified)
 
 ```
 FreeNav/
-├─ index.html           # 主页（Hero + 搜索 + 分类 + 工具列表 + 专栏带 + 页脚）
-├─ tools.html           # 全量工具列表（按场景分类）
-├─ tools/index.html     # 同上的目录入口版本
-├─ blog.html            # 专栏（深度测评文章入口 + 投稿）
-├─ columns/             # 6 个专题静态页
-├─ articles/            # 专栏文章
-├─ business.html        # 商务 / 赞助合作
-├─ shop.html            # 赞助推荐位
-├─ privacy.html / terms.html / disclaimer.html / 404.html
+├─ index.html            # Home (hero + search + categories + tools + columns + footer)
+├─ tools.html            # Full tool list
+├─ blog.html             # Deep-dive columns & articles index
+├─ columns/              # Column pages
+├─ articles/             # Long-form reviews & guides
+├─ en/                   # 🌍 English version (self-contained)
 ├─ assets/
-│  ├─ css/style.css (+ style.min.css)
-│  └─ js/               # 单一数据源 + 渲染
-│     ├─ config.min.js   # 站点配置（域名入口等）
-│     ├─ data.min.js     # ★ 软件数据（核心数据源）
-│     ├─ columns.min.js  # 专题数据
-│     ├─ app.min.js      # 渲染 / 搜索 / 筛选
-│     ├─ theme.min.js    # 主题
-│     ├─ column-render.min.js
-│     ├─ icons.min.js
-│     └─ share.min.js    # 分享栏
-├─ scripts/
-│  ├─ gen-tools.js      # 生成 tools.html / tools/index.html
-│  └─ gen_rss.mjs       # 生成 rss.xml（读取 articles/）
-├─ manifest.webmanifest # PWA 清单
-├─ sw.js                # Service Worker（离线缓存）
-├─ sw-register.js
+│  ├─ css/style.css      # styles (+ style.min.css)
+│  └─ js/                # data + render scripts (minified)
+├─ manifest.webmanifest  # PWA manifest
+├─ sw.js                 # Service Worker (offline cache)
 ├─ rss.xml / sitemap.xml / robots.txt
-└─ CNAME                # freenav.net
+└─ CNAME                 # freenav.net
 ```
 
-## 本地预览
+## ▶️ Local preview
 
 ```bash
 cd FreeNav
 python -m http.server 4173
-# 浏览器打开 http://localhost:4173
+# open http://localhost:4173
 ```
 
-## 部署
+## 🛠️ Maintain data
 
-- **GitHub Pages**：把本目录推到仓库，Settings → Pages 选 root；已含 `CNAME`，绑定 `freenav.net` 即可；
-- **Cloudflare Pages / Vercel**：导入仓库，输出目录设为 `.`（根目录），构建命令留空。
+All software entries live in **`assets/js/data.min.js`** (columns in `columns.min.js`). Add / edit / remove an object and refresh — done. The `en/` copy is generated from the same data (see `en/` assets).
 
-## 维护数据
+## 🤝 Contribute
 
-所有软件数据集中在 **`assets/js/data.min.js`**（专题数据在 `columns.min.js`）。增删一款软件：直接在数据数组里加 / 删对象即可，刷新即生效。如需压缩可重新 minify。
+- Found a useful free/open-source tool that's missing? Open a GitHub Issue, or reach out via the site (专栏投稿入口).
+- Want a deep-dive column written? Propose it in Issues — comparison table + hands-on review, no paywalled fluff.
+- Code improvements (a11y, i18n, PWA) are very welcome. MIT licensed.
 
-## 脚本
+## 📜 License
 
-- `scripts/gen-tools.js`：重新生成 `tools.html` / `tools/index.html`；
-- `scripts/gen_rss.mjs`：重新生成 `rss.xml`（读取 `articles/` 下文章，而非工具列表）。
+[MIT](./LICENSE) — free to use, modify and distribute (including commercially). Keep the copyright notice.
 
-## 免责声明
+## 🙏 Credits
 
-- 软件版权归各自作者所有，本站仅做整理与推荐；
-- 站点不含追踪脚本，不收集用户行为；
-- 部分页面含赞助 / 联盟推广链接，均已明确标注"推广 / 赞助"。
+Inspired by and referencing [fmhy.net](https://fmhy.net/) (Free Media Heck Yeah) and the wider open-source ecosystem.
 
-## 致谢
+---
 
-候选清单与灵感参考 [fmhy.net](https://fmhy.net/) 开源生态。
+## 中文简介 🇨🇳
+
+FreeNav 是一个**人工精选、深度测评**的免费 / 开源软件导航站：收录 **128 款**免费开源软件，覆盖 **11 大使用场景**，提供对比表与实测测评帮你做决定。**无追踪、纯静态、MIT 开源**，中文站 [freenav.net](https://freenav.net/)，英文版 [freenav.net/en](https://freenav.net/en/)。欢迎提 Issue 推荐软件或投稿专栏。
