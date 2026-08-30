@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>免费网盘与文件同步怎么选：我用开源方案替掉了百度网盘 · FreeNav 专栏</title>
+  <meta name="description" content="限速、隐私、数据存在别人服务器上——免费网盘真的「免费」吗？FreeNav 对比 Syncthing、Nextcloud 等不开你数据、不打听你隐私的同步方案，告诉你哪款适合谁、踩了哪些坑。" />
+  <link rel="canonical" href="https://freenav.net/articles/2026-08-30-free-cloud-sync.html" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FreeNav" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="免费网盘与文件同步怎么选：我用开源方案替掉了百度网盘" />
+  <meta property="og:description" content="限速、隐私、数据存在别人服务器上——免费网盘真的「免费」吗？Syncthing、Nextcloud 等不开你数据的同步方案，哪款适合谁。" />
+  <meta property="og:url" content="https://freenav.net/articles/2026-08-30-free-cloud-sync.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://freenav.net/og-blog.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../assets/css/style.min.css" />
+  <link rel="stylesheet" href="../assets/css/widgets.css" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#top">跳到主内容</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">FreeNav</span>
+        <span class="brand-sub">免费软件导航</span>
+      </a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/tools.html">全部工具</a>
+        <a href="/blog.html" class="active nav-cta">专栏</a>
+        <a href="#favs" id="navFavs">⭐ 收藏 <span id="favCount" class="nav-badge"></span></a>
+        <button class="nav-customize" id="navCustomize" type="button" aria-label="定制我的首页">✨ 定制</button>
+        <a href="/privacy.html">隐私</a>
+        <a href="/business.html">商务合作</a>
+        <a href="/disclaimer.html">免责</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="blog-main" id="top">
+    <article class="container post">
+      <p class="post-kicker">工具怎么选</p>
+      <h1 class="post-title">免费网盘与文件同步怎么选：我用开源方案替掉了百度网盘</h1>
+      <p class="post-meta">2026-08-30 · 约 7 分钟阅读</p>
+
+      <div class="post-body">
+        <p>先说个扎心的事实：我用了六年百度网盘，存了差不多 800 G 的照片和文档。直到有天我要把一份合同从电脑传到手机，点了"下载"，进度条告诉我——非会员限速到 100 KB/s，预计 2 小时。</p>
+        <p>那一刻我突然想明白一件事：<strong>免费网盘的「免费」，其实是我用时间和隐私换来的。</strong>于是我开始找"不开我数据、不打听我隐私"的替代。这篇就是我这半年折腾的笔记，一篇讲清楚——到底有哪些干净选项、哪个适合你。</p>
+
+        <h2>一、免费网盘的"免费"到底免费在哪</h2>
+        <p>我们得先把账算明白。一个网盘公司要付服务器、带宽、电费，这些都要钱。所以它"免费"给你用，钱从哪来？</p>
+        <p>通常三条路：要么拿你的文件做内容审查和数据画像（卖给广告）；要么用限速逼你开会员；要么两头都来。你以为存的是自己的照片，其实你的使用习惯、文件类型、活跃时间，都成了别人桌上的筹码。更要命的是——<strong>哪天它说"该资源已失效"，你连申诉的地方都没有</strong>。</p>
+        <p>我不是说所有网盘都坏。我是说：当你把"私人照片、工作合同、病历扫描件"往一个你不控制的服务器上扔时，至少该知道代价是什么。这正是 FreeNav 挑软件的出发点：能自己掌握的，就别交给别人。</p>
+
+        <h2>二、先问自己：你要的是"备份"，还是"同步"</h2>
+        <p>很多人一上来就搜"免费网盘"，但其实需求分两种，方案完全不同：</p>
+        <p>· <strong>同步</strong>：同一份文件在电脑、手机、平板上实时保持一致。改一处，处处改。适合"正在用的文档、正在写的稿子"。<br>
+        · <strong>备份</strong>：把重要文件存一份副本，防丢防删。平时不碰它，出事才找它。适合"老照片、发票、毕业论文"。</p>
+        <p>这两个需求混在一起，是大多数人选错工具的原因。下面三组方案，我按"能不能自己掌控数据"排了序，从最彻底到最省心。</p>
+
+        <h2>三、3 个不打听你隐私的方案</h2>
+        <p>挑的时候我给自己定了规矩：数据要么在自己设备上，要么在我自己租的服务器上；传输要加密；软件本身得开源、能被人审计。最后留下三个：</p>
+        <p><strong>① Syncthing——设备之间直接传，不经过任何服务器。</strong>它是一个开源的 P2P 同步工具（官网 <a href="https://syncthing.net/" target="_blank" rel="noopener noreferrer">syncthing.net</a>）。你装在两台设备上，它们就点对点加密同步，文件根本不落第三方服务器。手机电脑平板都能用，断网也能在本地先同步。</p>
+        <p><strong>② Nextcloud——自己搭一个"私人版百度网盘"。</strong>开源网盘系统（官网 <a href="https://nextcloud.com/" target="_blank" rel="noopener noreferrer">nextcloud.com</a>），装在你能控制的服务器或主机上。它有网页端、手机 App、桌面客户端，还能挂日历、通讯录、在线文档。等于把"网盘 + 办公"一起搬回自己手里。</p>
+        <p><strong>③ 加密备份路线——把任意盘变成保险箱。</strong>如果你只是想备份、不想折腾同步，最省事的做法是用 <a href="https://veracrypt.fr/" target="_blank" rel="noopener noreferrer">VeraCrypt</a> 建一个加密容器，把重要文件丢进去，再扔到任何你已有的空间（哪怕是原来的网盘）。文件是加密的，对方看得到一堆乱码、看不到内容。进阶一点可以用 <a href="https://kopia.io/" target="_blank" rel="noopener noreferrer">Kopia</a> 做带版本历史的自动加密备份。</p>
+        <p>三条路都不碰你的隐私、不开你数据。区别只在"你愿意花多少力气"——下面我就拿自己踩过的坑，说说前两个到底适合谁。</p>
+
+        <h2>四、Syncthing 适合谁、不适合谁</h2>
+        <p>我自己的主力方案就是它，手机和笔记本之间同步写作稿和截图，半年没出过岔子。</p>
+        <p><strong>适合谁：</strong>想要"多设备实时一致"、又怕隐私泄露的普通人。配置真不难——装好两边扫码配对，勾选要同步的文件夹，剩下的它自己跑。UI 是干净的，没有广告、没有会员弹窗，连"推荐给好友"都没有。它默认只在你指定的设备间同步，<strong>没有中心服务器能偷看你的内容</strong>。</p>
+        <p><strong>不适合谁：</strong>第一，你想"在任意浏览器里登录网页看文件"——Syncthing 没有网页网盘那种体验，它只认设备；第二，你有两台设备长期不在线（比如公司电脑周末关机），那它们各自改了同一个文件，重新连上会提示"冲突版本"，得你自己挑保留哪个；第三，完全怕折腾的小白，第一次配对那一下可能需要人带一手。</p>
+        <p>我的建议：把它当"同步主力"，而不是"云端保险箱"。真正怕丢的东西，再走第三条加密备份。</p>
+
+        <h2>五、Nextcloud 适合谁、不适合谁</h2>
+        <p>Nextcloud 是我给家里人搭的——我妈要随时用手机看我在电脑上整理的体检报告，这就需要一个"像网盘一样、但数据在我家"的东西。</p>
+        <p><strong>适合谁：</strong>想要完整网盘体验（网页访问、分享链接、多端 App），又不想把数据交给别人的人；或者小团队想自建一个干净的协作文档空间。<a href="/tools.html">FreeNav 的工具库</a>里它也常和"本地 AI""自托管"专题一起出现，因为它能跟开源生态打通。</p>
+        <p><strong>不适合谁：</strong>最重要的一条——<strong>它要你有个能跑服务器的地方</strong>。可以租个便宜的 VPS，也可以旧电脑常开，但"维护"的活儿是真的：更新、备份、偶尔排错。如果你连路由器都不会设，Nextcloud 会让你头大。它也吃一点学习成本，功能多到一开始不知道点哪。我的体会是：Nextcloud 适合"愿意为掌控感付出一点运维"的人，不适合"装完就想忘掉它"的人。</p>
+
+        <h2>六、FreeNav 挑软件的 3 条硬标准</h2>
+        <p>回头看这三个方案，它们为什么进得了我的清单？因为都过了 FreeNav 的底线：</p>
+        <p><strong>① 开源优先。</strong>Syncthing、Nextcloud、VeraCrypt、Kopia 全部开源，代码公开、有人审计、出事有人接力维护。作者跑路，项目也不会死。</p>
+        <p><strong>② 真免费，没有暗坑。</strong>这几个都是"免费到这个程度"写得很清楚：Syncthing 完全免费无会员；Nextcloud 软件免费（服务器成本是你自己出的，明码标价）；VeraCrypt / Kopia 开源免费。没有"下载免费、同步收费"的套路。</p>
+        <p><strong>③ 无追踪是底线。</strong>它们的同步都在你控制的设备 / 服务器之间加密完成，没有第三方在中间偷看你的文件名和内容。你用什么、存什么，别人无从知晓。</p>
+
+        <h2>写在最后</h2>
+        <p>折腾完这半年，我的组合很简单：<strong>日常文档用 Syncthing 在设备间同步，老照片和合同用 VeraCrypt 加密备份一份到冷存储</strong>。我没再为限速开过会员，也没再担心"我的照片是不是被拿去训练模型了"。</p>
+        <p>这篇不是劝你卸载所有网盘。它是想帮你把账算清：免费网盘"免费"的代价，你愿不愿意付；不愿付的话，上面这几个开源方案，已经够大多数人用得踏实。</p>
+        <p>如果你也想看某个具体软件的深度测评（比如 Nextcloud 到底怎么装最省心），欢迎去 <a href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer">GitHub 投个题</a>，或者邮件告诉我。更多"不打听你隐私"的工具，可以在 <a href="/tools.html">FreeNav 全部工具</a> 和 <a href="/columns/opensource-alt.html">开源替代专题</a> 里慢慢逛。</p>
+      </div>
+
+      <div class="share-bar">
+        <span class="share-label">📤 这篇有用？分享出去，帮更多人找到 FreeNav</span>
+        <div class="share-btns">
+          <button data-share="link" type="button">复制链接</button>
+          <button data-share="wechat" type="button">微信文案</button>
+          <button data-share="weibo" type="button">微博文案</button>
+          <button data-share="xiaohongshu" type="button">小红书/知乎文案</button>
+          <button data-share="headline" type="button">头条/B站文案</button>
+          <button data-share="native" type="button">系统分享</button>
+        </div>
+        <p class="share-tip">复制的文案已按平台适配：严格平台（小红书 / 知乎 / 头条 / B站）用纯文字带出「FreeNav（freenav.net）」做品牌记忆、不含外链与返佣话术；公众号 / 微博可带文章链接直接回流。</p>
+      </div>
+
+      <div class="post-end">
+        <p class="post-end-title">发现错漏，或有想看的专题？</p>
+        <div class="post-end-actions">
+          <a class="post-end-btn" href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer">去 GitHub 提 Issue</a>
+          <a class="post-end-btn ghost" href="mailto:zkl3@msn.com?subject=FreeNav%20投稿%2F纠错">写邮件给我</a>
+        </div>
+        <p class="post-end-note">本站不追踪你；投稿与纠错均不要求注册。</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>（Free Media Heck Yeah）。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">关于本站</p>
+        <p class="footer-note">本站为导航索引，不托管、不销售任何软件。所有链接指向软件官方网站或开源仓库。</p>
+        <p class="footer-note">部分链接为<strong>联盟推广 / 赞助</strong>链接，你通过它们可能产生佣金，但<strong>不会额外加价</strong>。详见<a href="/disclaimer.html">免责声明</a>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/tools.html">全部工具</a></p>
+        <p><a href="/columns/opensource-alt.html">细分专题</a></p>
+        <p><a href="/blog.html">专栏</a></p>
+        <p><a href="/business.html">商务合作</a></p>
+        <p><a href="/privacy.html">隐私政策</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span>
+      <span class="footer-tip">温馨提示：软件均来自第三方官方站点，下载前请认准官网，注意系统兼容与数据安全。</span>
+    </div>
+  </footer>
+
+  <button id="toTop" class="to-top" aria-label="回到顶部" hidden>↑</button>
+
+  <script>document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());</script>
+  <script defer src="../assets/js/theme.min.js"></script>
+  <script defer src="../assets/js/sw-register.js"></script>
+  <script defer src="../assets/js/pwa-install.min.js"></script>
+  <script defer src="../assets/js/share.min.js"></script>
+  <script async src="https://cn.vercount.one/js"></script>
+</body>
+</html>
