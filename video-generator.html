@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>短视频生成器 · 免费工具 · FreeNav</title>
+  <meta name="description" content="FreeNav 收录的免费短视频生成器：把文案变成竖屏视频，自动写稿/配图/配音/字幕/封面，解压即用，Windows 绿色便携。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FreeNav" />
+  <meta property="og:title" content="短视频生成器 · 免费工具 · FreeNav" />
+  <meta property="og:description" content="把文案变成竖屏视频：自动写稿/配图/配音/字幕/封面，解压即用，Windows 绿色便携。" />
+  <meta property="og:url" content="https://freenav.net/video-generator.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="短视频生成器 · 免费工具 · FreeNav" />
+  <meta name="twitter:description" content="把文案变成竖屏视频：自动写稿/配图/配音/字幕/封面，解压即用，Windows 绿色便携。" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/css/style.min.css" />
+  <link rel="stylesheet" href="/assets/css/widgets.css" />
+  <style>
+    /* —— 工具落地页专属样式（与 FreeNav 深色主题一致）—— */
+    .tool-hero{background:linear-gradient(160deg,#101a33,#1b2342 60%,#141a30);border:1px solid var(--line,#2a3252);border-radius:16px;padding:40px 34px;margin:26px 0;position:relative;overflow:hidden}
+    .tool-hero::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(124,92,255,.28),transparent 70%)}
+    .tool-hero h1{font-size:30px;margin:0 0 8px;color:#fff;letter-spacing:.5px}
+    .tool-hero .tagline{color:#9fb0d6;font-size:15px;margin:0 0 18px}
+    .tool-badges{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+    .tool-badge{background:rgba(124,92,255,.15);border:1px solid rgba(124,92,255,.4);color:#cdd6ec;padding:4px 12px;border-radius:20px;font-size:12.5px}
+    .tool-badge.ok{background:rgba(52,224,161,.12);border-color:rgba(52,224,161,.4)}
+    .tool-section{background:#171c2e;border:1px solid #2a3252;border-radius:14px;padding:26px 28px;margin:18px 0}
+    .tool-section h2{font-size:19px;color:#fff;margin:0 0 14px;display:flex;align-items:center;gap:8px}
+    .tool-section h2 .ic{font-size:22px}
+    .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(max-width:760px){.feature-grid{grid-template-columns:1fr}}
+    .feat{background:rgba(255,255,255,.03);border:1px solid #2a3252;border-radius:10px;padding:14px 16px}
+    .feat b{color:#fff;display:block;margin-bottom:4px;font-size:14px}
+    .feat span{color:#9fb0d6;font-size:12.5px;line-height:1.6}
+    .dl-buttons{display:flex;flex-direction:column;gap:10px;max-width:520px;margin:0 auto}
+    .dl-btn{display:flex;align-items:center;gap:12px;padding:16px 20px;border-radius:12px;text-decoration:none;font-weight:600;font-size:15px;transition:transform .15s,box-shadow .15s;border:1px solid transparent}
+    .dl-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.4)}
+    .dl-btn .ico{font-size:24px}
+    .dl-btn .sub{font-size:12px;opacity:.75;font-weight:400}
+    .dl-quark{background:linear-gradient(135deg,#7c5cff,#21d4fd);color:#fff}
+    .dl-note{text-align:center;color:#9fb0d6;font-size:12.5px;margin-top:12px}
+    .steps{counter-reset:step;margin:0;padding:0;list-style:none}
+    .steps li{position:relative;padding:0 0 20px 44px;color:#cdd6ec;font-size:14px;line-height:1.7}
+    .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:#7c5cff;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+    .steps li:last-child{padding-bottom:0}
+    .steps b{color:#fff}
+    .faq details{margin-bottom:8px;background:rgba(255,255,255,.03);border:1px solid #2a3252;border-radius:10px;padding:12px 16px}
+    .faq summary{cursor:pointer;color:#fff;font-weight:600;font-size:14px;list-style:none}
+    .faq summary::after{content:" ▾";color:#21d4fd}
+    .faq details:not([open]) summary::after{content:" ▸"}
+    .faq p{margin:10px 0 0;color:#9fb0d6;font-size:13px;line-height:1.7}
+    .tool-tip{background:rgba(255,194,75,.1);border:1px solid rgba(255,194,75,.35);border-radius:10px;padding:12px 16px;color:#e8c07a;font-size:13px;margin-top:14px;line-height:1.6}
+  </style>
+</head>
+<body>
+  <!-- ===== 与 FreeNav 首页一致的顶部导航 ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">FreeNav</span>
+        <span class="brand-sub">免费软件导航</span>
+      </a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/tools.html">全部工具</a>
+        <a href="/blog.html" class="nav-cta">专栏</a>
+        <a href="/privacy.html">隐私</a>
+        <a href="/business.html">商务合作</a>
+        <a href="/disclaimer.html">免责</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="content" id="main">
+    <div class="container">
+      <nav style="margin:18px 0 0;color:#9fb0d6;font-size:13px">
+        <a href="/" style="color:#9fb0d6">首页</a> › <a href="/tools.html" style="color:#9fb0d6">全部工具</a> › <span style="color:#fff">短视频生成器</span>
+      </nav>
+
+      <!-- 工具主视觉 -->
+      <div class="tool-hero">
+        <h1>🎬 短视频生成器 <span style="font-size:13px;background:rgba(33,212,253,.15);color:#21d4fd;padding:3px 10px;border-radius:20px;vertical-align:middle">FreeNav 作者自研</span></h1>
+        <p class="tagline">把文案变成能发布的竖屏视频：自动写稿 / 配图 / 配音 / 字幕 / 封面 / 三端发布文案，全自动出片。</p>
+        <div class="tool-badges">
+          <span class="tool-badge ok">✅ 免安装绿色便携</span>
+          <span class="tool-badge ok">✅ 配音永远免费</span>
+          <span class="tool-badge ok">✅ 本地运行不上传数据</span>
+          <span class="tool-badge">Windows 10/11</span>
+          <span class="tool-badge">v1.0</span>
+        </div>
+      </div>
+
+      <!-- 下载区 -->
+      <div class="tool-section">
+        <h2><span class="ic">📥</span>下载（网盘直发，解压即用）</h2>
+        <div class="dl-buttons">
+          <a class="dl-btn dl-quark" href="https://pan.quark.cn/s/8a7c299f9abb" target="_blank" rel="noopener">
+            <span class="ico">🚀</span>
+            <span>夸克网盘下载<small class="sub">提取码 s1nT · 解压即用</small></span>
+          </a>
+        </div>
+        <p class="dl-note">打开夸克链接 → 输入提取码 s1nT → 下载 → 解压 → 双击「启动面板.bat」即可使用</p>
+        <div class="tool-tip">💡 本工具为 FreeNav 作者自研，免费分享，无任何门槛。用得好欢迎回来给 FreeNav 点个收藏，就是最大的支持。</div>
+      </div>
+
+      <!-- 功能 -->
+      <div class="tool-section">
+        <h2><span class="ic">⚙️</span>它能做什么</h2>
+        <div class="feature-grid">
+          <div class="feat"><b>📝 自动写稿</b><span>选方向或填主题，AI 生成口播文案；也可以自己写文案贴进去（每行一句 = 一个画面）</span></div>
+          <div class="feat"><b>🖼️ 自动配图</b><span>按文案关键词搜索真实照片，或用自己的图片/视频做背景</span></div>
+          <div class="feat"><b>🎙️ 自动配音</b><span>11 种中文音色（女声/男声/东北/陕西/港台腔），Edge-TTS 永远免费</span></div>
+          <div class="feat"><b>✍️ 自动字幕</b><span>整句显示、自动换行，与配音同步</span></div>
+          <div class="feat"><b>🖼️ 自动封面</b><span>抖音 / 视频号 / 小红书 三套封面自动生成</span></div>
+          <div class="feat"><b>📋 三端发布文案</b><span>标题 + 描述 + 话题一键复制，直接发布</span></div>
+        </div>
+      </div>
+
+      <!-- 使用步骤 -->
+      <div class="tool-section">
+        <h2><span class="ic">🚀</span>三步出片</h2>
+        <ol class="steps">
+          <li><b>解压</b>：下载压缩包 → 解压到任意文件夹（<b>无需安装</b>，绿色便携）</li>
+          <li><b>打开</b>：双击「启动面板.bat」，浏览器自动打开操作面板</li>
+          <li><b>生成</b>：选方向 / 贴文案 → 点「一键生成」→ 出片后去「我的作品」下载发布</li>
+        </ol>
+      </div>
+
+      <!-- 常见问题 -->
+      <div class="tool-section faq">
+        <h2><span class="ic">❓</span>常见问题</h2>
+        <details open>
+          <summary>需要安装吗？占系统资源吗？</summary>
+          <p>完全不需要安装：绿色便携工具，不写注册表、不装服务、不上传数据。黑色小窗口是面板本体，开着几乎不占资源；不用了直接删文件夹，零残留。</p>
+        </details>
+        <details>
+          <summary>免费吗？有什么隐藏收费？</summary>
+          <p>工具本身免费下载使用。配音永远免费；AI 写稿 / 高清配图需要自己申请免费 API key（包内有 5 分钟图文教程），不填 key 也能出片（内置文案 + 通用图库）。</p>
+        </details>
+        <details>
+          <summary>适合做什么内容？</summary>
+          <p>情感语录、治愈金句、干货知识、冷知识、生活技巧、商家批量宣传片等「文字为主、无需真人出镜」的竖屏短视频。</p>
+        </details>
+        <details>
+          <summary>杀毒软件报毒怎么办？</summary>
+          <p>绿色便携工具被误报很常见（Defender 实测无威胁）。包内《杀毒说明.txt》有详细处理办法，把文件夹加入白名单即可。</p>
+        </details>
+      </div>
+
+      <div style="text-align:center;margin:26px 0">
+        <a class="dl-btn dl-quark" href="https://pan.quark.cn/s/8a7c299f9abb" target="_blank" rel="noopener" style="max-width:420px;margin:0 auto">
+          <span class="ico">🚀</span>
+          <span>立即下载 · 夸克网盘<small class="sub">提取码 s1nT</small></span>
+        </a>
+        <p style="color:#9fb0d6;font-size:13px;margin-top:14px">
+          想换自己的品牌？<a href="/business.html" style="color:#21d4fd">贴牌定制版 →</a>（标题/Logo/片尾署名换成你的）
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== 与 FreeNav 首页一致的页脚 ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">关于本站</p>
+        <p class="footer-note">本站为导航索引，不托管、不销售任何软件。</p>
+        <p class="footer-note">部分链接为<strong>联盟推广 / 赞助</strong>链接，你通过它们可能产生佣金，但<strong>不会额外加价</strong>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/tools.html">全部工具</a></p>
+        <p><a href="/blog.html">专栏</a></p>
+        <p><a href="/rss.xml">RSS 订阅</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <p style="text-align:center;color:#9fb0d6;font-size:12px;padding:14px 0 0">© FreeNav · 本页收录的软件为独立第三方工具，版权归其作者所有</p>
+    </div>
+  </footer>
+</body>
+</html>
