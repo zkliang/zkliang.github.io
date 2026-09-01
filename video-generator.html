@@ -133,48 +133,11 @@
         </ol>
       </div>
 
-      <!-- 详细使用教程 -->
-      <div class="tool-section">
-        <h2><span class="ic">📖</span>详细使用教程（跟着做，不下载也能看会）</h2>
-
-        <h3>① 启动面板</h3>
-        <p>解压后双击 <b>「启动面板.bat」</b>，黑色窗口会逐项显示自检结果，通过后<b>浏览器自动打开</b>（地址就是 <code>http://127.0.0.1:8777/</code>）。那个黑窗是面板本体，<b>别关它</b>——开着不影响你办公 / 看视频 / 打游戏；想退出时点面板底部「⏻ 退出」。</p>
-        <img class="tut-img" src="/assets/img/tut/real_main.png" alt="短视频生成器面板主界面" loading="lazy" />
-
-        <h3>② 选方向 / 贴文案</h3>
-        <p>在面板里选一个内容方向（情感语录、干货知识、冷知识…），或者自己写文案贴进输入框——<b>每行一句 = 一个画面</b>，想讲几屏就写几行。也能点「📚 选题库」直接挑现成热点。</p>
-        <img class="tut-img" src="/assets/img/tut/real_tab_work.png" alt="面板：选方向或贴文案" loading="lazy" />
-
-        <h3>③ 一键生成</h3>
-        <p>点「<b>▶ 一键生成</b>」就完事：自动写稿 → 配图 → 配音 → 字幕 → 封面，全程中文进度，不用你守着。出片后去「我的作品」页预览 / 下载。</p>
-
-        <h3>④ 成片去哪、怎么发</h3>
-        <p>成片在 <code>app/output/日期/video.mp4</code>，同一天生成第二条会自动存成「日期-2」文件夹，不会覆盖。每个作品文件夹还附带：</p>
-        <p style="color:#9fb0d6;font-size:13px;line-height:1.8">· script.txt —— 口播文案<br/>· publish_pack.md —— 抖音 / 视频号 / 小红书 三端发布文案（标题+描述+话题，一键复制）<br/>· 三端封面（抖音.jpg / 视频号.jpg / 小红书.jpg）—— 上传平台直接用</p>
-        <div class="tool-tip">💡 面板打不开？双击「<b>备用-直接出片.bat</b>」走命令行保底方案，不依赖浏览器，照样出片。生成失败会直接告诉你"哪步坏、为什么、怎么办"，不再是看不懂的报错。</div>
-      </div>
-
-      <!-- 进阶：免费 key -->
-      <div class="tool-section">
-        <h2><span class="ic">🔑</span>进阶：申请两个免费 Key，文案更个性（可选）</h2>
-        <p>不填 key <b>也能出片</b>——用内置通用文案 + 内置图库。想让文案更贴合、配图更精准，申请两个免费 key，<b>在面板里粘贴即可，不用改任何文件</b>：</p>
-
-        <h3>DeepSeek · AI 写稿（约 0.003 元/条，1 元出 300 多条）</h3>
-        <ol class="steps">
-          <li>打开 <a href="https://platform.deepseek.com/" target="_blank" rel="noopener">platform.deepseek.com</a> 注册（手机号最快）</li>
-          <li>左侧「充值」，最低 1 元（建议充 10 元，能用几年）</li>
-          <li>左侧「API Keys」→ 创建，复制 <code>sk-</code> 开头的字符串（只显示一次，存备忘录）</li>
-          <li>面板点「⚙ 更多设置」→ 把 key 粘进「AI 写稿密钥」框 → 保存 → 重启面板生效</li>
-        </ol>
-        <img class="tut-img" src="/assets/img/tut/real_tab_settings.png" alt="面板：更多设置里填 Key" loading="lazy" />
-
-        <h3>Pexels · 真实配图（完全免费，不限次）</h3>
-        <ol class="steps">
-          <li>打开 <a href="https://www.pexels.com/api/" target="_blank" rel="noopener">pexels.com/api</a> 注册（免费，不用充值）</li>
-          <li>进入 API 页面复制你的 Key</li>
-          <li>面板「⚙ 更多设置」→ 粘进「图库密钥」框 → 保存 → 重启生效</li>
-        </ol>
-        <p style="color:#9fb0d6;font-size:13px;line-height:1.8">填了 Pexels：配图按文案关键词搜真实照片（文案说"下雨天"就配雨景）；「背景方式」选「视频背景」还会自动拉氛围视频。不想申请？把图片丢进 <code>app\pipeline\assets\images\</code>、视频丢进 <code>bg_videos\</code>，用你自己的素材也行。</p>
+      <!-- 完整教程深链 -->
+      <div class="tool-section" style="text-align:center">
+        <h2><span class="ic">📖</span>还想要更细的？</h2>
+        <p style="color:#cdd6ec;font-size:14px;line-height:1.8">每个生成参数干什么、更多设置怎么调、我的作品怎么管理、常见坑怎么避、怎么做出优质作品——都在独立图文教程里。</p>
+        <a href="/video-generator-tutorial.html" style="display:inline-block;margin-top:12px;background:linear-gradient(135deg,#7c5cff,#21d4fd);color:#fff;padding:12px 26px;border-radius:30px;text-decoration:none;font-weight:600;font-size:15px">📖 查看完整图文教程 →</a>
       </div>
 
       <!-- 常见问题 -->
