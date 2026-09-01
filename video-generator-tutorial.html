@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>短视频生成器 · 使用教程 · FreeNav</title>
+  <meta name="description" content="FreeNav 作者自研短视频生成器的完整使用教程：三步出片、生成设置、更多设置、常见问题、优质作品经验。" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/css/style.min.css" />
+  <link rel="stylesheet" href="/assets/css/widgets.css" />
+  <style>
+    .tut-hero{background:linear-gradient(160deg,#101a33,#1b2342 60%,#141a30);border:1px solid var(--line,#2a3252);border-radius:16px;padding:34px 30px;margin:26px 0;position:relative;overflow:hidden}
+    .tut-hero h1{font-size:28px;margin:0 0 8px;color:#fff}
+    .tut-hero .tag{color:#9fb0d6;font-size:14px;margin:0 0 16px}
+    .tut-hero .dl{display:inline-block;background:linear-gradient(135deg,#7c5cff,#21d4fd);color:#fff;padding:12px 26px;border-radius:30px;text-decoration:none;font-weight:600;font-size:15px;margin-top:6px}
+    .tut-hero .dl:hover{transform:translateY(-2px)}
+    .tut-section{background:#171c2e;border:1px solid #2a3252;border-radius:14px;padding:22px 26px;margin:16px 0}
+    .tut-section details{margin-bottom:10px}
+    .tut-section summary{cursor:pointer;list-style:none;font-size:15.5px;font-weight:700;color:#fff;padding:12px 14px;background:rgba(10,14,26,.5);border:1px solid #2a3252;border-radius:10px;user-select:none}
+    .tut-section summary::after{content:" ▾";color:#21d4fd}
+    .tut-section details:not([open]) summary::after{content:" ▸"}
+    .tut-section .tc{padding:12px 8px 6px}
+    .tut-section p{margin:9px 0;font-size:14px;color:#cdd6ec;line-height:1.8}
+    .tut-section b{color:#fff}
+    .tut-section .hl{color:#21d4fd}
+    .tut-note{background:rgba(255,194,75,.1);border:1px solid rgba(255,194,75,.35);border-radius:10px;padding:12px 16px;color:#e8c07a;font-size:13px;margin-top:16px;line-height:1.7}
+  </style>
+</head>
+<body>
+  <!-- ===== 与 FreeNav 首页一致的顶部导航 ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">FreeNav</span>
+        <span class="brand-sub">免费软件导航</span>
+      </a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/tools.html">全部工具</a>
+        <a href="/blog.html" class="nav-cta">专栏</a>
+        <a href="/privacy.html">隐私</a>
+        <a href="/business.html">商务合作</a>
+        <a href="/disclaimer.html">免责</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="content" id="main">
+    <div class="container">
+      <nav style="margin:18px 0 0;color:#9fb0d6;font-size:13px">
+        <a href="/" style="color:#9fb0d6">首页</a> › <a href="/tools.html" style="color:#9fb0d6">全部工具</a> › <a href="/tools/video-generator.html" style="color:#9fb0d6">短视频生成器</a> › <span style="color:#fff">使用教程</span>
+      </nav>
+
+      <div class="tut-hero">
+        <h1>📖 短视频生成器 · 使用教程 <span style="font-size:13px;background:rgba(33,212,253,.15);color:#21d4fd;padding:3px 10px;border-radius:20px;vertical-align:middle">FreeNav 作者自研</span></h1>
+        <p class="tag">本文档与工具面板内的「📖 使用教程」内容一致，方便随时查阅。</p>
+        <a class="dl" href="https://pan.quark.cn/s/8a7c299f9abb" target="_blank" rel="noopener">🚀 免费下载（夸克网盘 · 提取码 s1nT）</a>
+      </div>
+
+      <div class="tut-section">
+        <details open>
+          <summary>🚀 快速上手（三步出片）</summary>
+          <div class="tc">
+            <p>1. <b>打开</b>：双击桌面「视频生成器」快捷方式（或双击根目录「启动面板.bat」），浏览器自动打开面板。</p>
+            <p>2. <b>生成</b>：选一个内容方向（或输入主题）→ 点底部「▶ 一键生成」→ 自动写稿、配图、配音、加字幕、出封面。什么都不选直接生成 = 随机选题，可先试一条看看效果。</p>
+            <p>3. <b>发布</b>：去「📦 我的作品」→ 预览成片、下载，复制三端发布文案，去抖音/视频号/小红书粘贴发布。</p>
+            <p>💡 想让 AI 写稿更贴、配图更准：先去「⚙ 更多设置」粘贴 2 个免费 key（DeepSeek 写稿约 0.003元/条，<b class="hl">1 元钱能生成 300 个视频</b>；Pexels 图库永久免费；各 5 分钟申请，包内有教程）。如果自己写文案或用豆包/Kimi 等免费 AI 助写，则<b class="hl">永久免费</b>，一分钱不花。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>🎬 生成设置（每个参数干什么）</summary>
+          <div class="tc">
+            <p><b>内容方向</b>：情感语录/治愈生活/干货拆解等，决定整条视频的"气质"；留空 = 随机轮换。</p>
+            <p><b>配音音色</b>：11 种中文音色（女声/男声/东北/陕西/台湾/粤语），挑一个顺耳的；失败会自动换备用音色。</p>
+            <p><b>字幕大小</b>：14~32，默认 20；金句/诗词建议开启「字幕居中」并调大字号，观感更美。</p>
+            <p><b>字幕位置</b>：数值越大越靠上，避开抖音/视频号底部按钮遮挡。</p>
+            <p><b>视频时长</b>：0 = 自动（按配音长度）；也可固定秒数。</p>
+            <p><b>文案句数</b>：5~14，句数 = 分镜画面数，越多视频越长越充实（默认 9，拖动滑块调整）。</p>
+            <p><b>BGM 音量</b>：0 = 静音；想换歌可替换 app\pipeline\assets\bgm\ 里的音乐。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>⚙ 更多设置（密钥 / 背景 / 模板 / 素材）</summary>
+          <div class="tc">
+            <p><b>AI 写稿 / 图库密钥</b>：粘贴保存即可（不用碰任何文件）。DeepSeek 写稿约 0.003元/条；Pexels 配图/视频背景永久免费。</p>
+            <p><b>背景方式</b>：自动配图（每句一张图）/ 视频背景（通用氛围视频，更动态）。</p>
+            <p><b>配图来源</b>：Pexels（按内容搜真实照片）；本地视频/图库（用自己的照片或视频，最贴你的内容）；免 key 通用图（内置 40 张氛围图，百搭）。</p>
+            <p><b>模板</b>：13 套方向风格包，选一个让视频更有"栏目感"。</p>
+            <p><b class="hl">我的素材（做出高质量作品的关键）</b>：自己的文案（每行一句 = 一个画面）、图片（铺分镜）、封面图、背景视频——用了自己的素材，视频独一无二。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>📦 我的作品（管理成片）</summary>
+          <div class="tc">
+            <p>每个作品卡片：<b>预览</b>（点播放）→ <b>下载</b>（存到本地）→ <b>打开文件夹</b>（mp4+文案+三端封面都在）→ <b>复制三端文案</b>（标题/描述/话题）→ <b>删除</b>。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>❓ 常见问题</summary>
+          <div class="tc">
+            <p><b>Q 杀毒软件报毒 / 文件被删？</b> 看包内《杀毒说明.txt》——绿色便携工具被误报很常见，把文件夹加入白名单即可（Defender 实测无威胁）。</p>
+            <p><b>Q key 怎么弄？</b> 更多设置 → 两个输入框粘贴保存 → 重启面板。教程见包内《DeepSeek-key申请教程.txt》《Pexels图源key申请教程.txt》。</p>
+            <p><b>Q 不填 key 能出片吗？</b> 能（内置文案 + 通用图库），但 AI 写稿、按内容配图需要 key；填了体验最好。</p>
+            <p><b>Q 黑色小窗口是什么？能关掉吗？</b> 那是面板本体，关掉面板就停了。它开着<b>几乎不占资源，不影响电脑其它功能正常使用</b>（办公/看视频/打游戏都不受影响）；想退出时点面板底部「⏻ 退出」更稳妥。</p>
+            <p><b>Q 生成失败怎么办？</b> 看作品页日志会告诉你哪一步坏了、怎么办。常见：杀毒拦截（加白名单）、网络不通（重试）、上一条视频还开着（关掉播放器）。</p>
+            <p><b>Q 成片存在哪？</b> app\output\日期\ 文件夹：video.mp4 + script.txt（文案）+ publish_pack.md（发布文案）+ 三端封面。</p>
+            <p><b>Q 生成出来没声音？</b> 一般是网络波动导致配音失败，重新生成一次即可。</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>🏆 如何做出优质作品（经验之谈）</summary>
+          <div class="tc">
+            <p><b>1. 选对方向并死磕</b>：情感/治愈类最容易共鸣涨粉；干货/知识类收藏率高。别今天发语录明天发美食，先做一个方向做到 30 条。</p>
+            <p><b>2. 文案是灵魂</b>：自己写最有辨识度（每行一句，10~25 字）；不会写就用 AI 写稿，或豆包/Kimi 免费 AI 写好粘贴进来——工具负责把它变成片。</p>
+            <p><b>3. 用你自己的素材</b>：自己的照片、视频、经历，是别人复制不走的差异化。</p>
+            <p><b>4. 发布讲究时机</b>：晚 7~10 点是刷视频高峰；标题用"提问式"更抓人（如"你多久没静下心来了？"）；三端文案直接复制微调。</p>
+            <p><b>5. 坚持比技巧重要</b>：前 30 条没人看是正常的，它是积累和练手，第 31 条可能就爆了。</p>
+          </div>
+        </details>
+
+        <div class="tut-note">💡 本工具为 FreeNav 作者自研，免费分享。用得好欢迎回来收藏 FreeNav；需要换自己的品牌（标题/Logo/片尾署名）见<a href="/business.html" style="color:#21d4fd">贴牌定制版 →</a></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== 与 FreeNav 首页一致的页脚 ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">关于本站</p>
+        <p class="footer-note">本站为导航索引，不托管、不销售任何软件。</p>
+        <p class="footer-note">部分链接为<strong>联盟推广 / 赞助</strong>链接，你通过它们可能产生佣金，但<strong>不会额外加价</strong>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/tools.html">全部工具</a></p>
+        <p><a href="/blog.html">专栏</a></p>
+        <p><a href="/rss.xml">RSS 订阅</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <p style="text-align:center;color:#9fb0d6;font-size:12px;padding:14px 0 0">© FreeNav · 本页收录的软件为独立第三方工具，版权归其作者所有</p>
+    </div>
+  </footer>
+</body>
+</html>
