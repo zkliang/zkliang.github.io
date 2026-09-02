@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>FreeNav · 免费软件导航 | 98 款开源免费工具精选</title>
-  <meta name="description" content="FreeNav 精选 98 款真正免费、开源的软件，覆盖系统、办公、设计、开发、影音、下载、AI、安全、学习与移动 10 大场景；并提供开源替代、新人装机清单、设计师素材、本地 AI 等 4 个差异化专题与对比测评，帮助你以更低的成本获取优质软件。" />
+  <title>FreeNav · 免费软件导航 | 128 款开源免费工具精选</title>
+  <meta name="description" content="FreeNav 精选 128 款真正免费、开源的软件，覆盖系统、办公、设计、开发、影音、下载、AI、安全、学习、移动与国产 AI 11 大场景；并提供开源替代、新人装机清单、设计师素材、本地 AI 等 6 个差异化专题与对比测评，帮助你以更低的成本获取优质软件。" />
   <meta name="keywords" content="免费软件,开源软件,软件导航,正版免费,替代付费,Adobe替代,Notion替代,开源清单,开源替代,装机清单" />
   <meta name="author" content="FreeNav" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cn.vercount.one https://hm.baidu.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://icons.duckduckgo.com https://www.google.com https://hm.baidu.com data:; connect-src 'self' https://cn.vercount.one https://events.vercount.one https://hm.baidu.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
@@ -25,7 +25,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="FreeNav · 免费软件导航" />
-  <meta property="og:description" content="精选 98 款真正免费、开源的软件，附 4 个差异化专题对比表与测评。" />
+  <meta property="og:description" content="精选 128 款真正免费、开源的软件，附 6 个差异化专题对比表与测评。" />
   <meta property="og:url" content="https://freenav.net/" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:image" content="https://freenav.net/og.png" />
@@ -33,12 +33,43 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="FreeNav · 免费软件导航" />
-  <meta name="twitter:description" content="精选 98 款真正免费、开源的软件，附 4 个差异化专题对比表与测评。" />
+  <meta name="twitter:description" content="精选 128 款真正免费、开源的软件，附 6 个差异化专题对比表与测评。" />
 
 
 
   <link rel="stylesheet" href="assets/css/style.min.css" />
   <link rel="stylesheet" href="assets/css/widgets.css" />
+
+  <!-- 结构化数据：帮助百度/Google 更好理解站点，提升收录与富媒体展示 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "FreeNav",
+        "url": "https://freenav.net",
+        "description": "精选 128 款真正免费、开源的软件，覆盖系统、办公、设计、开发、影音等场景，并提供开源替代、装机清单等专题。",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://freenav.net/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "FreeNav",
+        "url": "https://freenav.net",
+        "logo": "https://freenav.net/icon-512.png"
+      }
+    ]
+  }
+  </script>
+
+  <!-- 百度搜索资源平台站点验证：在 ziyuan.baidu.com 添加 freenav.net 后，
+       把官方给的 <meta name="baidu-site-verification" content="XXXX"> 替换下面这行注释即可 -->
+  <meta name="baidu-site-verification" content="REPLACE_WITH_BAIDU_CODE" />
+
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主内容</a>
@@ -70,7 +101,7 @@
       <!-- Hero（精简：去统计条与大卡片，只留标题 + 搜索） -->
       <section class="hero">
         <h1 class="hero-title">发现真正免费、开源的<br /><span class="hl">优质软件</span>。</h1>
-        <p class="hero-sub">FreeNav 精选 98 款免费、开源软件，覆盖 10 大使用场景；另设 4 个专题栏目，提供对比表与深度测评。</p>
+        <p class="hero-sub">FreeNav 精选 128 款免费、开源软件，覆盖 11 大使用场景；另设 6 个专题栏目，提供对比表与深度测评。</p>
         <div class="search-wrap">
           <span class="search-ico" aria-hidden="true">🔍</span>
           <input id="search" type="search" placeholder="搜索软件或标签" autocomplete="off" />
@@ -103,9 +134,21 @@
         <div class="container">
           <div class="home-col-inner">
             <div class="home-col-badge">📝 专栏 · 每周更新</div>
-            <h3 class="home-col-title">软件界的豆瓣榜单：每周一篇深度测评</h3>
+            <h3 class="home-col-title">人工精选的免费开源软件导航：每周一篇深度测评</h3>
             <p class="home-col-excerpt">不搬运资讯、不做排行榜。我们只做减法——把真正好用的免费 / 开源软件讲清楚、比明白，帮你做决定。每周持续更新，点开就是最新一篇。</p>
             <a class="home-col-go" href="/blog.html">阅读最新专栏 →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 作者自研工具高亮带：解决短视频生成器在站上入口过深的问题 -->
+      <section class="home-column home-tool" id="homeTool">
+        <div class="container">
+          <div class="home-col-inner" style="border:1px solid rgba(124,92,255,.45);background:linear-gradient(135deg,rgba(124,92,255,.14),rgba(33,212,253,.08))">
+            <div class="home-col-badge">🎬 作者自研 · 免费工具</div>
+            <h3 class="home-col-title">短视频生成器：贴段文案，自动出竖屏视频</h3>
+            <p class="home-col-excerpt">写稿→配图→配音→字幕→封面一条龙，解压即用（Windows）。免费、绿色、本地运行不上传——和你站「无追踪」一个调性。</p>
+            <a class="home-col-go" href="/video-generator.html">免费下载 →</a>
           </div>
         </div>
       </section>
@@ -146,6 +189,7 @@
         <p><a href="/columns/opensource-alt.html">细分专题</a></p>
         <p><a href="/rss.xml">RSS 订阅</a></p>
         <p><a href="/shop.html">免费建站手册 →</a></p>
+        <p><a href="/ascii-video/">视频转字符艺术 →</a></p>
 
         <p><a href="/business.html">商务合作</a></p>
         <p><a href="/privacy.html">隐私政策</a></p>
@@ -197,5 +241,15 @@
   <script defer src="assets/js/sw-register.js"></script>
   <script defer src="assets/js/pwa-install.min.js"></script>
   <script async src="https://cn.vercount.one/js"></script>
+  <!-- ============ 百度联盟广告位（接 union.baidu.com 审核通过后粘贴官方代码） ============
+       投放建议：
+       1) 首页信息流中部（高曝光）：把下方占位注释替换为官方 <script>/<ins> 代码
+       2) 工具/文章详情页底部（高相关）：在对应页面相同位置粘贴
+       官方代码形如：
+         <script charset="utf-8" src="https://cpro.baidustatic.com/cpro/ui/cm.js"></script>
+         <ins class="bdslot" data-ad-client="你的ID" data-ad-slot="你的广告位ID"></ins>
+       前提：需先通过百度联盟审核（要求 ICP 备案 + 内容质量 + 一定访问量） -->
+  <!-- BAIDU_UNION_SLOT_END -->
+
 </body>
 </html>
