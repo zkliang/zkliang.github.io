@@ -30,18 +30,6 @@
     return COLS.filter(function (c) { return c.key === key; })[0] || null;
   }
 
-  // 软件名「去标点」后比对，用于把对比表里的名字智能链到本站软件
-  function stripName(s) { return String(s).toLowerCase().replace(/[^a-z0-9]/g, ""); }
-  function softByName(name) {
-    var n = stripName(name);
-    if (!n) return null;
-    for (var i = 0; i < SOFTWARE.length; i++) {
-      var s = stripName(SOFTWARE[i].name);
-      if (s === n || n.indexOf(s) >= 0 || s.indexOf(n) >= 0) return SOFTWARE[i];
-    }
-    return null;
-  }
-
   function getPicks(col) {
     var p = col.picks || {};
     // 优先用显式 id 列表（已验证、科学筛选取）
@@ -179,10 +167,16 @@
     var sideNav = document.getElementById("sideNav");
     if (sideNav) {
       var curKey = col.key;
-      var COL_COLOR_MAP = { "opensource-alt": "security", "newbie": "office", "design": "design", "local-ai": "ai" };
+      var COL_COLOR_MAP = { "opensource-alt": "security", "newbie": "office", "design": "design", "local-ai": "ai", "domestic-ai": "aichina" };
       function countOf(key) { return SOFTWARE.filter(function (s) { return s.cat === key; }).length; }
+      // 分类→栏目 映射：能对应到专题栏目的分类，点一下直达栏目页；其余仍回首页按分类筛选
+      var CAT_TO_COL = { design: "design", ai: "local-ai", aichina: "domestic-ai" };
       var catLinks = CATS.map(function (c) {
-        return '<a class="side-cat" href="/#cat-' + c.key + '" data-cat="' + c.key + '" style="' + catStyle(c.key) + '">' +
+        var colKey = CAT_TO_COL[c.key];
+        var href = colKey ? "/columns/" + colKey + ".html" : "/?cat=" + c.key;
+        return '<a class="side-cat' + (colKey ? " side-cat-col" : "") + '" href="' + href + '" data-cat="' + c.key + '"' +
+          (colKey ? ' title="查看「' + (COLS.filter(function (x) { return x.key === colKey; })[0] || {}).title + '」栏目"' : ' title="在首页查看「' + esc(c.label) + '」全部软件"') +
+          ' style="' + catStyle(c.key) + '">' +
           '<span class="side-ico">' + c.icon + "</span>" +
           '<span class="side-label">' + esc(c.label) + "</span>" +
           '<span class="side-count">' + countOf(c.key) + "</span></a>";
@@ -190,7 +184,7 @@
       var colLinks = COLS.map(function (c) {
         var st = catStyle(COL_COLOR_MAP[c.key] || "security");
         var isActive = c.key === curKey;
-        return '<a class="side-col' + (isActive ? " active" : "") + '" href="columns/' + c.key + '.html" style="' + st + '">' +
+        return '<a class="side-col' + (isActive ? " active" : "") + '" href="/columns/' + c.key + '.html" style="' + st + '">' +
           '<span class="side-ico">' + c.icon + "</span>" +
           '<span class="side-label">' + esc(c.title) + "</span></a>";
       }).join("");
@@ -225,7 +219,7 @@
       })).filter(function (v, i, a) { return v && a.indexOf(v) === i; }));
       cmp.innerHTML =
         '<h2 class="col-h2" id="compare">替代 / 对标对比表</h2>' +
-        '<p class="col-sub">一眼看清免费方案能替代谁、差在哪。点软件名可直达官网；点表头排序、按平台筛选。</p>' +
+        '<p class="col-sub">一眼看清免费方案能替代谁、差在哪。点表头可排序、按平台可筛选；想直达官网见下方「相关软件」。</p>' +
         '<div class="cmp-tools">' +
           '<div class="cmp-filters" id="cmpFilters">' + platOpts.map(function (f) {
             return '<button class="cmp-chip' + (f === "all" ? " active" : "") + '" data-f="' + esc(f) + '">' + esc(f === "all" ? "全部" : f) + "</button>";
@@ -240,10 +234,9 @@
         '</tr></thead><tbody id="cmpBody"></tbody></table></div>';
 
       function cmpRowHTML(r) {
-        var soft = softByName(r.name);
-        var nameCell = soft
-          ? '<a class="cmp-name" href="' + esc(soft.url) + '" target="_blank" rel="noopener noreferrer">' + esc(r.name) + "</a>"
-          : esc(r.name);
+        // 对比表是「列表分析」，名字不做自动链接（旧逻辑按去标点模糊匹配，
+        // 会把中文名错链到无关软件）。正确的官网链接见下方「相关软件」卡片区。
+        var nameCell = esc(r.name);
         return "<tr>" +
           "<td>" + nameCell + "</td>" +
           "<td>" + esc(r.vs) + "</td>" +

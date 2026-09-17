@@ -13,8 +13,17 @@ const CORE_ASSETS = [
 ];
 
 self.addEventListener("install", function (e) {
-  e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(CORE_ASSETS).catch(function () {}); }));
-  self.skipWaiting();
+  // 逐文件预缓存：单个文件失败只跳过它并报警，不再因一个 404 让整批缓存静默作废
+  e.waitUntil(
+    caches.open(CACHE).then(function (c) {
+      return Promise.all(CORE_ASSETS.map(function (u) {
+        return c.add(u).catch(function (err) {
+          console.warn("[FreeNav SW] 预缓存失败，已跳过: " + u, err && (err.message || err));
+          return null;
+        });
+      }));
+    }).then(function () { return self.skipWaiting(); })
+  );
 });
 
 self.addEventListener("activate", function (e) {

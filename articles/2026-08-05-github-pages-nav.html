@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>用 GitHub Pages 搭一个自己的网址导航：零成本，30 分钟上线 · FreeNav 专栏</title>
+  <meta name="description" content="不想被广告绑架、想把常用工具收在一个干净页面？用 GitHub Pages 自建网址导航，零服务器成本、可绑定自己的域名。手把手讲清楚从建仓库到上线的每一步。" />
+  <link rel="canonical" href="https://freenav.net/articles/2026-08-05-github-pages-nav.html" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FreeNav" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="用 GitHub Pages 搭一个自己的网址导航：零成本，30 分钟上线" />
+  <meta property="og:description" content="不想被广告绑架、想把常用工具收在一个干净页面？用 GitHub Pages 自建网址导航，零服务器成本、可绑定自己的域名。" />
+  <meta property="og:url" content="https://freenav.net/articles/2026-08-05-github-pages-nav.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://freenav.net/og-blog.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../assets/css/style.min.css" />
+  <link rel="stylesheet" href="../assets/css/widgets.css" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#top">跳到主内容</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">FreeNav</span>
+        <span class="brand-sub">免费软件导航</span>
+      </a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/tools.html">全部工具</a>
+        <a href="/blog.html" class="active nav-cta">专栏</a>
+        <a href="#favs" id="navFavs">⭐ 收藏 <span id="favCount" class="nav-badge"></span></a>
+        <button class="nav-customize" id="navCustomize" type="button" aria-label="定制我的首页">✨ 定制</button>
+        <a href="/privacy.html">隐私</a>
+        <a href="/business.html">商务合作</a>
+        <a href="/disclaimer.html">免责</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="blog-main" id="top">
+    <article class="container post">
+      <p class="post-kicker">动手自建</p>
+      <h1 class="post-title">用 GitHub Pages 搭一个自己的网址导航：零成本，30 分钟上线</h1>
+      <p class="post-meta">2026-08-05 · 约 9 分钟阅读</p>
+
+      <div class="post-body">
+        <p>收藏夹塞了 200 个链接、浏览器书签栏挤到换行、团队要共享一份「常用工具清单」却只能用在线文档贴——这是不是你的日常？我后来想通了：与其和浏览器书签较劲，不如自己搭一个「网址导航页」：一个干净网页，左边是分类，右边是链接，手机电脑都能开。</p>
+        <p>最省事的方案，是用 <strong>GitHub Pages</strong>：它把你的静态网页免费托管在 <code>xxx.github.io</code>，不用买服务器、不用管运维。下面我把从「零」到「上线」的每一步讲清楚，全程零成本。</p>
+
+        <h2>一、为什么选 GitHub Pages，而不是买服务器</h2>
+        <p>普通网址导航站本质就是「一个静态网页 + 一堆链接」，不需要后端、不需要数据库。这种需求用 GitHub Pages 最划算：</p>
+        <p>· <strong>免费</strong>：静态站点托管目前完全免费，流量大也不收费；<br>
+        · <strong>稳</strong>：背后是 GitHub 的全球 CDN，比自己租的小服务器靠谱；<br>
+        · <strong>可绑定自己的域名</strong>：想要 <code>nav.你的名字.com</code> 这种专属地址，几十块钱买个域名就行；<br>
+        · <strong>自带版本管理</strong>：每次改链接都是一次提交，改错了随时回退。</p>
+        <p>如果你只是想「把链接收拢到一个页面」，这几乎是成本最低、最不怕丢的方案。我在 FreeNav 之前也这么折腾过，最后才做成现在这个带搜索、能收藏的完整版——但你从简版起步，完全够用。</p>
+
+        <h2>二、30 分钟上线的四步</h2>
+
+        <h3>第 1 步：建一个仓库</h3>
+        <p>注册 GitHub 账号（免费），新建一个仓库，名字取 <code>你的用户名.github.io</code>。这个特殊命名会让 GitHub 自动把它当成你的个人站点。仓库选「Public」即可。</p>
+
+        <h3>第 2 步：放一个 index.html</h3>
+        <p>在仓库里新建 <code>index.html</code>，写一个简单的导航页：用 <code>&lt;ul&gt;</code> 列分类、每个分类下用 <code>&lt;a&gt;</code> 放链接。不用会框架，纯 HTML 就够。想要好看一点，可以套一个免费的静态模板（搜「startpage」「homarr 风格」能找到不少）。</p>
+
+        <h3>第 3 步：开启 Pages</h3>
+        <p>进仓库的 Settings → Pages，Source 选「Deploy from a branch」，分支选 <code>main</code>、目录选 <code>/root</code>，保存。等一两分钟，浏览器打开 <code>https://你的用户名.github.io</code> 就能看到了。</p>
+
+        <h3>第 4 步（可选）：绑定自己的域名</h3>
+        <p>想甩掉 <code>.github.io</code> 尾巴，去域名商（比如<a href="https://www.aliyun.com/minisite/goods?userCode=dmi4rtzf" target="_blank" rel="noopener noreferrer">阿里云</a>）买个简短的域名，然后在 Pages 里填进去、并按提示加一条 CNAME 解析。几十块钱一年，专有感立刻上来。</p>
+
+        <h2>三、想省事？直接用现成的导航模板</h2>
+        <p>不想从空白 HTML 写起，可以用社区维护的开源导航项目：它们大多一键部署、自带搜索和分类，你只填链接就行。FreeNav 本身也是这类思路的进化版——如果你想要「分类更细、带软件介绍、还能收藏」的体验，直接<a href="/tools.html">逛逛 FreeNav 的工具清单</a>当灵感，或者参考我们的<a href="/columns/opensource-alt.html">开源替代专题</a>挑一组你真正常用的工具先放上去。</p>
+
+        <h2>四、几个小提醒</h2>
+        <p>· <strong>别把私密链接放公网</strong>：GitHub Pages 是公开的，放公司内网地址、个人云盘这类就别公开了；<br>
+        · <strong>链接失效要勤理</strong>：导航页最大的敌人是「点开 404」，每季度扫一遍；<br>
+        · <strong>想要更高阶的「自托管面板」</strong>（能登录、能多人协作），可以看我们另一篇<a href="articles/2026-08-05-self-host-nav.html">自建网址导航方案对比</a>，里面有零代码到自托管的完整路径。</p>
+
+        <h2>写在最后</h2>
+        <p>网址导航不是什么高科技，但它能实实在在省下你每天「找链接」的时间。GitHub Pages 这条路线，零成本、不怕丢、还能绑自己的域名——对大多数人来说，已经是甜点区。</p>
+        <p>如果你懒得自己搭，又想要一个「不追踪你、人工精选、分类清晰」的起点，<a href="/tools.html">FreeNav 本身就在一个干净的导航页上</a>，直接用也行。想看更多动手类内容，可以去<a href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer"> GitHub 给我们提建议</a>。</p>
+      </div>
+
+      <div class="share-bar">
+        <span class="share-label">📤 这篇有用？分享出去，帮更多人搭起自己的干净导航页</span>
+        <div class="share-btns">
+          <button data-share="link" type="button">复制链接</button>
+          <button data-share="wechat" type="button">微信文案</button>
+          <button data-share="weibo" type="button">微博文案</button>
+          <button data-share="xiaohongshu" type="button">小红书/知乎文案</button>
+          <button data-share="headline" type="button">头条/B站文案</button>
+          <button data-share="native" type="button">系统分享</button>
+        </div>
+        <p class="share-tip">复制的文案已按平台适配：严格平台（小红书 / 知乎 / 头条 / B站）用纯文字带出「FreeNav（freenav.net）」做品牌记忆、不含外链与返佣话术；公众号 / 微博可带文章链接直接回流。</p>
+      </div>
+
+      <div class="post-end">
+        <p class="post-end-title">搭建中踩坑了，或有想看的专题？</p>
+        <div class="post-end-actions">
+          <a class="post-end-btn" href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer">去 GitHub 提 Issue</a>
+          <a class="post-end-btn ghost" href="mailto:zkl3@msn.com?subject=FreeNav%20投稿%2F纠错">写邮件给我</a>
+        </div>
+        <p class="post-end-note">本站不追踪你；投稿与纠错均不要求注册。</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>（Free Media Heck Yeah）。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">关于本站</p>
+        <p class="footer-note">本站为导航索引，不托管、不销售任何软件。所有链接指向软件官方网站或开源仓库。</p>
+        <p class="footer-note">部分链接为<strong>联盟推广 / 赞助</strong>链接，你通过它们可能产生佣金，但<strong>不会额外加价</strong>。详见<a href="/disclaimer.html">免责声明</a>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/tools.html">全部工具</a></p>
+        <p><a href="/columns/opensource-alt.html">细分专题</a></p>
+        <p><a href="/blog.html">专栏</a></p>
+        <p><a href="/business.html">商务合作</a></p>
+        <p><a href="/privacy.html">隐私政策</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span>
+      <span class="footer-tip">温馨提示：软件均来自第三方官方站点，下载前请认准官网，注意系统兼容与数据安全。</span>
+    </div>
+  </footer>
+
+  <button id="toTop" class="to-top" aria-label="回到顶部" hidden>↑</button>
+
+  <script>document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());</script>
+  <script defer src="../assets/js/theme.min.js"></script>
+  <script defer src="../assets/js/sw-register.js"></script>
+  <script defer src="../assets/js/pwa-install.min.js"></script>
+  <script defer src="../assets/js/share.min.js"></script>
+  <script async src="https://cn.vercount.one/js"></script>
+</body>
+</html>

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>我做了个不追踪你的「软件界豆瓣」：FreeNav 是怎么挑软件的 · FreeNav 专栏</title>
-  <meta name="description" content="一个不懂代码的人，为什么动手搭了个软件导航站？它和全家桶、资讯流到底哪里不一样，以及 FreeNav 挑软件的 3 条硬标准。" />
-  <link rel="canonical" href="https://freenav.net/articles/why-freenav.html" />
+  <title>开源软件下载站横向评测：SourceForge / GitHub / Softpedia / FossHub 哪个最干净 · FreeNav 专栏</title>
+  <meta name="description" content="想下载开源软件，搜出来一排下载站，到底点哪个才不踩坑？我们把 SourceForge、GitHub、Softpedia、FossHub 四个主流平台按「干净程度、广告、捆绑」横向比了一遍，告诉你结论。" />
+  <link rel="canonical" href="https://freenav.net/articles/2026-08-05-download-showdown.html" />
   <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
   <link rel="manifest" href="../manifest.webmanifest" />
@@ -15,9 +15,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="FreeNav" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="我做了个不追踪你的「软件界豆瓣」：FreeNav 是怎么挑软件的" />
-  <meta property="og:description" content="一个不懂代码的人，为什么动手搭了个软件导航站？以及挑软件的 3 条硬标准。" />
-  <meta property="og:url" content="https://freenav.net/articles/why-freenav.html" />
+  <meta property="og:title" content="开源软件下载站横向评测：SourceForge / GitHub / Softpedia / FossHub 哪个最干净" />
+  <meta property="og:description" content="想下载开源软件，搜出来一排下载站，到底点哪个才不踩坑？我们把 4 个主流平台横向比了一遍。" />
+  <meta property="og:url" content="https://freenav.net/articles/2026-08-05-download-showdown.html" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:image" content="https://freenav.net/og-blog.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -51,46 +51,59 @@
 
   <main class="blog-main" id="top">
     <article class="container post">
-      <p class="post-kicker">关于本站</p>
-      <h1 class="post-title">我做了个不追踪你的「软件界豆瓣」：FreeNav 是怎么挑软件的</h1>
-      <p class="post-meta">2026-07-26 · 约 7 分钟阅读</p>
+      <p class="post-kicker">安全避坑</p>
+      <h1 class="post-title">开源软件下载站横向评测：SourceForge / GitHub / Softpedia / FossHub 哪个最干净</h1>
+      <p class="post-meta">2026-08-05 · 约 8 分钟阅读</p>
 
       <div class="post-body">
-        <p>先交个底：我是个完全不懂代码的人。所以当我跟朋友说"我做了个软件导航站"的时候，他们第一反应是——你被人骗去当代理了？</p>
-        <p>不是。我只是被"找软件"这件事烦透了。</p>
+        <p>想下个开源软件，浏览器一搜，排前面的常常是几个「下载站」，每个都标着大大的「下载」按钮，可你点下去才发现：有的是二次打包、有的顺手塞个工具栏、有的根本不是官网。到底该信哪个？我把四个最常见的开源软件下载平台拉出来，按「干净程度」逐一比一遍。</p>
 
-        <h2>一、被全家桶和弹窗逼出来的念头</h2>
-        <p>你大概也有过这种经历：想装个压缩软件，搜出来一排"高速下载""安全下载"，点下去蹦出三四个不认识的捆绑；想剪个视频，先被"免费试用 3 天"勾走注意力，真正想用的功能藏在付费墙后面。更别提那些装完就改你浏览器主页、隔三差五弹窗问你"是否允许发送使用数据"的。</p>
-        <p>我不是反对软件赚钱。我是烦那种<strong>「你以为免费，其实在拿隐私和注意力买单」</strong>的模糊感。于是我动了念头：能不能有个地方，把"真正免费、开源、不偷偷追踪你"的软件，老老实实列出来，还顺手告诉你"这个和那个比，谁更适合小白"。</p>
+        <h2>一、评分维度</h2>
+        <p>只比三件事，因为这三件最影响你「装得安不安心」：</p>
+        <p>· <strong>是否官方源</strong>：下载的是项目自己发布的原版，还是别人重新打包的；<br>
+        · <strong>广告 / 诱导按钮</strong>：页面上有没有「高速下载」「安全下载」这类容易点错的假按钮；<br>
+        · <strong>捆绑 / 追踪</strong>：安装包里有没有夹带其他软件、有没有偷偷上报。</p>
 
-        <h2>二、它和"资讯流"不是一回事</h2>
-        <p>有人问我：那你这不就是个软件版的新闻聚合？还真不是。</p>
-        <p>新闻聚合类工具（比如给开发者看资讯的 hackertab）做的是"自动搬运 + 实时更新 + 帮你省时间"——像今日头条，刷得越多越上头，但信息一过就忘。FreeNav 想做的是另一头：<strong>像豆瓣榜单那样，人工精选、深度测评、帮你做决定</strong>。一个软件值不值得进榜单，是人挑的，不是算法推的；一篇文章讲不讲得清，是写的人负责的，不是标题党凑的。</p>
-        <p>所以你会发现，这里没有"今日热榜"，也没有"猜你喜欢"。我们宁可慢一点、少一点，也要让每一条都经得起"你装上去用一周"的检验。</p>
+        <h2>二、四个平台横向比</h2>
 
-        <h2>三、挑软件的 3 条硬标准</h2>
-        <p>这是 FreeNav 选品的底线，一条不满足就不进列表：</p>
-        <p><strong>① 开源优先。</strong>能开源的，优先推荐开源版。代码公开意味着有人能审计、出事能接力维护，不会作者一跑路软件就死。当然，少数闭源但确实好用又良心的，也会收，但会标清楚。</p>
-        <p><strong>② 真免费，没有暗坑。</strong>不是"免费下载、核心功能收费"的套路，也不是"个人免费、商用要买"却不说清楚的含糊。免费到什么程度，我们写明白。</p>
-        <p><strong>③ 无追踪是底线。</strong>这一条是我的私心，也是 FreeNav 的招牌。凡是会偷偷上报你的行为、弹窗求权限、把数据卖给第三方的，一律不收。你在这站上逛，浏览器里不会被人悄悄记下"这个人看了什么"。</p>
+        <h3>1. GitHub（含 GitLab / Codeberg）</h3>
+        <p><strong>干净度：★★★★★</strong><br>
+        绝大多数开源项目的「第一发布地」就是 GitHub 的 Releases 页。你下到的是开发者亲手编译、带校验哈希的原版，几乎不存在二次打包。缺点是对新手不够友好——要在仓库里找 Releases 标签，且英文界面多。</p>
+        <p><strong>适合：</strong>能认项目官网 / 仓库的人，首选这里。</p>
 
-        <h2>四、站里现在有什么</h2>
-        <p>截至这篇写出来，FreeNav 已经收了 <a href="/tools.html">128 款软件</a>，按 11 大使用场景分好类——写文档、做图、录屏、传文件、本地跑 AI……你想得到的日常需求，基本都能直接对号入座。</p>
-        <p>另外还有 6 个深度专题：比如<a href="/columns/local-ai.html">本地 AI 怎么选</a>、<a href="/columns/newbie.html">新人装机清单</a>。它们不是"把软件罗列一遍"，而是真的做了对比表和踩坑提醒——这才是"专栏"存在的意义。</p>
+        <h3>2. FossHub</h3>
+        <p><strong>干净度：★★★★☆</strong><br>
+        专门收录开源 / 免费软件的下载站，最大卖点是「无广告、无捆绑、无追踪」。页面干净，按钮就是真下载。缺点是收录量不如大站，小众软件可能没有。</p>
+        <p><strong>适合：</strong>想要「像官网一样干净、又比 GitHub 好找」的人。</p>
 
-        <h2>五、你能怎么参与</h2>
-        <p>FreeNav 没有评论区（加第三方评论要么追踪你、要么塞广告，违背招牌）。但你有三个零追踪的方式参与：</p>
-        <p>· 在首页点 <strong>⭐ 收藏</strong>，把你常用的钉住，再用 <strong>✨ 定制</strong> 告诉站点你关心哪些场景，首页会更懂你；<br>
-        · 发现好软件，去 <a href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer">GitHub 开个 Issue 投稿</a>；<br>
-        · 文章有错漏，同样走 Issue 或邮件告诉我。</p>
+        <h3>3. SourceForge</h3>
+        <p><strong>干净度：★★★☆☆</strong><br>
+        老牌开源托管站，资源极多。早年有过「捆绑安装器」的坏名声，后来整改了，现在默认提供原版下载，但页面仍会放一些推广位，要认准「Direct Download」而不是花哨大按钮。</p>
+        <p><strong>适合：</strong>找老牌 / 小众开源项目时兜底，但下载时多看一眼链接。</p>
+
+        <h3>4. Softpedia</h3>
+        <p><strong>干净度：★★★☆☆</strong><br>
+        软件库庞大、有中文、有截图和版本历史，体验像正规媒体。但它本质是「镜像站」，部分安装包经过重新封装，偶尔夹带推荐软件。胜在信息全、检索方便。</p>
+        <p><strong>适合：</strong>先看评测和版本对比、再决定去哪下的人，不建议直接在这装。</p>
+
+        <h2>三、结论：按场景选</h2>
+        <p>· 找得到项目官网 / GitHub → <strong>永远先去官网或 GitHub Releases</strong>，这是最干净的；<br>
+        · 只想快速下一个干净版本、又不想翻仓库 → <strong>FossHub</strong>；<br>
+        · 项目太老、GitHub 搜不到 → <strong>SourceForge</strong>（认准 Direct Download）；<br>
+        · 想先看评测和版本对比 → <strong>Softpedia 看信息，但下载回到官网 / FossHub</strong>。</p>
+        <p>一句话：<strong>下载站只看「信息」、不在「下载站」下载</strong>，把真正的安装包留给官网和 GitHub，坑最少。</p>
+
+        <h2>四、几个通用防坑习惯</h2>
+        <p>无论用哪个站，装之前养成三个习惯：认域名是不是官网、取消勾选「安装 XX 工具栏 / 设为默认」、装完用任务管理器看有没有多出陌生自启项。我们把这些写进了另一篇<a href="articles/2026-08-05-clean-download.html">免费软件下载站避坑指南</a>，搭配着看更稳。</p>
+        <p>另外，FreeNav 的<a href="/tools.html">工具清单</a>里每个软件都尽量直链官网或开源仓库，你懒得一个个比对时，可以把它当「已经替你筛过一遍」的起点。</p>
 
         <h2>写在最后</h2>
-        <p>我做 FreeNav，不是要和它比谁软件多。我是想证明一件事：在"免费"这件事上，你本可以不交出隐私、不忍受捆绑、不被当成流量。</p>
-        <p>如果这篇让你点了头，欢迎去 <a href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer">GitHub 投个稿</a>，或者邮件告诉我你想看的下一个专题。下一期，我打算写《2026 年我私藏的 8 个开源替代，帮你告别全家桶》——你也可以在 <a href="/blog.html">专栏</a> 里蹲着。</p>
+        <p>没有「绝对干净」的下载站，只有「更可控」的习惯。把 GitHub / 官网当主渠道，下载站当信息源，再配上取消勾选的小心，基本能避开九成以上的捆绑陷阱。</p>
+        <p>如果你常用的某个软件不知道去哪下最干净，欢迎在<a href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer"> GitHub 上问我</a>，我们帮你定位官方源。</p>
       </div>
 
       <div class="share-bar">
-        <span class="share-label">📤 这篇有用？分享出去，帮更多人找到 FreeNav</span>
+        <span class="share-label">📤 这篇有用？分享出去，帮更多人避开下载站的坑</span>
         <div class="share-btns">
           <button data-share="link" type="button">复制链接</button>
           <button data-share="wechat" type="button">微信文案</button>

@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# 内部运营 / 文档不对外索引（不删除，仅屏蔽爬虫）
+Disallow: /_运营/
+Disallow: /FreeNav_分发文案_精简版.md
+Disallow: /manual.pdf
+
 Sitemap: https://freenav.net/sitemap.xml

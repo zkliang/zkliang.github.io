@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>想自己搭个开源网址导航？从 0 到上线，我用过的方案 · FreeNav 专栏</title>
+  <meta name="description" content="收藏夹塞满了、团队要共享书签、嫌广告太多——这篇讲 4 种自建网址导航的方案，从零代码的 GitHub Pages 到自托管面板，并附上本站的实际做法。" />
+  <link rel="canonical" href="https://freenav.net/articles/2026-08-05-self-host-nav.html" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FreeNav" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="想自己搭个开源网址导航？从 0 到上线，我用过的方案" />
+  <meta property="og:description" content="收藏夹塞满了、团队要共享书签、嫌广告太多——这篇讲 4 种自建网址导航的方案。" />
+  <meta property="og:url" content="https://freenav.net/articles/2026-08-05-self-host-nav.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://freenav.net/og-blog.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../assets/css/style.min.css" />
+  <link rel="stylesheet" href="../assets/css/widgets.css" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#top">跳到主内容</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">FreeNav</span>
+        <span class="brand-sub">免费软件导航</span>
+      </a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/tools.html">全部工具</a>
+        <a href="/blog.html" class="active nav-cta">专栏</a>
+        <a href="#favs" id="navFavs">⭐ 收藏 <span id="favCount" class="nav-badge"></span></a>
+        <button class="nav-customize" id="navCustomize" type="button" aria-label="定制我的首页">✨ 定制</button>
+        <a href="/privacy.html">隐私</a>
+        <a href="/business.html">商务合作</a>
+        <a href="/disclaimer.html">免责</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="blog-main" id="top">
+    <article class="container post">
+      <p class="post-kicker">动手自建</p>
+      <h1 class="post-title">想自己搭个开源网址导航？从 0 到上线，我用过的方案</h1>
+      <p class="post-meta">2026-08-05 · 约 9 分钟阅读</p>
+
+      <div class="post-body">
+        <p>先说清楚「网址导航」是什么：它和你浏览器里的收藏夹一样，是把常用网站摆在一个页面上、点一下就跳。区别是——收藏夹只有你自己看，网址导航可以是一个<strong>网页</strong>，能分享、能团队共用、能当新标签页。</p>
+        <p>我自己的 FreeNav 最初就是这么来的：收藏夹塞了 200 多个链接，找东西比搜还慢。于是我把它搬成了一个网页。下面把走过、试过的 4 条路讲清楚，从零代码到自托管，你按自己的技术胃口选。</p>
+
+        <h2>一、先想清楚：你要的是哪种「导航」</h2>
+        <p>需求不同，方案天差地别：</p>
+        <p>· <strong>个人清爽起始页</strong>：只要自己打开浏览器第一眼看到常用站，别无广告；<br>
+        · <strong>团队 / 家庭共享</strong>：多人维护一份书签，比如家人共用影视 / 工具入口；<br>
+        · <strong>对外发布的资源站</strong>：像 FreeNav 这样，给陌生人看、还能 SEO 被搜到；<br>
+        · <strong>纯折腾乐趣</strong>：有自己的服务器，想玩自托管面板。</p>
+        <p>对号入座后再往下看，能省很多时间。</p>
+
+        <h2>二、方案 1：零代码静态站（GitHub Pages）</h2>
+        <p>这是 FreeNav 自己用的路子，也最适合「想自己掌控、又不想学后端」的人。</p>
+        <p><strong>做法：</strong>写一份 HTML（其实就是把链接分类排好），扔到 GitHub 仓库，开启 Pages，它就变成一个公开网址。零服务器、零费用、不怕跑路——GitHub 替你托管。</p>
+        <p><strong>优点：</strong>完全可控、不追踪用户、内容想写什么写什么、还能被百度 / 谷歌收录带来自然流量。<br>
+        <strong>缺点：</strong>要会一点 HTML；想要评论、登录这类动态功能得另接服务。</p>
+        <p><strong>适合：</strong>想做一个「长期资产型」导航站、甚至 future 想靠流量变现的人。这篇<a href="/blog.html">专栏</a>里我反复强调的，就是这种「属于自己的、不被平台拿捏」的站点。</p>
+
+        <h2>三、方案 2：开箱即用的起始页服务</h2>
+        <p>如果你连 HTML 都不想碰，<strong>start.me</strong> 这类服务最省事：注册后拖拽添加书签、分栏分组，还能跨设备同步、生成公开页分享给别人。</p>
+        <p><strong>优点：</strong>五分钟上手，无需技术；<br>
+        <strong>缺点：</strong>数据在别人服务器上、免费版功能受限、品牌是别人的。适合「只想用、不想拥有」的人。</p>
+
+        <h2>四、方案 3：自托管面板（有服务器 / NAS 的人）</h2>
+        <p>如果你家里有 NAS、或者有台轻量云服务器，可以跑 <strong>Heimdall、Homarr、Dashy</strong> 这类开源导航面板。它们专为「自托管全家桶」设计：Docker 一键起，界面漂亮，能显示服务状态（比如「我家 Plex 在线吗」）。</p>
+        <p><strong>优点：</strong>功能强、可玩性高、数据完全在自己手里；<br>
+        <strong>缺点：</strong>要会装 Docker、要维护服务器。这是「爱好级」方案，不是给小白的。</p>
+
+        <h2>五、方案 4：浏览器书签 + 同步（最朴素）</h2>
+        <p>说句大实话：很多人需要的只是「换设备也能看同一份书签」。那 Chrome / Edge 的同步功能就够了，配合「书签栏分组」，比任何导航站都轻。</p>
+        <p><strong>适合：</strong>需求极简、不想额外维护任何东西的人。它解决不了「分享给别人」和「被搜索到」。</p>
+
+        <h2>六、本站的实际做法（给你一条最小路径）</h2>
+        <p>FreeNav 走的是方案 1：一份纯静态 HTML + 一点 CSS/JS，托管在 <a href="https://www.aliyun.com/minisite/goods?userCode=dmi4rtzf" target="_blank" rel="noopener noreferrer">阿里云</a>的轻量服务器上（新用户通常有首单优惠，服务器是建站绕不开的基础投入）。之所以没用 GitHub Pages 而用独立服务器，是因为后续要接统计、广告、自定义域名更灵活——但<strong>对只想搭个个人导航的新手，GitHub Pages FREE 就够</strong>。</p>
+        <p>最小路径就三步：</p>
+        <p>① 在 GitHub 建个仓库，写一份带分类链接的 <code>index.html</code>；<br>
+        ② 仓库设置里开启 Pages；<br>
+        ③ 想要自己的域名，再去买一个、按提示解析。完事。</p>
+        <p>想看实战细节，可以读我们的<a href="/columns/newbie.html">新人装机清单</a>，里面也涉及「工具怎么组织才不乱」的思路，和搭导航是一回事。</p>
+
+        <h2>写在最后</h2>
+        <p>搭网址导航本身不难，难的是「坚持维护」。所以我的建议是：<strong>从最小可用开始</strong>——先放 20 个你真常用的链接，跑通上线，再慢慢加。别一上来就追求完美分类，那会劝退自己。</p>
+        <p>如果你也想做一个「不被平台拿捏、长期属于自己的」导航 / 资源站，FreeNav 就是个现成范本：开源、静态、可白嫖托管。也欢迎在<a href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer"> GitHub 上交流</a>你的玩法——我也在持续迭代它。</p>
+      </div>
+
+      <div class="share-bar">
+        <span class="share-label">📤 这篇有用？分享给也想搭自己导航站的朋友</span>
+        <div class="share-btns">
+          <button data-share="link" type="button">复制链接</button>
+          <button data-share="wechat" type="button">微信文案</button>
+          <button data-share="weibo" type="button">微博文案</button>
+          <button data-share="xiaohongshu" type="button">小红书/知乎文案</button>
+          <button data-share="headline" type="button">头条/B站文案</button>
+          <button data-share="native" type="button">系统分享</button>
+        </div>
+        <p class="share-tip">复制的文案已按平台适配：严格平台（小红书 / 知乎 / 头条 / B站）用纯文字带出「FreeNav（freenav.net）」做品牌记忆、不含外链与返佣话术；公众号 / 微博可带文章链接直接回流。</p>
+      </div>
+
+      <div class="post-end">
+        <p class="post-end-title">发现错漏，或有想看的专题？</p>
+        <div class="post-end-actions">
+          <a class="post-end-btn" href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer">去 GitHub 提 Issue</a>
+          <a class="post-end-btn ghost" href="mailto:zkl3@msn.com?subject=FreeNav%20投稿%2F纠错">写邮件给我</a>
+        </div>
+        <p class="post-end-note">本站不追踪你；投稿与纠错均不要求注册。</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>（Free Media Heck Yeah）。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">关于本站</p>
+        <p class="footer-note">本站为导航索引，不托管、不销售任何软件。所有链接指向软件官方网站或开源仓库。</p>
+        <p class="footer-note">部分链接为<strong>联盟推广 / 赞助</strong>链接，你通过它们可能产生佣金，但<strong>不会额外加价</strong>。详见<a href="/disclaimer.html">免责声明</a>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/tools.html">全部工具</a></p>
+        <p><a href="/columns/opensource-alt.html">细分专题</a></p>
+        <p><a href="/blog.html">专栏</a></p>
+        <p><a href="/business.html">商务合作</a></p>
+        <p><a href="/privacy.html">隐私政策</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span>
+      <span class="footer-tip">温馨提示：软件均来自第三方官方站点，下载前请认准官网，注意系统兼容与数据安全。</span>
+    </div>
+  </footer>
+
+  <button id="toTop" class="to-top" aria-label="回到顶部" hidden>↑</button>
+
+  <script>document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());</script>
+  <script defer src="../assets/js/theme.min.js"></script>
+  <script defer src="../assets/js/sw-register.js"></script>
+  <script defer src="../assets/js/pwa-install.min.js"></script>
+  <script defer src="../assets/js/share.min.js"></script>
+  <script async src="https://cn.vercount.one/js"></script>
+</body>
+</html>

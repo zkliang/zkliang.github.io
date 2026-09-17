@@ -55,6 +55,20 @@
     <section class="container" id="colPicks"></section>
     <section class="container" id="colReviews"></section>
     </main>
+
+    <section class="share-bar" aria-label="分享 / 分发">
+      <span class="share-label">ð¤ 分享 / 分发这个专题</span>
+      <div class="share-btns">
+        <button data-share="link" type="button">复制链接</button>
+        <button data-share="wechat" type="button">微信文案</button>
+        <button data-share="weibo" type="button">微博文案</button>
+        <button data-share="xiaohongshu" type="button">小红书/知乎文案</button>
+        <button data-share="toutiao" type="button">头条/B站文案</button>
+        <button data-share="native" type="button">系统分享</button>
+      </div>
+      <p class="share-tip">每篇优质内容都值得被更多人看到：按平台分别生成文案，严格平台（小红书/知乎/头条/B站）仅带「FreeNav」纯文字做品牌记忆，不踩导流变现与贬竞品的坑。</p>
+    </section>
+
   </div>
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -110,6 +124,7 @@
   <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script defer src="../assets/js/sw-register.js"></script>
   <script defer src="../assets/js/pwa-install.min.js"></script>
+  <script defer src="../assets/js/share.min.js"></script>
   <script defer src="https://cn.vercount.one/js"></script>
 </body>
 </html>
