@@ -5,8 +5,15 @@
     <link>https://freenav.net</link>
     <description>精选 100+ 款真正免费、开源的软件，附 4 个差异化专题对比表与测评。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 10 Jul 2026 03:23:47 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 07:15:47 GMT</lastBuildDate>
     <atom:link href="https://freenav.net/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>笔记软件怎么选：Obsidian / Joplin / Logseq / Standard Notes，谁适合你</title>
+      <link>https://freenav.net/articles/2026-09-17-note-app-choose.html</link>
+      <guid isPermaLink="true">https://freenav.net/articles/2026-09-17-note-app-choose.html</guid>
+      <description>换了三次笔记软件，每次搬家都像搬一次家。这篇拆开四款主流笔记：数据存哪、怎么同步、开源与否、适合谁不适合谁。</description>
+      <pubDate>Thu, 17 Sep 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>Everything</title>
       <link>https://www.voidtools.com/</link>
