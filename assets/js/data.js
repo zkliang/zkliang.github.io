@@ -99,7 +99,7 @@ window.FREENAV_SOFTWARE = [
   { id: "aria2", name: "Aria2", cat: "download", desc: "命令行多协议下载内核，配合前端做离线下载。", url: "https://aria2.github.io/", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["命令行", "离线下载"] },
   { id: "ytdlp", name: "yt-dlp", cat: "download", desc: "视频下载命令行神器，更新极快、支持海量站点。", url: "https://github.com/yt-dlp/yt-dlp", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["视频", "命令行"] },
   { id: "persepolis", name: "Persepolis", cat: "download", desc: "Aria2 的图形前端，下载管理更直观。", url: "https://persepolisdm.github.io/", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["图形化", "Aria2"] },
-  { id: "downzemall", name: "DownZemAll", cat: "download", desc: "开源下载管理器，批量抓取页面里的所有链接。", url: "https://www.downthemall.org/", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["批量", "抓取"] },
+  { id: "downzemall", name: "DownZemAll", cat: "download", desc: "开源下载管理器，批量抓取页面里的所有链接。", url: "https://www.arrow-dl.com/", pricing: "开源", platforms: ["Win", "Mac", "Linux"], tags: ["批量", "抓取"] },
   { id: "cobalt", name: "Cobalt", cat: "download", desc: "开源在线媒体下载器，粘贴链接即得视频/音频，干净无广告。", url: "https://cobalt.tools/", pricing: "开源", platforms: ["Web"], tags: ["在线", "视频"] },
 
   // ───────── AI 工具 ─────────
@@ -142,7 +142,7 @@ window.FREENAV_SOFTWARE = [
 { id: "lanxin", name: "vivo 蓝心", cat: "aichina", desc: "vivo 设备内置 AI 助手，蓝心大模型驱动。", url: "https://www.vivo.com.cn/", pricing: "免费", platforms: ["Android"], tags: ["手机AI", "vivo"] },
 { id: "marvis", name: "Marvis", cat: "aichina", desc: "腾讯操作系统级 AI 助手，一句话操控电脑、跨端远程、隐私模式数据不上云。", url: "https://marvis.qq.com/", pricing: "免费增值", platforms: ["Win", "Mac", "iOS", "Android"], tags: ["操作系统", "腾讯", "Agent", "跨端"] },
 { id: "qclaw", name: "QClaw", cat: "aichina", desc: "腾讯电脑管家出品微信远程办公 AI 助手，手机发指令、电脑自动干活。", url: "https://qclaw.qq.com/", pricing: "免费增值", platforms: ["Win", "Mac"], tags: ["微信", "腾讯", "Agent", "办公"] },
-{ id: "qoderwork", name: "QoderWork", cat: "aichina", desc: "阿里 Qoder 出品的桌面 AI Agent，自然语言自主执行多步任务。", url: "https://qoderwork.org/", pricing: "免费增值", platforms: ["Mac", "桌面"], tags: ["阿里", "Agent", "桌面", "自动化"] },
+{ id: "qoderwork", name: "QoderWork", cat: "aichina", desc: "阿里 Qoder 出品的桌面 AI Agent，自然语言自主执行多步任务。", url: "https://qoder.com.cn/qoderwork", pricing: "免费增值", platforms: ["Mac", "桌面"], tags: ["阿里", "Agent", "桌面", "自动化"] },
 { id: "qwenwork", name: "千问办公", cat: "aichina", desc: "阿里企业级 Agent 产品（QwenWork），整合桌面/云端/协同 Agent。", url: "https://qwenwork.cn/", pricing: "免费增值", platforms: ["Web", "Win", "Mac"], tags: ["阿里", "企业", "Agent", "办公"] },
 { id: "lovekey", name: "LoveKey", cat: "aichina", desc: "AI 社交聊天键盘，分析语境一键高情商回复，恋爱社交场景。", url: "https://www.lovekeyboard.com/", pricing: "免费增值", platforms: ["Android", "iOS"], tags: ["社交", "键盘", "聊天", "AI回复"] },
 
@@ -174,7 +174,7 @@ window.FREENAV_SOFTWARE = [
   { id: "organicmaps", name: "Organic Maps", cat: "mobile", desc: "开源离线地图，无遥测、省电，徒步导航好用。", url: "https://organicmaps.app/", pricing: "开源", platforms: ["Android", "iOS"], tags: ["地图", "离线"] },
   { id: "kdeconnect", name: "KDE Connect", cat: "mobile", desc: "手机电脑无缝互联，通知同步/文件互传。", url: "https://kdeconnect.kde.org/", pricing: "开源", platforms: ["Win", "Mac", "Linux", "Android", "iOS"], tags: ["互联", "文件互传"] },
   { id: "simplemobile", name: "Simple Mobile Tools", cat: "mobile", desc: "开源安卓基础应用套件（相册/计算器/文件）。", url: "https://www.simplemobiletools.com/", pricing: "开源", platforms: ["Android"], tags: ["套件", "基础应用"] },
-  { id: "librera", name: "Librera Reader", cat: "mobile", desc: "安卓电子书阅读器，格式全、自定义强。", url: "https://librera.ml/", pricing: "开源", platforms: ["Android"], tags: ["阅读器", "电子书"] },
+  { id: "librera", name: "Librera Reader", cat: "mobile", desc: "安卓电子书阅读器，格式全、自定义强。", url: "https://librera.app/", pricing: "开源", platforms: ["Android"], tags: ["阅读器", "电子书"] },
   { id: "antennapod", name: "AntennaPod", cat: "mobile", desc: "开源播客客户端，订阅管理清爽无广告。", url: "https://antennapod.org/", pricing: "开源", platforms: ["Android"], tags: ["播客", "无广告"] },
   { id: "opencamera", name: "Open Camera", cat: "mobile", desc: "开源相机，手动参数与稳定拍摄，无隐私收集。", url: "https://opencamera.org.uk/", pricing: "开源", platforms: ["Android"], tags: ["相机", "开源"] },
   { id: "trailsense", name: "Trail Sense", cat: "mobile", desc: "离线户外工具，指南针/气压/高度，无网络也能用。", url: "https://github.com/kylecorry31/Trail-Sense", pricing: "开源", platforms: ["Android"], tags: ["户外", "离线"] },
