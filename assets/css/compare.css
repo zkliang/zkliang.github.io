@@ -1,0 +1,54 @@
+/* FreeNav 工具对比页样式 */
+.compare-main { padding-top: 64px; padding-bottom: 80px; min-height: 60vh; }
+.cmp-hero h1 { font-size: 34px; line-height: 1.25; margin: 0 0 14px; color: var(--text); }
+
+.cmp-picker { margin: 8px 0 28px; }
+.cmp-pick-label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.cmp-select {
+  width: 100%; max-width: 420px; font: inherit; font-size: 14px;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border-strong);
+  border-radius: 10px; padding: 11px 14px; cursor: pointer;
+}
+.cmp-select:focus { outline: none; border-color: var(--accent); }
+.cmp-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.cmp-chip-active {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 13px;
+  color: var(--text); background: var(--surface); border: 1px solid var(--accent);
+  border-radius: 999px; padding: 6px 8px 6px 14px;
+}
+.cmp-chip-active button {
+  background: transparent; border: none; color: var(--faint); cursor: pointer; font-size: 16px; line-height: 1; padding: 0 2px;
+}
+.cmp-chip-active button:hover { color: var(--danger); }
+
+.cmp-empty {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  min-height: 220px; border: 1px dashed var(--border-strong); border-radius: var(--radius);
+  color: var(--faint); text-align: center; padding: 30px;
+}
+.cmp-empty span { font-size: 38px; }
+.cmp-empty p { font-size: 14px; line-height: 1.7; max-width: 380px; margin: 0; }
+
+.cmp-table-wrap { border: 1px solid var(--border); border-radius: var(--radius); overflow-x: auto; }
+.cmp-row { display: grid; border-bottom: 1px solid var(--border); min-width: 620px; }
+.cmp-row:last-child { border-bottom: none; }
+.cmp-head-row { position: sticky; top: 0; background: var(--surface); }
+.cmp-cell { flex: 1 1 0; padding: 14px 16px; font-size: 13.5px; color: var(--text); line-height: 1.6; border-left: 1px solid var(--border); }
+.cmp-cell:first-child { border-left: none; }
+.cmp-label { color: var(--faint); font-size: 12.5px; flex: 0 0 120px; background: var(--surface); }
+.cmp-col-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.cmp-col-name { font-size: 15px; font-weight: 600; }
+.cmp-remove { background: transparent; border: none; color: var(--faint); cursor: pointer; font-size: 18px; line-height: 1; }
+.cmp-remove:hover { color: var(--danger); }
+.cmp-cell a { color: var(--accent); text-decoration: none; }
+.cmp-cell a:hover { text-decoration: underline; }
+.cmp-tag { display: inline-block; font-size: 11px; color: var(--muted); background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; margin: 0 4px 4px 0; }
+
+.cmp-foot { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+@media (max-width: 640px) {
+  .compare-main { padding-top: 44px; }
+  .cmp-hero h1 { font-size: 27px; }
+  .cmp-label { flex: 0 0 96px; padding: 12px 10px; }
+  .cmp-cell { padding: 12px 10px; }
+}

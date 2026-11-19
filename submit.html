@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>提交工具 / 纠错反馈 - FreeNav</title>
+  <meta name="description" content="发现好用的免费开源软件？或者链接失效、信息过时？提交给 FreeNav，一起把这份清单维护得更好。" />
+  <link rel="canonical" href="https://freenav.net/submit.html" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="提交工具 / 纠错反馈 · FreeNav" />
+  <meta property="og:description" content="一起把这份免费开源软件清单维护得更好。" />
+  <meta property="og:url" content="https://freenav.net/submit.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://freenav.net/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="assets/css/style.min.css" />
+  <link rel="stylesheet" href="assets/css/submit.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#top">跳到主内容</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/"><span class="brand-mark">◆</span><span class="brand-name">FreeNav</span><span class="brand-sub">免费软件导航</span></a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/tools.html">全部工具</a>
+        <a href="/picker.html">场景选型</a>
+        <a href="/compare.html">工具对比</a>
+        <a href="/blog.html">专栏</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="submit-main container" id="top">
+    <section class="submit-hero">
+      <p class="pk-kicker">参与维护</p>
+      <h1>好工具不该被埋没，错信息该被纠正。</h1>
+      <p class="pk-lead">FreeNav 是一份人工维护的清单。你发现的好软件、遇到的坏链接，都能让这里变得更好。提交会直达本站的 GitHub 仓库，我逐条审核。</p>
+    </section>
+
+    <div class="submit-tabs" role="tablist" aria-label="提交类型">
+      <button class="submit-tab active" data-tab="tool" role="tab" aria-selected="true" type="button">推荐新工具</button>
+      <button class="submit-tab" data-tab="error" role="tab" aria-selected="false" type="button">纠错反馈</button>
+    </div>
+
+    <section class="submit-panel" id="panel-tool">
+      <form id="formTool" class="submit-form">
+        <label>工具名称 <span class="req">*</span>
+          <input name="name" required placeholder="例如：Everything" />
+        </label>
+        <label>官网地址 <span class="req">*</span>
+          <input name="url" type="url" required placeholder="https://" />
+        </label>
+        <label>适合分类
+          <select name="cat">
+            <option>不确定</option><option>系统工具</option><option>办公 & 文档</option>
+            <option>设计 & 创作</option><option>开发 & 编程</option><option>影音 & 媒体</option>
+            <option>下载 & 传输</option><option>AI & 智能</option><option>国产 AI</option>
+            <option>安全 & 隐私</option><option>学习 & 教育</option><option>移动 & 安卓</option>
+          </select>
+        </label>
+        <label class="full">一句话介绍 <span class="req">*</span>
+          <input name="desc" required placeholder="它解决什么问题？" />
+        </label>
+        <label class="full">为什么值得收录
+          <textarea name="why" rows="4" placeholder="免费 / 开源情况、是否无广告无追踪、相比同类好在哪……"></textarea>
+        </label>
+        <div class="submit-actions full">
+          <button type="submit" class="pk-btn">生成提交 →</button>
+          <span class="submit-hint">点击后跳转到 GitHub 提交，需要 GitHub 账号</span>
+        </div>
+      </form>
+    </section>
+
+    <section class="submit-panel" id="panel-error" hidden>
+      <form id="formError" class="submit-form">
+        <label>问题类型
+          <select name="kind">
+            <option>链接失效 / 打不开</option><option>信息错误（名称、授权、价格等）</option>
+            <option>内容过时</option><option>其他</option>
+          </select>
+        </label>
+        <label>涉及的工具或页面 <span class="req">*</span>
+          <input name="target" required placeholder="工具名或页面链接" />
+        </label>
+        <label class="full">具体情况 <span class="req">*</span>
+          <textarea name="detail" rows="5" required placeholder="错在哪、正确信息是什么。如有官方新地址请一并提供。"></textarea>
+        </label>
+        <div class="submit-actions full">
+          <button type="submit" class="pk-btn">生成提交 →</button>
+          <span class="submit-hint">点击后跳转到 GitHub 提交，需要 GitHub 账号</span>
+        </div>
+      </form>
+    </section>
+
+    <p class="submit-note">所有提交我都会人工核对后更新。没有 GitHub 账号？也可以直接写邮件到 <a href="mailto:zkl3@msn.com?subject=FreeNav%20%E6%8F%90%E4%BA%A4%2F%E7%BA%A0%E9%94%99">zkl3@msn.com</a>，或到 <a href="https://github.com/zkliang/zkliang.github.io/issues" target="_blank" rel="noopener noreferrer">GitHub Issues 列表 →</a> 查看已提交条目的处理进度。</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/">首页</a></p>
+        <p><a href="/tools.html">全部工具</a></p>
+        <p><a href="/picker.html">场景选型</a></p>
+        <p><a href="/compare.html">工具对比</a></p>
+        <p><a href="/changelog.html">更新日志</a></p>
+        <p><a href="/submit.html">提交工具 / 纠错</a></p>
+        <p><a href="/privacy.html">隐私政策</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span></div>
+  </footer>
+
+  <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script defer src="assets/js/submit-app.js"></script>
+  <script defer src="assets/js/theme.min.js"></script>
+  <script defer src="assets/js/sw-register.js"></script>
+  <script async src="https://cn.vercount.one/js"></script>
+</body>
+</html>

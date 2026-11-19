@@ -1,0 +1,52 @@
+name: 提交新工具
+description: 推荐一款免费 / 开源软件加入 FreeNav
+title: "[新工具] "
+labels: ["提交工具"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: 工具名称
+      placeholder: 例如：Everything
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: 官网地址
+      placeholder: https://
+    validations:
+      required: true
+  - type: dropdown
+    id: cat
+    attributes:
+      label: 适合分类
+      options:
+        - 系统工具
+        - 办公 & 文档
+        - 设计 & 创作
+        - 开发 & 编程
+        - 影音 & 媒体
+        - 下载 & 传输
+        - AI & 智能
+        - 国产 AI
+        - 安全 & 隐私
+        - 学习 & 教育
+        - 移动 & 安卓
+        - 不确定
+    validations:
+      required: true
+  - type: textarea
+    id: desc
+    attributes:
+      label: 一句话介绍
+      description: 它解决什么问题？
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 为什么值得收录
+      description: 免费 / 开源情况、是否无广告无追踪、相比同类好在哪
+    validations:
+      required: false

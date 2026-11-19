@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>工具对比 · 横向比较免费开源软件 - FreeNav</title>
+  <meta name="description" content="把 2-4 款免费开源软件放在一起比：授权、平台、分类、标签、简介一目了然，帮你快速做出选择。" />
+  <link rel="canonical" href="https://freenav.net/compare.html" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="工具对比 · FreeNav" />
+  <meta property="og:description" content="把 2-4 款免费开源软件放在一起比，快速做出选择。" />
+  <meta property="og:url" content="https://freenav.net/compare.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://freenav.net/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="assets/css/style.min.css" />
+  <link rel="stylesheet" href="assets/css/compare.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#top">跳到主内容</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/"><span class="brand-mark">◆</span><span class="brand-name">FreeNav</span><span class="brand-sub">免费软件导航</span></a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/tools.html">全部工具</a>
+        <a href="/picker.html">场景选型</a>
+        <a href="/compare.html" class="active">工具对比</a>
+        <a href="/blog.html">专栏</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="compare-main container" id="top">
+    <section class="cmp-hero">
+      <p class="pk-kicker">工具对比</p>
+      <h1>放在一起比，才知道谁适合你。</h1>
+      <p class="pk-lead">选 2 到 4 款工具，授权方式、支持平台、标签定位并排看。数据来自 FreeNav 已验证的 128 款软件清单。</p>
+    </section>
+
+    <section class="cmp-picker">
+      <label class="cmp-pick-label" for="cmpPick">选择工具（最多 4 款）</label>
+      <select id="cmpPick" class="cmp-select"></select>
+      <div class="cmp-chips" id="cmpChips"></div>
+    </section>
+
+    <div class="cmp-empty" id="cmpEmpty">
+      <span aria-hidden="true">⚖️</span>
+      <p>再选一款就能开始对比了。选好 2 款以上，对比表会自动出现在这里。</p>
+    </div>
+    <div class="cmp-table-wrap" id="cmpTableWrap" hidden></div>
+
+    <div class="cmp-foot">
+      <a class="pk-btn" href="/picker.html">不知道选什么？用场景选型器 →</a>
+      <a class="pk-btn pk-btn-ghost" href="/submit.html">建议对比某两款？告诉我们 →</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/">首页</a></p>
+        <p><a href="/tools.html">全部工具</a></p>
+        <p><a href="/picker.html">场景选型</a></p>
+        <p><a href="/compare.html">工具对比</a></p>
+        <p><a href="/changelog.html">更新日志</a></p>
+        <p><a href="/submit.html">提交工具 / 纠错</a></p>
+        <p><a href="/privacy.html">隐私政策</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span></div>
+  </footer>
+
+  <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script defer src="assets/js/data.min.js"></script>
+  <script defer src="assets/js/compare-app.js"></script>
+  <script defer src="assets/js/theme.min.js"></script>
+  <script defer src="assets/js/sw-register.js"></script>
+  <script async src="https://cn.vercount.one/js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+name: 纠错反馈
+description: 报告死链、信息错误或内容问题
+title: "[纠错] "
+labels: ["纠错"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 问题类型
+      options:
+        - 链接失效 / 打不开
+        - 信息错误（名称、授权、价格等）
+        - 内容过时
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: 涉及的工具或页面
+      description: 工具名或页面链接
+      placeholder: 例如：DownThemAll 或 https://freenav.net/tools/xxx.html
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 具体情况
+      description: 错在哪、正确信息是什么。如有官方新地址请一并提供。
+    validations:
+      required: true

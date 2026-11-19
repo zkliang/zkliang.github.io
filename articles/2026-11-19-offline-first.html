@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>没网也能干活：一份真正的离线优先软件清单 · FreeNav 专栏</title>
+  <meta name="description" content="断网、坐飞机、云服务商宕机、或者单纯不想把文件传到别人服务器——这篇把笔记、影音、办公、AI、地图里真正能离线用的免费开源工具挑出来，逐个讲清楚离线到什么程度。" />
+  <link rel="canonical" href="https://freenav.net/articles/2026-11-19-offline-first.html" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="FreeNav" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="没网也能干活：一份真正的离线优先软件清单" />
+  <meta property="og:description" content="断网、坐飞机、云服务商宕机，或不想把文件传到别人服务器——挑出真正能离线用的免费开源工具。" />
+  <meta property="og:url" content="https://freenav.net/articles/2026-11-19-offline-first.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://freenav.net/og-blog.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../assets/css/style.min.css" />
+  <link rel="stylesheet" href="../assets/css/widgets.css" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#top">跳到主内容</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/"><span class="brand-mark">◆</span><span class="brand-name">FreeNav</span><span class="brand-sub">免费软件导航</span></a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/tools.html">全部工具</a>
+        <a href="/picker.html">场景选型</a>
+        <a href="/blog.html" class="active nav-cta">专栏</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="blog-main" id="top">
+    <article class="container post">
+      <p class="post-kicker">离线优先</p>
+      <h1 class="post-title">没网也能干活：一份真正的离线优先软件清单</h1>
+      <p class="post-meta">2026-11-19 · 约 10 分钟阅读</p>
+
+      <div class="post-body">
+        <p>上个月我坐了十几个小时的长途航班，机上有 Wi-Fi，但我没连。不是矫情，是想试试看——<strong>把我日常依赖的软件断网一整天，到底有多少会当场罢工。</strong></p>
+        <p>结果比想象中糟，也比想象中好。糟的是几个我一直以为"本地"的工具，断网后直接弹登录框；好的是有一批软件全程若无其事地跑着，甚至比联网时更安静。这篇就把这批"断网也不掉链子"的工具挑出来，按用途讲清楚：它们各自能离线到什么程度，哪些功能一断网就没了。</p>
+
+        <h2>一、先分清三种"离线"，别被商家的"支持离线"糊弄</h2>
+        <p>很多软件宣传"可离线使用"，但断网体验天差地别。我把它分成三档，你照着判断：</p>
+        <p><strong>① 完全离线型：</strong>装好之后从头到尾不需要网络，不登录、不联网校验、不偷偷上传。断网对它没有任何影响——这是最理想的一档。</p>
+        <p><strong>② 离线可用、联网增强型：</strong>核心功能断网能干，只有同步、在线素材、云模型这类"加分项"需要网。断网只是少了锦上添花的部分，不影响主业。</p>
+        <p><strong>③ 假离线型：</strong>打着离线旗号，实际首次启动要登录、要联网激活，或者断网一段时间后弹窗要你重新验证。这类最坑，往往在你最需要它的时候掉链子。</p>
+        <p>下面我只收前两档，并且明确标注属于哪一档。第三档一律不进清单——这正是 FreeNav 一直坚持的"免费的部分要真能用"。</p>
+
+        <h2>二、笔记与文档：你的字得留在硬盘上</h2>
+        <p>离线场景下最先要确认的，是"我写的东西存在哪"。存本地普通文件的，断网毫无压力；只存云端的，断网基本等于罢工。</p>
+
+        <h3>① Obsidian / Joplin / MarkText（完全离线型）</h3>
+        <p>这三款在我的 <a href="/articles/2026-09-17-note-app-choose.html">笔记软件选型</a> 里都讲过，从离线角度看它们有个共同点：<strong>内容就是硬盘上的本地文件，写的时候根本不碰网络。</strong><a href="/tools/obsidian.html">Obsidian</a> 是你的 Markdown 文件夹，<a href="/tools/joplin.html">Joplin</a> 开源且加密，<a href="/tools/marktext.html">MarkText</a> 是轻量所见即所得编辑器。断网时它们照常打开、照常编辑、照常全文搜索。</p>
+        <p>要提醒一句：Obsidian 的插件市场和 Joplin 的同步需要联网，但那属于"联网增强"，不影响你离线写字。真正的关键——<strong>文件在你自己硬盘上，断网只是暂时不能同步，不是不能工作。</strong></p>
+
+        <h3>② LibreOffice（完全离线型）</h3>
+        <p><a href="/tools/libreoffice.html">LibreOffice</a> 是我飞机上处理文档的主力。写文档、做表格、改幻灯片，全程不需要网。它读写的是标准 Office 格式（doc/docx、xlsx、pptx）和开放的 ODF 格式，跟同事交换文件毫无障碍。断网写的东西，落地就是硬盘上的一个文件——这点看起来朴素，但在云文档动不动要登录的时代反而是稀缺品。</p>
+
+        <h2>三、影音播放：离线才是主战场</h2>
+        <p>这一档天然为离线而生。飞行路上看的片子、听的歌，本来就得提前存到本地。</p>
+
+        <h3>① VLC / mpv（完全离线型）</h3>
+        <p><a href="/tools/vlc.html">VLC</a> 几乎是"万能播放器"的代名词：几乎所有常见音视频格式都能直接打开，不装额外解码器，不联网。你甚至可以把它当成格式转换工具用。<a href="/tools/mpv.html">mpv</a> 则是极简派的选择，配置文件党的心头好，资源占用低、启动快，字幕和画面校准做得很好。两款都是开源免费，断网完全不影响播放本地文件。</p>
+
+        <h3>② ffmpeg（完全离线型，进阶）</h3>
+        <p>如果你要在路上转码、压片、切片段，<a href="/tools/ffmpeg.html">ffmpeg</a> 是命令行里的万能工具。它是纯本地运行的，装好之后所有处理都在你机器上完成，一行命令搞定，既不上传也不联网。缺点是没图形界面、要记命令——但一旦会用，它就是离线影音处理的天花板。</p>
+
+        <h2>四、AI 工具：真离线和"伪离线"差别最大</h2>
+        <p>这一档是我这次测试里最意外的。市面上大量"本地 AI"其实第一次用还是要联网下模型、注册账号，而真正做到完全离线的，屈指可数。</p>
+
+        <h3>① Ollama / LM Studio（离线可用，模型需先下载）</h3>
+        <p><a href="/tools/ollama.html">Ollama</a> 和 <a href="/tools/lmstudio.html">LM Studio</a> 是本地跑大模型最主流的两条路。<strong>关键操作是：先在联网时把模型下载好。</strong>下载完成后，断网状态下照样能对话、能写代码、能总结文档，全程数据不出本机——这也是它们被收进<a href="/columns/local-ai.html">本地 AI 专题</a>的原因。</p>
+        <p>要注意两点：一是模型文件不小，动辄几个 GB，出门前确认下载完整；二是如果你用的是需要联网调用的在线模型 API，那断网就用不了了——所以出发前一定在本地模型上验证一遍，别到飞机上才发现调的是云端。</p>
+
+        <h2>五、密码、文件与地图：几个容易被忽略的离线刚需</h2>
+        <p><strong>密码：</strong><a href="/tools/keepassxc.html">KeePassXC</a> 是我离线场景下的首选——开源、完全本地、一个加密数据库文件，不联网也能查密码、生成强密码。<a href="/tools/bitwarden.html">Bitwarden</a> 断网时也能读缓存的密码库，但同步要联网。飞机上要填各种账号，这类工具是刚需。</p>
+        <p><strong>文件搜索：</strong><a href="/tools/everything.html">Everything</a> 断网反而更快——它的索引本来就在本地，秒级搜出文件名，断不断网一个样（它是 Windows 工具）。</p>
+        <p><strong>地图：</strong><a href="/tools/organicmaps.html">Organic Maps</a> 是少见的真正离线地图，基于 OpenStreetMap，提前下载好区域地图后，导航、找地点全程不需要网，开着 GPS 就能用。出国漫游、山路没信号的时候特别救命。安卓端配合 <a href="/tools/newpipe.html">NewPipe</a>（离线看缓存视频）和 <a href="/tools/fdroid.html">F-Droid</a>（离线应用商店）基本能撑起一套不联网的移动方案。</p>
+
+        <h2>六、对号入座：按你的离线场景挑</h2>
+        <p>不想逐个看的话，直接按场景对号入座：</p>
+        <p>· 飞机上写东西、改文档 → <a href="/tools/obsidian.html">Obsidian</a> 或 <a href="/tools/libreoffice.html">LibreOffice</a><br>
+        · 路上看片听歌 → <a href="/tools/vlc.html">VLC</a> / <a href="/tools/mpv.html">mpv</a>，提前存好文件<br>
+        · 断网也要用 AI → <a href="/tools/lmstudio.html">LM Studio</a> / <a href="/tools/ollama.html">Ollama</a>，出发前下好模型<br>
+        · 没信号也要导航 → <a href="/tools/organicmaps.html">Organic Maps</a>，提前下载离线地图<br>
+        · 管理账号密码 → <a href="/tools/keepassxc.html">KeePassXC</a>（纯本地）<br>
+        · 安卓不联网方案 → <a href="/tools/fdroid.html">F-Droid</a> + <a href="/tools/newpipe.html">NewPipe</a> + <a href="/tools/organicmaps.html">Organic Maps</a></p>
+        <p>不确定从哪下手？用站点新上的 <a href="/picker.html">场景选型器</a>，选"本地跑 AI"或"新电脑装机"，会直接给你配好一套互相搭配的工具。</p>
+
+        <h2>七、FreeNav 收录"离线工具"的三条硬标准</h2>
+        <p>这类工具最容易夸大宣传，所以我卡得比别的分类更严：</p>
+        <p><strong>① 核心功能必须真的不联网。</strong>不是"离线模式可用"这种模糊说法，而是断网后主业照常。要登录才能启动的一律不收。</p>
+        <p><strong>② 数据存本地通用格式。</strong>Markdown、本地数据库、标准音视频文件，而不是锁在私有格式或云端里。能不能带走，是离线工具的底线。</p>
+        <p><strong>③ 把"联网才能用的部分"讲清楚。</strong>比如本地 AI 要先下模型、离线地图要先下区域——这些前提我会写明，不让你在飞机上才发现缺了一步。</p>
+
+        <h2>写在最后</h2>
+        <p>那天十几个小时没联网，我反而有种久违的清净：没有消息弹窗，没有"正在同步"，文件该在哪就在哪。真正好用的工具，是那种你几乎感觉不到它存在、需要它时它又在的东西——离线优先，本质上是在把控制权从云端拿回你自己手里。</p>
+        <p>如果你也在搭一套自己的离线方案，欢迎把自己验证过的好工具通过 <a href="/submit.html">提交页</a> 告诉我；发现哪款"假离线"混进了清单，也请一并指出，我逐条核实。更多这类工具，可以在 <a href="/tools.html">全部工具</a> 和 <a href="/columns/local-ai.html">本地 AI 专题</a> 里慢慢逛。</p>
+      </div>
+
+      <div class="share-bar">
+        <span class="share-label">📤 这篇有用？分享出去，帮更多人找到 FreeNav</span>
+        <div class="share-btns">
+          <button data-share="link" type="button">复制链接</button>
+          <button data-share="wechat" type="button">微信文案</button>
+          <button data-share="weibo" type="button">微博文案</button>
+          <button data-share="xiaohongshu" type="button">小红书/知乎文案</button>
+          <button data-share="headline" type="button">头条/B站文案</button>
+          <button data-share="native" type="button">系统分享</button>
+        </div>
+        <p class="share-tip">复制的文案已按平台适配：严格平台（小红书 / 知乎 / 头条 / B站）用纯文字带出「FreeNav（freenav.net）」做品牌记忆、不含外链与返佣话术；公众号 / 微博可带文章链接直接回流。</p>
+      </div>
+
+      <div class="post-end">
+        <p class="post-end-title">发现错漏，或有想看的专题？</p>
+        <div class="post-end-actions">
+          <a class="post-end-btn" href="https://github.com/zkliang/zkliang.github.io/issues/new" target="_blank" rel="noopener noreferrer">去 GitHub 提 Issue</a>
+          <a class="post-end-btn ghost" href="/submit.html">提交工具 / 纠错</a>
+        </div>
+        <p class="post-end-note">本站不追踪你；投稿与纠错均不要求注册。</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>（Free Media Heck Yeah）。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/">首页</a></p>
+        <p><a href="/tools.html">全部工具</a></p>
+        <p><a href="/blog.html">专栏</a></p>
+        <p><a href="/picker.html">场景选型</a></p>
+        <p><a href="/submit.html">提交工具 / 纠错</a></p>
+        <p><a href="/privacy.html">隐私政策</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span></div>
+  </footer>
+
+  <script>document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());</script>
+  <script defer src="../assets/js/theme.min.js"></script>
+  <script defer src="../assets/js/sw-register.js"></script>
+  <script defer src="../assets/js/pwa-install.min.js"></script>
+  <script defer src="../assets/js/share.min.js"></script>
+  <script async src="https://cn.vercount.one/js"></script>
+</body>
+</html>

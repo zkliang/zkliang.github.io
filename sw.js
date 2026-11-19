@@ -2,7 +2,7 @@
 // 缓存策略：核心资源 precache + 网络优先（避免过期）
 //           非核心资源 stale-while-revalidate（后台更新、前台不阻塞）
 
-const CACHE = "freenav-v3";
+const CACHE = "freenav-v4";
 const CORE_ASSETS = [
   "/", "/index.html",
   "/assets/css/style.min.css",

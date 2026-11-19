@@ -5,8 +5,15 @@
     <link>https://freenav.net</link>
     <description>精选 128 款真正免费、开源的软件，覆盖 11 大场景，附 5 个差异化专题对比表与测评。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 17 Sep 2026 12:41:24 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://freenav.net/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>没网也能干活：一份真正的离线优先软件清单</title>
+      <link>https://freenav.net/articles/2026-11-19-offline-first.html</link>
+      <guid isPermaLink="true">https://freenav.net/articles/2026-11-19-offline-first.html</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <description>断网、坐飞机、云服务商宕机，或不想把文件传到别人服务器——笔记、影音、办公、AI、地图里真正能离线用的免费开源工具，逐个讲清楚离线到什么程度。</description>
+    </item>
     <item>
       <title>笔记软件怎么选：Obsidian / Joplin / Logseq / Standard Notes，谁适合你</title>
       <link>https://freenav.net/articles/2026-09-17-note-app-choose.html</link>

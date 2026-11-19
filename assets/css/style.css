@@ -245,6 +245,14 @@ img { max-width: 100%; }
 }
 .hero-tags button:hover { color: var(--text); border-color: var(--accent); background: var(--surface-hover); }
 
+.hero-quicklinks { margin-top: 22px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.hero-quicklinks a {
+  color: var(--accent); text-decoration: none; font-size: 13.5px;
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  border-radius: 999px; padding: 9px 16px; transition: 0.15s;
+}
+.hero-quicklinks a:hover { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+
 /* ---------- 区块标题（eyebrow 结构） ---------- */
 .section { padding: 14px 0 8px; }
 .section-eyebrow {

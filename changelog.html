@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>更新日志 · FreeNav 最近做了什么</title>
+  <meta name="description" content="FreeNav 的更新记录：新增工具、修复死链、上线新功能、发布专栏文章，按时间倒序排列，全部来自仓库真实提交。" />
+  <link rel="canonical" href="https://freenav.net/changelog.html" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f8fb" media="(prefers-color-scheme: light)" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="更新日志 · FreeNav" />
+  <meta property="og:description" content="FreeNav 的更新记录，按时间倒序，全部来自仓库真实提交。" />
+  <meta property="og:url" content="https://freenav.net/changelog.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://freenav.net/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="assets/css/style.min.css" />
+  <link rel="stylesheet" href="assets/css/changelog.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#top">跳到主内容</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/"><span class="brand-mark">◆</span><span class="brand-name">FreeNav</span><span class="brand-sub">免费软件导航</span></a>
+      <nav class="top-nav">
+        <a href="/#categories">全部分类</a>
+        <a href="/#columns">细分专题</a>
+        <a href="/tools.html">全部工具</a>
+        <a href="/picker.html">场景选型</a>
+        <a href="/compare.html">工具对比</a>
+        <a href="/blog.html">专栏</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="changelog-main container" id="top">
+    <section class="submit-hero">
+      <p class="pk-kicker">更新日志</p>
+      <h1>这座站，最近在忙什么。</h1>
+      <p class="pk-lead">新增了哪些工具、修掉了哪些坏链、上线了什么功能、写了哪篇长文——都记在这里。所有条目按时间倒序，可从 <a href="https://github.com/zkliang/zkliang.github.io/commits/main" target="_blank" rel="noopener noreferrer">GitHub 提交历史</a> 逐条核对。</p>
+    </section>
+
+    <div class="cl-list">
+      <article class="cl-item">
+        <div class="cl-date">2026-11-19</div>
+        <div class="cl-body">
+          <span class="cl-tag tag-feature">新功能</span>
+          <h2>上线场景选型器、工具对比与社区提交通道</h2>
+          <p>新增 <a href="/picker.html">场景选型器</a>：按"新电脑装机""本地跑 AI""摆脱 Adobe"等 8 个真实场景，直接给出搭配好的工具组合；新增 <a href="/compare.html">工具对比</a>：把 2–4 款工具并排比授权、平台与定位；新增 <a href="/submit.html">提交工具 / 纠错</a> 页面与 GitHub Issue 模板，让每个人都能参与维护。</p>
+        </div>
+      </article>
+      <article class="cl-item">
+        <div class="cl-date">2026-11-19</div>
+        <div class="cl-body">
+          <span class="cl-tag tag-article">新文章</span>
+          <h2>《没网也能干活：一份真正的离线优先软件清单》</h2>
+          <p>把笔记、影音、办公、AI、地图里真正能离线用的免费开源工具挑出来，逐个讲清楚"离线到什么程度"，并区分完全离线 / 联网增强 / 假离线三档。见 <a href="/articles/2026-11-19-offline-first.html">专栏全文</a>。</p>
+        </div>
+      </article>
+      <article class="cl-item">
+        <div class="cl-date">2026-11-19</div>
+        <div class="cl-body">
+          <span class="cl-tag tag-fix">修复</span>
+          <h2>补齐 30 个详情页死链，同步专题数据</h2>
+          <p>此前 30 款国产 AI 工具的"查看详情"指向不存在的页面（404），已用站点统一模板补齐详情页并加入 sitemap；同时修复 columns 源文件与压缩版不同步的隐患，避免下次构建让专题页变空白。</p>
+        </div>
+      </article>
+      <article class="cl-item">
+        <div class="cl-date">2026-11-19</div>
+        <div class="cl-body">
+          <span class="cl-tag tag-feature">运维</span>
+          <h2>死链巡检从"假闭环"修成真闭环</h2>
+          <p>旧巡检脚本只打印日志、从未写入 Actions 输出，导致"自动提 Issue"从未真正触发。现已修复输出链路、加入死链分级判定与 GET 二次复核，并把"发现→提 Issue→修复后关闭"串成闭环。</p>
+        </div>
+      </article>
+      <article class="cl-item">
+        <div class="cl-date">2026-10-29</div>
+        <div class="cl-body">
+          <span class="cl-tag tag-content">内容</span>
+          <h2>新增 13 个软件合集页与内链集群</h2>
+          <p>围绕下载、修图、办公、本地 AI 等主题新增 13 篇合集内容，更新博客索引与 sitemap，并修正 DownThemAll 官网域名。</p>
+        </div>
+      </article>
+      <article class="cl-item">
+        <div class="cl-date">2026-09-17</div>
+        <div class="cl-body">
+          <span class="cl-tag tag-content">内容</span>
+          <h2>补回 10 篇深度长文，完善收录</h2>
+          <p>补齐笔记选型、云同步、密码管理等深度测评，完善 sitemap 与 RSS 收录，清洗历史遗留的冗余注入内容。</p>
+        </div>
+      </article>
+    </div>
+
+    <p class="cl-foot-note">只看到最近几条？完整历史请到 <a href="https://github.com/zkliang/zkliang.github.io/commits/main" target="_blank" rel="noopener noreferrer">GitHub 提交记录</a>。想先知道接下来做什么，可以在 <a href="/submit.html">提交页</a> 告诉我。</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <p class="footer-brand">◆ FreeNav</p>
+        <p class="footer-note">精选免费 / 开源软件导航。内容灵感与清单来源：<a href="https://fmhy.net/" target="_blank" rel="noopener noreferrer">fmhy.net</a>。</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-title">链接</p>
+        <p><a href="/">首页</a></p>
+        <p><a href="/tools.html">全部工具</a></p>
+        <p><a href="/picker.html">场景选型</a></p>
+        <p><a href="/compare.html">工具对比</a></p>
+        <p><a href="/changelog.html">更新日志</a></p>
+        <p><a href="/submit.html">提交工具 / 纠错</a></p>
+        <p><a href="/privacy.html">隐私政策</a></p>
+        <p><a href="/disclaimer.html">免责声明</a></p>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> FreeNav · 免费与开源软件导航</span></div>
+  </footer>
+
+  <script>if (document.getElementById("year")) document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script defer src="assets/js/theme.min.js"></script>
+  <script defer src="assets/js/sw-register.js"></script>
+  <script async src="https://cn.vercount.one/js"></script>
+</body>
+</html>

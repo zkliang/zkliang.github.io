@@ -1,0 +1,36 @@
+/* FreeNav 提交页样式 */
+.submit-main { padding-top: 64px; padding-bottom: 80px; min-height: 60vh; }
+.submit-hero h1 { font-size: 32px; line-height: 1.3; margin: 0 0 14px; color: var(--text); }
+.submit-hero .pk-lead { margin-bottom: 32px; }
+
+.submit-tabs { display: flex; gap: 8px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+.submit-tab {
+  background: transparent; border: none; border-bottom: 2px solid transparent;
+  color: var(--muted); font: inherit; font-size: 15px; padding: 12px 18px; cursor: pointer;
+}
+.submit-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.submit-tab:hover { color: var(--text); }
+
+.submit-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 18px; max-width: 760px; }
+.submit-form label { display: flex; flex-direction: column; gap: 7px; font-size: 13px; color: var(--muted); }
+.submit-form .full { grid-column: 1 / -1; }
+.req { color: var(--danger); }
+.submit-form input, .submit-form select, .submit-form textarea {
+  font: inherit; font-size: 14px; color: var(--text); background: var(--surface);
+  border: 1px solid var(--border-strong); border-radius: 10px; padding: 11px 13px; width: 100%;
+  box-sizing: border-box;
+}
+.submit-form input:focus, .submit-form select:focus, .submit-form textarea:focus {
+  outline: none; border-color: var(--accent);
+}
+.submit-form textarea { resize: vertical; line-height: 1.6; }
+.submit-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 4px; }
+.submit-hint { font-size: 12px; color: var(--faint); }
+.submit-note { margin-top: 30px; font-size: 13px; color: var(--faint); line-height: 1.8; max-width: 760px; }
+.submit-note a { color: var(--accent); }
+
+@media (max-width: 640px) {
+  .submit-main { padding-top: 44px; }
+  .submit-hero h1 { font-size: 26px; }
+  .submit-form { grid-template-columns: 1fr; }
+}
