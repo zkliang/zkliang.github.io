@@ -342,5 +342,125 @@ window.FREENAV_COLUMNS = [
           "<p class='review-tip'>新手路线：先 Ollama + Open WebUI 跑通对话 → 再按需要加 Whisper（转写）/ AnythingLLM（知识库）→ 有独显再上 SD WebUI 出图。别一上来全装，按需扩展。</p>"
       }
     ]
+  },
+  {
+    "key": "domestic-oss",
+    "title": "国产开源软件清单",
+    "icon": "🇨🇳",
+    "axis": "按场景选型",
+    "tagline": "Dify、Halo、Alist、1Panel……本土团队做的开源好物，隐私可控、免费可改",
+    "intro": "很多人以为「免费开源」都是老外的东西，其实国内有一批很能打的开源项目：自建 AI 用 Dify、网盘聚合用 Alist（告别百度网盘限速）、建站用 Halo、运维用 1Panel……它们和 FreeNav 的调性天然契合——开源、无追踪、数据自己掌控。这一栏按场景梳理真正好用的国产开源软件，帮你把「国民闭源 App」换成更安心的选择。",
+    "compare": [
+      {
+        "name": "Dify",
+        "vs": "闭源 AI 平台（如 Coze）",
+        "price": "开源免费",
+        "platforms": "自托管/云",
+        "note": "可视化搭建 LLM 应用，国产团队，Apache-2.0"
+      },
+      {
+        "name": "FastGPT",
+        "vs": "商业知识库问答",
+        "price": "开源免费",
+        "platforms": "自托管",
+        "note": "知识库 + 工作流，训练私有问答机器人"
+      },
+      {
+        "name": "Halo",
+        "vs": "WordPress/闭源建站",
+        "price": "开源免费",
+        "platforms": "自托管",
+        "note": "个人建站/博客，插件丰富，国产社区活跃"
+      },
+      {
+        "name": "Alist",
+        "vs": "百度网盘/各网盘客户端",
+        "price": "开源免费",
+        "platforms": "全平台/自托管",
+        "note": "30+ 网盘聚成一个 Web 盘，去限速神器"
+      },
+      {
+        "name": "1Panel",
+        "vs": "宝塔面板",
+        "price": "开源免费",
+        "platforms": "Linux 自托管",
+        "note": "现代运维面板，比宝塔更轻更干净"
+      },
+      {
+        "name": "Koodo Reader",
+        "vs": "微信读书/各类阅读器",
+        "price": "开源免费",
+        "platforms": "全平台",
+        "note": "多格式电子书 + 笔记，数据本地存"
+      },
+      {
+        "name": "RSSHub",
+        "vs": "各平台 RSS 输出",
+        "price": "开源免费",
+        "platforms": "自托管",
+        "note": "把各大站点变 RSS，自由订阅信息"
+      },
+      {
+        "name": "PicGo",
+        "vs": "手动传图床",
+        "price": "开源免费",
+        "platforms": "Win·Mac·Linux",
+        "note": "图床上传一键搞定，写作配图利器"
+      },
+      {
+        "name": "Gopeed",
+        "vs": "IDM/迅雷",
+        "price": "开源免费",
+        "platforms": "全平台/移动",
+        "note": "现代下载器，多协议、跨端同步"
+      },
+      {
+        "name": "LX Music",
+        "vs": "各音乐会员 App",
+        "price": "开源免费",
+        "platforms": "全平台",
+        "note": "聚合多源免费听歌，无会员墙"
+      },
+      {
+        "name": "JumpServer",
+        "vs": "商业堡垒机",
+        "price": "开源免费",
+        "platforms": "自托管",
+        "note": "运维审计跳板机，企业级也够用"
+      },
+      {
+        "name": "DataEase",
+        "vs": "Tableau/帆软",
+        "price": "开源免费",
+        "platforms": "自托管",
+        "note": "拖拽式 BI 看板，国产开源"
+      },
+      {
+        "name": "EasySpider",
+        "vs": "八爪鱼/火车头",
+        "price": "开源免费",
+        "platforms": "Win·Mac·Linux",
+        "note": "可视化爬虫，零代码数据采集"
+      }
+    ],
+    "reviews": [
+      {
+        "title": "Alist：把限速的百度网盘换成自托管聚合盘",
+        "rating": 4.6,
+        "difficulty": "中等",
+        "bestFor": "有多网盘、受够限速、想要统一文件入口的人",
+        "notFor": "完全不想碰服务器的小白",
+        "pros": [
+          "聚合 30+ 网盘到一个 Web 界面",
+          "开源可审计，数据自己掌控",
+          "支持 WebDAV，能当网络硬盘用"
+        ],
+        "cons": [
+          "需要一台服务器或 NAS 自托管",
+          "首次部署要懂点命令行"
+        ],
+        "verdict": "愿意花半小时部署，它会彻底改变你管理网盘的方式——比买会员更划算、更安心。"
+      }
+    ]
   }
 ];
