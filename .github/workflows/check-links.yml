@@ -1,16 +1,23 @@
-name: 死链检测
+name: 死链巡检
 
 on:
   schedule:
-    # 每周一凌晨 2:00 (UTC+8 = UTC 18:00 周日)
+    # 每周一 02:00 (UTC+8) = 上周日 18:00 UTC
     - cron: "0 18 * * 0"
-  workflow_dispatch:  # 也可手动触发
+  workflow_dispatch: # 可在 Actions 页面手动触发
+
+# 收敛并发：同一分支同时只跑一个巡检，避免重复提 Issue
+concurrency:
+  group: freenav-link-check
+  cancel-in-progress: false
 
 jobs:
   check-links:
-    # 免费额度足够，每月 2000+ 分钟
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
+    permissions:
+      contents: read
+      issues: write
 
     steps:
       - uses: actions/checkout@v4
@@ -20,51 +27,128 @@ jobs:
         with:
           node-version: 20
 
-      - name: 运行死链检测
+      - name: 运行死链巡检
         id: check
-        run: node scripts/check-dead-links.js | tee /tmp/report.txt
+        env:
+          LINK_REPORT_PATH: /tmp/freenav-link-report.json
+          CHECK_TIMEOUT_MS: "15000"
+          CHECK_CONCURRENCY: "12"
+        run: node scripts/check-dead-links.js 2>&1 | tee /tmp/report.txt
 
-      - name: 发现死链 → 创建 Issue
-        if: contains(steps.check.outputs.has_dead, 'true')
+      - name: 同步巡检结果到 Issue
         uses: actions/github-script@v7
+        env:
+          HAS_DEAD: ${{ steps.check.outputs.has_dead }}
+          DEAD_COUNT: ${{ steps.check.outputs.dead_count }}
+          REVIEW_COUNT: ${{ steps.check.outputs.review_count }}
+          CHECK_ERROR: ${{ steps.check.outputs.check_error }}
         with:
           script: |
             const fs = require('fs');
-            const report = fs.readFileSync('/tmp/report.txt', 'utf8');
-            const lines = report.split('\n').filter(l => l.match(/\[(ERR|TIMEOUT|\d+)\]/));
-            const body = lines.length > 0
-              ? '## 🔴 死链检测报告\n\n以下 ' + lines.length + ' 个链接可能存在访问异常：\n\n```\n' + lines.join('\n') + '\n```\n\n> 自动检测于 ' + new Date().toISOString().slice(0, 10)
-              : '## ✅ 死链检测报告\n\n本次未发现异常链接。\n\n> 自动检测于 ' + new Date().toISOString().slice(0, 10);
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: '📡 死链检测报告 — ' + new Date().toISOString().slice(0, 10),
-              body: body,
-              labels: ['auto-check', 'maintenance']
-            });
+            const today = new Date().toISOString().slice(0, 10);
+            const hasDead = process.env.HAS_DEAD === 'true';
+            const hasError = process.env.CHECK_ERROR === 'true';
+            const deadCount = Number(process.env.DEAD_COUNT || 0);
+            const reviewCount = Number(process.env.REVIEW_COUNT || 0);
 
-      - name: 全部正常 → 关闭上次 Issue（如果有）
-        if: contains(steps.check.outputs.all_ok, 'true')
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const issues = await github.rest.issues.listForRepo({
+            let report = {};
+            try { report = JSON.parse(fs.readFileSync('/tmp/freenav-link-report.json', 'utf8')); }
+            catch (e) { core.warning('JSON 报告读取失败: ' + e.message); }
+
+            // 查找已存在的巡检 Issue（用固定标签识别，避免重复开新 Issue）
+            const LABEL = 'auto-check';
+            const found = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
               state: 'open',
-              labels: 'auto-check'
+              labels: LABEL,
+              per_page: 20,
             });
-            for (const issue of issues.data) {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issue.number,
-                body: '✅ 链接已全部恢复。'
-              });
+            const existing = found.data.find(i => i.title.startsWith('📡 死链巡检'));
+
+            // 组装正文：确证死链必须处理；需复核仅供参考，不计入死链
+            const lines = [];
+            lines.push('## 🦅 FreeNav 死链巡检报告');
+            lines.push('');
+            lines.push('> 检测日期：' + today + '　|　自动巡检，每周一 02:00 (UTC+8)');
+            lines.push('');
+
+            if (hasError) {
+              lines.push('### ⚠️ 巡检脚本异常');
+              lines.push('本次检测未完成，请查看 [Workflow 日志](' +
+                context.serverUrl + '/' + context.repo.owner + '/' + context.repo.repo +
+                '/actions/runs/' + context.runId + ') 排查。');
+            } else if (hasDead) {
+              lines.push('### 🔴 确证死链 ' + deadCount + ' 个（需处理）');
+              lines.push('');
+              lines.push('| 状态 | 链接 | 来源 |');
+              lines.push('|---|---|---|');
+              for (const d of (report.dead || [])) {
+                lines.push('| ' + d.status + ' | ' + d.url + ' | ' + d.source + ' |');
+              }
+              for (const u of (report.missingPages || [])) {
+                lines.push('| 缺失页面 | ' + u + ' | sitemap.xml |');
+              }
+              for (const m of (report.missingInternal || [])) {
+                lines.push('| 站内缺失 | ' + m.link + ' | ' + m.source + ' |');
+              }
+              lines.push('');
+              lines.push('处理：修正 `assets/js/data.js` 或对应页面后推送，下次巡检会自动核实。');
+            } else {
+              lines.push('### ✅ 未发现确证死链');
+              lines.push('');
+              lines.push('全部 ' + (report.counts ? report.counts.tools : '?') +
+                ' 个软件官网外链可达，站内页面与链接完整。');
+            }
+
+            if (reviewCount > 0) {
+              lines.push('');
+              lines.push('<details><summary>🟡 需人工复核 ' + reviewCount +
+                ' 个（反爬 / 维护 / 网络，不计入死链）</summary>');
+              lines.push('');
+              lines.push('```');
+              for (const r of (report.review || [])) {
+                lines.push('[' + r.status + '] ' + r.url + '  <- ' + r.source);
+              }
+              lines.push('```');
+              lines.push('');
+              lines.push('</details>');
+            }
+
+            const body = lines.join('\n');
+            const title = hasDead
+              ? '📡 死链巡检 — 发现 ' + deadCount + ' 个死链 — ' + today
+              : '📡 死链巡检 — 正常 — ' + today;
+
+            if (existing) {
+              // 已有未关闭 Issue：更新正文，不再新建
               await github.rest.issues.update({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                issue_number: issue.number,
-                state: 'closed'
+                issue_number: existing.number,
+                title: title,
+                body: body,
+                state: hasDead || hasError ? 'open' : 'closed',
               });
+              if (!hasDead && !hasError) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: existing.number,
+                  body: '✅ ' + today + ' 巡检通过，死链已全部恢复，自动关闭。',
+                });
+              }
+              core.info('已更新 Issue #' + existing.number);
+            } else if (hasDead || hasError) {
+              // 无现存 Issue 且发现问题：新建一条
+              const created = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: [LABEL],
+              });
+              core.info('已创建 Issue #' + created.data.number);
+            } else {
+              core.info('巡检正常且无现存 Issue，无需操作。');
             }

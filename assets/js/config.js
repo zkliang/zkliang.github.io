@@ -18,17 +18,6 @@ window.FREENAV_SITE_URL = "https://freenav.net";
  *  - Vercel 推荐仅为「账户额度」、非现金，已移除；腾讯云因注册名额上限暂无法接入，已移除。
  *  - 想加新联盟：复制下面任意一项改 name/note/url/tag 即可，无需改其它代码。
  */
-window.FREENAV_AFFILIATE = [
-  {
-    name: "阿里云服务器 / 域名",
-    note: "FreeNav 域名即在阿里云注册；新用户首单优惠力度大，佣金直接结算到支付宝 / 国内银行卡",
-    url: "https://www.aliyun.com/minisite/goods?userCode=dmi4rtzf",
-    tag: "广告"
-  },
-  {
-    name: "硅基流动 SiliconFlow · AI 算力",
-    note: "国产大模型 API 平台（DeepSeek / Qwen 等），新用户注册即送额度；用邀请码 dg8NmW 你与好友各得代金券",
-    url: "https://cloud.siliconflow.cn/sj/dg8NmW",
-    tag: "广告"
-  }
-];
+// 2026-11-19：按站主要求移除全部广告位，数组留空则首页不渲染任何赞助卡片。
+// 如需恢复，把下面的联盟条目按 { name, note, url, tag:"广告" } 格式填回即可。
+window.FREENAV_AFFILIATE = [];
